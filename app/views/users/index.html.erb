@@ -1,0 +1,27 @@
+<header>
+  <div class="title">
+    <h1> Pomodora</h1>
+    <div id="logo"><%= image_tag("pomodoro.png") %> </div>
+  </div>
+  <div class="menu-container">
+    <h3> About </h3>
+    <div class="counter-container"><h3 id="pomodoro-count"> 0</h3></div>
+  </div>
+</header>
+<main>
+  <div class="timer-container"><h1 id="countdown"> 25:00</h1> </div>
+  <div class="button-container"> <button id="twenty-five"><h3>25 minutes</h3></button><button id="ten"><h3> 10 minutes</h3></button><button id="five"><h3>  5      minutes</h3></button></div>
+  <input id="textbox" type="search" placeholder="ex ~ reading, journaling"> <button id="start"> Start</button>
+  <button id="yes" class="button-style" type ="button">Yes </button>
+  <button id ="no" class="button-style" type="button"> No </button>
+</main>
+<footer>
+  <div class="progressbar" id="max22">
+    <div id="progressbar-meter"></div>
+  </div>
+  <div class="newsfeed-container">
+    <div class="small-image-container">
+    </div>
+    <p id="newsfeed">Megan ~ read books for class</p>
+  </div>
+</footer>
