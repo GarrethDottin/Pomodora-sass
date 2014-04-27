@@ -36,6 +36,7 @@ $spacing: 30px;
   text-shadow: 0 1px 0 rgba(0,0,0,0.25);
   background-color: $color;
   color: #FFF;
+  cursor: pointer;
   margin-right: 10px;
 }
 
@@ -224,7 +225,7 @@ footer {
   bottom: 45px;
   left: 5px;
   font-size: 14px;
-  text-overflow: hidden;
+  overflow: hidden;
 }
 
 .sign-in-partial {
