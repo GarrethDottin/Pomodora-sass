@@ -40,7 +40,7 @@ $spacing: 30px;
 }
 
 @mixin fixed-nav-bar($bottom) {
-  height: 40px;
+  height: 45px;
   width: 100%;
   position: fixed;
   #{$bottom}: 0px;
@@ -50,6 +50,7 @@ $spacing: 30px;
 
 header {
  @include fixed-nav-bar($top);
+ height: 40px;
  background-color: #00AFD8;
  border-bottom: 1.5px solid #a5a9b6;
 }
