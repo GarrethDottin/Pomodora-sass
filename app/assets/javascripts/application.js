@@ -51,8 +51,8 @@ var startClicked = (function (selectors) {
     var interval = setInterval(function(selectors) {
     var el = document.getElementById(element);
       if(time == -1) {
-        var audio = new Audio('/assets/ambiance.wav');
-        audio.play();
+        // var audio = new Audio('/assets/ambiance.wav');
+        // audio.play();
         countdown.text('Done?')
         $('#start').fadeToggle( "slow", "linear" )
         $('#start').css("display", "none")
@@ -97,21 +97,19 @@ var buttonClicked = (function (selectors) {
   };
   var yesButton = function(event, selectors) {
     var signupCheck = function (selectors) {
-      if (selectors.counterText.text() == '1' && window.location.search.length == 0) {
-        selectors.primaryContent.css('display', 'none');
-        selectors.signupContent.fadeToggle( "slow", "linear")
-        selectors.loginPartial.click(function() {
-          selectors.signupContent.css('display', 'none');
-          selectors.loginContent.fadeToggle( "slow", "linear")
-        })
-
+      if (+selectors.counterText.text() == '1' && window.location.hash.length == 0) {
+        console.log("this is hit")
+        $('main').css("display", "none")
+        $('header').css("display", "none")
+        $('footer').css("display", "none")
+        $('.sign-in-partial').fadeToggle( "slow", "linear")
+        }
         selectors.submitButton.on("click", function() {
-          selectors.signupContent.css('display', 'none')
-          selectors.signupContent.css('display', 'none')
-          selectors.loginPartial.css('display', 'none')
-          selectors.primaryContent.fadeToggle( "slow", "linear" );
+        $('.sign-in-partial').fadeToggle( "slow", "linear")
+        $('main').css("display", "none")
+        $('header').css("display", "none")
+        $('footer').css("display", "none")
         })
-      }
     }
     signupCheck(selectors)
 
@@ -125,9 +123,9 @@ var buttonClicked = (function (selectors) {
 
     var storePomodoros = function (selectors) {
       var facebook = $('#facebook')
-      if(+selectors.counterText.text() >= 0 && window.location.search.length > 0) {
+      if(+selectors.counterText.text() >= 0 && window.location.hash.length > 0) {
         var url = window.location.search
-        var data = +url.slice(4)
+        var data = +$('#current-user').text()
         $.ajax({
           type: 'POST',
           data: data,
@@ -290,7 +288,7 @@ $(function (){
     signupContent: $('.signup-content'),
     loginPartial: $('#login-partial'),
     loginContent:  $('#login-content'),
-    submitButton:  $('#submit-button'),
+    submitButton:  $('#facebook'),
     counter: $('.timer-container h1')
   };
   appcontroller.init(selectors)

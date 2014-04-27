@@ -1,7 +1,6 @@
 // Place all the styles related to the User controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
 $bottom: bottom;
 $top: top;
 $spacing: 30px;
@@ -16,7 +15,7 @@ $spacing: 30px;
   background: #fff;
   border: 1px solid;
   border-color: #e5e6e9 #dfe0e4 #d0d1d5;
-  border-top-color: rgb(229, 230, 233);
+  border-top-color: rgb(223, 224, 228);
   border-right-color: rgb(223, 224, 228);
   border-bottom-color: rgb(208, 209, 213);
   border-left-color: rgb(223, 224, 228);
@@ -41,7 +40,7 @@ $spacing: 30px;
 }
 
 @mixin fixed-nav-bar($bottom) {
-  height: 45px;
+  height: 40px;
   width: 100%;
   position: fixed;
   #{$bottom}: 0px;
@@ -51,13 +50,23 @@ $spacing: 30px;
 
 header {
  @include fixed-nav-bar($top);
- background-color: #525252;
+ background-color: #00AFD8;
  border-bottom: 1.5px solid #a5a9b6;
 }
 
 .title {
   float: left;
   margin-left: 10px;
+  margin-top: -10px;
+}
+
+.title h1, .title h6 {
+  display: inline-block;
+}
+
+.title h6 {
+  font-family: 'Open Sans',Helvetica,Arial,sans-serif;
+  font-size: 14px;
 }
 
 body {
@@ -70,11 +79,6 @@ body {
   position: relative;
   top: 7px;
   right: 5px;
-  display: inline-block;
-}
-
-.title  h1 {
-  color: #E3C393;
   display: inline-block;
 }
 
@@ -95,7 +99,7 @@ body {
 }
 
 .counter-container {
-  height: 45px;
+  height: 40px;
   margin-left: 15px;
   padding-left: 10px;
   border-left: solid grey 1px;
@@ -109,13 +113,13 @@ body {
 
 main {
   @extend %centered-main-content;
-  margin-top: 100px;
+  margin-top: 60px;
   text-align:center;
 }
 
 .timer-container h1 {
   font-size: 160px;
-  color: #3C91BF;
+  color: #326795;
   @extend %white-centered-container;
 }
 
@@ -147,6 +151,11 @@ main {
   margin: 2px;
 }
 
+main h2 {
+  margin-bottom: 20px;
+
+}
+
 main button {
   @include flat-ui-button;
 }
@@ -168,7 +177,7 @@ main input {
 }
 footer {
   @include fixed-nav-bar($bottom);
-  background: #466581;
+  background: #326795;
   opacity: .9;
   border-top: 1px solid #57544c;
   opacity: .9;
@@ -217,4 +226,46 @@ footer {
   text-overflow: hidden;
 }
 
+.sign-in-partial {
+  display: none;
+  width: 100%;
+  background-color: white;
+  opacity: .8;
+}
+
+.social-wrap {
+  position: fixed;
+  left: 35%;
+  top: 35%;
+  max-width: 450px;
+  padding: 40px;
+  margin: 0 auto;
+  background: white;
+  box-shadow: 0 0 20px rgba(0,0,0,0.25);
+  z-index: 100;
+  border-radius: 5px;
+}
+
+#facebook {
+  margin-top: 10px;
+  margin-left: 80px;
+  padding: 7px 14px;
+  border: 2px solid #4A65A0;
+  background: #4A65A0;
+  text-decoration: none;
+  border-radius: 3px;
+  -webkit-transition: all 0.15s ease-in-out;
+  -moz-transition: all 0.15s ease-in-out;
+  -o-transition: all 0.15s ease-in-out;
+  transition: all 0.15s ease-in-out;
+}
+
+a {
+  font-weight: bold;
+  color: #fff;
+}
+
+#current-user {
+  visibility: hidden;
+}
 
