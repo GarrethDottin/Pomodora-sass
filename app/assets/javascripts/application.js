@@ -15,7 +15,6 @@
 //= require_tree .
 var appcontroller = {
   init: function (selectors) {
-    console.log("init function hit")
     startClicked.init(selectors);
     timerSetting.init(selectors);
     NewsFeed.init(selectors);
@@ -43,7 +42,7 @@ var startClicked = (function (selectors) {
     selectors.starts.prop("disabled",true)
     var string = selectors.countdown.text().replace(':00','')
     var string = Number(string)
-    countdown('countdown', 00, 01, selectors);
+    countdown('countdown', 00, string, selectors);
   };
   var countdown = function (element, minutes, seconds, selectors) {
     var time = minutes*60 + seconds;
@@ -98,7 +97,6 @@ var buttonClicked = (function (selectors) {
   var yesButton = function(event, selectors) {
     var signupCheck = function (selectors) {
       if (+selectors.counterText.text() == '1' && window.location.hash.length == 0) {
-        console.log("this is hit")
         $('main').css("display", "none")
         $('header').css("display", "none")
         $('footer').css("display", "none")
@@ -125,7 +123,7 @@ var buttonClicked = (function (selectors) {
       var facebook = $('#facebook')
       if(+selectors.counterText.text() >= 0 && window.location.hash.length > 0) {
         var url = window.location.search
-        var data = +$('#current-user').text()
+        var data = +$('#current-user').text().split(" ")[1]
         $.ajax({
           type: 'POST',
           data: data,
@@ -139,10 +137,10 @@ var buttonClicked = (function (selectors) {
     //Check if the user needs to login
     var addNewsFeeditem = function (selectors) {
       var textbox = $('#textbox')
-      var facebook = $('#facebook')
+      var name = $('#current-user').text().split(" ")[2]
       var inputstring = []
-      if (textbox.val().length >= 3 && facebook.text().length > 1 ) {
-        inputstring[0] =  facebook.text() + " ~ " + textbox.val()
+      if (textbox.val().length >= 3 && name.length > 1 ) {
+        inputstring[0] =  name + " ~ " + textbox.val()
         var index = NewsFeed.counterDisplay + 1
         NewsFeed.texts.splice(index,0, inputstring)
       }
@@ -160,7 +158,7 @@ var buttonClicked = (function (selectors) {
 
     //determine increase of pomodoro count
     var increaseProgressBar = function () {
-      id +=10
+      id +=5
       $('.progressbar').attr("id", "max" + id)
       function progress(percent, element) {
         var progressBarWidth = percent * element.width() / 100;
@@ -186,7 +184,6 @@ var buttonClicked = (function (selectors) {
 
   var progressBarCheck = function (progressBarWidth, element) {
     if (progressBarWidth <= 500) {
-      console.log("progressBarCheck", progressBarWidth)
       element.find('div').animate({ width: progressBarWidth }, 500);
     }
   }
@@ -233,7 +230,6 @@ var NewsFeed = {
 }
 
 var timerSetting = (function (selectors) {
-  console.log("timerSetting is hit")
   var setTimer = function (event, selectors, length) {
     switch (length)
     {
