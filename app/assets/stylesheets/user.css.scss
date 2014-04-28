@@ -195,21 +195,22 @@ footer {
 }
 
 .progressbar {
-  width: 80%;
+  width: 78%;
   background-color: white;
   opacity: .9;
   border: 2px solid grey;
 }
 
 .newsfeed-container {
-  width: 18%;
+  width: 20%;
   border-radius: 3px;
   color: white;
 }
 
 .small-image-container {
   width: 40px;
-  height: 39px;
+  height: 38px;
+  border-right: 1px solid white;
 }
 
 .progressbar div {
@@ -222,8 +223,8 @@ footer {
 
 #newsfeed {
   position: relative;
-  bottom: 45px;
-  left: 5px;
+  bottom: 42px;
+  left: 43px;
   font-size: 14px;
 }
 

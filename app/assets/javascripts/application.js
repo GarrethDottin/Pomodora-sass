@@ -158,6 +158,7 @@ var buttonClicked = (function (selectors) {
     //determine increase of pomodoro count
     var increaseProgressBar = function () {
       id +=5
+      $('#task').css("display", "none")
       $('.progressbar').attr("id", "max" + id)
       function progress(percent, element) {
         var progressBarWidth = percent * element.width() / 100;
