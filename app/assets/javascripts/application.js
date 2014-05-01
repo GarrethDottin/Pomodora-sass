@@ -41,7 +41,7 @@ var startClicked = (function (selectors) {
   var triggerCountdown = function (event, selectors){
     selectors.starts.prop("disabled",true)
     var time = +selectors.countdown.text().replace(':00','')
-    countdown('countdown', time, 00, selectors);
+    countdown('countdown', 00, 01, selectors);
   };
   var countdown = function (element, minutes, seconds, selectors) {
     var time = minutes*60 + seconds;
@@ -96,7 +96,7 @@ var buttonClicked = (function (selectors) {
   };
   var yesButton = function(event, selectors) {
     var signupCheck = function (selectors) {
-      if (+selectors.counterText.text() == '1' && window.location.hash.length == 0 && logincounter = 0) {
+      if (+selectors.counterText.text() == '1' && window.location.hash.length == 0 && logincounter == 0) {
         $('main').css("display", "none")
         $('header').css("display", "none")
         $('footer').css("display", "none")
