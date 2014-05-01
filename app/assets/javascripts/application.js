@@ -87,6 +87,7 @@ var startClicked = (function (selectors) {
 }) ();
 
 var buttonClicked = (function (selectors) {
+  var logincounter = 0;
   var id = 0;
   var noButton = function(event, selectors) {
     selectors.countdown.text("25:00")
@@ -95,11 +96,12 @@ var buttonClicked = (function (selectors) {
   };
   var yesButton = function(event, selectors) {
     var signupCheck = function (selectors) {
-      if (+selectors.counterText.text() == '1' && window.location.hash.length == 0) {
+      if (+selectors.counterText.text() == '1' && window.location.hash.length == 0 && logincounter = 0) {
         $('main').css("display", "none")
         $('header').css("display", "none")
         $('footer').css("display", "none")
         $('.sign-in-partial').fadeToggle( "slow", "linear")
+        logincounter++
         }
         selectors.submitButton.on("click", function() {
           $('.sign-in-partial').fadeToggle( "slow", "linear")
