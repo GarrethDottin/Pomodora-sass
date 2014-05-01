@@ -102,10 +102,10 @@ var buttonClicked = (function (selectors) {
         $('.sign-in-partial').fadeToggle( "slow", "linear")
         }
         selectors.submitButton.on("click", function() {
-        $('.sign-in-partial').fadeToggle( "slow", "linear")
-        $('main').css("display", "none")
-        $('header').css("display", "none")
-        $('footer').css("display", "none")
+          $('.sign-in-partial').fadeToggle( "slow", "linear")
+          $('main').css("display", "block")
+          $('header').css("display", "initial")
+          $('footer').css("display", "initial")
         })
     }
     signupCheck(selectors)
