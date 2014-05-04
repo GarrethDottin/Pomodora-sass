@@ -21,6 +21,7 @@
   <button id ="no" class="button-style" type="button"> No </button>
 </main>
 <div id="current-user"><% if current_user %> <%= current_user.id %> <%=current_user.name %> <%end %></div>
+<% audio_tag('ambiance.wav', autoplay: true, controls: true) %>
 <footer>
   <div class="progressbar" id="max22">
     <img id=task src="assets/task.png">

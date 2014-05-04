@@ -41,7 +41,7 @@ var startClicked = (function (selectors) {
   var triggerCountdown = function (event, selectors){
     selectors.starts.prop("disabled",true)
     var time = +selectors.countdown.text().replace(':00','')
-    countdown('countdown', 00, 01, selectors);
+    countdown('countdown', time, 00, selectors);
   };
   var countdown = function (element, minutes, seconds, selectors) {
     var time = minutes*60 + seconds;
@@ -49,8 +49,8 @@ var startClicked = (function (selectors) {
     var interval = setInterval(function(selectors) {
     var el = document.getElementById(element);
       if(time == -1) {
-        // var audio = new Audio('/assets/ambiance.wav');
-        // audio.play();
+        var audio = new Audio('/assets/ambiance.wav');
+        audio.play();
         countdown.text('Done?')
         $('#start').fadeToggle( "slow", "linear" )
         $('#start').css("display", "none")
@@ -110,7 +110,7 @@ var buttonClicked = (function (selectors) {
           $('footer').css("display", "initial")
         })
     }
-    signupCheck(selectors)
+    // signupCheck(selectors)
 
     var login = function (selectors) {
       selectors.loginPartial.click(function() {
