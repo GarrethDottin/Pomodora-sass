@@ -273,3 +273,8 @@ a {
   visibility: hidden;
 }
 
+#stop-button {
+@include flat-ui-button($color: #b95e5b);
+  height: 30px;
+  display: none;
+}

@@ -38,35 +38,53 @@ var appcontroller = {
 var startClicked = (function (selectors) {
   counter = 0;
   counter1 = 0;
+
   var triggerCountdown = function (event, selectors){
-    selectors.starts.prop("disabled",true)
     var time = +selectors.countdown.text().replace(':00','')
+    showStopButton(selectors)
     countdown('countdown', time, 00, selectors);
   };
+
+  var showStopButton = function(selectors) {
+    console.log("showStopButton")
+    selectors.starts.fadeToggle( "slow", "linear")
+    selectors.stop.css("display", "inline");
+  }
+
+  var stopCountdown = function(event, selectors) {
+    clearInterval(interval)
+    $('.timer-container h1').text("25:00")
+    selectors.stop.fadeToggle( "slow", "linear")
+    selectors.starts.css("display", "inline");
+    var time = +selectors.countdown.text().replace(':00','')
+    return;
+  }
+
+
   var countdown = function (element, minutes, seconds, selectors) {
     var time = minutes*60 + seconds;
     var countdown = $('.timer-container h1');
-    var interval = setInterval(function(selectors) {
-    var el = document.getElementById(element);
-      if(time == -1) {
-        var audio = new Audio('/assets/ambiance.wav');
-        audio.play();
-        countdown.text('Done?')
-        $('#start').fadeToggle( "slow", "linear" )
-        $('#start').css("display", "none")
-        $('#textbox').css("display", "none")
-        appcontroller.hideYesandNo()
-        clearInterval(interval);
-        return;
-      }
-      var minutes = Math.floor( time / 60 );
-      if (minutes < 10) minutes = "0" + minutes;
-      var seconds = time % 60;
-      if (seconds < 10) seconds = "0" + seconds;
-      var text = minutes + ':' + seconds;
-      el.innerHTML = text;
-      $('title').text(text)
-      time--;
+    interval = setInterval(function(selectors) {
+      var el = document.getElementById(element);
+        if(time == -1) {
+          var audio = new Audio('/assets/ambiance.wav');
+          audio.play();
+          countdown.text('Done?')
+          $('#start').fadeToggle( "slow", "linear" )
+          $('#start').css("display", "none")
+          $('#textbox').css("display", "none")
+          appcontroller.hideYesandNo()
+          clearInterval(interval);
+          return;
+        }
+        var minutes = Math.floor( time / 60 );
+        if (minutes < 10) minutes = "0" + minutes;
+        var seconds = time % 60;
+        if (seconds < 10) seconds = "0" + seconds;
+        var text = minutes + ':' + seconds;
+        el.innerHTML = text;
+        $('title').text(text)
+        time--;
     }, 1000);
   };
 
@@ -74,6 +92,10 @@ var startClicked = (function (selectors) {
     selectors.starts.on("click", function (event){
       triggerCountdown(event, selectors);
     });
+
+    selectors.stop.on("click", function(event) {
+      stopCountdown(event,selectors);
+    })
   };
 
   var init = function (selectors) {
@@ -119,6 +141,13 @@ var buttonClicked = (function (selectors) {
     }
 
     login(selectors)
+
+    //Logic
+    //when the user clicks start
+    // hide the start button
+    // show the button
+    // clicking the button will reset the
+
 
     var storePomodoros = function (selectors) {
       var facebook = $('#facebook')
@@ -287,7 +316,8 @@ $(function (){
     loginPartial: $('#login-partial'),
     loginContent:  $('#login-content'),
     submitButton:  $('#facebook'),
-    counter: $('.timer-container h1')
+    counter: $('.timer-container h1'),
+    stop: $('#stop-button')
   };
   appcontroller.init(selectors)
 });
