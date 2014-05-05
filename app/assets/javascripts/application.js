@@ -73,6 +73,7 @@ var startClicked = (function (selectors) {
           $('#start').fadeToggle( "slow", "linear" )
           $('#start').css("display", "none")
           $('#textbox').css("display", "none")
+          $('#stop-button').css("display", "none")
           appcontroller.hideYesandNo()
           clearInterval(interval);
           return;
