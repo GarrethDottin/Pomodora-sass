@@ -3,18 +3,15 @@
 <head>
   <title>Pomodora</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
+</head>
+<body>
+<%= yield %>
+</body>
+<%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
   <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
   <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
   <link href='http://fonts.googleapis.com/css?family=Niconne|Lobster|Lobster+Two:700italic' rel='stylesheet' type='text/css'>
-</head>
-<body>
-<%= yield %>
-
-</body>
-
-</body>
 <script type='text/javascript'>
   var _ues = {
   host:'pomodora.userecho.com',

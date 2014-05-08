@@ -19,6 +19,7 @@ var appcontroller = {
     timerSetting.init(selectors);
     NewsFeed.init(selectors);
     buttonClicked.init(selectors);
+    about.init(selectors);
   },
   hideYesandNo: function (selectors) {
     $('#yes').fadeToggle( "slow", "linear" );
@@ -109,6 +110,35 @@ var startClicked = (function (selectors) {
   };
 }) ();
 
+var about = (function(selectors) {
+  var bindFunctions = function (selectors) {
+    selectors.about.on("click", function(event) {
+      aboutPartial(selectors)
+    })
+
+    $('.hidden-image').on("click", function(event) {
+      selectors.countdown.fadeToggle()
+      $('.about-container').css("display", "none")
+      $('.hidden-image').css("display", "none")
+    })
+  }
+
+  var aboutPartial = function(selectors) {
+    $('.about-container').css("opacity", "0.0")
+    $('.hidden-image').css("display", "inline-block")
+    selectors.countdown.fadeToggle()
+    $('.about-container').css("display", "inline-block").animate({opacity: 1.00},3000 )
+  }
+
+  var init = function(selectors) {
+    bindFunctions(selectors)
+  }
+
+  return {
+    init: init
+  }
+}) ();
+
 var buttonClicked = (function (selectors) {
   var logincounter = 0;
   var id = 0;
@@ -142,13 +172,6 @@ var buttonClicked = (function (selectors) {
     }
 
     login(selectors)
-
-    //Logic
-    //when the user clicks start
-    // hide the start button
-    // show the button
-    // clicking the button will reset the
-
 
     var storePomodoros = function (selectors) {
       var facebook = $('#facebook')
@@ -317,8 +340,12 @@ $(function (){
     loginPartial: $('#login-partial'),
     loginContent:  $('#login-content'),
     submitButton:  $('#facebook'),
+    about: $('.menu-container h3'),
     counter: $('.timer-container h1'),
     stop: $('#stop-button')
   };
   appcontroller.init(selectors)
 });
+
+// Too much loading selectors
+//
