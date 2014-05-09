@@ -17,10 +17,15 @@
   <div class="timer-container"><h1 id="countdown"> 25:00</h1>
   <img class="hidden-image" src="assets/exit.png">
   <p class="about-container"> Pomodora is a simple technique used to keep track of tasks you set out for yourself. By putting them in small time increments you can accomplish all your big activities. </p> </div>
-  <div class="button-container"> <button id="twenty-five"><h3>25 minutes</h3></button><button id="ten"><h3> 10 minutes</h3></button><button id="five"><h3>  5      minutes</h3></button></div>
+  <div class="button-container"> <button id="twenty-five"><h3>25 minutes</h3></button><button id="ten"><h3> 10 minutes</h3></button><button id="five"><h3>  5 minutes</h3></button></div>
   <input id="textbox" type="search" placeholder="ex ~ reading, journaling"> <button id="start"> Start</button> <button id="stop-button"> Stop</button>
   <button id="yes" class="button-style" type ="button">Yes </button>
   <button id ="no" class="button-style" type="button"> No </button>
+  <p>
+    <label for="amount">Maximum price:</label>
+    <input type="text" id="amount" style="border:0; color:#f6931f; font-weight:bold;">
+  </p>
+  <div id="slider-range-min" class="ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all" aria-disabled="false"><a class="ui-slider-handle ui-state-default ui-corner-all" href="#" style="left: 5.150214592274678%;"></a></div>
 </main>
 <div id="current-user"><% if current_user %> <%= current_user.id %> <%=current_user.name %> <%end %></div>
 <% audio_tag('ambiance.wav', autoplay: true, controls: true) %>
@@ -35,5 +40,6 @@
     <p id="newsfeed">Megan ~ read books for class</p>
   </div>
 </footer>
-  <div class="sign-in-partial">
-  <div class="social-wrap a"><h2> You must sign in to continue </h2><button id="facebook"><%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %> </button> </div>
+<div class="sign-in-partial">
+  <div class="social-wrap a"><h2> You must sign in to continue </h2><button id="facebook"><%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %> </button>
+</div>
