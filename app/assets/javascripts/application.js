@@ -346,6 +346,3 @@ $(function (){
   };
   appcontroller.init(selectors)
 });
-
-// Too much loading selectors
-//

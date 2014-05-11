@@ -40,14 +40,14 @@ var _ues = {
 $(function() {
   $( "#slider-range-min" ).slider({
     range: "min",
-    value: 37,
+    value: 0,
     min: 0,
-    max: 700,
+    max: 30,
     slide: function( event, ui ) {
-      $( "#amount" ).val( "$" + ui.value );
+      $( "#countdown" ).text(ui.value + ":00");
     }
   });
-  $( "#amount" ).val( "$" + $( "#slider-range-min" ).slider( "value" ) );
+  $( "#countdown" ).val($( "#slider-range-min" ).slider( "value" ) );
 });
 </script>
 <script>

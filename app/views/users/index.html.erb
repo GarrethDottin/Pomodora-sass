@@ -2,30 +2,25 @@
   <div class="title">
     <h1> Pomodora</h1> <h6>a productivity timer</h6>
   </div>
-  <div class="menu-container">
-    <h3> About </h3>
     <div class="counter-container">
-      <h3 id="pomodoro-count"> <% if current_user %> <%=current_user.pomodoro %>
+      <h3 id="pomodoro-count">Count <% if current_user %> <%=current_user.pomodoro %>
         <%else%>  0
         <%end%>
       </h3>
+      <div id="about"><img  src ="assets/about.png"> <h3> About </h3> </div>
     </div>
-  </div>
 </header>
 <main>
   <h2> What can you finish in: </h2>
   <div class="timer-container"><h1 id="countdown"> 25:00</h1>
   <img class="hidden-image" src="assets/exit.png">
   <p class="about-container"> Pomodora is a simple technique used to keep track of tasks you set out for yourself. By putting them in small time increments you can accomplish all your big activities. </p> </div>
-  <div class="button-container"> <button id="twenty-five"><h3>25 minutes</h3></button><button id="ten"><h3> 10 minutes</h3></button><button id="five"><h3>  5 minutes</h3></button></div>
+  <div class="button-container"> <button id="twenty-five"><h3>25 minutes</h3></button><button id="ten"><h3> 10 minutes</h3></button><button id="five"><h3>  5 minutes</h3></button>
+    <div id="slider-range-min" class="ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all" aria-disabled="false"><a class="ui-slider-handle ui-state-default ui-corner-all" href="#" style="left: 5.150214592274678%;"></a></div>
+  </div>
   <input id="textbox" type="search" placeholder="ex ~ reading, journaling"> <button id="start"> Start</button> <button id="stop-button"> Stop</button>
   <button id="yes" class="button-style" type ="button">Yes </button>
   <button id ="no" class="button-style" type="button"> No </button>
-  <p>
-    <label for="amount">Maximum price:</label>
-    <input type="text" id="amount" style="border:0; color:#f6931f; font-weight:bold;">
-  </p>
-<!--   <div id="slider-range-min" class="ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all" aria-disabled="false"><a class="ui-slider-handle ui-state-default ui-corner-all" href="#" style="left: 5.150214592274678%;"></a></div> -->
 </main>
 <div id="current-user"><% if current_user %> <%= current_user.id %> <%=current_user.name %> <%end %></div>
 <% audio_tag('ambiance.wav', autoplay: true, controls: true) %>
