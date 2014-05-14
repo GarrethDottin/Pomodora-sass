@@ -43,7 +43,7 @@ var startClicked = (function (selectors) {
   var triggerCountdown = function (event, selectors){
     var time = +selectors.countdown.text().replace(':00','')
     showStopButton(selectors)
-    countdown('countdown', time, 00, selectors);
+    countdown('countdown', 00, 01, selectors);
   };
 
   var showStopButton = function(selectors) {
@@ -231,7 +231,9 @@ var buttonClicked = (function (selectors) {
 
     //pomodoros display
     var correctPomodoros = function () {
-        var text = +$('#pomodoro-count').text() + 1
+        var number = $('#pomodoro-count').text()
+        number = +number.split(" ")[1] + 1
+        var text = "Count " + number
         $('#pomodoro-count').text(text)
     }
     correctPomodoros()
