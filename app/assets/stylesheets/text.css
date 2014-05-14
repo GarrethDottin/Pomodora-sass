@@ -1,16 +1,29 @@
-body {  font-family: 'Open Sans',Helvetica,Arial,sans-serif;
+
+@font-face {
+  font-family: 'ChunkFive';
+  src: url('Chunkfive.otf');
 }
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url('OpenSans-Regular.ttf');
+}
+
+body {
+  font-family: 'Open Sans',Helvetica,Arial,sans-serif;
+}
+
 .title {
   font-family: 'ChunkFive', sans-serif;
   font-size: 28.5px ;
   color: #3B7CB9;
   display: inline-block;
 }
+
 h1 {
   font-size: 40px;
-  padding: 0px;
-  margin: 0px;
 }
+
 h2 {
   font-size: 32px;
   font-weight: bold;
@@ -23,6 +36,7 @@ h3 {
   font-weight: bold;
   font-family: 'Open Sans',Helvetica,Arial,sans-serif;
 }
+
 h4 {
   font-size: 14px;
   font-weight: bold;
