@@ -43,7 +43,7 @@ var startClicked = (function (selectors) {
   var triggerCountdown = function (event, selectors){
     var time = +selectors.countdown.text().replace(':00','')
     showStopButton(selectors)
-    countdown('countdown', 00, 01, selectors);
+    countdown('countdown', time, 00, selectors);
   };
 
   var showStopButton = function(selectors) {
