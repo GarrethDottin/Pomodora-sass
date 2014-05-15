@@ -148,7 +148,7 @@ var buttonClicked = (function (selectors) {
   };
   var yesButton = function(event, selectors) {
     var signupCheck = function (selectors) {
-      if (+$('#pomodoro-count').text().split(" ")[1] == '1' && window.location.hash.length == 0 && logincounter == 0) {
+      if (+$('#pomodoro-count').text().split(" ")[1] == 1  && window.location.hash.length == 0 && logincounter == 0) {
         $('main').css("display", "none")
         $('header').css("display", "none")
         $('footer').css("display", "none")
