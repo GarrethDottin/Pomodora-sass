@@ -248,7 +248,8 @@ main input {
   position: relative;
   text-align: left;
   width: 290px;
-  margin-left: 170px;
+  position: relative;
+  margin: 0 auto;
 }
 
 .ui-slider-handle {

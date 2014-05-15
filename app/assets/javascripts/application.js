@@ -163,7 +163,7 @@ var buttonClicked = (function (selectors) {
           $('footer').css("display", "initial")
         })
     }
-    // signupCheck(selectors)
+    signupCheck(selectors)
 
     var login = function (selectors) {
       selectors.loginPartial.click(function() {
