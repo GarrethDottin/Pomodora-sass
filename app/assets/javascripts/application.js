@@ -156,13 +156,14 @@ var buttonClicked = (function (selectors) {
         logincounter++
         }
         selectors.submitButton.on("click", function() {
+          console.log("this section of the code is hit ")
           $('.sign-in-partial').fadeToggle( "slow", "linear")
           $('main').css("display", "block")
           $('header').css("display", "initial")
           $('footer').css("display", "initial")
         })
     }
-    signupCheck(selectors)
+    // signupCheck(selectors)
 
     var login = function (selectors) {
       selectors.loginPartial.click(function() {
