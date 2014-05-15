@@ -47,7 +47,6 @@ var startClicked = (function (selectors) {
   };
 
   var showStopButton = function(selectors) {
-    console.log("showStopButton")
     selectors.starts.fadeToggle( "slow", "linear")
     selectors.stop.css("display", "inline");
   }
@@ -149,7 +148,7 @@ var buttonClicked = (function (selectors) {
   };
   var yesButton = function(event, selectors) {
     var signupCheck = function (selectors) {
-      if (+selectors.counterText.text() == '1' && window.location.hash.length == 0 && logincounter == 0) {
+      if (+$('#pomodoro-count').text().split(" ")[1] == '1' && window.location.hash.length == 0 && logincounter == 0) {
         $('main').css("display", "none")
         $('header').css("display", "none")
         $('footer').css("display", "none")
