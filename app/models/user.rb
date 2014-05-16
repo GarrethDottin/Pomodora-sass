@@ -6,13 +6,17 @@ class User < ActiveRecord::Base
   # Setup accessible (or protected) attributes for your model
   attr_accessible :uid, :name, :provider,:email, :password, :password_confirmation, :remember_me, :name
 
-  # def pomodoro
-  #   if 1.days.ago < last_reset
-  #     self.pomodoro = 0
-  #     self.last_reset = Time.now
-  #   end
-  #   super
-  # end
+  def pomodoro
+    if self.last_reset
+      if 1.days.ago < last_reset
+        self.pomodoro = 0
+        self.last_reset = Time.now
+      end
+    end
+    super
+  end
+  ## reset the database on heroku
+  ##
 
   # Change the time stamp so it checks to see if its been
 
