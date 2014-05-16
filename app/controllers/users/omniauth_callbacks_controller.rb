@@ -6,14 +6,13 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     # with this code you can see the data sent by facebook
     omniauth = request.env["omniauth.auth"]
     @user = User.find_for_facebook_oauth(request.env["omniauth.auth"].provider, request.env["omniauth.auth"].uid, request.env["omniauth.auth"].extra.raw_info.name, request.env["omniauth.auth"].info.email, current_user)
-
+    puts "oauth hit"
     if @user.persisted?
       flash[:notice] = I18n.t "devise.omniauth_callbacks.success", :kind => "Facebook"
       sign_in_and_redirect @user, :event => :authentication
     else
       session["devise.facebook_data"] = request.env["omniauth.auth"].uid
-      puts "this oauth code is hit"
-      redirect_to :back
+      redirect_to(controller: 'names', id: @user.to_param)
     end
    end
 end
