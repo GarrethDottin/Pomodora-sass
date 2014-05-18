@@ -162,7 +162,7 @@ var buttonClicked = (function (selectors) {
           $('footer').css("display", "initial")
         })
     }
-    signupCheck(selectors)
+    // signupCheck(selectors)
 
     var login = function (selectors) {
       selectors.loginPartial.click(function() {
@@ -185,7 +185,7 @@ var buttonClicked = (function (selectors) {
         })
        }
     }
-    // storePomodoros(selectors)
+    storePomodoros(selectors)
 
     //Check if the user needs to login
     var addNewsFeeditem = function (selectors) {
