@@ -185,7 +185,7 @@ var buttonClicked = (function (selectors) {
         })
        }
     }
-    storePomodoros(selectors)
+    // storePomodoros(selectors)
 
     //Check if the user needs to login
     var addNewsFeeditem = function (selectors) {
