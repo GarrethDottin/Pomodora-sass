@@ -16,12 +16,12 @@ body {
 .title {
   font-family: 'ChunkFive', sans-serif;
   font-size: 28.5px ;
-  color: #3B7CB9;
+  color: white;
   display: inline-block;
 }
 
 h1 {
-  font-size: 40px;
+  font-size: 35px;
 }
 
 h2 {
