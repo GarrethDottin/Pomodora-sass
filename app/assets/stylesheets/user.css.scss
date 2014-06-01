@@ -98,7 +98,6 @@ body {
   padding-top: 15px;
 }
 
-
 .counter-container {
   position: absolute;
   height: 28px;
@@ -117,9 +116,9 @@ body {
   display: inline-block;
 }
 
-.counter-container h3 {
-  padding-bottom: 3px;
-
+#pomodoro-count {
+  position: relative;
+  bottom: 3px;
 }
 
 #about {
@@ -130,6 +129,7 @@ body {
   color: #474747;
   padding-bottom: 5px;
 }
+
 #about img {
   position: relative;
   top: 5px;
@@ -138,7 +138,6 @@ body {
 #about h3 {
   display: inline;
 }
-
 
 .counter-container h3 {
   margin-top: 10px;
