@@ -98,13 +98,10 @@ body {
   padding-top: 15px;
 }
 
-.counter-container h3:hover {
-  color: #292929;
-}
 
 .counter-container {
   position: absolute;
-  height: 32px;
+  height: 28px;
   width: 75px;
   padding-bottom: 2px;
   padding-left: 2px;
@@ -118,6 +115,11 @@ body {
   float: right;
   margin-left: 770px;
   display: inline-block;
+}
+
+.counter-container h3 {
+  padding-bottom: 3px;
+
 }
 
 #about {
