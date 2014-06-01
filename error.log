@@ -964,3 +964,45 @@ Tasks: TOP => db:reset_pomodoro
 /Users/apprentice/.rvm/gems/ruby-2.0.0-p247/bin/ruby_executable_hooks:15:in `<main>'
 Tasks: TOP => db:reset_pomodoro
 (See full trace by running task with --trace)
+rake aborted!
+ActiveRecord::StatementInvalid: SQLite3::SQLException: no such table: users: UPDATE "users" SET "pomodoro" = 0
+/Users/apprentice/.rvm/gems/ruby-2.0.0-p247/gems/sqlite3-1.3.9/lib/sqlite3/database.rb:91:in `initialize'
+/Users/apprentice/.rvm/gems/ruby-2.0.0-p247/gems/sqlite3-1.3.9/lib/sqlite3/database.rb:91:in `new'
+/Users/apprentice/.rvm/gems/ruby-2.0.0-p247/gems/sqlite3-1.3.9/lib/sqlite3/database.rb:91:in `prepare'
+/Users/apprentice/.rvm/gems/ruby-2.0.0-p247/gems/activerecord-4.0.0/lib/active_record/connection_adapters/sqlite3_adapter.rb:296:in `block in exec_query'
+/Users/apprentice/.rvm/gems/ruby-2.0.0-p247/gems/activerecord-4.0.0/lib/active_record/connection_adapters/abstract_adapter.rb:425:in `block in log'
+/Users/apprentice/.rvm/gems/ruby-2.0.0-p247/gems/activesupport-4.0.0/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+/Users/apprentice/.rvm/gems/ruby-2.0.0-p247/gems/activerecord-4.0.0/lib/active_record/connection_adapters/abstract_adapter.rb:420:in `log'
+/Users/apprentice/.rvm/gems/ruby-2.0.0-p247/gems/activerecord-4.0.0/lib/active_record/connection_adapters/sqlite3_adapter.rb:292:in `exec_query'
+/Users/apprentice/.rvm/gems/ruby-2.0.0-p247/gems/activerecord-4.0.0/lib/active_record/connection_adapters/sqlite3_adapter.rb:318:in `exec_delete'
+/Users/apprentice/.rvm/gems/ruby-2.0.0-p247/gems/activerecord-4.0.0/lib/active_record/connection_adapters/abstract/database_statements.rb:102:in `update'
+/Users/apprentice/.rvm/gems/ruby-2.0.0-p247/gems/activerecord-4.0.0/lib/active_record/connection_adapters/abstract/query_cache.rb:14:in `update'
+/Users/apprentice/.rvm/gems/ruby-2.0.0-p247/gems/activerecord-4.0.0/lib/active_record/relation.rb:311:in `update_all'
+/Users/apprentice/.rvm/gems/ruby-2.0.0-p247/gems/activerecord-deprecated_finders-1.0.3/lib/active_record/deprecated_finders/relation.rb:54:in `update_all_with_deprecated_options'
+/Users/apprentice/.rvm/gems/ruby-2.0.0-p247/gems/activerecord-4.0.0/lib/active_record/querying.rb:7:in `update_all'
+/Users/apprentice/Desktop/pomodora-sass/lib/tasks/reset_pomodoro.rake:4:in `block (2 levels) in <top (required)>'
+/Users/apprentice/.rvm/gems/ruby-2.0.0-p247/bin/ruby_executable_hooks:15:in `eval'
+/Users/apprentice/.rvm/gems/ruby-2.0.0-p247/bin/ruby_executable_hooks:15:in `<main>'
+Tasks: TOP => db:reset_pomodoro
+(See full trace by running task with --trace)
+rake aborted!
+ActiveRecord::StatementInvalid: SQLite3::SQLException: no such table: users: UPDATE "users" SET "pomodoro" = 0
+/Users/apprentice/.rvm/gems/ruby-2.0.0-p247/gems/sqlite3-1.3.9/lib/sqlite3/database.rb:91:in `initialize'
+/Users/apprentice/.rvm/gems/ruby-2.0.0-p247/gems/sqlite3-1.3.9/lib/sqlite3/database.rb:91:in `new'
+/Users/apprentice/.rvm/gems/ruby-2.0.0-p247/gems/sqlite3-1.3.9/lib/sqlite3/database.rb:91:in `prepare'
+/Users/apprentice/.rvm/gems/ruby-2.0.0-p247/gems/activerecord-4.0.0/lib/active_record/connection_adapters/sqlite3_adapter.rb:296:in `block in exec_query'
+/Users/apprentice/.rvm/gems/ruby-2.0.0-p247/gems/activerecord-4.0.0/lib/active_record/connection_adapters/abstract_adapter.rb:425:in `block in log'
+/Users/apprentice/.rvm/gems/ruby-2.0.0-p247/gems/activesupport-4.0.0/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+/Users/apprentice/.rvm/gems/ruby-2.0.0-p247/gems/activerecord-4.0.0/lib/active_record/connection_adapters/abstract_adapter.rb:420:in `log'
+/Users/apprentice/.rvm/gems/ruby-2.0.0-p247/gems/activerecord-4.0.0/lib/active_record/connection_adapters/sqlite3_adapter.rb:292:in `exec_query'
+/Users/apprentice/.rvm/gems/ruby-2.0.0-p247/gems/activerecord-4.0.0/lib/active_record/connection_adapters/sqlite3_adapter.rb:318:in `exec_delete'
+/Users/apprentice/.rvm/gems/ruby-2.0.0-p247/gems/activerecord-4.0.0/lib/active_record/connection_adapters/abstract/database_statements.rb:102:in `update'
+/Users/apprentice/.rvm/gems/ruby-2.0.0-p247/gems/activerecord-4.0.0/lib/active_record/connection_adapters/abstract/query_cache.rb:14:in `update'
+/Users/apprentice/.rvm/gems/ruby-2.0.0-p247/gems/activerecord-4.0.0/lib/active_record/relation.rb:311:in `update_all'
+/Users/apprentice/.rvm/gems/ruby-2.0.0-p247/gems/activerecord-deprecated_finders-1.0.3/lib/active_record/deprecated_finders/relation.rb:54:in `update_all_with_deprecated_options'
+/Users/apprentice/.rvm/gems/ruby-2.0.0-p247/gems/activerecord-4.0.0/lib/active_record/querying.rb:7:in `update_all'
+/Users/apprentice/Desktop/pomodora-sass/lib/tasks/reset_pomodoro.rake:4:in `block (2 levels) in <top (required)>'
+/Users/apprentice/.rvm/gems/ruby-2.0.0-p247/bin/ruby_executable_hooks:15:in `eval'
+/Users/apprentice/.rvm/gems/ruby-2.0.0-p247/bin/ruby_executable_hooks:15:in `<main>'
+Tasks: TOP => db:reset_pomodoro
+(See full trace by running task with --trace)
