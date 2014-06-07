@@ -99,7 +99,7 @@ body {
 }
 
 .counter-container {
-  position: absolute;
+  position: relative;
   height: 28px;
   width: 75px;
   padding-bottom: 2px;
@@ -112,8 +112,7 @@ body {
   border-left: solid grey 1px;
   display: inline-block;
   float: right;
-  margin-left: 770px;
-  display: inline-block;
+  right: 10px;
 }
 
 #pomodoro-count {
