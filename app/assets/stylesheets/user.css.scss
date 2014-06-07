@@ -167,6 +167,11 @@ main {
   height: 190px;
 }
 
+@-moz-document url-prefix() {
+    .timer-container {padding-top:10px;}
+}
+
+
 .button-container {
   width: 100%;
   margin: 0 auto;
