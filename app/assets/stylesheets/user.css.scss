@@ -46,7 +46,7 @@ $spacing: 30px;
 }
 
 @mixin fixed-nav-bar($bottom) {
-  height: 45px;
+  height: 40px;
   width: 100%;
   position: fixed;
   #{$bottom}: 0px;
@@ -54,7 +54,7 @@ $spacing: 30px;
 
 header {
   @include fixed-nav-bar($top);
-  height: 40px;
+  height: 4em;
   background: url('menu-background.jpg');
   border-bottom: 1.5px solid #a5a9b6;
   box-shadow: 0px 3px 0px rgba(0, 0, 0, 0.15), 0px -4px 20px rgba(0, 0, 0, 0.20);
@@ -79,6 +79,7 @@ header {
 
 body {
   @extend %reset-style;
+  font-size: 10px;
   background: url('background.jpg');
 }
 
@@ -103,7 +104,6 @@ body {
   height: 28px;
   width: 75px;
   padding-bottom: 2px;
-  padding-left: 2px;
   border-radius: 5px;
   color: white;
   background-color: #007a6c;
@@ -384,4 +384,24 @@ a {
 @include flat-ui-button($color: #b95e5b);
   height: 30px;
   display: none;
+}
+
+
+@media only screen and (max-width: 400px) {
+  body {
+    font-size: 10px;
+  }
+  .counter-container {
+    right: .5em;
+    display: inline;
+  }
+
+  .title {
+    width: 75%;
+  }
+  .title h1 {
+    font-size: .5em;
+  }
+
+
 }
