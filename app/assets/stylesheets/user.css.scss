@@ -176,6 +176,29 @@ main {
   margin-bottom: 20px;
 }
 
+.arrow-up {
+  width: 0;
+  height: 0;
+  border-left: 35px solid transparent;
+  border-right: 35px solid transparent;
+  box-shadow: 0px -2px 0px #2e5f8a;
+  border-bottom: 50px solid #2e5f8a;
+  border-top: solid transparent;
+  position: absolute;
+  margin-left: -51px;
+  margin-top: -100px;
+}
+
+.arrow-down {
+  width: 0;
+  height: 0;
+  border-left: 35px solid transparent;
+  border-right: 35px solid transparent;
+  border-top: 50px solid #2e5f8a;
+  box-shadow: 0px 0px 0px #2e5f8a;
+
+}
+
 @-moz-document url-prefix() {
     .timer-container {padding-top:1.5em;}
 }
