@@ -155,7 +155,7 @@ main {
 }
 
 .timer-container h1 {
-  font-size: 110px;
+  font-size: 100px;
   color: #474747;
   margin-top: 15px;
 }
@@ -204,7 +204,6 @@ main {
 @-moz-document url-prefix() {
     .timer-container {padding-top:1.5em;}
 }
-
 
 .button-container {
   width: 100%;
