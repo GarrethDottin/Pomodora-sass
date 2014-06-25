@@ -20,6 +20,8 @@ var appcontroller = {
     NewsFeed.init(selectors);
     buttonClicked.init(selectors);
     about.init(selectors);
+    appcontroller.queFeature();
+    appcontroller.queInit();
   },
   hideYesandNo: function (selectors) {
     $('#yes').fadeToggle( "slow", "linear" );
@@ -33,6 +35,30 @@ var appcontroller = {
     selectors.starts.css("display", "inline")
     selectors.starts.prop("disabled", false)
     $('#textbox').css("display", "inline")
+  },
+  counter: 0,
+  queFeature: function(selectors) {
+    $(".que-add").on("click", function() {
+      appcontroller.counter++
+      var div = document.createElement("DIV");
+      div.className = "que-item";
+
+      var button = document.createElement("button");
+      div.className = "que-item";
+      button.className ="que-start";
+      button.innerHTML = "start";
+      button.id = "button" + appcontroller.counter;
+      div.id = "que-container" + appcontroller.counter;
+      div.onclick = function () {
+        $('main input').val(div.innerHTML)
+      }
+      $("#que-list").append(div)
+      div.innerHTML = $('#que-dropdown input').val()
+    })
+  },
+  queInit: function() {
+    $('#que').on("mouseenter", function() { $('#que-dropdown').css("visibility", "visible")})
+    $('#que-dropdown').on("mouseleave",function() { $('#que-dropdown').css("visibility", "hidden")})
   }
 }
 
@@ -173,10 +199,16 @@ var buttonClicked = (function (selectors) {
     login(selectors)
 
     var storePomodoros = function (selectors) {
+      var data;
       var facebook = $('#facebook')
+      if (textbox.val().length >= 3) {
+        data = textbox.val()
+      }
+      else {
+        data = +$('#current-user').text().split(" ")[1]
+      }
       if(+selectors.counterText.text() >= 0 && window.location.hash.length > 0) {
         var url = window.location.search
-        var data = +$('#current-user').text().split(" ")[1]
         $.ajax({
           type: 'POST',
           data: data,
@@ -185,7 +217,7 @@ var buttonClicked = (function (selectors) {
         })
        }
     }
-    storePomodoros(selectors)
+    storePomodoros(selectors);
 
     //Check if the user needs to login
     var addNewsFeeditem = function (selectors) {
@@ -198,7 +230,18 @@ var buttonClicked = (function (selectors) {
         NewsFeed.texts.splice(index,0, inputstring)
       }
     }
-    addNewsFeeditem(selectors)
+    addNewsFeeditem(selectors);
+
+
+    var additemQue = function() {
+      if ($('#textbox').text().length >= 1) {
+        $("#que-list").append($('#textbox').text());
+      };
+
+    }
+
+    additemQue();
+
 
     //Show start button
     var showStartButton = function (selectors){

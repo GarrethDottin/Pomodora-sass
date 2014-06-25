@@ -21,7 +21,38 @@ Release 3:
   III. Add completed items
 
 Release 4:
+<<<<<<< Updated upstream
 -Change color of footer
+=======
+-Change color of footer COM
+-Responsive Mobile
+-Branding
+  I. Get Logo COM
+  II. Header COM
+-Create Que Feature
+  I. Allow users
+
+
+  QUe Functionality MVP
+    A.ADd items to be stored later COM
+    B. Display items on the que COM
+    C. Allow users to delete from the que
+    D. Add start button to do the action
+        I. When they click start their text should appear in the
+
+Functionality:
+-On Click of que button load the list of items
+-On click load a div with a button
+
+-when the user
+
+
+Process of Features:
+-Create Grey feature
+-Display the item
+-Create the functionality of the item add item to que
+
+>>>>>>> Stashed changes
 
 -make it responsive for mobile
 

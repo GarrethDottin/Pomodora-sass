@@ -61,6 +61,11 @@ header {
   -webkit-box-shadow: 0px 3px 0px rgba(0, 0, 0, 0.15), 0px -4px 20px rgba(0, 0, 0, 0.20);
   z-index: 100;
 }
+.logo {
+  display: inline-block;
+  position: relative;
+  top: 8px;
+}
 
 .title {
   float: left;
@@ -75,6 +80,79 @@ header {
 .title h6 {
   font-family: 'Open Sans',Helvetica,Arial,sans-serif;
   font-size: 14px;
+}
+
+#que {
+  position: relative;
+  height: 93%;
+  width: 60px;
+  padding-bottom: 2px;
+  color: white;
+  background-color: #007a6c;
+  padding-left: 2px;
+  border-left: solid grey 1px;
+  display: inline-block;
+  float: right;
+  right: 1px;
+}
+
+#que h4 {
+  text-align: center;
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+#que-dropdown {
+  width: 200px;
+  height: 250px;
+  display: inline-block;
+  background-color: #2f2f2f;
+  color: white;
+  opacity: .85;
+  border-radius: 3px;
+  box-shadow: 0 0 10px #333;
+  position: absolute;
+  top: -2px;
+  right: 50px;
+  z-index: 100;
+}
+
+
+#que-dropdown p {
+  font-size: 20px;
+  margin-bottom: 0px
+}
+#que-list {
+  position: relative;
+  height: 45%;
+  font-size: 16px;
+  cursor: pointer;
+}
+hr {
+  background-color: white;
+  width: 95%;
+  text-align:center;
+}
+#que-dropdown button {
+  @include flat-ui-button($size: 40px);
+  color: white;
+  height: 32px;
+  width: 80%;
+  margin: 0px auto;
+  margin-top: 5px;
+}
+
+#que-dropdown input {
+  width: 85%;
+  text-align: center;
+  margin-top: 0px;
+}
+
+.que-add {
+  width: 40px;
+  background-color: #326795;
+  opacity: .95;
 }
 
 body {
@@ -101,23 +179,22 @@ body {
 
 .counter-container {
   position: relative;
-  height: 28px;
-  width: 75px;
+  height: 92%;
+  width: 80px;
   padding-bottom: 2px;
-  border-radius: 5px;
   color: white;
   background-color: #007a6c;
   padding-left: 2px;
-  margin-top: 5px;
   border-left: solid grey 1px;
   display: inline-block;
   float: right;
-  right: 10px;
+  right: 1px;
 }
 
 #pomodoro-count {
   position: relative;
-  bottom: 3px;
+  padding-top: 2px;
+  padding-left: 5px;
 }
 
 #about {
@@ -319,11 +396,12 @@ main input {
 
 footer {
   @include fixed-nav-bar($bottom);
-  background: #326795;
-  opacity: .9;
+  background: #5c5c5c;
   border-top: 1px solid #57544c;
-  opacity: .9;
   height: 44px;
+  border-bottom: 1px solid #000;
+  -webkit-box-shadow: inset 0 0 1px rgba(255,255,255,0.4);
+  box-shadow: inset 0 0 1px rgba(255,255,255,0.4);
 }
 
 .progressbar, .newsfeed-container {
@@ -339,20 +417,24 @@ footer {
   width: 78%;
   background-color: white;
   opacity: .9;
-  border: 2px solid grey;
+  border: 1px solid grey;
 }
 
 .newsfeed-container {
   width: 20%;
-  border-radius: 3px;
-  color: white;
+  background-color: #837e72;
+  border: 1px solid grey;
+  box-shadow: inset 0 0 -1px #000000;
   overflow: hidden;
+  border: 1px solid #000;
+    box-shadow: 0 1px 0 rgba(255,255,255,0.08),inset 1px 1px rgba(255,255,255,0.06);
+  background-color: #333;
 }
 
 .small-image-container {
   width: 40px;
-  height: 38px;
-  border-right: 1px solid white;
+  height: 40px;
+  border-right: 1px solid black;
 }
 
 .progressbar div {
@@ -369,6 +451,7 @@ footer {
   left: 43px;
   padding-left: 2px;
   font-size: 14px;
+  width: 200px;
 }
 
 .sign-in-partial {

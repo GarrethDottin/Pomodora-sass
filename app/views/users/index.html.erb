@@ -1,16 +1,28 @@
 <header>
   <div class="title">
+    <img class ="" src="/assets/dora.png"/>
     <h1> Pomodora</h1> <h6>a productivity timer</h6>
   </div>
     <div class="counter-container">
-      <h3 id="pomodoro-count">Count <% if current_user %> <%=current_user.pomodoro %>
+      <h3 id="pomodoro-count">Count: <% if current_user %> <%=current_user.pomodoro %>
         <%else%>0
         <%end%>
       </h3>
 <!--       <div id="about"><img  src ="assets/about.png"> <h3> About </h3> </div>
- -->    </div>
+ -->
+    </div>
+    <div id="que"> <h4> Que</h4>
+    </div>
 </header>
 <main>
+  <div id="que-dropdown">
+  <p> Tasks in Progress</p>
+  <hr id="hr">
+  <div id="que-list"> </div>
+  <hr>
+  <input  type="search"/>
+  <button class="que-add">Add </button>
+  </div>
   <h2> What task can you finish in: </h2>
   <div class="timer-container"><h1 id="countdown"> 25:00</h1>
   <div class="arrow-up"> </div>
@@ -34,7 +46,6 @@
   </div>
   <div class="newsfeed-container">
     <div class="small-image-container"><img src="assets/chat.png">
-    </div>
     <p id="newsfeed">Megan ~ read books for class</p>
   </div>
 </footer>
