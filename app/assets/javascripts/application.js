@@ -173,6 +173,7 @@ var buttonClicked = (function (selectors) {
     appcontroller.showStartHideYesNo(selectors);
   };
   var yesButton = function(event, selectors) {
+    console.log("This is hit")
     var signupCheck = function (selectors) {
       if (+$('#pomodoro-count').text().split(" ")[1] == 1  && window.location.hash.length == 0 && logincounter == 0) {
         $('main').css("display", "none")
@@ -201,7 +202,7 @@ var buttonClicked = (function (selectors) {
     var storePomodoros = function (selectors) {
       var data;
       var facebook = $('#facebook')
-      if (textbox.val().length >= 3) {
+      if ($('#textbox').val().length >= 3) {
         data = textbox.val()
       }
       else {
