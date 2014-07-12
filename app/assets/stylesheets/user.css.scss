@@ -219,19 +219,20 @@ hr {
 }
 
 .counter-container h3 {
-  margin-top: 7px;
+  margin-top: 6px;
 }
 
 main h2 {
   margin-bottom: 15px;
   font-size: 30px;
+
 }
 
 main {
   @extend %centered-main-content;
   margin-top: 60px;
   text-align:center;
-  overflow: hidden;
+  overflow: scroll;
 }
 
 .timer-container h1 {
