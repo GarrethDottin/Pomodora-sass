@@ -17,7 +17,6 @@ var appcontroller = {
   init: function (selectors) {
     startClicked.init(selectors);
     timerSetting.init(selectors);
-    NewsFeed.init(selectors);
     buttonClicked.init(selectors);
     about.init(selectors);
     appcontroller.queFeature();
@@ -42,18 +41,27 @@ var appcontroller = {
       appcontroller.counter++
       var div = document.createElement("DIV");
       div.className = "que-item";
-
       var button = document.createElement("button");
+       var textDiv = document.createElement("DIV");
       div.className = "que-item";
       button.className ="que-start";
       button.innerHTML = "start";
       button.id = "button" + appcontroller.counter;
       div.id = "que-container" + appcontroller.counter;
-      div.onclick = function () {
-        $('main input').val(div.innerHTML)
+      var href = document.createElement('a');
+      href.innerHTML = "X";
+      textDiv.innerHTML = ($('#que-dropdown input').val());
+      div.appendChild(textDiv);
+      div.appendChild(href);
+      textDiv.onclick = function () {
+        $('main input').val($('#que-dropdown input').val())
+        $('#que-dropdown input').val("")
+      }
+      href.onclick = function () {
+        $('#' + div.id).remove()
+        $('#que-dropdown input').val("")
       }
       $("#que-list").append(div)
-      div.innerHTML = $('#que-dropdown input').val()
     })
   },
   queInit: function() {
@@ -203,7 +211,7 @@ var buttonClicked = (function (selectors) {
       var data;
       var facebook = $('#facebook')
       if ($('#textbox').val().length >= 3) {
-        data = textbox.val()
+        data =$('#textbox').val()
       }
       else {
         data = +$('#current-user').text().split(" ")[1]
@@ -220,23 +228,16 @@ var buttonClicked = (function (selectors) {
     }
     storePomodoros(selectors);
 
-    //Check if the user needs to login
-    var addNewsFeeditem = function (selectors) {
-      var textbox = $('#textbox')
-      var name = $('#current-user').text().split(" ")[2]
-      var inputstring = []
-      if (textbox.val().length >= 3 && name.length > 1 ) {
-        inputstring[0] =  name + " ~ " + textbox.val()
-        var index = NewsFeed.counterDisplay + 1
-        NewsFeed.texts.splice(index,0, inputstring)
-      }
-    }
-    addNewsFeeditem(selectors);
-
 
     var additemQue = function() {
-      if ($('#textbox').text().length >= 1) {
-        $("#que-list").append($('#textbox').text());
+      if ($('#textbox').val().length >= 1) {
+        console.log("additemQue")
+        var textDiv = document.createElement('div')
+        textDiv.innerHTML = $('#textbox').val()
+        $("#que-finished").append(textDiv);
+        $('#que h4').css("opacity", .7);
+        setInterval(function(){$('#que h4').css("opacity", 1) }, 1500)
+
       };
 
     }
@@ -308,26 +309,6 @@ var buttonClicked = (function (selectors) {
   }
 }) ();
 
-var NewsFeed = {
-  init: function () {
-    NewsFeed.displays()
-  },
-  texts: [["Jenna ~ Read two chapters"], ["Mary ~ Write a Cover Letter"], ["Dave ~ Practice Designing"], ["Alex ~ Outline Blog Post"],["Jamie ~ finish reading the news"]],
-  textdisplay: document.getElementById('newsfeed'),
-  counterDisplay: 0,
-  displays: function () {
-    var feed = document.getElementById('newsfeed')
-      setInterval(function(){
-        $('#newsfeed').css("display", "none")
-        feed.innerHTML = NewsFeed.texts[NewsFeed.counterDisplay][0]
-        $('#newsfeed').show( 1500, function() {});
-        NewsFeed.counterDisplay++
-        if (NewsFeed.counterDisplay == NewsFeed.texts.length) {
-            NewsFeed.counterDisplay = 0;
-          }
-        },11000)
-  }
-}
 
 var timerSetting = (function (selectors) {
   var setTimer = function (event, selectors, length) {
