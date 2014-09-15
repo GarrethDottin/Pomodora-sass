@@ -21,6 +21,8 @@
   <hr id="hr">
   <div id="que-list"> </div>
   <hr>
+  <div id='que-finished'> </div>
+
   <input  type="search"/>
   <button class="que-add">Add </button>
   </div>
@@ -63,10 +65,7 @@
     <img id=task src="assets/task.png">
     <div id="progressbar-meter"></div>
   </div>
-  <div class="newsfeed-container">
-    <div class="small-image-container"><img src="assets/chat.png">
-    <p id="newsfeed">Megan ~ read books for class</p>
-  </div>
+
 </footer>
 <div class="sign-in-partial">
   <div class="social-wrap a"><h2> You must sign in to continue </h2><button id="facebook"><%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %> </button>
