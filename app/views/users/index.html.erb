@@ -8,13 +8,14 @@
         <%else%>0
         <%end%>
       </h4>
+
 <!--       <div id="about"><img  src ="assets/about.png"> <h3> About </h3> </div>
  -->
     </div>
     <div id="que"> <h4> Que</h4>
     </div>
 </header>
-<main>
+<main ng-app="App" ng-controller="ApplicationController" >
   <div id="que-dropdown">
   <p> Tasks in Progress</p>
   <hr id="hr">
@@ -23,7 +24,8 @@
   <input  type="search"/>
   <button class="que-add">Add </button>
   </div>
-  <h2> What task can you finish in: </h2>
+  <div flip-Clock> </div>
+  <!-- <h2> What task can you finish in: </h2>
   <div class="timer-container"><h1 id="countdown"> 25:00</h1>
   <div class="arrow-up"> </div>
   <div class="arrow-down"> </div>
@@ -35,10 +37,27 @@
   </div>
   <input id="textbox" type="search" placeholder="ex ~ reading, journaling"> <button id="start"> Start</button> <button id="stop-button"> Stop</button>
   <button id="yes" class="button-style" type ="button">Yes </button>
-  <button id ="no" class="button-style" type="button"> No </button>
+  <button id ="no" class="button-style" type="button"> No </button> -->
+ <div ng-controller="TodoCtrl">
+    <ul class="unstyled">
+      <li ng-repeat="todo in todos" >
+      <div ng-hide="{{todo.done}}">
+        <input ng-click="archive(todo)" type="checkbox" ng-model="todo.done">
+        <span>{{todo.text}}</span>
+      </div>
+      </li>
+    </ul>
+    <form ng-submit="addTodo()">
+      <input type="text" ng-model="todoText"  size="30"
+             placeholder="add new todo here">
+      <input class="btn-primary" type="submit" value="add">
+    </form>
+  </div>
 </main>
 <div id="current-user"><% if current_user %> <%= current_user.id %> <%=current_user.name %> <%end %></div>
 <% audio_tag('ambiance.wav', autoplay: true, controls: true) %>
+
+</div>
 <footer>
   <div class="progressbar" id="max22">
     <img id=task src="assets/task.png">

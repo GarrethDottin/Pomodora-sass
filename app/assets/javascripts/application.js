@@ -12,8 +12,15 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require angular
+//= require angular-resource
+//= main
+//= ztodo
+//= zflipclock
 //= require_tree .
-var appcontroller = {
+
+
+  var appcontroller = {
   init: function (selectors) {
     startClicked.init(selectors);
     timerSetting.init(selectors);
