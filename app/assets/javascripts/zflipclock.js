@@ -5,6 +5,7 @@ angular.module("App").directive("flipClock", function() {
 			autoStart: false, 
 			countdown: true,
 			clockFace: "MinuteCounter"
+			
 		});
 		setTime(clock)
 	}
