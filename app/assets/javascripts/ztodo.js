@@ -1,4 +1,4 @@
-angular.module("App").controller("TodoCtrl", function($scope){ 
+angular.module("App").controller("TodoCtrl", ["$scope", function($scope){ 
 	$scope.todos = [];
 	
 	$scope.addTodo = function() {
@@ -14,7 +14,7 @@ angular.module("App").controller("TodoCtrl", function($scope){
   		if (!todo.done) $scope.todos.push(todo);
   	});  
     };
-}); 
+}]); 
 
 // add connection with checkbox and archive
 // What is the architecture setup for? 

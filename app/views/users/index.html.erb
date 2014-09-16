@@ -40,7 +40,7 @@
   <input id="textbox" type="search" placeholder="ex ~ reading, journaling"> <button id="start"> Start</button> <button id="stop-button"> Stop</button>
   <button id="yes" class="button-style" type ="button">Yes </button>
   <button id ="no" class="button-style" type="button"> No </button> -->
- <div ng-controller="TodoCtrl">
+<!--  <div ng-controller="TodoCtrl">
     <ul class="unstyled">
       <li ng-repeat="todo in todos" >
       <div ng-hide="{{todo.done}}">
@@ -54,7 +54,7 @@
              placeholder="add new todo here">
       <input class="btn-primary" type="submit" value="add">
     </form>
-  </div>
+  </div> -->
 </main>
 <div id="current-user"><% if current_user %> <%= current_user.id %> <%=current_user.name %> <%end %></div>
 <% audio_tag('ambiance.wav', autoplay: true, controls: true) %>

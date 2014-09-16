@@ -3,15 +3,6 @@ source 'https://rubygems.org'
 gem 'rails', '4.0.0'
 gem 'sass-rails','~> 4.0.0'
 gem 'uglifier', '>= 1.3.0'
-
-
-group :development, :test do
-  gem 'sqlite3'
-end
-
-group :production do
-  gem 'pg'
-end
 gem 'therubyracer'
 gem 'jquery-rails'
 gem "oa-oauth"
@@ -26,14 +17,15 @@ gem 'whenever', require: false
 gem 'capistrano-ext'
 gem 'protected_attributes'
 gem 'heroku'
-
-
-
-gem 'rails', '4.0.0'
-gem 'sass-rails','~> 4.0.0'
-gem 'uglifier', '>= 1.3.0'
 gem 'nokogiri', '1.3.3'
 gem 'angularjs-rails'
+group :development, :test do
+  gem 'sqlite3'
+end
+
+group :production do
+  gem 'pg'
+end
 
 # To use Jbuilder templates for JSON
 # gem 'jbuilder'

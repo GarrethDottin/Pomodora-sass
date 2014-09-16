@@ -3,9 +3,9 @@ angular.module("App", [])
 		username: '', 
 		firstName: ''
 	})
-	.controller("ApplicationController", function($scope){ 
+	.controller("ApplicationController", ["$scope", function($scope){ 
 		$scope.currentUser = 'guest'; 
 		$scope.setUser = function (user) { 
 			$scope.currentUser = user;
 		}	
-	})
+	}])
