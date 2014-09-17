@@ -6,7 +6,7 @@ angular.module("App").controller("TodoCtrl", ["$scope", function($scope){
 		$scope.todoText = '';
 	};
 
-   $scope.archive = function(todo) {
+  $scope.archive = function(todo) {
   	var oldTodos = $scope.todos;
   	todo.done = true; 
   	$scope.todos = [];
