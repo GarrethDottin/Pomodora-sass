@@ -1,9 +1,10 @@
-angular.module("App").controller("TodoCtrl", ["$scope", function($scope){ 
+angular.module("App").controller("TodoCtrl", ["$scope", "localStorage", function($scope, localStorage){ 
 	$scope.todos = [];
 	
 	$scope.addTodo = function() {
 		$scope.todos.push({text:$scope.todoText, done:false});
 		$scope.todoText = '';
+    localStorage.setItem($scope.todoText,$scope.todoText);
 	};
 
   $scope.archive = function(todo) {
@@ -14,14 +15,11 @@ angular.module("App").controller("TodoCtrl", ["$scope", function($scope){
   		if (!todo.done) $scope.todos.push(todo);
   	});  
     };
+
+  $scope.removeTask = function(index, todo) { 
+  	$scope.todos.splice(index,1);
+    localStorage.removeItem(todo)
+  }
+ 
 }]); 
 
-// add connection with checkbox and archive
-// What is the architecture setup for? 
-	//High Affordance 
-	//Consistency of behaviour 
-	//Speed is less important 
-	
-
-// Ways to improve it 
-	// I. Setup model better 

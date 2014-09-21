@@ -17,6 +17,9 @@
 //= main
 //= ztodo
 //= zflipclock
+//= zhome_controller
+//= zpush_menu  
+//= zlocal_storage
 //= require_tree .
 
 

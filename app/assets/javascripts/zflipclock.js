@@ -1,38 +1,42 @@
-angular.module("App").directive("flipClock", function() { 
+angular.module("App").directive("flipClock", function($location) { 
 	
-	var createClock = function (time) { 
-		var clock = $('.your-clock').FlipClock({
+
+	flipClockApi = {}; 
+
+	flipClockApi.createClock = function () { 
+		var Clock = $('.your-clock').FlipClock({
 			autoStart: false, 
 			countdown: true,
-			clockFace: "MinuteCounter"
-			
+			clockFace: "MinuteCounter", 
 		});
-		setTime(clock)
-	}
-	var UserInput = function (){ 
-		// if user clicks the value is inserted 
-		// return a call to startClock
-	}
+		return Clock;
+	};
 
-	var setTime = function (clock, time) {
-		var startTime = clock.setTime(1500);
-		UserInput(clock)
-	}
-
-	var startClock = function(clock) { 
+	flipClockApi.startClock = function(clock) { 
 		clock.start();
-	}
+	};
 
-	var initClock = function () { 
-		createClock(time)
-	}
-
+	flipClockApi.initClock = function (scope) { 
+		var clock = flipClockApi.createClock();
+		var initialClock = clock.setTime(1500);
+		scope.$watch('timerValue', function() { 
+			if (scope.timerValue != undefined) { 
+				var inputTime = parseInt(scope.timerValue) * 60; 
+				clock.setTime(inputTime);
+				flipClockApi.startClock(clock)
+			};
+		});
+	};
 
 	return { 
-		restrict: 'A', 
+		transclude: false, 
+		controller: function($scope) { 
+			$scope.buttonClicked = function(num) { 
+				$scope.timerValue = num;
+			}
+		}, 
 		template: '<div class="your-clock"></div>',
-		replace: true, 
-		link: createClock, 
+		link: flipClockApi.initClock
 	}
 
 })
