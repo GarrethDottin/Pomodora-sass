@@ -1,0 +1,31 @@
+{
+  "name": "ng-slide.and.push",
+  "homepage": "https://github.com/Thram/slide.and.push",
+  "authors": [
+    "thram <thramposo@gmail.com>"
+  ],
+  "description": "AngularJS Directive to make Slide and Push menus",
+  "main": "scripts/slide.and.push.js",
+  "keywords": [
+    "slide",
+    "push"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "_release": "2d067b2745",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "2d067b27450176f000fc0f66e218084fc3832f7a"
+  },
+  "_source": "git://github.com/Thram/slide.and.push.git",
+  "_target": "*",
+  "_originalSource": "ng-slide.and.push",
+  "_direct": true
+}

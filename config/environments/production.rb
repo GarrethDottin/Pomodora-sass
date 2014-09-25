@@ -4,6 +4,7 @@ PomodoraSass::Application.configure do
   # Code is not reloaded between requests.
   config.cache_classes = true
 
+  config.assets.precompile = []
   # Eager load code on boot. This eager loads most of Rails and
   # your application in memory, allowing both thread web servers
   # and those relying on copy on write to perform better.
@@ -24,7 +25,6 @@ PomodoraSass::Application.configure do
   # Compress JavaScripts and CSS.
   config.assets.js_compressor = :uglifier
   # config.assets.css_compressor = :sass
-
   # Do not fallback to assets pipeline if a precompiled asset is missed.
   config.assets.compile = true
 
@@ -33,6 +33,9 @@ PomodoraSass::Application.configure do
 
   # Version of your assets, change this if you want to expire all your assets.
   config.assets.version = '1.0'
+
+  config.assets.compress = false
+
 
   # Specifies the header that your server uses for sending files.
   # config.action_dispatch.x_sendfile_header = "X-Sendfile" # for apache

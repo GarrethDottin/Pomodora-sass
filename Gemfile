@@ -3,13 +3,16 @@ source 'https://rubygems.org'
 gem 'rails', '4.0.0'
 gem 'sass-rails','~> 4.0.0'
 gem 'uglifier', '>= 1.3.0'
-gem 'therubyracer'
+gem 'execjs'
+gem 'therubyracer', :platforms => :ruby
 gem 'jquery-rails'
 gem "oa-oauth"
+gem 'foundation-rails'
 # To use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '~> 3.0.0', require: 'bcrypt'
 gem 'devise', github: 'plataformatec/devise'
 gem 'omniauth'
+gem 'coffee-rails'
 gem 'oauth2'
 gem 'omniauth-facebook'
 gem 'certified'

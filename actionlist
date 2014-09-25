@@ -8,7 +8,16 @@ Areas for Growth:
 V1 
 -Make sure Angular is working √
 -Put Jquery plugin in directive √
--Customize Clock 
-  I. display is right 
-  II. on click events 
+-Customize Clock √
+  I. display is right √
+  II. on click events √
+
+V2 
+-Local Storage service setup √
+-Setup Directive Api 
+-Inline editing 
+-Style Basic Layout of timer 
+
+Secondary: 
+-Make sure refresh of page keeps 
 

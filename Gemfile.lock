@@ -50,12 +50,22 @@ GEM
       capistrano (>= 1.0.0)
     certified (1.0.0)
     chronic (0.10.2)
+    coffee-rails (4.0.1)
+      coffee-script (>= 2.2.0)
+      railties (>= 4.0.0, < 5.0)
+    coffee-script (2.3.0)
+      coffee-script-source
+      execjs
+    coffee-script-source (1.8.0)
     colorize (0.7.3)
     erubis (2.7.0)
     excon (0.39.5)
     execjs (2.2.1)
     faraday (0.9.0)
       multipart-post (>= 1.2, < 3)
+    foundation-rails (5.4.4.0)
+      railties (>= 3.1.0)
+      sass (>= 3.2.0)
     hashie (3.3.1)
     heroku (3.10.3)
       heroku-api (~> 0.3.19)
@@ -187,7 +197,10 @@ DEPENDENCIES
   bcrypt-ruby (~> 3.0.0)
   capistrano-ext
   certified
+  coffee-rails
   devise!
+  execjs
+  foundation-rails
   heroku
   jquery-rails
   nokogiri (= 1.3.3)
