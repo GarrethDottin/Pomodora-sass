@@ -1,32 +1,24 @@
 <header>
-  <div class="title">
-    <img class ="" src="/assets/dora.png"/>
-    <h1> Pomodora</h1> <h6>defy those distractions, get back on track</h6>
-  </div>
-    <div class="counter-container">
-      <h4 id="pomodoro-count">Count: <% if current_user %> <%=current_user.pomodoro %>
-        <%else%>0
-        <%end%>
-      </h4>
-
-<!--       <div id="about"><img  src ="assets/about.png"> <h3> About </h3> </div>
- -->
-    </div>
-    <div id="que"> <h4> Que</h4>
-    </div>
 </header>
-<main ng-app="App" ng-controller="ApplicationController" >
+<main  ng-controller="HomeController" >
   <div id="que-dropdown">
-  <p> Tasks in Progress</p>
-  <hr id="hr">
-  <div id="que-list"> </div>
-  <hr>
-  <div id='que-finished'> </div>
+    <p> Tasks in Progress</p>
+    <hr id="hr">
+    <div id="que-list"> </div>
+    <hr>
+    <div id='que-finished'> </div>
 
-  <input  type="search"/>
-  <button class="que-add">Add </button>
+    <input  type="search"/>
+    <button class="que-add">Add </button>
   </div>
   <div flip-Clock> </div>
+  <button ng-click="buttonClicked(15)">15 </button>
+  <button ng-click="buttonClicked(25)">25 </button>
+  <button ng-click="buttonClicked(45)">45 </button>
+  <form ng-submit="buttonClicked(name)">
+    <input type="text" ng-model="name" />
+  </form>
+
   <!-- <h2> What task can you finish in: </h2>
   <div class="timer-container"><h1 id="countdown"> 25:00</h1>
   <div class="arrow-up"> </div>
@@ -40,21 +32,29 @@
   <input id="textbox" type="search" placeholder="ex ~ reading, journaling"> <button id="start"> Start</button> <button id="stop-button"> Stop</button>
   <button id="yes" class="button-style" type ="button">Yes </button>
   <button id ="no" class="button-style" type="button"> No </button> -->
-<!--  <div ng-controller="TodoCtrl">
-    <ul class="unstyled">
-      <li ng-repeat="todo in todos" >
-      <div ng-hide="{{todo.done}}">
-        <input ng-click="archive(todo)" type="checkbox" ng-model="todo.done">
-        <span>{{todo.text}}</span>
-      </div>
-      </li>
-    </ul>
-    <form ng-submit="addTodo()">
-      <input type="text" ng-model="todoText"  size="30"
-             placeholder="add new todo here">
-      <input class="btn-primary" type="submit" value="add">
-    </form>
-  </div> -->
+  <ng-slide-push-menu position="right" button="push" button-icon-class="glyphicon glyphicon-cog">
+    <h3>List</h3>
+    <div ng-controller="TodoCtrl">
+      <ul class="unstyled">
+        <div ng-repeat="todo in todos" >
+          <div ng-hide="{{todo.done}}">
+            <input ng-click="archive(todo)" type="checkbox" ng-model="todo.done">
+            <div ng-click="removeTask($index, todo.text)"> delete</div>
+            <span ng-hide="editing">{{todo.text}}</span>
+            <form  ng-show="editing" ng-submit="toggleEditing()"> 
+              <input type="text" placeholder="{{todo.text}}" ng-model="todo.text">
+            </form>
+            <span ng-click="toggleEditing()"> edit</span>
+          </div>
+        </div>
+      </ul>
+      <form ng-submit="addTodo($index)">
+        <input type="text" ng-model="todoText"  size="30"
+        placeholder="add new todo here">
+        <input class="btn-primary" type="submit" value="add">
+      </form>
+    </div>
+  </ng-slide-push-menu>
 </main>
 <div id="current-user"><% if current_user %> <%= current_user.id %> <%=current_user.name %> <%end %></div>
 <% audio_tag('ambiance.wav', autoplay: true, controls: true) %>
@@ -69,4 +69,4 @@
 </footer>
 <div class="sign-in-partial">
   <div class="social-wrap a"><h2> You must sign in to continue </h2><button id="facebook"><%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %> </button>
-</div>
+  </div>
