@@ -21,10 +21,7 @@
 //= zpush_menu  
 //= require_tree .
 
-
-console.log('file hit')
-
-  var appcontroller = {
+var appcontroller = {
   init: function (selectors) {
     startClicked.init(selectors);
     timerSetting.init(selectors);

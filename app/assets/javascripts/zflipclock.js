@@ -1,4 +1,4 @@
-angular.module("App").directive("flipClock", function($location) { 
+angular.module("App").directive("flipClock", ["$location", function($location) { 
 	flipClockApi = {}; 
 
 	flipClockApi.createClock = function () { 
@@ -36,4 +36,4 @@ angular.module("App").directive("flipClock", function($location) {
 		template: '<div class="your-clock"></div>',
 		link: flipClockApi.initClock
 	};
-});
+}]);
