@@ -1,4 +1,4 @@
-angular.module("App").directive("flipClock", ["$location", function($location) { 
+angular.module("App").directive("flipClock", [ function() { 
 	flipClockApi = {}; 
 
 	flipClockApi.createClock = function () { 
