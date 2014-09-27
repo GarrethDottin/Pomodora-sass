@@ -1,4 +1,4 @@
-angular.module("App", ["ngCookies"])
+angular.module("App", [])
 	.value('user', { 
 		username: '', 
 		firstName: ''

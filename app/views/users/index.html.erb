@@ -1,6 +1,5 @@
-<header>
-</header>
-<main  ng-controller="HomeController" >
+<main ng-app="App" ng-controller="ApplicationController">
+<div>
   <div id="que-dropdown">
     <p> Tasks in Progress</p>
     <hr id="hr">
@@ -19,7 +18,7 @@
     <input type="text" ng-model="name" />
   </form>
 
-  <!-- <h2> What task can you finish in: </h2>
+  <h2> What task can you finish in: </h2>
   <div class="timer-container"><h1 id="countdown"> 25:00</h1>
   <div class="arrow-up"> </div>
   <div class="arrow-down"> </div>
@@ -31,8 +30,8 @@
   </div>
   <input id="textbox" type="search" placeholder="ex ~ reading, journaling"> <button id="start"> Start</button> <button id="stop-button"> Stop</button>
   <button id="yes" class="button-style" type ="button">Yes </button>
-  <button id ="no" class="button-style" type="button"> No </button> -->
-  <ng-slide-push-menu position="right" button="push" button-icon-class="glyphicon glyphicon-cog">
+  <button id ="no" class="button-style" type="button"> No </button>
+<<ng-slide-push-menu position="right" button="push" button-icon-class="glyphicon glyphicon-cog">
     <h3>List</h3>
     <div ng-controller="TodoCtrl">
       <ul class="unstyled">
@@ -54,7 +53,8 @@
         <input class="btn-primary" type="submit" value="add">
       </form>
     </div>
-  </ng-slide-push-menu>
+  </ng-slide-push-menu> 
+  </div>
 </main>
 <div id="current-user"><% if current_user %> <%= current_user.id %> <%=current_user.name %> <%end %></div>
 <% audio_tag('ambiance.wav', autoplay: true, controls: true) %>

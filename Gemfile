@@ -22,6 +22,9 @@ gem 'protected_attributes'
 gem 'heroku'
 gem 'nokogiri', '1.3.3'
 gem 'angularjs-rails'
+gem 'sprockets'
+gem 'bower-rails'
+gem 'angular-rails-templates'
 group :development, :test do
   gem 'sqlite3'
 end

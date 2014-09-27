@@ -2,20 +2,23 @@
 <html>
 <head>
   <title>Pomodora</title>
+
   <%= stylesheet_link_tag    "application", :media => "all" %>    
+  <%= javascript_include_tag "application" %>
+
   <link rel="stylesheet" href="/assets/flipclock.css">
-    
+
 </head>
-<body ng-app="App" ng-controller="ApplicationController">
+  <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>  
+<body>
   <%= yield %>
 </body>
-<%= javascript_include_tag "application" %>
+<script src="/assets/flipclock.min.js"></script>
+
 <%= csrf_meta_tags %>
 
-<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
 <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
 <link href='http://fonts.googleapis.com/css?family=Niconne|Lobster|Lobster+ o:700italic' rel='stylesheet' type='text/css'>
-<script src="/assets/flipclock.min.js"></script>
 <script type='text/javascript'>
 var _ues = {
   host:'pomodora.userecho.com',
