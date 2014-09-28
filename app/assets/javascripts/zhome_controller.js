@@ -1,4 +1,4 @@
-angular.module("App").controller("HomeController", ["$scope", "localStorage", function($scope, localStorage){ 
+angular.module("App").controller("HomeController", ["$scope", function($scope){ 
 	$scope.editing = false; 
 	
 	$scope.toggleEditing = function () { 
