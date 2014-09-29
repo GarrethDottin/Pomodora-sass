@@ -1,4 +1,4 @@
-angular.module("App").factory('slidePush',function () {
+angular.module("App").factory('slidePush',[function () {
   var spmenuHorizontalHeight, spmenuVerticalWidth;
   spmenuVerticalWidth = 320;
   spmenuHorizontalHeight = 150;
@@ -144,7 +144,7 @@ angular.module("App").factory('slidePush',function () {
       }
     }
   };
-}).directive("ngSlideMenu", [
+}]).directive("ngSlideMenu", [
 'slidePush', function (slidePush) {
   return {
     restrict: "A",
