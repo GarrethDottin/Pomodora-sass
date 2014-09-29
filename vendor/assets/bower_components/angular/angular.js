@@ -3261,17 +3261,20 @@ var FN_ARG_SPLIT = /,/;
 var FN_ARG = /^\s*(_?)(\S+?)\1\s*$/;
 var STRIP_COMMENTS = /((\/\/.*$)|(\/\*[\s\S]*?\*\/))/mg;
 var $injectorMinErr = minErr('$injector');
+
 function annotate(fn) {
   var $inject,
       fnText,
       argDecl,
       last;
 
-  if (typeof fn === 'function') {
+  if (typeof fn == 'function') {
     if (!($inject = fn.$inject)) {
       $inject = [];
       if (fn.length) {
         fnText = fn.toString().replace(STRIP_COMMENTS, '');
+        throw 'Using injection by name, should explicitly define ' +
+          'requirements using $inject or an array! Function text:' +  fnText;
         argDecl = fnText.match(FN_ARGS);
         forEach(argDecl[1].split(FN_ARG_SPLIT), function(arg){
           arg.replace(FN_ARG, function(all, underscore, name){
