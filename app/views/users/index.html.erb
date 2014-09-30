@@ -1,15 +1,5 @@
 <main ng-app="App" ng-controller="ApplicationController">
 <div>
-  <div id="que-dropdown">
-    <p> Tasks in Progress</p>
-    <hr id="hr">
-    <div id="que-list"> </div>
-    <hr>
-    <div id='que-finished'> </div>
-
-    <input  type="search"/>
-    <button class="que-add">Add </button>
-  </div>
   <div flip-Clock> </div>
   <button ng-click="buttonClicked(15)">15 </button>
   <button ng-click="buttonClicked(25)">25 </button>
@@ -17,21 +7,7 @@
   <form ng-submit="buttonClicked(name)">
     <input type="text" ng-model="name" />
   </form>
-
-  <h2> What task can you finish in: </h2>
-  <div class="timer-container"><h1 id="countdown"> 25:00</h1>
-  <div class="arrow-up"> </div>
-  <div class="arrow-down"> </div>
-  <img class="hidden-image" src="assets/exit.png">
-    <p class="about-container"> Pomodora is a simple technique used to keep track of tasks you set out for yourself. By putting them in small time increments you can accomplish all your big activities. </p>
-  </div>
-  <div class="button-container"> <button id="twenty-five"><h3>25 minutes</h3></button><button id="ten"><h3> 10 minutes</h3></button><button id="five"><h3>  5 minutes</h3></button>
-    <div id="slider-range-min" class="ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all" aria-disabled="false"><a class="ui-slider-handle ui-state-default ui-corner-all" href="#" style="left: 5.150214592274678%;"></a></div>
-  </div>
-  <input id="textbox" type="search" placeholder="ex ~ reading, journaling"> <button id="start"> Start</button> <button id="stop-button"> Stop</button>
-  <button id="yes" class="button-style" type ="button">Yes </button>
-  <button id ="no" class="button-style" type="button"> No </button>
-<<ng-slide-push-menu position="right" button="push" button-icon-class="glyphicon glyphicon-cog">
+  <ng-slide-push-menu position="right" button="push" button-icon-class="glyphicon glyphicon-cog">
     <h3>List</h3>
     <div ng-controller="TodoCtrl">
       <ul class="unstyled">
@@ -54,19 +30,13 @@
       </form>
     </div>
   </ng-slide-push-menu> 
-  </div>
-</main>
-<div id="current-user"><% if current_user %> <%= current_user.id %> <%=current_user.name %> <%end %></div>
-<% audio_tag('ambiance.wav', autoplay: true, controls: true) %>
-
 </div>
-<footer>
-  <div class="progressbar" id="max22">
-    <img id=task src="assets/task.png">
-    <div id="progressbar-meter"></div>
-  </div>
-
-</footer>
-<div class="sign-in-partial">
+</main>
+<div id="container">
+<div id="glass">
+    <div id="water"></div>
+</div>
+</div>
+<!-- <div class="sign-in-partial">
   <div class="social-wrap a"><h2> You must sign in to continue </h2><button id="facebook"><%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %> </button>
-  </div>
+  </div> -->
