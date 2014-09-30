@@ -17,14 +17,14 @@ angular.module("App").directive("progressBar", function() {
 		debugger		
 	}
 	progressBar.add = function (scope) { 
-		
+
 	}; 
 
 	progressBar.reset = function () { 
 
 	};
 	return { 
-		controller: function($scope) { 
+		controller: function() { 
 			$scope.add = add; 
 			$scope.reset = reset;
 			$scope.progress; 

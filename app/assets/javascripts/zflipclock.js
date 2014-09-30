@@ -7,7 +7,6 @@ angular.module("App").directive("flipClock", function() {
 			countdown: true,
 			clockFace: "MinuteCounter", 
 		});
-		console.log("creatClock")
 		return Clock;
 	};
 
@@ -28,7 +27,7 @@ angular.module("App").directive("flipClock", function() {
 	};
 
 	return { 
-		controller: function($scope) { 
+		controller: function() { 
 			$scope.buttonClicked = function(num) { 
 				$scope.timerValue = num;
 			}
