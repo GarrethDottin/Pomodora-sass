@@ -24,19 +24,19 @@ angular.module("App").directive("progressBar", function() {
 
 	};
 	return { 
-		controller: function() { 
-			// $scope.add = add; 
-			// $scope.reset = reset;
-			// $scope.progress; 
+		controller: ['$scope', function($scope) { 
+			$scope.add = add; 
+			$scope.reset = reset;
+			$scope.progress; 
 			
 			function add () { 
-				// $scope.progress += 50; 
+				$scope.progress += 50; 
 			}; 
 			
 			function reset  () { 
-				// $scope.progress = 0; 
+				$scope.progress = 0; 
 			}; 
-		}, 
+		}], 
 		template: '<div id="container"> <div id="glass"> <div id="water"></div></div></div>',
 		link: progressBar.watch
 	};

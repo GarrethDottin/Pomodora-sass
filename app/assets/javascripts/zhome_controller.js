@@ -4,4 +4,8 @@ angular.module("App").controller("HomeController", ["$scope", function($scope){
 	$scope.toggleEditing = function () { 
 		$scope.editing =  !$scope.editing; 
 	}; 
+
+	$scope.buttonClicked = function(num) { 
+		$scope.timerValue = num;
+	}
 }]);
