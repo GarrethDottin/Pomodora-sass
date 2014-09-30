@@ -28,9 +28,9 @@ angular.module("App").directive("flipClock", function() {
 
 	return { 
 		controller: function() { 
-			$scope.buttonClicked = function(num) { 
-				$scope.timerValue = num;
-			}
+			// $scope.buttonClicked = function(num) { 
+			// 	$scope.timerValue = num;
+			// }
 		}, 
 		template: '<div class="your-clock"></div>',
 		link: flipClockApi.initClock
