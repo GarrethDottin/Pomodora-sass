@@ -16,6 +16,7 @@
 //= require angular-route
 //= main
 //= ztodo
+//= zprogress_bar
 //= zflipclock
 //= zhome_controller
 //= zpush_menu  

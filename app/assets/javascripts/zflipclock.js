@@ -7,6 +7,7 @@ angular.module("App").directive("flipClock", function() {
 			countdown: true,
 			clockFace: "MinuteCounter", 
 		});
+		console.log("creatClock")
 		return Clock;
 	};
 
