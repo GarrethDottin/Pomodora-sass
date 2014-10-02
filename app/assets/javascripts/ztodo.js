@@ -1,8 +1,7 @@
 angular.module("App").controller("TodoCtrl", ["$scope", "localStorage", function($scope, localStorage){ 
 	$scope.todos = [];
-	$scope.test ="hello"
+	$scope.test ="hello";
 	$scope.addTodo = function($index) {
-    console.log($index)
 		$scope.todos.push({text:$scope.todoText, done:false});
 		$scope.todoText = '';
     localStorage.setItem($scope.todoText,$scope.todoText);

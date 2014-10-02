@@ -1,7 +1,8 @@
 <main ng-app="App" ng-controller="ApplicationController">
 <div>
+
   <div flip-Clock> </div>
-  <button ng-click="buttonClicked(15)">15 </button>
+  <button ng-click="add(1)">15 </button>
   <button ng-click="buttonClicked(25)">25 </button>
   <button ng-click="buttonClicked(45)">45 </button>
   <form ng-submit="buttonClicked(name)">
@@ -31,8 +32,10 @@
     </div>
   </ng-slide-push-menu> 
 </div>
-<div progress-Bar></div>
+<div progress-bar></div>
+
 </main>
+
 <!-- <div class="sign-in-partial">
   <div class="social-wrap a"><h2> You must sign in to continue </h2><button id="facebook"><%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %> </button>
   </div> -->

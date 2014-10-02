@@ -13,11 +13,16 @@ V1
   II. on click events √
 
 V2 
--Local Storage service setup √
--Setup Directive Api 
--Inline editing 
--Style Basic Layout of timer 
+	I. Go over what pieces it needs to interact with 
+	II. implement on to do list 
+-Setup Directive Api √
+-Inline editing √
+-To do list 
+	I. Edit Functionality
+	II. Basic Markup (Background color, review foundation)
+-Local Storage service setup 
+
 
 Secondary: 
--Make sure refresh of page keeps 
+-Make sure refresh of page keeps token
 
