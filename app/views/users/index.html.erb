@@ -1,40 +1,43 @@
-<main ng-app="App" ng-controller="ApplicationController">
-<div>
-
-  <div flip-Clock> </div>
-  <button ng-click="add(1)">15 </button>
-  <button ng-click="buttonClicked(25)">25 </button>
-  <button ng-click="buttonClicked(45)">45 </button>
-  <form ng-submit="buttonClicked(name)">
-    <input type="text" ng-model="name" />
-  </form>
-  <ng-slide-push-menu position="right" button="push" button-icon-class="glyphicon glyphicon-cog">
-    <h3>List</h3>
-    <div ng-controller="TodoCtrl">
-      <ul class="unstyled">
-        <div ng-repeat="todo in todos" >
-          <div ng-hide="{{todo.done}}">
-            <input ng-click="archive(todo)" type="checkbox" ng-model="todo.done">
-            <div ng-click="removeTask($index, todo.text)"> delete</div>
-            <span ng-hide="editing">{{todo.text}}</span>
-            <form  ng-show="editing" ng-submit="toggleEditing()"> 
-              <input type="text" placeholder="{{todo.text}}" ng-model="todo.text">
-            </form>
-            <span ng-click="toggleEditing()"> edit</span>
-          </div>
-        </div>
-      </ul>
-      <form ng-submit="addTodo($index)">
-        <input type="text" ng-model="todoText"  size="30"
-        placeholder="add new todo here">
-        <input class="btn-primary" type="submit" value="add">
+<div class="row">
+  <div class="small-1 columns">
+    <main ng-app="App" ng-controller="ApplicationController">
+      <div flip-Clock> </div>
+      <button ng-click="add(1)">15 </button>
+      <button ng-click="buttonClicked(25)">25 </button>
+      <button ng-click="buttonClicked(45)">45 </button>
+      <form ng-submit="buttonClicked(name)">
+        <input type="text" ng-model="name" />
       </form>
-    </div>
-  </ng-slide-push-menu> 
-</div>
-<div progress-bar></div>
 
-</main>
+      <div class="small-12 columns">
+        <ng-slide-push-menu position="right" button="push" button-icon-class="glyphicon glyphicon-cog">
+       <span><img class="img-plus-sign" src="assets/plus.png"> <h3>My To Do List</h3> <img class="img-pencil" src="assets/pencil.png"></span>
+        <div ng-controller="TodoCtrl">
+          <ul>
+            <div class ="todo-item" ng-repeat="todo in model.todos" >
+                <span>
+                  <img class ="img-checkmark"ng-click="archive(todo)" src="assets/checkmark.png"/>
+                  <form  class="todo-item-margin" ng-show="editing" ng-submit="editing = false"> 
+                    <input type="text" ng-model="todo.text">
+                  </form>
+                  <span  class="todo-item-margin" ng-hide="editing">{{todo.text}}</span>
+                  <span class="todo-item-margin" ng-click="removeTask($index, todo.text)"> delete</span>
+                  <span class="todo-item-margin" ng-click="editing = true"> edit</span>
+                  
+                </span>
+            </div>
+          </ul>
+          <form ng-submit="addTodo($index)" >
+            <input type="text" ng-model="todoText" size="30"
+            placeholder="Add New Item">
+          </form>
+        </div>
+        </ng-slide-push-menu> 
+      </div>
+      <div progress-bar></div>
+    </main>
+  </div>
+</div>
 
 <!-- <div class="sign-in-partial">
   <div class="social-wrap a"><h2> You must sign in to continue </h2><button id="facebook"><%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %> </button>

@@ -1,8 +1,8 @@
 Areas for Growth: 
--Add Angular 
--Add Foundation 
--Remove bootstrap 
--
+-Add Angular √
+-Add Foundation √ 
+-Remove bootstrap √ 
+-Get App Architecture Reviewed
 
 
 V1 
@@ -13,14 +13,30 @@ V1
   II. on click events √
 
 V2 
-	I. Go over what pieces it needs to interact with 
-	II. implement on to do list 
 -Setup Directive Api √
 -Inline editing √
 -To do list 
 	I. Edit Functionality
 	II. Basic Markup (Background color, review foundation)
+			A. Background Color √
+			B. Use Foundation Classes
 -Local Storage service setup 
+
+V3 
+-Change controller to accept toggle editing 
+	I. Read article on toggle Editing 
+-Structure CSS 
+	I. Break out into more sheets 
+	II. Review Object Oriented with 
+	III. One Thing 
+
+Theory on Angular Development 
+Its a funnle of being most expressive and declarative on the Dom and abastracting communication to the controller and logic and analysis to the services. You are telling a story to other developers and allowing small interconnected behaviors to happen in the terest way possible 
+
+
+-
+-
+
 
 
 Secondary: 

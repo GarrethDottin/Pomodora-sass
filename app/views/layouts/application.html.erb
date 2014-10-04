@@ -1,33 +1,26 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Pomodora</title>
+	<head>
+		<title>Pomodora</title>
+			<%= stylesheet_link_tag    "application", :media => "all" %>    
+			<%= javascript_include_tag "application" %>
+			<script src="/assets/angular-cookies.js"></script>
+			<link rel="stylesheet" href="/assets/flipclock.css">
+			<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>  
+			<script src="//cdnjs.cloudflare.com/ajax/libs/foundation/5.4.5/css/foundation.min.css"></script>
+	</head>
 
-  <%= stylesheet_link_tag    "application", :media => "all" %>    
-  <%= javascript_include_tag "application" %>
-
-  <link rel="stylesheet" href="/assets/flipclock.css">
-
-</head>
-  <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>  
 <body>
-  <%= yield %>
+	<%= yield %>
 </body>
-<script src="/assets/flipclock.min.js"></script>
-
-<%= csrf_meta_tags %>
-
-<script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
-<link href='http://fonts.googleapis.com/css?family=Niconne|Lobster|Lobster+ o:700italic' rel='stylesheet' type='text/css'>
-
-
-<script>
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-ga('create', 'UA-4710282-2', 'pomodora.co');
-ga('send', 'pageview');
-</script>
+	<%= csrf_meta_tags %>
+	<script src="/assets/flipclock.min.js"></script>
+	<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		ga('create', 'UA-4710282-2', 'pomodora.co');
+		ga('send', 'pageview');
+	</script>
 </html>

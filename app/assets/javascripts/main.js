@@ -1,15 +1,13 @@
-angular.module("App", [])
+angular.module("App", ['ngCookies'])
 	.value('user', { 
 		username: '', 
 		firstName: ''
 	})
 	.controller("ApplicationController", ["$scope", function($scope){ 
-			$scope.click = function () { 
-			$scope.progress += 150;
-		}; 
-
+		$scope.setUser = setUser;
 		$scope.currentUser = 'guest'; 
-		$scope.setUser = function (user) { 
+		
+		var setUser = function (user) { 
 			$scope.currentUser = user;
 		};	
 	}]);
