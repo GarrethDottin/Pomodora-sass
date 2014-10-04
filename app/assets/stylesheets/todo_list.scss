@@ -322,3 +322,10 @@ a.spmenu-button {
   position: relative; 
   bottom: 20px;
 }
+
+//Animations 
+
+.fader { 
+  opacity: 0; 
+  transition: opacity 1s;
+}

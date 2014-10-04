@@ -14,9 +14,9 @@
        <span><img class="img-plus-sign" src="assets/plus.png"> <h3>My To Do List</h3> <img class="img-pencil" src="assets/pencil.png"></span>
         <div ng-controller="TodoCtrl">
           <ul>
-            <div class ="todo-item" ng-repeat="todo in model.todos" >
+            <div class="todo-item" ng-class="{fader:fadeout}" ng-repeat="todo in model.todos" >
                 <span>
-                  <img class ="img-checkmark"ng-click="archive(todo)" src="assets/checkmark.png"/>
+                  <img class ="img-checkmark"ng-click="fadeout = true; archive(todo);" src="assets/checkmark.png"/>
                   <form  class="todo-item-margin" ng-show="editing" ng-submit="editing = false"> 
                     <input type="text" ng-model="todo.text">
                   </form>
