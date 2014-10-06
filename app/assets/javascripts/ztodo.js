@@ -27,7 +27,7 @@ angular.module("App").controller("TodoCtrl", ["$scope", "localStorage", "$timeou
     $timeout(refreshTodos, 500); 
   };
 
-  var refreshTodos = function () { 
+  function refreshTodos () { 
     var oldTodos = $scope.model.todos;
     $scope.model.todos = [];
     angular.forEach(oldTodos, function(todo) {
@@ -40,7 +40,6 @@ angular.module("App").controller("TodoCtrl", ["$scope", "localStorage", "$timeou
       $scope.model.todos.push({text:$scope.todoText + '.' , done:false});
       $scope.todoText = '';
       localStorage.setItem('todos',$scope.model.todos);
-      console.log(localStorage);
     };
   };
 

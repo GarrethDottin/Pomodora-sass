@@ -314,14 +314,22 @@ a.spmenu-button {
 }
 .todo-item { 
   border-width: 0px;
-  border-style: solid;
   border-top: solid $borders-color;
 }
 
-.todo-item-margin{ 
+.todo-item-margin { 
   position: relative; 
   bottom: 20px;
 }
+
+.todo-input { 
+  padding-top: 22px;
+  text-align: left;
+  padding-left: 50px;
+  padding-bottom: 5px;
+  font-size: 18px;
+}
+
 
 //Animations 
 

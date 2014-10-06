@@ -3,6 +3,7 @@ Areas for Growth:
 -Add Foundation √ 
 -Remove bootstrap √ 
 -Get App Architecture Reviewed
+-Setup Better File Structure
 
 
 V1 
@@ -16,11 +17,12 @@ V2
 -Setup Directive Api √
 -Inline editing √
 -To do list 
-	I. Edit Functionality
+	I. Edit Functionality √
 	II. Basic Markup (Background color, review foundation)
 			A. Background Color √
 			B. Use Foundation Classes
--Local Storage service setup 
+	III. Fade out effect √
+-Local Storage service setup √
 
 V3 
 -Change controller to accept toggle editing 
@@ -30,15 +32,8 @@ V3
 	II. Review Object Oriented with 
 	III. One Thing 
 
+
 Theory on Angular Development 
-Its a funnle of being most expressive and declarative on the Dom and abastracting communication to the controller and logic and analysis to the services. You are telling a story to other developers and allowing small interconnected behaviors to happen in the terest way possible 
+Its a funnel of being most expressive and declarative on the Dom and abastracting communication to the controller and logic and analysis to the services. You are telling a story to other developers and allowing small interconnected behaviors to happen in the terest way possible 
 
-
--
--
-
-
-
-Secondary: 
--Make sure refresh of page keeps token
 
