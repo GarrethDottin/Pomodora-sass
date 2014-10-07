@@ -1,24 +1,50 @@
-angular.module("App").controller("TodoCtrl", ["$scope", "localStorage", function($scope, localStorage){ 
-	$scope.todos = [];
-	$scope.test ="hello"
-	$scope.addTodo = function($index) {
-    console.log($index)
-		$scope.todos.push({text:$scope.todoText, done:false});
-		$scope.todoText = '';
-    localStorage.setItem($scope.todoText,$scope.todoText);
-	};
+angular.module("App").controller("TodoCtrl", ["$scope", "localStorage", "$timeout", function($scope, localStorage, $timeout){ 
+  $scope.model = {};
+  $scope.model.todos;
 
-  $scope.archive = function(todo) {
-  	var oldTodos = $scope.todos;
-  	todo.done = true; 
-  	$scope.todos = [];
-  	angular.forEach(oldTodos, function(todo) {
-  		if (!todo.done) $scope.todos.push(todo);
-  	});  
+  $scope.toggleEditing = toggleEditing; 
+  $scope.archive =archive;
+  $scope.refreshTodos = refreshTodos;
+  $scope.addTodo = addTodo;
+  $scope.removeTask = removeTask;
+
+
+  // Code Smell 
+    if (localStorage.getItem('todos') != undefined) { 
+      $scope.model.todos = localStorage.getItem('todos');
+    } 
+    else { 
+      $scope.model.todos = [];
     };
 
-  $scope.removeTask = function(index, todo) { 
-  	$scope.todos.splice(index,1);
-    localStorage.removeItem(todo)
+  function toggleEditing () { 
+    $scope.editing =  !$scope.editing; 
+  }; 
+ 
+  function archive(todo) {
+    // save oldTodos into Local Storage 
+    todo.done = true; 
+    $timeout(refreshTodos, 500); 
+  };
+
+  function refreshTodos () { 
+    var oldTodos = $scope.model.todos;
+    $scope.model.todos = [];
+    angular.forEach(oldTodos, function(todo) {
+      if (!todo.done) $scope.model.todos.push(todo);
+    });  
+  };
+
+  function addTodo ($index) {
+    if ($scope.todoText.length > 1) {
+      $scope.model.todos.push({text:$scope.todoText + '.' , done:false});
+      $scope.todoText = '';
+      localStorage.setItem('todos',$scope.model.todos);
+    };
+  };
+
+  function removeTask (index, todo) { 
+  	$scope.model.todos.splice(index,1);
+    localStorage.removeItem(todo);
   }
 }]); 

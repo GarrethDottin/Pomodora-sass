@@ -1,76 +1,27 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Pomodora</title>
+	<head>
+		<title>Pomodora</title>
+			<%= stylesheet_link_tag    "application", :media => "all" %>
+			<%= javascript_include_tag "application" %>
+			<script src="/assets/angular-cookies.js"></script>
+			<link rel="stylesheet" href="/assets/flipclock.css">
+			<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+			<script src="//cdnjs.cloudflare.com/ajax/libs/foundation/5.4.5/css/foundation.min.css"></script>
+			<link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+	</head>
 
-  <%= stylesheet_link_tag    "application", :media => "all" %>    
-  <%= javascript_include_tag "application" %>
-
-  <link rel="stylesheet" href="/assets/flipclock.css">
-
-</head>
-  <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>  
 <body>
-  <%= yield %>
+	<%= yield %>
 </body>
-<script src="/assets/flipclock.min.js"></script>
-
-<%= csrf_meta_tags %>
-
-<script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
-<link href='http://fonts.googleapis.com/css?family=Niconne|Lobster|Lobster+ o:700italic' rel='stylesheet' type='text/css'>
-<script type='text/javascript'>
-var _ues = {
-  host:'pomodora.userecho.com',
-  forum:'31963',
-  lang:'en',
-  tab_corner_radius:5,
-  tab_font_size:20,
-  tab_image_hash:'ZmVlZGJhY2s%3D',
-  tab_chat_hash:'Y2hhdA%3D%3D',
-  tab_alignment:'right',
-  tab_text_color:'#FFFFFF',
-  tab_text_shadow_color:'#00000055',
-  tab_bg_color:'#E3C393',
-  tab_hover_color:'#CFB186'
-};
-
-(function() {
-  var _ue = document.createElement('script'); _ue.type = 'text/javascript'; _ue.async = true;
-  _ue.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'cdn.userecho.com/js/widget-1.4.gz.js';
-  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(_ue, s);
-})();
-</script>
-<script>
-$(function() {
-  $( "#slider-range-min" ).slider({
-    range: "min",
-    value: 0,
-    min: 0,
-    max: 30,
-    slide: function( event, ui ) {
-      $( "#countdown" ).text(ui.value + ":00");
-    }
-  });
-  $( "#countdown" ).val($( "#slider-range-min" ).slider( "value" ) );
-});
-</script>
-<script>
-(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=212672002259260";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));
-</script>
-<script>
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-ga('create', 'UA-4710282-2', 'pomodora.co');
-ga('send', 'pageview');
-</script>
+	<%= csrf_meta_tags %>
+	<script src="/assets/flipclock.min.js"></script>
+	<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		ga('create', 'UA-4710282-2', 'pomodora.co');
+		ga('send', 'pageview');
+	</script>
 </html>

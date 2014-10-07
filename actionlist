@@ -1,23 +1,44 @@
-Areas for Growth: 
--Add Angular 
--Add Foundation 
--Remove bootstrap 
--
+Areas for Growth:
+-Add Angular √
+-Add Foundation √
+-Remove bootstrap √
+-Get App Architecture Reviewed
+-Setup Better File Structure
 
 
-V1 
+V1
 -Make sure Angular is working √
 -Put Jquery plugin in directive √
 -Customize Clock √
   I. display is right √
   II. on click events √
 
-V2 
+V2
+-Setup Directive Api √
+-Inline editing √
+-To do list
+	I. Edit Functionality √
+	II. Basic Markup (Background color, review foundation)
+			A. Background Color √
+			B. Use Foundation Classes
+	III. Fade out effect √
 -Local Storage service setup √
--Setup Directive Api 
--Inline editing 
--Style Basic Layout of timer 
 
-Secondary: 
--Make sure refresh of page keeps 
+V3
+-Change controller to accept toggle editing
+	I. Read article on toggle Editing
+-Structure CSS
+	I. Break out into more sheets
+	II. Review Object Oriented with
+	III. One Thing
+-Fix up To do list
+	I. Font fix
+	II. Style Edit Field
+
+
+
+
+Theory on Angular Development
+Its a funnel of being most expressive and declarative on the Dom and abastracting communication to the controller and logic and analysis to the services. You are telling a story to other developers and allowing small interconnected behaviors to happen in the terest way possible
+
 

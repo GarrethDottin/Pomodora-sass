@@ -26,12 +26,13 @@ angular.module("App").directive("flipClock", function(	) {
 		});
 	};
 
+
 	return {
-		controller: function($scope) {
+		controller: ['$scope', function($scope) {
 			$scope.buttonClicked = function(num) {
 				$scope.timerValue = num;
 			}
-		},
+		}],
 		template: '<div class="your-clock"></div>',
 		link: flipClockApi.initClock
 	};

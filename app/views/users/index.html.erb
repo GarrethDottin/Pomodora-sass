@@ -1,72 +1,44 @@
-<main ng-app="App" ng-controller="ApplicationController">
-<div>
-  <div id="que-dropdown">
-    <p> Tasks in Progress</p>
-    <hr id="hr">
-    <div id="que-list"> </div>
-    <hr>
-    <div id='que-finished'> </div>
-
-    <input  type="search"/>
-    <button class="que-add">Add </button>
-  </div>
-  <div flip-Clock> </div>
-  <button ng-click="buttonClicked(15)">15 </button>
-  <button ng-click="buttonClicked(25)">25 </button>
-  <button ng-click="buttonClicked(45)">45 </button>
-  <form ng-submit="buttonClicked(name)">
-    <input type="text" ng-model="name" />
-  </form>
-
-  <h2> What task can you finish in: </h2>
-  <div class="timer-container"><h1 id="countdown"> 25:00</h1>
-  <div class="arrow-up"> </div>
-  <div class="arrow-down"> </div>
-  <img class="hidden-image" src="assets/exit.png">
-    <p class="about-container"> Pomodora is a simple technique used to keep track of tasks you set out for yourself. By putting them in small time increments you can accomplish all your big activities. </p>
-  </div>
-  <div class="button-container"> <button id="twenty-five"><h3>25 minutes</h3></button><button id="ten"><h3> 10 minutes</h3></button><button id="five"><h3>  5 minutes</h3></button>
-    <div id="slider-range-min" class="ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all" aria-disabled="false"><a class="ui-slider-handle ui-state-default ui-corner-all" href="#" style="left: 5.150214592274678%;"></a></div>
-  </div>
-  <input id="textbox" type="search" placeholder="ex ~ reading, journaling"> <button id="start"> Start</button> <button id="stop-button"> Stop</button>
-  <button id="yes" class="button-style" type ="button">Yes </button>
-  <button id ="no" class="button-style" type="button"> No </button>
-<<ng-slide-push-menu position="right" button="push" button-icon-class="glyphicon glyphicon-cog">
-    <h3>List</h3>
-    <div ng-controller="TodoCtrl">
-      <ul class="unstyled">
-        <div ng-repeat="todo in todos" >
-          <div ng-hide="{{todo.done}}">
-            <input ng-click="archive(todo)" type="checkbox" ng-model="todo.done">
-            <div ng-click="removeTask($index, todo.text)"> delete</div>
-            <span ng-hide="editing">{{todo.text}}</span>
-            <form  ng-show="editing" ng-submit="toggleEditing()"> 
-              <input type="text" placeholder="{{todo.text}}" ng-model="todo.text">
-            </form>
-            <span ng-click="toggleEditing()"> edit</span>
-          </div>
-        </div>
-      </ul>
-      <form ng-submit="addTodo($index)">
-        <input type="text" ng-model="todoText"  size="30"
-        placeholder="add new todo here">
-        <input class="btn-primary" type="submit" value="add">
+<div class="row">
+  <div class="small-1 columns">
+    <main ng-app="App" ng-controller="ApplicationController">
+      <div flip-Clock> </div>
+      <button ng-click="add(1)">15 </button>
+      <button ng-click="buttonClicked(25)">25 </button>
+      <button ng-click="buttonClicked(45)">45 </button>
+      <form ng-submit="buttonClicked(name)">
+        <input type="text" ng-model="name" />
       </form>
-    </div>
-  </ng-slide-push-menu> 
-  </div>
-</main>
-<div id="current-user"><% if current_user %> <%= current_user.id %> <%=current_user.name %> <%end %></div>
-<% audio_tag('ambiance.wav', autoplay: true, controls: true) %>
 
+      <div class="small-12 columns">
+        <ng-slide-push-menu position="right" button="push" button-icon-class="glyphicon glyphicon-cog">
+       <span><img class="img-plus-sign" src="assets/plus.png"> <h3>My To Do List</h3> <img class="img-pencil" src="assets/pencil.png"></span>
+        <div ng-controller="TodoCtrl">
+          <ul>
+            <div class="todo-item" ng-class="{fader:fadeout}" ng-repeat="todo in model.todos" >
+                <span>
+                  <img class ="img-checkmark"ng-click="fadeout = true; archive(todo);" src="assets/checkmark2.png"/>
+                  <form  class="todo-item-margin" ng-show="editing" ng-submit="editing = false">
+                    <input type="text" ng-model="todo.text">
+                  </form>
+                  <span  class="todo-item-margin" ng-hide="editing">{{todo.text}}</span>
+                  <img class ="todo-cancel-button todo-item-margin" ng-click="removeTask($index, todo.text)" src="assets/cancel.png"/>
+                  <img ng-click="editing = true" class="todo-edit-button" src="assets/pencil2.png">
+
+                </span>
+            </div>
+          </ul>
+          <form ng-submit="addTodo($index)" >
+            <input class="todo-item todo-input" type="text" ng-model="todoText" size="30"
+            placeholder="Add New Item...">
+          </form>
+        </div>
+        </ng-slide-push-menu>
+      </div>
+      <div progress-bar></div>
+    </main>
+  </div>
 </div>
-<footer>
-  <div class="progressbar" id="max22">
-    <img id=task src="assets/task.png">
-    <div id="progressbar-meter"></div>
-  </div>
 
-</footer>
-<div class="sign-in-partial">
+<!-- <div class="sign-in-partial">
   <div class="social-wrap a"><h2> You must sign in to continue </h2><button id="facebook"><%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %> </button>
-  </div>
+  </div> -->
