@@ -11,18 +11,17 @@
 
       <div class="small-12 columns">
         <ng-slide-push-menu position="right" button="push" button-icon-class="glyphicon glyphicon-cog">
-       <span><img class="img-plus-sign" src="assets/plus.png"> <h3>My To Do List</h3> <img class="img-pencil" src="assets/pencil.png"></span>
+       <span><div class="todo-title">My To Do List</div></span>
         <div ng-controller="TodoCtrl">
           <ul>
-            <div class="todo-item" ng-class="{fader:fadeout}" ng-repeat="todo in model.todos" >
+            <div ng-mouseover="editing = true"  ng-mouseleave="editing = false" class="todo-item" ng-class="{fader:fadeout}" ng-repeat="todo in model.todos" >
                 <span>
-                  <img class ="img-checkmark"ng-click="fadeout = true; archive(todo);" src="assets/checkmark2.png"/>
-                  <form  class="todo-item-margin" ng-show="editing" ng-submit="editing = false">
-                    <input type="text" ng-model="todo.text">
+                  <img class="img-checkmark"   ng-mouseover="completeTask = true" ng-click="fadeout = true; archive(todo);" ng-class="{opacitychange:completeTask}"  ng-mouseleave="completeTask = false" src="assets/checkmark2.png"/>
+                  <form class="todo-item-margin" ng-show="editing" ng-submit="editing = false">
+                    <input class="todo-inline-edit" type="text" ng-model="todo.text">
                   </form>
                   <span  class="todo-item-margin" ng-hide="editing">{{todo.text}}</span>
-                  <img class ="todo-cancel-button todo-item-margin" ng-click="removeTask($index, todo.text)" src="assets/cancel.png"/>
-                  <img ng-click="editing = true" class="todo-edit-button" src="assets/pencil2.png">
+                  <img ng-show="editing" class ="todo-cancel-button todo-item-margin" ng-click="removeTask($index, todo.text)" src="assets/cancel.png"/>
 
                 </span>
             </div>
