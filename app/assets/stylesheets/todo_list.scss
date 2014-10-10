@@ -13,9 +13,9 @@ $borders-color: #F6F6F6;
 
 // ANCHOR OR LABEL
 $lbl-font-color: #000;
-$lbl-hover-background-color: #65CFF0;
-$lbl-active-background-color: #65CFF0;
-$lbl-active-font-color: #000;
+$lbl-hover-background-color: white;
+$lbl-active-background-color: white;
+$lbl-active-font-color: white;
 
 // BUTTONS
 $btn-background-color: #06C0F2;
@@ -75,50 +75,23 @@ $spmenu-horizontal-height: 150px;
 a.spmenu-button {
   display: none;
   position: absolute;
+  top: 400px;
   border: none;
   font-size: 25px;
   text-align: center;
-  padding: 10px;
-  background: $btn-background-color;
-  color: $btn-font-color;
+  padding: 20px;
+  background: white;
   text-decoration: none;
-  -moz-box-shadow: -8px 4px 10px $shadow-color;
-  -webkit-box-shadow: -8px 4px 10px $shadow-color;
-  box-shadow: -8px 4px 10px $shadow-color;
   border: none !important;
   &.show {
     display: block;
   }
   &.active {
-    background: $lbl-active-background-color;
-    color: $lbl-active-font-color;
-    i, span {
-      color: $caret-color-opened;
-    }
-    .caret {
-      border-bottom: 4px solid transparent;
-      border-top: 4px solid transparent;
-      border-right: 4px solid transparent;
-      border-left: 4px solid $caret-color-opened;
-      display: inline-block;
-      height: 0;
-      opacity: 1;
-      vertical-align: top;
-      width: 0;
-    }
+    opacity: .3;
   }
-
-  .caret {
-    border-bottom: 4px solid transparent;
-    border-top: 4px solid transparent;
-    border-left: 4px solid transparent;
-    border-right: 4px solid $caret-color-closed;
-    display: inline-block;
-    height: 0;
-    opacity: 1;
-    vertical-align: top;
-    width: 0;
-    margin: 6px;
+  &.hover {
+    opacity: .6;
+    background-color: blue;
   }
 }
 
@@ -199,7 +172,7 @@ a.spmenu-button {
   right: -$spmenu-vertical-width;
   a.spmenu-button {
     right: $spmenu-vertical-width;
-    top: 10px;
+    top: 240px;
     -webkit-border-top-left-radius: 5px;
     -moz-border-top-left-radius: 5px;
     border-top-left-radius: 5px;

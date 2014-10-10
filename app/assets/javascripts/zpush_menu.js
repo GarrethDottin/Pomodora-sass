@@ -227,7 +227,7 @@ return {
   compile: compile,
   restrict: "E",
   replace: true,
-  template: "<nav><a class=\"spmenu-button\"><i class=\"caret\"></i></a></nav>",
+  template: "<nav><a class=\"spmenu-button\"><img src='assets/pencilicon.png'/></a></nav>",
   transclude: "element"
 };
 }
