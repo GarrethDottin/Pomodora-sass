@@ -326,7 +326,8 @@ a.spmenu-button {
 
 .todo-item {
   border-width: 0px;
-  margin-bottom: 15px;
+  margin-bottom: 16px;
+  font-size: 16px;
   border-top: solid #F6F6F6 1px;
 }
 
@@ -341,14 +342,14 @@ a.spmenu-button {
   font-weight: 550;
   border: none;
   position: absolute;
-  left: 35px;
-  bottom: -2px;
+  left: 38px;
+  bottom: -1px;
   cursor: text;
 }
 
 .todo-cancel-button {
   position: absolute;
-  left: 300px;
+  left: 290px;
   margin-top: -20px;
   opacity: .6;
 }
@@ -359,11 +360,11 @@ a.spmenu-button {
 }
 
 .todo-input {
-  padding-top: 22px;
   text-align: left;
-  padding-left: 50px;
-  padding-bottom: 5px;
+  padding-left: 51px;
   font-size: 16px;
+  display: inline-block;
+  height: 40px;
 }
 
 //Animations
