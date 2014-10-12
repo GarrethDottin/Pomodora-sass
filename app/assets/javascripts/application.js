@@ -19,7 +19,8 @@
 //= zprogress_bar
 //= zflipclock
 //= zhome_controller
-//= zpush_menu  
+//= zpush_menu
+//= ztodo_list_service
 //= require_tree .
 
 var appcontroller = {

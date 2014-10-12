@@ -227,7 +227,7 @@ angular.module("slidePushMenu", []).factory('slidePush',function () {
                 compile: compile,
                 restrict: "E",
                 replace: true,
-                template: "<nav><a class=\"spmenu-button\"><i class=\"caret\"></i></a></nav>",
+                template: "<nav><a ng-click='positionModal()'' class=\"spmenu-button\"><i  class=\"caret\"></i></a></nav>",
                 transclude: "element"
             };
         }

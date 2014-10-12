@@ -4,6 +4,9 @@
 $bottom: bottom;
 $top: top;
 $spacing: 30px;
+body {
+  background-color: #449BB6;
+}
 
 %reset-style {
   margin: 0;
@@ -66,7 +69,7 @@ $spacing: 30px;
 #glass {
   background: rgba( 255, 255, 255, 0.50);
   border: 1px solid #bbb;
-  border-top: 1px solid #eee;  
+  border-top: 1px solid #eee;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   border-radius: 10px;
@@ -75,7 +78,7 @@ $spacing: 30px;
   position: relative;
 }
 #water {
-  background-image: url("waves.png");   
+  background-image: url("waves.png");
   background-position: 100% 0%;
   position: absolute;
   left:0px;

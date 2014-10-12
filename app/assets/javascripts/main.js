@@ -1,13 +1,16 @@
 angular.module("App", ['ngCookies'])
-	.value('user', { 
-		username: '', 
+	.value('user', {
+		username: '',
 		firstName: ''
 	})
-	.controller("ApplicationController", ["$scope", function($scope){ 
+	.controller("ApplicationController", ["$scope", function($scope){
 		$scope.setUser = setUser;
-		$scope.currentUser = 'guest'; 
-		
-		var setUser = function (user) { 
-			$scope.currentUser = user;
-		};	
+		$scope.currentUser = 'guest';
+		$scope.close = function (event) { dom.closeModal(event)};
+
+		$scope.closeModal = false;
+		var setUser = function (user) {
+
+		$scope.currentUser = user;
+		};
 	}]);

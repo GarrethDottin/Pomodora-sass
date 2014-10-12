@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row" >
   <div class="small-1 columns">
     <main ng-app="App" ng-controller="ApplicationController">
       <div flip-Clock> </div>
@@ -9,16 +9,16 @@
         <input type="text" ng-model="name" />
       </form>
 
-      <div class="small-12 columns">
+      <div class="small-12 columns" >
         <ng-slide-push-menu position="right" button="push" button-icon-class="glyphicon glyphicon-cog">
-       <span><div class="todo-title">My To Do List</div></span>
+        <span><div class="todo-title">My To Do List</div></span>
         <div ng-controller="TodoCtrl">
           <ul>
             <div ng-mouseover="editing = true"  ng-mouseleave="editing = false" class="todo-item" ng-class="{fader:fadeout}" ng-repeat="todo in model.todos" >
                 <span>
                   <img class="img-checkmark"   ng-mouseover="completeTask = true" ng-click="fadeout = true; archive(todo);" ng-class="{opacitychange:completeTask}"  ng-mouseleave="completeTask = false" src="assets/checkmark2.png"/>
-                  <form class="todo-item-margin" ng-show="editing" ng-submit="editing = false">
-                    <input class="todo-inline-edit" type="text" ng-model="todo.text">
+                  <form class="todo-item-margin noshadow" ng-show="editing" ng-submit="editing = false">
+                    <input class="todo-inline-edit noshadow" type="text" ng-model="todo.text">
                   </form>
                   <span  class="todo-item-margin" ng-hide="editing">{{todo.text}}</span>
                   <img ng-show="editing" class ="todo-cancel-button todo-item-margin" ng-click="removeTask($index, todo.text)" src="assets/cancel.png"/>
@@ -27,7 +27,7 @@
             </div>
           </ul>
           <form ng-submit="addTodo($index)" >
-            <input class="todo-item todo-input" type="text" ng-model="todoText" size="30"
+            <input class="todo-item todo-input noshadow" type="text" ng-model="todoText" size="30"
             placeholder="Add New Item...">
           </form>
         </div>
