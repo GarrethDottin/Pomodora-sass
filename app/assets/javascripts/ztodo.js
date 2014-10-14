@@ -38,7 +38,7 @@ angular.module("App").controller("TodoCtrl", ["$scope", "localStorage", "$timeou
   };
 
   function addTodo ($index) {
-    if ($scope.todoText.length > 1 && $scope.todoText.length < 16) {
+    if ($scope.todoText.length > 1 && $scope.todoText.length < 27) {
       $scope.model.todos.push({text:$scope.todoText + '.' , done:false});
       $scope.todoText = '';
       localStorage.setItem('todos',$scope.model.todos);

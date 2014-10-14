@@ -27,7 +27,7 @@
             </div>
           </ul>
           <form ng-submit="addTodo($index)" >
-            <input class="todo-item todo-input noshadow" type="text" ng-model="todoText" size="30"
+            <input class="todo-item todo-input noshadow" maxlength="25" type="text" ng-model="todoText" size="30"
             placeholder="Add New Item...">
           </form>
         </div>
