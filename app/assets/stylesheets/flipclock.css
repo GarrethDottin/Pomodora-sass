@@ -68,8 +68,8 @@
   position: relative;
   float: left;
   margin: 5px;
-  width: 60px;
-  height: 90px;
+  width: 140px;
+  height: 210px;
 /*    width: 140px;
   height: 210px;*/
   font-size: 80px;
@@ -111,7 +111,8 @@
   height: 50%;
   font-size: 80px;
   overflow: hidden;
-  outline: 1px solid transparent; }
+  outline: 1px solid transparent;
+  font-size: 181px;}
 
 .flip-clock-wrapper ul li a div .shadow {
   position: absolute;
@@ -130,7 +131,7 @@
 .flip-clock-wrapper ul li a div.up:after {
   content: "";
   position: absolute;
-  top: 43px;
+  top: 101px;
   left: 0;
   z-index: 5;
   width: 100%;
@@ -161,7 +162,9 @@
   text-align: center;
   background-color: white;
   border-radius: 6px;
-  font-size: 70px; }
+  font-size: 160px;
+  padding-top: 59px;
+}
 
 .flip-clock-wrapper ul li a div.up div.inn {
   top: 0; }
