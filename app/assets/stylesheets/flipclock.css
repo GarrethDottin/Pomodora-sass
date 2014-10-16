@@ -70,6 +70,8 @@
   margin: 5px;
   width: 60px;
   height: 90px;
+/*    width: 140px;
+  height: 210px;*/
   font-size: 80px;
   font-weight: bold;
   line-height: 87px;
@@ -108,7 +110,7 @@
   width: 100%;
   height: 50%;
   font-size: 80px;
-  overflow: hidden; 
+  overflow: hidden;
   outline: 1px solid transparent; }
 
 .flip-clock-wrapper ul li a div .shadow {
@@ -128,13 +130,13 @@
 .flip-clock-wrapper ul li a div.up:after {
   content: "";
   position: absolute;
-  top: 44px;
+  top: 43px;
   left: 0;
   z-index: 5;
   width: 100%;
-  height: 3px;
+  height: 5px;
   background-color: #000;
-  background-color: rgba(0, 0, 0, 0.4); }
+  background-color: #449BB6; }
 
 .flip-clock-wrapper ul li a div.down {
   -webkit-transform-origin: 50% 0;
@@ -153,10 +155,11 @@
   z-index: 1;
   width: 100%;
   height: 200%;
-  color: #ccc;
-  text-shadow: 0 1px 2px #000;
+  color: #043d5d;
+  font: 'Lato Light';
+  font-weight: 300;
   text-align: center;
-  background-color: #333;
+  background-color: white;
   border-radius: 6px;
   font-size: 70px; }
 
@@ -183,7 +186,22 @@
   display: inline-block;
   position: relative;
   width: 20px;
-  height: 100px; }
+  height: 100px;
+  display: none;}
+
+.flipclock-small-text {
+  color: #22222;
+  font-size: 10px;
+  font-weight: 300;
+  position: absolute;
+  left: 100px;
+  top: 100px;
+  font-family: 'lato';}
+
+.flipclock-small-text-seconds {
+  margin-left: 35px;}
+
+
 
 .flip-clock-divider:first-child {
   width: 0; }
