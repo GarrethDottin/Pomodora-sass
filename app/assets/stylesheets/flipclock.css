@@ -76,7 +76,7 @@
   font-weight: bold;
   line-height: 87px;
   border-radius: 6px;
-  background: #000;
+  background: white;
 }
 
 .flip-clock-wrapper ul li {
@@ -96,9 +96,9 @@
 .flip-clock-wrapper ul li a {
   display: block;
   height: 100%;
-  -webkit-perspective: 200px;
-  -moz-perspective: 200px;
-  perspective: 200px;
+  -webkit-perspective: 600px;
+  -moz-perspective: 600px;
+  perspective: 600px;
   margin: 0 !important;
   overflow: visible !important;
   cursor: default !important; }
@@ -112,7 +112,8 @@
   font-size: 80px;
   overflow: hidden;
   outline: 1px solid transparent;
-  font-size: 181px;}
+  font-size: 181px;
+  border-bottom: solid 1px #C5C5C3;}
 
 .flip-clock-wrapper ul li a div .shadow {
   position: absolute;
@@ -136,7 +137,7 @@
   z-index: 5;
   width: 100%;
   height: 5px;
-  background-color: #000;
+  background-color: white;
   background-color: #449BB6; }
 
 .flip-clock-wrapper ul li a div.down {
@@ -223,7 +224,7 @@
   position: absolute;
   top: -1.5em;
   right: -86px;
-  color: black;
+  color: white;
   text-shadow: none; }
 
 .flip-clock-divider.minutes .flip-clock-label {
@@ -351,46 +352,28 @@
 
 /* SHADOW */
 .flip-clock-wrapper ul.play li.flip-clock-before .up .shadow {
-  background: -moz-linear-gradient(top, rgba(0, 0, 0, 0.1) 0%, black 100%);
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0, 0, 0, 0.1)), color-stop(100%, black));
-  background: linear, top, rgba(0, 0, 0, 0.1) 0%, black 100%;
-  background: -o-linear-gradient(top, rgba(0, 0, 0, 0.1) 0%, black 100%);
-  background: -ms-linear-gradient(top, rgba(0, 0, 0, 0.1) 0%, black 100%);
-  background: linear, to bottom, rgba(0, 0, 0, 0.1) 0%, black 100%;
   -webkit-animation: show 0.5s linear both;
   -moz-animation: show 0.5s linear both;
   animation: show 0.5s linear both; }
 
 .flip-clock-wrapper ul.play li.flip-clock-active .up .shadow {
-  background: -moz-linear-gradient(top, rgba(0, 0, 0, 0.1) 0%, black 100%);
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0, 0, 0, 0.1)), color-stop(100%, black));
-  background: linear, top, rgba(0, 0, 0, 0.1) 0%, black 100%;
-  background: -o-linear-gradient(top, rgba(0, 0, 0, 0.1) 0%, black 100%);
-  background: -ms-linear-gradient(top, rgba(0, 0, 0, 0.1) 0%, black 100%);
-  background: linear, to bottom, rgba(0, 0, 0, 0.1) 0%, black 100%;
   -webkit-animation: hide 0.5s 0.3s linear both;
   -moz-animation: hide 0.5s 0.3s linear both;
   animation: hide 0.5s 0.3s linear both; }
 
 /*DOWN*/
 .flip-clock-wrapper ul.play li.flip-clock-before .down .shadow {
-  background: -moz-linear-gradient(top, black 0%, rgba(0, 0, 0, 0.1) 100%);
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, black), color-stop(100%, rgba(0, 0, 0, 0.1)));
-  background: linear, top, black 0%, rgba(0, 0, 0, 0.1) 100%;
-  background: -o-linear-gradient(top, black 0%, rgba(0, 0, 0, 0.1) 100%);
-  background: -ms-linear-gradient(top, black 0%, rgba(0, 0, 0, 0.1) 100%);
-  background: linear, to bottom, black 0%, rgba(0, 0, 0, 0.1) 100%;
   -webkit-animation: show 0.5s linear both;
   -moz-animation: show 0.5s linear both;
   animation: show 0.5s linear both; }
 
 .flip-clock-wrapper ul.play li.flip-clock-active .down .shadow {
-  background: -moz-linear-gradient(top, black 0%, rgba(0, 0, 0, 0.1) 100%);
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, black), color-stop(100%, rgba(0, 0, 0, 0.1)));
-  background: linear, top, black 0%, rgba(0, 0, 0, 0.1) 100%;
-  background: -o-linear-gradient(top, black 0%, rgba(0, 0, 0, 0.1) 100%);
-  background: -ms-linear-gradient(top, black 0%, rgba(0, 0, 0, 0.1) 100%);
-  background: linear, to bottom, black 0%, rgba(0, 0, 0, 0.1) 100%;
+  background: -moz-linear-gradient(top, white 25%, rgba(0, 0, 0, 0.5) 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(25%, white), color-stop(100%, rgba(0, 0, 0, 0.5)));
+  background: linear, top, white 25%, rgba(0, 0, 0, 0.5) 100%;
+  background: -o-linear-gradient(top, white 25%, rgba(0, 0, 0, 0.5) 100%);
+  background: -ms-linear-gradient(top, white 25%, rgba(0, 0, 0, 0.5) 100%);
+  background: linear, to bottom, white 25%, rgba(0, 0, 0, 0.5) 100%;
   -webkit-animation: hide 0.5s 0.3s linear both;
   -moz-animation: hide 0.5s 0.3s linear both;
   animation: hide 0.5s 0.2s linear both; }
