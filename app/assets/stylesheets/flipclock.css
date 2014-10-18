@@ -176,7 +176,8 @@
 .flip-clock-wrapper ul.play li.flip-clock-before {
   z-index: 3; }
 
-.flip-clock-wrapper .flip {    }
+.flip-clock-wrapper .flip {
+  box-shadow: 0 8px 2px -5px #545454;}
 
 .flip-clock-wrapper ul.play li.flip-clock-active {
   -webkit-animation: asd 0.5s 0.5s linear both;
@@ -487,12 +488,42 @@
   .blockcontent2 {
     left: 151px;
   }
+
   .blockcontent3 {
     left: 301px;
   }
+
   .blockcontent4 {
     left: 452px;
   }
+
   .blockcontent5 {
     left: 601px;
+    width: 30px;
+    height: 100px;
+    top: 89px;
+  }
+
+  .border-bottom {
+    border-bottom: solid 2px #D6D5D5;
+  }
+
+  .timer-button {
+    border-radius: 5px;
+    border: 1px solid white;
+    background-color: inherit;
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
+    font-size: 12px;
+    color: white;
+    padding: 15px;
+    padding-left: 25px;
+    padding-right: 25px;
+    outline: 0;
+  }
+
+  .timer-button:hover {
+    background-color: #73B4C8;
+    cursor: pointer;
+
   }
