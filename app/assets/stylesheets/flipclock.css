@@ -42,7 +42,6 @@
 
 .flip-clock-meridium {
   background: none !important;
-  box-shadow: 0 0 0 !important;
   font-size: 36px !important; }
 
 .flip-clock-meridium a { color: #313333; }
@@ -112,14 +111,14 @@
   font-size: 80px;
   overflow: hidden;
   outline: 1px solid transparent;
-  font-size: 181px;
-  border-bottom: solid 1px #C5C5C3;}
+  font-size: 181px;}
 
 .flip-clock-wrapper ul li a div .shadow {
   position: absolute;
   width: 100%;
-  height: 100%;
-  z-index: 2; }
+  height: 98%;
+  z-index: 6;
+  border-bottom: solid 2px #D6D5D5; }
 
 .flip-clock-wrapper ul li a div.up {
   -webkit-transform-origin: 50% 100%;
@@ -177,7 +176,7 @@
 .flip-clock-wrapper ul.play li.flip-clock-before {
   z-index: 3; }
 
-.flip-clock-wrapper .flip {   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.7); }
+.flip-clock-wrapper .flip {    }
 
 .flip-clock-wrapper ul.play li.flip-clock-active {
   -webkit-animation: asd 0.5s 0.5s linear both;
@@ -217,7 +216,6 @@
   height: 10px;
   position: absolute;
   border-radius: 50%;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
   left: 5px; }
 
 .flip-clock-divider .flip-clock-label {
@@ -433,3 +431,68 @@
 
   100% {
     opacity: 0; } }
+.smallblock, .smallblock2, .smallblock3, .smallblock4, .smallblock5, .smallblock6, .smallblock7, .smallblock8 {
+  background-color: #449BB6;
+  width: 6px;
+  height: 40px;
+  display: inline-block;
+  position: absolute;
+  top: 88px;
+  left: 15px;
+  z-index: 1000;
+  border-radius: 1px;
+  border-top: solid 2px #D6D5D5;}
+
+  .smallblock2 {
+    left: 151px;
+  }
+
+  .smallblock3 {
+    left: 165px;
+  }
+
+  .smallblock4 {
+    left: 300px;
+  }
+
+  .smallblock5 {
+    left: 315px;
+  }
+
+  .smallblock6 {
+    left: 452px;
+  }
+
+  .smallblock7 {
+    left: 465px;
+  }
+
+  .smallblock8 {
+    left: 601px;
+  }
+  .blockcontent, .blockcontent1, .blockcontent2, .blockcontent3, .blockcontent4, .blockcontent5 {
+    display: inline-block;
+    width: 15px;
+    background: #449BB6;
+    height: 39px;
+    position: absolute;
+    z-index: 1000;
+    border-radius: 2px;
+    top: 90px;
+  }
+  .blockcontent1 {
+    left: 1px;
+  }
+
+  .blockcontent2 {
+    left: 151px;
+  }
+  .blockcontent3 {
+    left: 301px;
+  }
+  .blockcontent4 {
+    left: 452px;
+  }
+  .blockcontent5 {
+    left: 601px;
+  }
