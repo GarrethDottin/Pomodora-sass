@@ -8,6 +8,34 @@ body {
   background-color: #449BB6;
 }
 
+button {
+  outline: 0;
+  cursor: pointer;
+}
+
+.flat-ui-button {
+  border:none;
+  color: white;
+  background-color: #68C49F;
+  font-family: 'lato';
+  font-weight: 400;
+  font-size: 14px;
+  border-radius: 5px;
+  padding: 15px;
+  padding-left: 80px;
+  padding-right: 80px;
+}
+
+#stop-button {
+  font-size: 14px;
+  font-weight: 400;
+  padding-left: 80px !important;
+  padding-right: 80px !important;
+}
+.flat-ui-button:hover {
+  background-color: #7BD1AE;
+}
+
 %reset-style {
   margin: 0;
   padding: 0;

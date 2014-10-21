@@ -16,12 +16,11 @@
       <div class="blockcontent3">&nbsp</div>
       <div class="blockcontent4">&nbsp</div>
       <div class="blockcontent5">&nbsp</div>
-      <button class="timer-button" ng-click="add(1)">15 minutes </button>
+      <button class="timer-button" ng-click="buttonClicked(15)">15 minutes </button>
       <button class= "timer-button" ng-click="buttonClicked(25)">25 minutes </button>
-      <button  class="timer-button" ng-click="buttonClicked(45)">45 minutes </button>
-      <form ng-submit="buttonClicked(name)">
-        <input type="text" ng-model="name" />
-      </form>
+      <button class="timer-button" ng-click="buttonClicked(45)">45 minutes </button>
+      <button id="stop-button" class="timer-button " ng-click="stopClicked()">Stop </button>
+      <button class="flat-ui-button" ng-click="startClicked()"> Start</button>
 
 
       <div class="small-12 columns" >
