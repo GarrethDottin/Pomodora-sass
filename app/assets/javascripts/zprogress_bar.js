@@ -23,16 +23,25 @@ angular.module("App").directive("progressBar", function() {
 			if(scope.progress == 0) {
 				progressBar.reset(progressMeter);
 			};
-			if (scope.progress > 0) {
+			if (scope.progress > 10) {
 				progressBar.add(progressMeter, progressBar.width);
 			};
 		});
 	};
 
 	progressBar.add = function (progressMeter, progressBarwidth) {
-		progressBar.width += 50;
-		var width = progressBar.width.toString();
-		progressBarChange(progressMeter,progressBar.position, width);
+		if (progressBar.width < 1070)  { 
+			if (progressBar.width == 750) {
+				progressBar.width += 320;
+				console.log(progressBar.width)
+			}
+			if (progressBar.width < 750 ){ 
+				progressBar.width += 250;
+			};
+						console.log("this function is hit") 
+			var width = progressBar.width.toString();
+			progressBarChange(progressMeter,progressBar.position, width);
+		}
 	};
 
 	progressBar.reset = function (progressMeter, progressContainer) {
@@ -45,9 +54,8 @@ angular.module("App").directive("progressBar", function() {
 			$scope.add = add;
 			$scope.reset = reset;
 			$scope.progress = 0;
-
 			function add () {
-				$scope.progress += 50;
+				$scope.progress += 250;
 			};
 
 			function reset  () {
@@ -55,12 +63,9 @@ angular.module("App").directive("progressBar", function() {
 			};
 
 		}],
-		template: '<div id="container"> <div id="glass"> <div id="water"></div></div></div>',
+		template: '<div id="container"> <div id="glass"><span class="progress-bar-hashmark"> | </span>  <span class="progress-bar-hashmark"> | </span> <span class="progress-bar-hashmark"> | </span>	<div id="water"></div></div></div>',
 		link: progressBar.watch
 	};
 });
 
 
-// Take function out of add and reset √
-// Test out function
-// read over https://thinkster.io/egghead/animating-the-angular-way/

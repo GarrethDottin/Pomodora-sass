@@ -1,8 +1,7 @@
 angular.module("App").factory("localStorage", ["$cookieStore", function($cookieStore) {
 	localStorage = {};
 	var storedTodos = $cookieStore.get('todos');
-
-	localStorage.setItem = function (key, value) {
+		localStorage.setItem = function (key, value) {
 		$cookieStore.put(key,value);
 	};
 

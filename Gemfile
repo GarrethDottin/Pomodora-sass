@@ -15,6 +15,8 @@ gem 'omniauth'
 gem 'coffee-rails'
 gem 'oauth2'
 gem 'omniauth-facebook'
+gem 'sprockets', ' >= 2.2.2' 
+
 gem 'certified'
 gem 'whenever', require: false
 gem 'capistrano-ext'
@@ -22,8 +24,8 @@ gem 'protected_attributes'
 gem 'heroku'
 gem 'nokogiri', '1.3.3'
 gem 'angularjs-rails'
-gem 'sprockets'
 gem 'bower-rails'
+gem 'foundation-rails'
 gem 'angular-rails-templates'
 group :development, :test do
   gem 'sqlite3'

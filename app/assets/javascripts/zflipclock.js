@@ -1,5 +1,6 @@
 angular.module("App").directive("flipClock", function(	) {
 	flipClockApi = {};
+	console.log("This is working flipClockApi")
 
 	flipClockApi.createClock = function () {
 		var Clock = $('.your-clock').FlipClock({
@@ -28,6 +29,16 @@ angular.module("App").directive("flipClock", function(	) {
 		flipClockApi.clock.setTime(time);
 	};
 
+	flipClockApi.adjustTime = function (input ) { 
+		var currentTime = flipClockApi.getTime(); 
+		if (input == 'add') { 
+			flipClockApi.clock.setTime(currentTime + 61); 
+		}
+		else { 
+			flipClockApi.clock.setTime(currentTime - 59); 
+		}
+	}; 
+
 	var changeClock = function (scope){
 		scope.$watch('timerValue', function() {
 			if (scope.timerValue != undefined) {
@@ -41,6 +52,11 @@ angular.module("App").directive("flipClock", function(	) {
 
 	return {
 		controller: ['$scope', function($scope) {
+			$scope.adjustTime = adjustTime; 
+
+			function adjustTime (input) { 
+				flipClockApi.adjustTime(input);
+			}
 			$scope.buttonClicked = function(num) {
 				$scope.timerValue = 0;
 				$scope.$apply();
@@ -67,7 +83,7 @@ angular.module("App").directive("flipClock", function(	) {
 			}
 
 		}],
-		template: '<div class="your-clock"></div>',
+		template: '<div class="your-clock test"></div>',
 		link: flipClockApi.initClock
 	};
 });

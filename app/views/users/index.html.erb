@@ -1,26 +1,36 @@
+<header> 
+<img class="logo" src="assets/groove.png" /> <div class="header-buttons"> <span class="header-button">TIMER </span> <br>  <span id='about' class="header-button"> HOW TO</span> </div>
+</header>
 <div class="row" >
   <div class="small-1 columns">
     <main ng-app="App" ng-controller="ApplicationController">
-      <div flip-Clock> </div>
-      <div class="flipclock-small-text"> <span>Minutes </span> <span class="flipclock-small-text-seconds">Seconds</span> </div>
-      <div class="smallblock">&nbsp</div>
-      <div class="smallblock2"> &nbsp</div>
-      <div class="smallblock3"> &nbsp</div>
-      <div class="smallblock4"> &nbsp</div>
-      <div class="smallblock5"> &nbsp</div>
-      <div class="smallblock6"> &nbsp</div>
-      <div class="smallblock7"> &nbsp</div>
-      <div class="smallblock8"> &nbsp</div>
-      <div class="blockcontent1">&nbsp</div>
-      <div class="blockcontent2">&nbsp</div>
-      <div class="blockcontent3">&nbsp</div>
-      <div class="blockcontent4">&nbsp</div>
-      <div class="blockcontent5">&nbsp</div>
-      <button class="timer-button" ng-click="buttonClicked(15)">15 minutes </button>
-      <button class= "timer-button" ng-click="buttonClicked(25)">25 minutes </button>
-      <button class="timer-button" ng-click="buttonClicked(45)">45 minutes </button>
-      <button id="stop-button" class="timer-button " ng-click="stopClicked()">Stop </button>
-      <button class="flat-ui-button" ng-click="startClicked()"> Start</button>
+
+      <div class="timer-container"> 
+        <h2 class="title"> {{statement}} </h2>
+          <button id="fifteen" class="timer-button" ng-click="add(15)">15 minutes </button>
+          <button class= "timer-button" ng-click="buttonClicked(25)">25 minutes </button>
+          <button class="timer-button" ng-click="buttonClicked(45)">45 minutes </button>
+          <div flip-Clock> </div>
+          <div class="flipclock-small-text"> <span>Minutes </span> <span class="flipclock-small-text-seconds">Seconds</span> </div>
+          <div class="smallblock">&nbsp</div>
+          <div class="smallblock2"> &nbsp</div>
+          <div class="smallblock3"> &nbsp</div>
+          <div class="smallblock4"> &nbsp</div>
+          <div class="smallblock5"> &nbsp</div>
+          <div class="smallblock6"> &nbsp</div>
+          <div class="smallblock7"> &nbsp</div>
+          <div class="smallblock8"> &nbsp</div>
+          <div class="blockcontent1">&nbsp</div>
+          <div class="blockcontent2">&nbsp</div>
+          <div class="blockcontent3">&nbsp</div>
+          <div class="blockcontent4">&nbsp</div>
+          <div class="blockcontent5">&nbsp</div>
+          <button class="flat-ui-button" ng-click="startClicked()"> Start</button>
+          <button id="stop-button" class="timer-button " ng-click="stopClicked()">Stop </button>
+          <div ng-click="adjustTime('add')" class="timerButtonContainer addButton"> <div ng-click=""class="upvote"> </div></div>
+          <div ng-click="adjustTime('down')"class="timerButtonContainer"> <div class="downvote"> </div></div>
+      </div>  
+
 
 
       <div class="small-12 columns" >
@@ -47,9 +57,12 @@
         </div>
         </ng-slide-push-menu>
       </div>
-      <div progress-bar></div>
-    </main>
+      <div class="progress-bar-container">
+        <div progress-bar></div>
+      </div>
+     </main>
   </div>
+
 </div>
 
 <!-- <div class="sign-in-partial">

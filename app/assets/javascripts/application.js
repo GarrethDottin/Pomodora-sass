@@ -12,14 +12,15 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require foundation
 //= require angular
 //= require angular-route
 //= main
 //= ztodo
-//= zprogress_bar
 //= zflipclock
 //= zhome_controller
 //= zpush_menu
+//= zprogress_bar
 //= ztodo_list_service
 //= require_tree .
 
@@ -382,3 +383,4 @@ $(function (){
   };
   appcontroller.init(selectors)
 });
+

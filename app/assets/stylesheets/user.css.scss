@@ -4,8 +4,20 @@
 $bottom: bottom;
 $top: top;
 $spacing: 30px;
+
+header{ 
+  background-color: #1f1f1f; 
+  position: fixed; 
+  top: 0; 
+  width: 101%;
+  margin-left: -1%; 
+  height: 50px;
+  z-index: 1001;
+}
+
 body {
   background-color: #449BB6;
+  margin-bottom: 0px;
 }
 
 button {
@@ -24,14 +36,17 @@ button {
   padding: 15px;
   padding-left: 80px;
   padding-right: 80px;
-}
+  margin-left: 110px;
+margin-top: 20px;}
 
 #stop-button {
   font-size: 14px;
   font-weight: 400;
   padding-left: 80px !important;
   padding-right: 80px !important;
-}
+  margin-left: 15px;
+  margin-top: 20px;}
+
 .flat-ui-button:hover {
   background-color: #7BD1AE;
 }
@@ -76,48 +91,148 @@ button {
   }
 }
 
-
 #container {
-  background: rgba( 0, 0, 0, 0.10);
-  margin-left:auto;
-  margin-right:auto;
-  width: 500px;
-  border-left: 1px solid #bbb;
-  border-right: 1px solid #bbb;
-  border-bottom: 1px solid #bbb;
-  border-top: 1px solid #ccc;
+  display: inline-block; 
+  margin-left: 15%; 
+  margin-top: 2%;
+  background: white;
+  width: 950px;
+  height: 35px;
+  border: 2px solid white; 
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   border-radius: 10px;
-  padding-left: 5px;
-  padding-right: 5px;
-  padding-bottom: 5px;
-  padding-top: 5px;
+  z-index: 1000;
 }
+
 #glass {
-  background: rgba( 255, 255, 255, 0.50);
-  border: 1px solid #bbb;
-  border-top: 1px solid #eee;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  border-radius: 10px;
-  width: 500px;
-  height: 200px;
+  border-radius: 5px;
+  width: 950px;
+  height: 35px;
   position: relative;
 }
 #water {
   background-image: url("waves.png");
   background-position: 100% 0%;
   position: absolute;
-  left:0px;
-  width: 200px;
-  height: 200px;
-  -webkit-transition: all 2s ease-out;
-  -moz-transition: all 2s ease-out;
-  -o-transition: all 2s ease-out;
-  transition: all 2s ease-out;
+  left:1px;
+  width: 150px;
+  height: 35px;
+  -webkit-transition: all 3s ease-out;
+  -moz-transition: all 3s ease-out;
+  -o-transition: all 3s ease-out;
+  transition: all 3s ease-out;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   border-radius: 10px;
 }
 
+.upvote { 
+  width: 0;
+  height: 0;
+  border-left: 9px solid transparent;
+  border-right: 9px solid transparent;
+  border-bottom: 17px solid #1D354C;
+  position: relative;
+  left: 8px;
+  top: 8px
+}
+
+.downvote { 
+  width: 0;
+  height: 0;
+  border-left: 9px solid transparent;
+  border-right: 9px solid transparent;
+  border-top: 17px solid #1D354C;
+  position: relative;
+  left: 8px;
+  top: 12px;
+}
+
+.addButton{ 
+  top: 190px !important;
+}
+
+.timerButtonContainer{ 
+  background-color: #E1E1E3;
+  width: 35px;
+  height: 35px;
+  border-radius: 35px;
+  cursor: pointer;
+  position: absolute;
+  top: 230px;
+  left: 740px;
+}
+
+.timerButtonContainer:hover .upvote  { 
+  border-bottom: 17px solid white;
+}
+
+.timerButtonContainer:hover .downvote { 
+  border-top: 17px solid white; 
+}
+
+.timerButtonContainer:hover { 
+  background-color: #1D354C;
+}
+
+.logo { 
+  padding: 5px; 
+  padding-left: 40px;
+  padding-bottom: 17px;
+}
+
+.header-buttons { 
+  margin-left: 70%;
+  display: inline-block;
+  color: white;
+}
+
+.header-button { 
+  margin-left: 5%; 
+  display: inline-block;
+  margin-bottom: 13px;
+}
+
+#about { 
+  left: 85px;
+  width: 56px;
+  bottom: 30px;
+  position: relative;
+  width: 100px;
+}
+
+.header-button:hover { 
+  cursor: pointer;
+}
+
+.progress-bar-container { 
+  background-color: #E5E9EE;
+  height: 120px;
+  margin-left: -7px;
+  width: 102%;
+  margin-top: 100px;
+  margin-bottom: -8px;
+}
+
+.progress-bar-hashmark { 
+  width: 0px;
+  background-position: 100% 0%;
+  margin-left: 20%;
+  font-size: 38px;
+  color: #E5E9EE;
+  padding-bottom: 8px;
+  display: inline-block;
+  padding-bottom: 11px;
+  position: absolute;
+  bottom: -17px;
+  z-index: 0;
+}
+
+.progress-bar-hashmark:nth-child(2) { 
+  margin-left: 43%;
+}
+
+.progress-bar-hashmark:nth-child(3) { 
+  margin-left: 70%;
+}

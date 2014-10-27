@@ -198,12 +198,14 @@
   font-size: 10px;
   font-weight: 300;
   position: absolute;
-  left: 100px;
-  top: 100px;
+  left: 200px;
+  top: 345px;
   font-family: 'lato';}
 
 .flipclock-small-text-seconds {
-  margin-left: 35px;}
+  margin-left: 265px;
+
+}
 
 
 
@@ -432,44 +434,52 @@
 
   100% {
     opacity: 0; } }
+
+.timer-container { 
+  position: relative;
+  margin: 0 auto ;
+  top: 50px;
+  width: 800px;
+  padding-left: 100px;
+}
 .smallblock, .smallblock2, .smallblock3, .smallblock4, .smallblock5, .smallblock6, .smallblock7, .smallblock8 {
   background-color: #449BB6;
   width: 6px;
   height: 40px;
   display: inline-block;
   position: absolute;
-  top: 88px;
-  left: 15px;
+  top: 208px;
+  left: 115px;
   z-index: 1000;
   border-radius: 1px;
   border-top: solid 2px #D6D5D5;}
 
   .smallblock2 {
-    left: 151px;
+    left: 251px;
   }
 
   .smallblock3 {
-    left: 165px;
+    left: 265px;
   }
 
   .smallblock4 {
-    left: 300px;
+    left: 400px;
   }
 
   .smallblock5 {
-    left: 315px;
+    left: 415px;
   }
 
   .smallblock6 {
-    left: 452px;
+    left: 552px;
   }
 
   .smallblock7 {
-    left: 465px;
+    left: 565px;
   }
 
   .smallblock8 {
-    left: 601px;
+    left: 701px;
   }
   .blockcontent, .blockcontent1, .blockcontent2, .blockcontent3, .blockcontent4, .blockcontent5 {
     display: inline-block;
@@ -479,29 +489,29 @@
     position: absolute;
     z-index: 1000;
     border-radius: 2px;
-    top: 90px;
+    top: 210px;
   }
   .blockcontent1 {
-    left: 1px;
+    left: 101px;
   }
 
   .blockcontent2 {
-    left: 151px;
+    left: 251px;
   }
 
   .blockcontent3 {
-    left: 301px;
+    left: 401px;
   }
 
   .blockcontent4 {
-    left: 452px;
+    left: 552px;
   }
 
   .blockcontent5 {
-    left: 601px;
+    left: 701px;
     width: 30px;
     height: 40px;
-    top: 89px;
+    top: 210px;
   }
 
   .border-bottom {
@@ -520,10 +530,23 @@
     padding-left: 25px;
     padding-right: 25px;
     outline: 0;
+    margin-left: 15px;
+  }
+
+  .title { 
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    font-size: 32px;
+    margin-left: 10%;
+    color: white;
+  }
+
+  #fifteen { 
+    margin-left: 120px;
   }
 
   .timer-button:hover {
     background-color: #73B4C8;
     cursor: pointer;
-
   }
+
