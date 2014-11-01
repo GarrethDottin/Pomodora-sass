@@ -163,6 +163,7 @@ a.spmenu-button {
 }
 
 .spmenu-right {
+  z-index: 150000;
   right: -$spmenu-vertical-width;
   a.spmenu-button {
     right: $spmenu-vertical-width;

@@ -1,7 +1,8 @@
-angular.module("App").directive("flipClock", function(	) {
+angular.module("App").directive("flipClock", function() {
 	flipClockApi = {};
 	console.log("This is working flipClockApi")
 
+	var timeExpired;
 	flipClockApi.createClock = function () {
 		var Clock = $('.your-clock').FlipClock({
 			autoStart: false,
@@ -11,13 +12,15 @@ angular.module("App").directive("flipClock", function(	) {
 		return Clock;
 	};
 
-	flipClockApi.startClock = function() {
+	flipClockApi.startClock = function(scope) {
 		flipClockApi.clock.start();
+		var time = flipClockApi.getTime();
+		internalClock(time, scope)
 	};
 
 	flipClockApi.initClock = function (scope) {
 		flipClockApi.clock = flipClockApi.createClock();
-		flipClockApi.setTimer(1500);
+		flipClockApi.setTimer(1500, scope);
 		changeClock(scope);
 	};
 
@@ -25,17 +28,25 @@ angular.module("App").directive("flipClock", function(	) {
 		return flipClockApi.clock.getTime().time;
 	};
 
-	flipClockApi.setTimer = function (time) {
+	flipClockApi.setTimer = function (time, scope) {
+		console.log(time + 1)
+		flipClockApi.currentTime = time + 1;
 		flipClockApi.clock.setTime(time);
 	};
 
-	flipClockApi.adjustTime = function (input ) { 
-		var currentTime = flipClockApi.getTime(); 
+
+
+	flipClockApi.adjustTime = function (input ) {
+		var time = flipClockApi.getTime(); 
 		if (input == 'add') { 
-			flipClockApi.clock.setTime(currentTime + 61); 
+			console.log("if statement")
+			flipClockApi.currentTime = time + 60;
+			flipClockApi.clock.setTime(time + 61); 
 		}
 		else { 
-			flipClockApi.clock.setTime(currentTime - 59); 
+			flipClockApi.currentTime = time + 60;
+			flipClockApi.currentTime = time + 120;
+			flipClockApi.clock.setTime(time - 59); 
 		}
 	}; 
 
@@ -44,10 +55,21 @@ angular.module("App").directive("flipClock", function(	) {
 			if (scope.timerValue != undefined) {
 				var inputTime = parseInt(scope.timerValue) * 60;
 				flipClockApi.clock.setTime(inputTime);
-				flipClockApi.startClock();
+				flipClockApi.currentTime = inputTime;
+				flipClockApi.startClock(scope);
 			};
 		});
 	};
+
+	var internalClock  = function (time,scope) { 
+		console.log("internalClock is hit")
+		if (time != 0) { 
+			setTimeout(function(){
+				scope.overlay1 = true; 
+				scope.$apply(); 
+			}, time * 10000)
+		}
+	}; 
 
 
 	return {
@@ -57,6 +79,7 @@ angular.module("App").directive("flipClock", function(	) {
 			function adjustTime (input) { 
 				flipClockApi.adjustTime(input);
 			}
+
 			$scope.buttonClicked = function(num) {
 				$scope.timerValue = 0;
 				$scope.$apply();
@@ -70,15 +93,18 @@ angular.module("App").directive("flipClock", function(	) {
 			$scope.changeClockTime = function (direction) {
 				var currentTime = flipClockApi.getTime();
 				if (direction == "plus") {
-					flipClockApi.clock.setTimer(currentTime + 60);
+					var modifiedTime = currentTime +60; 
+					console.log("this is hit")
+					flipClockApi.clock.setTimer(modifiedTime, $scope);
 				}
 				else {
-					flipClockApi.clock.setTimer(currentTime - 60);
+					flipClockApi.clock.setTimer(modifiedTime, $scope);
 				};
 			}
 
-			$scope.stopClicked =function() {
-				flipClockApi.setTimer(1500);
+			$scope.stopClicked =function( $scope) {
+				1
+				flipClockApi.setTimer(flipClockApi.currentTime, $scope);
 				flipClockApi.clock.stop();
 			}
 
