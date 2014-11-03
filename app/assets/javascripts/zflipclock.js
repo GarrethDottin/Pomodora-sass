@@ -1,5 +1,6 @@
 angular.module("App").directive("flipClock", function() {
 	flipClockApi = {};
+	flipClockApi.currentTime = 1500;
 
 	var timeExpired;
 	flipClockApi.createClock = function () {
@@ -12,8 +13,9 @@ angular.module("App").directive("flipClock", function() {
 	};
 
 	flipClockApi.startClock = function(scope) {
-		flipClockApi.clock.start();
 		var time = flipClockApi.getTime();
+		flipClockApi.currentTime = time;
+		flipClockApi.clock.start();
 		internalClock(time, scope)
 	};
 
@@ -24,7 +26,8 @@ angular.module("App").directive("flipClock", function() {
 	};
 
 	flipClockApi.getTime = function (clock) {
-		return flipClockApi.clock.getTime().time;
+		flipClockApi.currentTime = flipClockApi.clock.getTime().time;
+		return flipClockApi.currentTime;
 	};
 
 	flipClockApi.setTimer = function (time, scope) {
@@ -97,8 +100,10 @@ angular.module("App").directive("flipClock", function() {
 				};
 			}
 
-			$scope.stopClicked =function( $scope) {
-				flipClockApi.setTimer(flipClockApi.currentTime, $scope);
+			$scope.stopClicked =function($scope) {
+				console.log(flipClockApi.currentTime)
+				var time = flipClockApi.currentTime;
+				flipClockApi.clock.setTime(flipClockApi.currentTime, $scope);
 				flipClockApi.clock.stop();
 			}
 

@@ -5,9 +5,13 @@ $bottom: bottom;
 $top: top;
 $spacing: 30px;
 
-div , main { 
+div,main,input{ 
   outline: none;
+
 }
+input:focus {outline:none;}
+input {border:0; outline:none;}
+
 header{ 
   background-color: #1f1f1f; 
   position: fixed; 
