@@ -7,9 +7,9 @@
 
       <div class="timer-container"> 
         <h2 class="title"> {{statement}} </h2>
-          <button id="fifteen" class="timer-button" ng-click="buttonClicked(15)">15 minutes </button>
-          <button class= "timer-button" ng-click="buttonClicked(25)">25 minutes </button>
-          <button class="timer-button" ng-click="buttonClicked(45)">45 minutes </button>
+          <button id="fifteen" class="timer-button" ng-click="buttonClicked(15); changeStatement(15)">15 minutes </button>
+          <button class= "timer-button" ng-click="buttonClicked(25); changeStatement(25)">25 minutes </button>
+          <button class="timer-button" ng-click="buttonClicked(45); changeStatement(45)">45 minutes </button>
           <div flip-Clock> </div>
    <!--        <div class="flipclock-small-text"> <span>Minutes </span> <span class="flipclock-small-text-seconds">Seconds</span> </div>
           <div class="smallblock">&nbsp</div>
@@ -27,8 +27,8 @@
           <div class="blockcontent5">&nbsp</div> -->
           <button class="flat-ui-button" ng-click="startClicked()"> Start</button>
           <button id="stop-button" class="timer-button " ng-click="stopClicked()">Stop </button>
-          <div ng-click="adjustTime('add')" class="timerButtonContainer addButton"> <div class="upvote"> </div></div>
-          <div ng-click="adjustTime('down')"class="timerButtonContainer"> <div class="downvote"> </div></div>
+          <div ng-click="adjustTime('add'); changeStatement('add');" class="timerButtonContainer addButton"> <div class="upvote"> </div></div>
+          <div ng-click="adjustTime('down'); changeStatement('down');"class="timerButtonContainer"> <div class="downvote"> </div></div>
       </div>  
 
 
