@@ -58,7 +58,7 @@
         </ng-slide-push-menu>
       </div>
          <div class="overlay" ng-show="overlay1"> <div class="overlay-exit" ng-click="exitOverlay(1)">X</div><span class="overlay-text"> Did you complete your task successfully? </span>
-            <button ng-click ="secondOverlay()"class="flat-ui-button overlay-button-yes"> Yes, I Did!</button> <button class="timer-button overlay-button-no" ng-click="closeOverlay()">No, Not this Time</button>
+            <button ng-click ="secondOverlay(); add();"class="flat-ui-button overlay-button-yes"> Yes, I Did!</button> <button class="timer-button overlay-button-no" ng-click="closeOverlay()">No, Not this Time</button>
         </div>
         <div class="overlay2" ng-show="overlay2"> 
         <div class="overlay-exit" ng-click="exitOverlay(2)">X</div>

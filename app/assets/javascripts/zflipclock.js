@@ -16,13 +16,12 @@ angular.module("App").directive("flipClock", function() {
 		var time = flipClockApi.getTime();
 		flipClockApi.currentTime = time;
 		flipClockApi.clock.start();
-		console.log(scope)
 		internalClock(time, scope)
 	};
 
 	flipClockApi.initClock = function (scope) {
 		flipClockApi.clock = flipClockApi.createClock();
-		flipClockApi.setTimer(60, scope);
+		flipClockApi.setTimer(1500, scope);
 		changeClock(scope);
 	};
 
@@ -57,17 +56,17 @@ angular.module("App").directive("flipClock", function() {
 			if (scope.timerValue != undefined) {
 				var inputTime = parseInt(scope.timerValue) * 60;
 				flipClockApi.setTimer(inputTime,scope);
-				console.log()
 				flipClockApi.startClock(scope);
 			};
 		});
 	};
 
 	var internalClock  = function (time,scope) { 
-			setTimeout(function(){
-				scope.overlay1 = true; 
-				scope.$apply(); 
-			}, time * 10000)
+		var time = time + 1;
+		setTimeout(function(){
+			scope.overlay1 = true; 
+			scope.$apply(); 
+		}, time * 1000)
 		
 	}; 
 
