@@ -1,6 +1,7 @@
 angular.module("App").directive("flipClock", function() {
 	flipClockApi = {};
 	flipClockApi.currentTime = 1500;
+	var internalClockTime; 
 
 	var timeExpired;
 	flipClockApi.createClock = function () {
@@ -14,7 +15,8 @@ angular.module("App").directive("flipClock", function() {
 
 	flipClockApi.startClock = function(scope) {
 		var time = flipClockApi.getTime();
-		flipClockApi.currentTime = time;
+
+		flipClockApi.currentTime = roundTime(time);
 		flipClockApi.clock.start();
 		internalClock(time, scope)
 	};
@@ -31,7 +33,7 @@ angular.module("App").directive("flipClock", function() {
 	};
 
 	flipClockApi.setTimer = function (time, scope) {
-		flipClockApi.currentTime = time;
+		flipClockApi.currentTime = roundTime(time);
 		scope.time = flipClockApi.currentTime/60; 
 		flipClockApi.clock.setTime(time);
 	};
@@ -41,7 +43,7 @@ angular.module("App").directive("flipClock", function() {
 	flipClockApi.adjustTime = function (input) {
 		var time = flipClockApi.getTime(); 
 		if (input == 'add') { 
-			flipClockApi.currentTime = time + 60;
+			flipClockApi.currentTime = roundTime(time + 60);
 			flipClockApi.clock.setTime(time + 61); 
 		}
 		else { 
@@ -62,16 +64,30 @@ angular.module("App").directive("flipClock", function() {
 	};
 
 	var internalClock  = function (time,scope) { 
-		var time = time + 1;
-		if (time != 1) {
-			setTimeout(function(){
+		var timeInput = (time + 1) * 1000;
+			if (timeInput != 1000) {
+				internalClockTime = setTimeout(function(){
 				scope.overlay1 = true; 
 				scope.$apply(); 
-			}, time * 1000)
-		}
-		
+			}, timeInput)
+		}	
 	}; 
 
+	var roundTime = function (currentTime) { 
+		var modifiedTime = currentTime.toString();
+		var arrayofTime = modifiedTime.split('');
+		var roundedNumber; 
+		if (arrayofTime[arrayofTime.length -1] == 9 ) { 
+			var roundedNumber = currentTime + 1 
+		}
+		else if (arrayofTime[arrayofTime.length -1] == 8) {
+			roundedNumber = currentTime + 2;
+		 }
+		else { 
+			roundedNumber = currentTime;
+		}
+		return roundedNumber
+	}; 
 
 	return {
 		controller: ['$scope', function($scope) {
@@ -94,7 +110,7 @@ angular.module("App").directive("flipClock", function() {
 			$scope.changeClockTime = function (direction) {
 				var currentTime = flipClockApi.getTime();
 				if (direction == "plus") {
-					var modifiedTime = currentTime +60; 
+					var modifiedTime = roundTime(currentTime +60); 
 					flipClockApi.clock.setTimer(modifiedTime, $scope);
 				}
 				else {
@@ -103,9 +119,11 @@ angular.module("App").directive("flipClock", function() {
 			}
 
 			$scope.stopClicked =function($scope) {
-				var time = flipClockApi.currentTime;
+				var time = roundTime(flipClockApi.currentTime);
+
 				flipClockApi.clock.setTime(flipClockApi.currentTime, $scope);
 				flipClockApi.clock.stop();
+				clearInterval(internalClockTime);
 			}
 
 		}],

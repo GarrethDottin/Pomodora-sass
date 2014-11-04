@@ -16,29 +16,27 @@ angular.module("App", ['ngCookies'])
 		$scope.overlay1 = false; 
 		$scope.overlay2 = false; 
 		$scope.time = 25;
-		$scope.statement = "What can you do in " + $scope.time +  " minutes"; 
+		$scope.statement = "What can you do in " + $scope.time +  " minutes?"; 
 		$scope.currentUser = 'guest';
 
 		$scope.changeStatement = function (num) {
 			if(num =='add') { 
 				$scope.time +=1;
-				$scope.statement ="What can you do in " + $scope.time +  " minutes";	
+				$scope.statement ="What can you do in " + $scope.time +  " minutes?";	
 			}
 			else if (num == 'down') { 
 				$scope.time -=  1; 
-				$scope.statement ="What can you do in " + $scope.time +  " minutes";	
+				$scope.statement ="What can you do in " + $scope.time +  " minutes?";	
 			}
 			else { 
 				$scope.time = parseInt(num);
-				$scope.statement ="What can you do in " + $scope.time +  " minutes";
+				$scope.statement ="What can you do in " + $scope.time +  " minutes?";
 			}
 		}
 
 		$scope.buttonClicked = function(num) {
 			$scope.timerValue = num;
 		};
-
-
 
 		function initialOverlay () { 
 			$scope.overlay1 = true;
