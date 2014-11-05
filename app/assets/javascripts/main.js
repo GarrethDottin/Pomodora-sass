@@ -21,11 +21,9 @@ angular.module("App", ['ngCookies'])
 
 		$scope.changeStatement = function (num) {
 			if(num =='add') { 
-				$scope.time +=1;
 				$scope.statement ="What can you do in " + $scope.time +  " minutes?";	
 			}
 			else if (num == 'down') { 
-				$scope.time -=  1; 
 				$scope.statement ="What can you do in " + $scope.time +  " minutes?";	
 			}
 			else { 

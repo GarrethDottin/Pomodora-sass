@@ -15,7 +15,6 @@ angular.module("App").directive("flipClock", function() {
 
 	flipClockApi.startClock = function(scope) {
 		var time = flipClockApi.getTime();
-
 		flipClockApi.currentTime = roundTime(time);
 		flipClockApi.clock.start();
 		internalClock(time, scope)
@@ -40,16 +39,16 @@ angular.module("App").directive("flipClock", function() {
 
 
 
-	flipClockApi.adjustTime = function (input) {
+	flipClockApi.adjustTime = function (input, scope) {
 		var time = flipClockApi.getTime(); 
 		if (input == 'add') { 
 			flipClockApi.currentTime = roundTime(time + 60);
-			flipClockApi.clock.setTime(time + 61); 
+			console.log(flipClockApi.currentTime);
+			flipClockApi.setTimer(flipClockApi.currentTime, scope); 
 		}
 		else { 
-			flipClockApi.currentTime = time + 60;
-			flipClockApi.currentTime = time + 120;
-			flipClockApi.clock.setTime(time - 59); 
+			flipClockApi.currentTime = roundTime(time - 60);
+			flipClockApi.setTimer(flipClockApi.currentTime, scope); 
 		}
 	}; 
 
@@ -94,7 +93,7 @@ angular.module("App").directive("flipClock", function() {
 			$scope.adjustTime = adjustTime; 
 
 			function adjustTime (input) { 
-				flipClockApi.adjustTime(input);
+				flipClockApi.adjustTime(input, $scope);
 			}
 
 			$scope.buttonClicked = function(num) {
@@ -107,16 +106,16 @@ angular.module("App").directive("flipClock", function() {
 				flipClockApi.startClock($scope);
 			}
 
-			$scope.changeClockTime = function (direction) {
-				var currentTime = flipClockApi.getTime();
-				if (direction == "plus") {
-					var modifiedTime = roundTime(currentTime +60); 
-					flipClockApi.clock.setTimer(modifiedTime, $scope);
-				}
-				else {
-					flipClockApi.clock.setTimer(modifiedTime, $scope);
-				};
-			}
+			// $scope.changeClockTime = function (direction) {
+			// 	var currentTime = flipClockApi.getTime();
+			// 	if (direction == "plus") {
+			// 		var modifiedTime = roundTime(currentTime +60); 
+			// 		flipClockApi.clock.setTimer(modifiedTime, $scope);
+			// 	}
+			// 	else {
+			// 		flipClockApi.clock.setTimer(modifiedTime, $scope);
+			// 	};
+			// }
 
 			$scope.stopClicked =function($scope) {
 				var time = roundTime(flipClockApi.currentTime);
