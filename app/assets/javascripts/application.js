@@ -381,6 +381,6 @@ $(function (){
     counter: $('.timer-container h1'),
     stop: $('#stop-button')
   };
-  appcontroller.init(selectors)
+  // appcontroller.init(selectors)
 });
 

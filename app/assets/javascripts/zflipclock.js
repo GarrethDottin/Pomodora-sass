@@ -2,6 +2,7 @@ angular.module("App").directive("flipClock", function() {
 	flipClockApi = {};
 	flipClockApi.currentTime = 1500;
 	var internalClockTime; 
+	var timerInProgress = false;
 
 	var timeExpired;
 	flipClockApi.createClock = function () {
@@ -18,6 +19,7 @@ angular.module("App").directive("flipClock", function() {
 		flipClockApi.currentTime = roundTime(time);
 		flipClockApi.clock.start();
 		internalClock(time, scope)
+		timerInProgress = true;
 	};
 
 	flipClockApi.initClock = function (scope) {
@@ -66,8 +68,10 @@ angular.module("App").directive("flipClock", function() {
 		var timeInput = (time + 1) * 1000;
 			if (timeInput != 1000) {
 				internalClockTime = setTimeout(function(){
-				scope.overlay1 = true; 
-				scope.$apply(); 
+				// scope.overlay1 = true; 
+				// scope.$apply(); 
+				scope.initialOverlay(); 
+				timerInProgress = false;
 			}, timeInput)
 		}	
 	}; 
