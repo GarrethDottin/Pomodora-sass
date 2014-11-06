@@ -18,7 +18,7 @@ angular.module("App").directive("progressBar", function() {
 	};
 
 	progressBar.watch = function (scope,element,attr){
-		var progressMeter = element.children().children().children();
+		progressMeter = element.children().children().children();
 
 		scope.$watch("progress", function () {
 			if(scope.progress == 0) {
@@ -31,12 +31,14 @@ angular.module("App").directive("progressBar", function() {
 	};
 
 	progressBar.add = function (progressMeter, progressBarwidth) {
-		if (progressBar.width < 1270)  { 
-			if (progressBar.width >= 750) {
+		if (progressBar.width >= 945) { 
+			reset(progressMeter)
+		}
+		if (progressBar.width <= 680)  { 
+			if (progressBar.width >= 680) {
 				progressBar.width += 265;
-				console.log(progressBar.width)
 			}
-			if (progressBar.width < 750 ){ 
+			if (progressBar.width < 680 ){ 
 				progressBar.width += 220;
 			};
 			var width = progressBar.width.toString();
@@ -54,6 +56,15 @@ angular.module("App").directive("progressBar", function() {
 			$scope.add = add;
 			$scope.reset = reset;
 			$scope.progress = 0;
+
+			$scope.checkProgress = checkProgress;
+
+			function checkProgress () { 
+				if (progressBar.width >= 945) { 
+					progressBar.reset(progressMeter);
+				}
+			};
+
 			function add () {
 				$scope.progress += 250;
 			};

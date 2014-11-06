@@ -229,7 +229,7 @@ button {
 .progress-bar-hashmark { 
   width: 0px;
   background-position: 100% 0%;
-  margin-left: 20%;
+  margin-left: 24%;
   font-size: 18px;
   color: #E5E9EE;
   padding-bottom: 8px;
@@ -244,16 +244,17 @@ button {
 
 
 .progress-bar-hashmark:nth-child(2) { 
-  margin-left: 43%;
+  margin-left: 47.4%;
 }
 
 .progress-bar-hashmark:nth-child(3) { 
-  margin-left: 70%;
+  margin-left: 70.4%;
 }
 
 .progress-bar-image { 
   position: relative;
 }
+
 .progress-bar-image-caption { 
   position: relative; 
   top: 15px; 
@@ -262,11 +263,11 @@ button {
 }
 
 .image-caption-teacup { 
-  left: 335px;
+  left: 375px;
 }
 
 .image-caption-meditate { 
-  left: 465px;
+  left: 505px;
 }
 
 .image-caption-snack { 
@@ -278,11 +279,11 @@ button {
 }
 
 #teacup-image { 
-  left: 381px; 
+  left: 420px; 
 }
 
 #meditate-image { 
-  left: 510px; 
+  left: 550px; 
 }
 
 #snack-image { 
