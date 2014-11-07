@@ -222,8 +222,8 @@ button {
   width: 102%;
   margin-top: 100px;
   margin-bottom: -8px;
-  position: fixed;
-  bottom: 0;
+  position: absolute;
+  top: 450px;
 }
 
 .progress-bar-hashmark { 
@@ -291,8 +291,6 @@ button {
 #bench-image { 
   left: 870px;
 }
-
-
 
 .daily-counter { 
   width: 70px;
@@ -387,4 +385,19 @@ button {
 
 .second-overlay-text { 
   top: 300px;
+}
+
+// How TO Section 
+.how-to-container { 
+  width: 115%; 
+  background-color: blue; 
+  display:inline-block; 
+  position: absolute; 
+  top: 670px;
+  margin-left: -7px;
+}
+
+.panel {
+  height: 400px;
+  width: 100%; 
 }
