@@ -8,6 +8,7 @@ $spacing: 30px;
 div,main,input{ 
   outline: none;
 }
+
 button:focus {outline:0;}
 input:focus {outline:none;}
 input {border:0; outline:none;}
@@ -223,7 +224,7 @@ button {
   margin-top: 100px;
   margin-bottom: -8px;
   position: absolute;
-  top: 450px;
+  top: 500px;
 }
 
 .progress-bar-hashmark { 
