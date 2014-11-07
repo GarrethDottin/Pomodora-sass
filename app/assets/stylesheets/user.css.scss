@@ -7,8 +7,8 @@ $spacing: 30px;
 
 div,main,input{ 
   outline: none;
-
 }
+button:focus {outline:0;}
 input:focus {outline:none;}
 input {border:0; outline:none;}
 
@@ -240,8 +240,6 @@ button {
   z-index: 0;
   font-weight: 100;
 }
-
-
 
 .progress-bar-hashmark:nth-child(2) { 
   margin-left: 47.4%;
