@@ -18,9 +18,18 @@ angular.module("App").directive("progressBar", function() {
 	};
 
 	progressBar.watch = function (scope,element,attr){
-		progressMeter = element.children().children().children();
+		var progressMeter = element.children().children().children();
 
+		scope.$watch("counter", function (){ 
+			if (scope.counter % 4 == 0 && scope.counter != 0) { 
+				console.log("this is hit")
+				setTimeout(function(){
+					progressBar.reset(progressMeter);
+				},5000);
+			};
+		})
 		scope.$watch("progress", function () {
+			console.log(scope.counter)
 			if(scope.progress == 0) {
 				progressBar.reset(progressMeter);
 			};
@@ -31,9 +40,6 @@ angular.module("App").directive("progressBar", function() {
 	};
 
 	progressBar.add = function (progressMeter, progressBarwidth) {
-		if (progressBar.width >= 945) { 
-			reset(progressMeter)
-		}
 		if (progressBar.width <= 680)  { 
 			if (progressBar.width >= 680) {
 				progressBar.width += 265;
@@ -46,7 +52,7 @@ angular.module("App").directive("progressBar", function() {
 		}
 	};
 
-	progressBar.reset = function (progressMeter, progressContainer) {
+	progressBar.reset = function (progressMeter) {
 		progressBarChange(progressMeter,progressBar.position, 20);
 		progressBar.width = 20;
 	};
@@ -54,23 +60,10 @@ angular.module("App").directive("progressBar", function() {
 	return {
 		controller: ['$scope', function($scope) {
 			$scope.add = add;
-			$scope.reset = reset;
 			$scope.progress = 0;
-
-			$scope.checkProgress = checkProgress;
-
-			function checkProgress () { 
-				if (progressBar.width >= 945) { 
-					progressBar.reset(progressMeter);
-				}
-			};
 
 			function add () {
 				$scope.progress += 250;
-			};
-
-			function reset  () {
-				$scope.progress = 0;
 			};
 
 		}],
