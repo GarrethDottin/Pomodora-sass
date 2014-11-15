@@ -29,7 +29,6 @@ angular.module("App").directive("progressBar", function() {
 			};
 		})
 		scope.$watch("progress", function () {
-			console.log(scope.counter)
 			if(scope.progress == 0) {
 				progressBar.reset(progressMeter);
 			};

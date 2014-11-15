@@ -362,25 +362,25 @@ var timerSetting = (function (selectors) {
 
   }) ();
 
-$(function (){
-  selectors = {
-    no: $('#no'),
-    yes: $('#yes'),
-    starts: $('#start'),
-    countdown: $('.timer-container h1'),
-    longPomodoro: $('#twenty-five'),
-    shortPomodoro: $('#five'),
-    medPomodoro: $('#ten'),
-    counterText: $('.counter-container'),
-    primaryContent: $('.primary-content'),
-    signupContent: $('.signup-content'),
-    loginPartial: $('#login-partial'),
-    loginContent:  $('#login-content'),
-    submitButton:  $('#facebook'),
-    about: $('.menu-container h3'),
-    counter: $('.timer-container h1'),
-    stop: $('#stop-button')
-  };
-  // appcontroller.init(selectors)
-});
+// $(function (){
+//   selectors = {
+//     no: $('#no'),
+//     yes: $('#yes'),
+//     starts: $('#start'),
+//     countdown: $('.timer-container h1'),
+//     longPomodoro: $('#twenty-five'),
+//     shortPomodoro: $('#five'),
+//     medPomodoro: $('#ten'),
+//     counterText: $('.counter-container'),
+//     primaryContent: $('.primary-content'),
+//     signupContent: $('.signup-content'),
+//     loginPartial: $('#login-partial'),
+//     loginContent:  $('#login-content'),
+//     submitButton:  $('#facebook'),
+//     about: $('.menu-container h3'),
+//     counter: $('.timer-container h1'),
+//     stop: $('#stop-button')
+//   };
+//   // appcontroller.init(selectors)
+// });
 
