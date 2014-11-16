@@ -42,13 +42,12 @@ angular.module("App").directive("flipClock", function() {
 
 	flipClockApi.adjustTime = function (input, scope) {
 		if (timerInProgress == false) {
-			var time = flipClockApi.getTime(); 
 			if (input == 'add') { 
-				flipClockApi.currentTime = roundTime(time + 60);
+				flipClockApi.currentTime = roundTime(flipClockApi.currentTime + 60);
 				flipClockApi.setTimer(flipClockApi.currentTime, scope); 
 			}
 			else { 
-				flipClockApi.currentTime = roundTime(time - 60);
+				flipClockApi.currentTime = roundTime(flipClockApi.currentTime - 60);
 				flipClockApi.setTimer(flipClockApi.currentTime, scope); 
 			}
 		};
