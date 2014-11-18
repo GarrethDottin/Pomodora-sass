@@ -329,7 +329,7 @@ button {
   position: absolute;
   top: -25px;
   left: -8px;
-  z-index: 10005;
+  z-index: 999999;
   opacity: 0.95;
 }
 
@@ -432,8 +432,9 @@ button {
 }
 
 .carrot1 { 
-  left: 290px;
-  top: 107px;
+  position: absolute;
+  left: 260px;
+  top: 358px;
 }
 
 .carrot2, .carrot5, .carrot6 { 
@@ -468,6 +469,24 @@ footer {
   height: 50px;
 }
 
+// How To Section 
+.title-position { 
+  position: relative; 
+  top: 100px;
+  left: 100px;
+}
+.body-position { 
+  width: 550px;
+  position: relative;
+  top: 100px;
+  left: 100px;
+}
+
+.img-placement { 
+  position: relative; 
+  left: 1000px;
+}
+
 //colors 
 .light-green { 
     background-color: #70AA95;
@@ -486,4 +505,8 @@ footer {
 
 .red { 
   background-color: #CE4A4C;
+}
+
+.white-text { 
+  color: white;
 }

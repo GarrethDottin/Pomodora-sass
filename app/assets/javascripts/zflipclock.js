@@ -3,7 +3,7 @@ angular.module("App").directive("flipClock", function() {
 	flipClockApi.currentTime = 1500;
 	var internalClockTime; 
 	var timerInProgress = false;
-	// var audio = new Audio('/assets/audios/warning1.mp4')
+	var audio = new Audio('/assets/warning1.mp4')
 
 	var timeExpired;
 	flipClockApi.createClock = function () {
@@ -17,10 +17,8 @@ angular.module("App").directive("flipClock", function() {
 
 	flipClockApi.startClock = function(scope) {
 			flipClockApi.clock.start();
-			// var time = flipClockApi.getTime();
-			// flipClockApi.currentTime = roundTime(time);
-			// internalClock(flipClockApi.currentTime, scope);
-			// warningSound(flipClockApi.currentTime);
+			internalClock(flipClockApi.currentTime, scope);
+			warningSound(flipClockApi.currentTime);
 			timerInProgress = true;
 	};
 
@@ -75,8 +73,7 @@ angular.module("App").directive("flipClock", function() {
 	}; 
 
 	var warningSound = function (time) { 
-		var timeInput = ((time -60) * 1000);
-
+		var timeInput = ((time - 60) * 1000);
 		if (timeInput != -60000) {
 			oneMinuteWarning = setTimeout(function() { 
 				audio.play();
