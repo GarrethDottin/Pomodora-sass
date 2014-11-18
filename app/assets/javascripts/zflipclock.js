@@ -62,7 +62,7 @@ angular.module("App").directive("flipClock", function() {
 	};
 
 	var internalClock  = function (time,scope) { 
-		var timeInput = (time) * 1000;
+		var timeInput = ((time) * 1000) +100;
 			if (timeInput != 0) {
 				internalClockTime = setTimeout(function(){
 				scope.overlay1 = true; 
