@@ -1,34 +1,34 @@
 <header> 
-<img class="logo" src="assets/groove.png" /> <div class="header-buttons"> <span class="header-button">TIMER </span> <br>  <span id='about' class="header-button"> HOW TO</span> </div>
+<img class="logo" src="assets/groove.svg" /> <div class="header-buttons"> <span class="header-button">TIMER </span> <br>  <!-- <span id='about' class="header-button"> HOW TO</span>  --></div>
 </header>
 <div class="row" >
   <div class="small-1 columns">
-    <main ng-app="App" ng-controller="ApplicationController">
+    <main>
 
       <div class="timer-container"> 
         <h2 class="title"> {{statement}} </h2>
-          <button id="fifteen" class="timer-button" ng-click="add(15)">15 minutes </button>
-          <button class= "timer-button" ng-click="buttonClicked(25)">25 minutes </button>
-          <button class="timer-button" ng-click="buttonClicked(45)">45 minutes </button>
+          <button id="fifteen" class="timer-button" ng-click="buttonClicked(15); changeStatement(15)">15 minutes </button>
+          <button class= "timer-button" ng-click="buttonClicked(25); changeStatement(25)">25 minutes </button>
+          <button class="timer-button" ng-click="buttonClicked(45); changeStatement(45)">45 minutes </button>
           <div flip-Clock> </div>
-          <div class="flipclock-small-text"> <span>Minutes </span> <span class="flipclock-small-text-seconds">Seconds</span> </div>
+   <!--        <div class="flipclock-small-text"> <span>Minutes </span> <span class="flipclock-small-text-seconds">Seconds</span> </div>
           <div class="smallblock">&nbsp</div>
           <div class="smallblock2"> &nbsp</div>
           <div class="smallblock3"> &nbsp</div>
           <div class="smallblock4"> &nbsp</div>
           <div class="smallblock5"> &nbsp</div>
-          <div class="smallblock6"> &nbsp</div>
+          <div class="smallblock6"> &nbsp</div>s
           <div class="smallblock7"> &nbsp</div>
           <div class="smallblock8"> &nbsp</div>
           <div class="blockcontent1">&nbsp</div>
           <div class="blockcontent2">&nbsp</div>
           <div class="blockcontent3">&nbsp</div>
           <div class="blockcontent4">&nbsp</div>
-          <div class="blockcontent5">&nbsp</div>
+          <div class="blockcontent5">&nbsp</div> -->
           <button class="flat-ui-button" ng-click="startClicked()"> Start</button>
           <button id="stop-button" class="timer-button " ng-click="stopClicked()">Stop </button>
-          <div ng-click="adjustTime('add')" class="timerButtonContainer addButton"> <div ng-click=""class="upvote"> </div></div>
-          <div ng-click="adjustTime('down')"class="timerButtonContainer"> <div class="downvote"> </div></div>
+          <div ng-click="adjustTime('add'); changeStatement('add');" class="timerButtonContainer addButton"> <div class="upvote"> </div></div>
+          <div ng-click="adjustTime('down'); changeStatement('down');"class="timerButtonContainer"> <div class="downvote"> </div></div>
       </div>  
 
 
@@ -57,13 +57,72 @@
         </div>
         </ng-slide-push-menu>
       </div>
-      <div class="progress-bar-container">
-        <div progress-bar></div>
+         <div class="overlay" ng-show="overlay1"> <div class="overlay-exit" ng-click="exitOverlay(1)">X</div><span class="overlay-text"> Did you complete your task successfully? </span>
+            <button ng-click ="secondOverlay(); add();"class="flat-ui-button overlay-button-yes"> Yes, I Did!</button> <button class="timer-button overlay-button-no" ng-click="closeOverlay(); checkProgress();":>No, Not this Time</button>
+        </div>
+        <div class="overlay2" ng-show="overlay2"> 
+        <div class="overlay-exit" ng-click="exitOverlay(2)">X</div>
+            <img src="assets/smiley.png" class="overlay-image-smiley"/>
+            <span class="overlay-text second-overlay-text"> Congrats, you're one step closer to being done!</span>
+        </div>
+
+      <div> 
       </div>
      </main>
   </div>
+      <div class="progress-bar-container">
+        <div class="daily-counter"> <div class="daily-count">{{counter}}</div><div class="daily-name">Today </div></div>
+        <div progress-bar></div>
+        <div class="image-container">
+        <img src="assets/teacup.png" id ="teacup-image" class="progress-bar-image"/>
+        <span class="progress-bar-image-caption image-caption-teacup"> short break</span>
+        <img src="assets/meditate.png" id ="meditate-image" class="progress-bar-image"/>
+        <span class="progress-bar-image-caption image-caption-meditate"> short break</span>
+        <img src="assets/snack.png" id ="snack-image" class="progress-bar-image"/>
+        <span class="progress-bar-image-caption image-caption-snack"> short break</span>
+        <img src="assets/bench.png" id ="bench-image" class="progress-bar-image"/>
+        <span class="progress-bar-image-caption image-caption-bench"> long break</span>
 
+        </div>
+      </div>
+<!--         <div class="how-to-container">
+          <div class="panel">
+            <div class="panel-main">
+              <h1 class="panel-centered-title"> HOW IT WORKS </h1>
+                <div class="panel-text">
+                  Groove is based off a 30 year  technique to help people be more productive by managing tasks in small intervals. Harness the power of productivity. Find your Groove. 
+                </div>
+                <div class="carrot carrot1">
+                </div>
+            </div> 
+          </div>
+          <div class="panel light-green"> 
+            <h3 class="white-text title-position"> 1. CHOOSE A TASK TO ACCOMPLISH </h3>
+            <p class="body-position white-text"> Frankness applauded by supported ye household. Collected favourite now for for and rapturous repulsive consulted. An seems green be wrote again.</p>
+            <img src="assets/notes.png" class="img-placement"/>
+          </div>
+          <div class="panel blue">
+            <div class="carrot carrot2">
+            </div>
+          </div>
+          <div class="panel light-blue" id="panel3"> 
+              <div class="carrot carrot3"></div>
+          </div>
+          <div class="panel yellow" id="panel4"> 
+              <div class="carrot carrot4"></div>
+          </div>
+          <div class="panel red" id="panel5"> 
+              <div class="carrot carrot5"></div>
+          </div>
+          <div class="panel light-green" id="panel6"> 
+              <div class="carrot carrot6"></div>
+          </div>
+      </div> -->
+<!--       <footer class="footer">
+      </footer> -->
 </div>
+
+
 
 <!-- <div class="sign-in-partial">
   <div class="social-wrap a"><h2> You must sign in to continue </h2><button id="facebook"><%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %> </button>

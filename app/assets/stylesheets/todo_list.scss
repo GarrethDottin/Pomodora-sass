@@ -163,6 +163,7 @@ a.spmenu-button {
 }
 
 .spmenu-right {
+  z-index: 150000;
   right: -$spmenu-vertical-width;
   a.spmenu-button {
     right: $spmenu-vertical-width;
@@ -290,6 +291,7 @@ a.spmenu-button {
   position: relative;
   top: 10px;
   opacity: .1;
+  left: 10px;
 }
 
 .todo-item {
@@ -308,7 +310,7 @@ a.spmenu-button {
 
 .todo-item-margin {
   position: relative;
-  left: 5px;
+  left: 15px;
 }
 .todoclosed {
   right: -320px;
