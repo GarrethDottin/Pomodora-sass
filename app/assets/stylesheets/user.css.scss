@@ -461,6 +461,11 @@ button {
   border-top: 25px solid #CE4A4C;
 }
 
+#flipclock-image { 
+  position: relative; 
+  left: 105px;
+  top: 50px;
+}
 
 footer { 
   background-color: #1A1A1A;
@@ -477,11 +482,18 @@ footer {
   top: 100px;
   left: 100px;
 }
-.body-position { 
+.body-position-left { 
   width: 550px;
   position: relative;
   top: 100px;
   left: 100px;
+}
+
+.body-position-right { 
+  width: 550px;
+  position: relative;
+  left: 800px;
+  bottom: 100px;
 }
 
 .img-placement { 
