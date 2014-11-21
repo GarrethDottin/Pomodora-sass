@@ -1,0 +1,3 @@
+<!-- <div class="sign-in-partial">
+  <div class="social-wrap a"><h2> You must sign in to continue </h2><button id="facebook"><%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %> </button>
+  </div> -->

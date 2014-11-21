@@ -414,7 +414,7 @@ button {
   margin: 0 auto;
   width: 600px;
   position: relative;
-  right: 115px;
+  right: 130px;
 }
 
 .panel-text { 
@@ -435,22 +435,22 @@ button {
 
 .carrot1 { 
   position: absolute;
-  left: 260px;
-  top: 358px;
+  left: 680px;
+  top: 316px;
 }
 
 .carrot2, .carrot5, .carrot6 { 
-  left: 660px;
+  left: 680px;
   border-top: 25px solid  #70AA95;
 }
 
 .carrot3 { 
-  left: 660px;
+  left: 680px;
   border-top: 25px solid #122F4A;
 }
 
 .carrot4 { 
-  left: 660px;
+  left: 680px;
   border-top: 25px solid #4A88AE;
 }
 
@@ -487,6 +487,7 @@ footer {
 .img-placement { 
   position: relative; 
   left: 1000px;
+  bottom: 40px;
 }
 
 //colors 
