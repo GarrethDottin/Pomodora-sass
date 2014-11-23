@@ -13,7 +13,7 @@ angular.module("App", ['ngCookies'])
 
 		$scope.counter = 0; 
 		$scope.overlay1 = false; 
-		$scope.overlay2 = true; 
+		$scope.overlay2 = false; 
 		$scope.time = 25;
 		$scope.closeModal = false;
 		$scope.statement = "What can you do in " + $scope.time +  " minutes?"; 
