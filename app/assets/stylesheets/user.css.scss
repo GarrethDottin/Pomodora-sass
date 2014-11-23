@@ -488,6 +488,10 @@ button {
   border-top: 25px solid #CE4A4C;
 }
 
+#notes { 
+  bottom: 150px;
+}
+
 #flipclock-image { 
   position: relative; 
   left: 105px;
@@ -500,16 +504,6 @@ button {
   top: 50px;
 }
 
-footer { 
-  background-color: #1A1A1A;
-  position: absolute; 
-  top: 3100px;
-  left: -10px; 
-  width: 125%; 
-  height: 50px;
-}
-
-// How To Section 
 .title2 { 
   position: relative; 
   top: 100px;
@@ -537,9 +531,17 @@ footer {
   bottom: 40px;
 }
 
-
 #time-clock{ 
   bottom: 100px;
+}
+
+footer { 
+  background-color: #1A1A1A;
+  position: absolute; 
+  top: 3100px;
+  left: -10px; 
+  width: 125%; 
+  height: 50px;
 }
 
 
