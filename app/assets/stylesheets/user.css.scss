@@ -16,6 +16,13 @@ div,main,input{
     outline: none;
 }
 
+body {
+  background-color: #449BB6;
+  margin-bottom: 0px;
+}
+
+//Header
+
 .logo { 
   padding: 5px; 
   padding-left: 40px;
@@ -37,6 +44,7 @@ div,main,input{
   bottom: 20px;
 }
 
+
 #about { 
   left: 85px;
   width: 56px;
@@ -55,7 +63,6 @@ input:focus {outline:none;}
 input {border:0; outline:none;}
 
 
-//Header 
 header{ 
   background-color: #1f1f1f; 
   position: fixed; 
@@ -66,10 +73,8 @@ header{
   z-index: 1001;
 }
 
-body {
-  background-color: #449BB6;
-  margin-bottom: 0px;
-}
+//Main Section 
+
 
 button {
   outline: 0;
@@ -101,41 +106,10 @@ button {
   box-sizing: border-box;
 }
 
-// Header 
-.logo { 
-  padding: 5px; 
-  padding-left: 40px;
-  padding-bottom: 17px;
-}
-
-.header-buttons { 
-  margin-left: 70%;
-  display: inline-block;
-  color: white;
-}
-
-.header-button { 
-  margin-left: 5%; 
-  display: inline-block;
-  font-weight: 100;
-  font-size: 14px;
-  position: relative; 
-  bottom: 20px;
-}
-
-#about { 
-  left: 85px;
-  width: 56px;
-  bottom: 38px;
-  position: relative;
-  width: 100px;
-}
 
 .header-button:hover { 
   cursor: pointer;
 }
-
-//Main Section 
 
 .addButton{ 
   top: 190px !important;
@@ -206,8 +180,6 @@ button {
     width: 50%;
   }
 }
-
-
 
 #container {
   display: inline-block;
@@ -491,7 +463,7 @@ button {
 .carrot1 { 
   position: absolute;
   left: 680px;
-  top: 299px;
+  top: 316px;
 }
 
 .carrot2, .carrot5, .carrot6 { 
@@ -570,6 +542,7 @@ footer {
   bottom: 100px;
 }
 
+
 //colors 
 .light-green { 
     background-color: #5eba8b;
@@ -597,3 +570,4 @@ footer {
 footer .white-text { 
   text-align: center;
 }
+
