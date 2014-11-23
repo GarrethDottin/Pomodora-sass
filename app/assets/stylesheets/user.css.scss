@@ -199,17 +199,16 @@ button {
 .header-button { 
   margin-left: 5%; 
   display: inline-block;
-  margin-bottom: 25px;
   font-weight: 100;
   font-size: 14px;
   position: relative; 
-  bottom: 35px;
+  bottom: 20px;
 }
 
 #about { 
   left: 85px;
   width: 56px;
-  bottom: 30px;
+  bottom: 38px;
   position: relative;
   width: 100px;
 }
@@ -222,7 +221,7 @@ button {
   background-color: #E5E9EE;
   height: 120px;
   margin-left: -7px;
-  width: 110%;
+  width: 102%;
   margin-top: 100px;
   margin-bottom: -8px;
   position: absolute;
@@ -392,7 +391,7 @@ button {
 
 // How TO Section 
 .how-to-container { 
-  width: 115%;
+  width: 102%;
   display: inline-block;
   position: absolute;
   top: 720px;
@@ -467,6 +466,12 @@ button {
   top: 50px;
 }
 
+.left-panel-image { 
+  position: relative; 
+  left: 105px;
+  top: 50px;
+}
+
 footer { 
   background-color: #1A1A1A;
   position: absolute; 
@@ -496,15 +501,20 @@ footer {
   bottom: 100px;
 }
 
-.img-placement { 
+.right-panel-image { 
   position: relative; 
   left: 1000px;
   bottom: 40px;
 }
 
+
+#time-clock{ 
+  bottom: 100px;
+}
+
 //colors 
 .light-green { 
-    background-color: #70AA95;
+    background-color: #5eba8b;
 }
 
 .light-blue { 
@@ -524,4 +534,8 @@ footer {
 
 .white-text { 
   color: white;
+}
+
+footer .white-text { 
+  text-align: center;
 }

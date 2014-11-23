@@ -1,7 +1,6 @@
 <header> 
-<img class="logo" src="assets/groove.png" /> <div class="header-buttons"> <span class="header-button">TIMER </span> <br>  <!-- <span id='about' class="header-button"> HOW TO</span>  --></div>
+<img class="logo" src="assets/groove.png" /> <div class="header-buttons"> <span class="header-button" id='timer'>TIMER </span> <br>   <span id='about' class="header-button"> HOW TO</span> </div>
 </header>
-<div class="row" >
   <div class="small-1 columns">
     <main>
 
@@ -33,8 +32,8 @@
 
 
 
-      <div class="small-12 columns" >
-        <ng-slide-push-menu position="right" button="push" button-icon-class="glyphicon glyphicon-cog">
+  <div class="small-12 columns" >
+         <ng-slide-push-menu position="right" button="push" button-icon-class="glyphicon glyphicon-cog">
         <span><div class="todo-title">My To Do List</div></span>
         <div ng-controller="TodoCtrl">
           <ul>
@@ -56,8 +55,8 @@
           </form>
         </div>
         </ng-slide-push-menu>
-      </div>
-         <div class="overlay" ng-show="overlay1"> <div class="overlay-exit" ng-click="exitOverlay(1)">X</div><span class="overlay-text"> Did you complete your task successfully? </span>
+     </div>
+        <div class="overlay" ng-show="overlay1"> <div class="overlay-exit" ng-click="exitOverlay(1)">X</div><span class="overlay-text"> Did you complete your task successfully? </span>
             <button ng-click ="secondOverlay(); add();"class="flat-ui-button overlay-button-yes"> Yes, I Did!</button> <button class="timer-button overlay-button-no" ng-click="closeOverlay(); checkProgress();":>No, Not this Time</button>
         </div>
         <div class="overlay2" ng-show="overlay2"> 
@@ -69,41 +68,39 @@
       <div> 
       </div>
      </main>
-  </div>
-      <div class="progress-bar-container">
+
+    <div class="progress-bar-container">
         <div class="daily-counter"> <div class="daily-count">{{counter}}</div><div class="daily-name">Today </div></div>
         <div progress-bar></div>
         <div class="image-container">
-        <img src="assets/teacup.png" id ="teacup-image" class="progress-bar-image"/>
-        <span class="progress-bar-image-caption image-caption-teacup"> short break</span>
-        <img src="assets/meditate.png" id ="meditate-image" class="progress-bar-image"/>
-        <span class="progress-bar-image-caption image-caption-meditate"> short break</span>
-        <img src="assets/snack.png" id ="snack-image" class="progress-bar-image"/>
-        <span class="progress-bar-image-caption image-caption-snack"> short break</span>
-        <img src="assets/bench.png" id ="bench-image" class="progress-bar-image"/>
-        <span class="progress-bar-image-caption image-caption-bench"> long break</span>
-
+          <img src="assets/teacup.png" id ="teacup-image" class="progress-bar-image"/>
+          <span class="progress-bar-image-caption image-caption-teacup"> short break</span>
+          <img src="assets/meditate.png" id ="meditate-image" class="progress-bar-image"/>
+          <span class="progress-bar-image-caption image-caption-meditate"> short break</span>
+          <img src="assets/snack.png" id ="snack-image" class="progress-bar-image"/>
+          <span class="progress-bar-image-caption image-caption-snack"> short break</span>
+          <img src="assets/bench.png" id ="bench-image" class="progress-bar-image"/>
+          <span class="progress-bar-image-caption image-caption-bench"> long break</span>
         </div>
-      </div>
+    </div>
 <div class="how-to-container">
-          <div class="panel">
-                          <div class="carrot carrot1"></div>
-            <div class="panel-main">
-              <h1 class="panel-centered-title"> HOW IT WORKS </h1>
-
-                <div class="panel-text">
-                  GrooveOtter is based off a 30 year  technique to help people be more productive by managing tasks in small intervals. Harness the power of productivity. Find your Groove. 
-                </div>
-            </div> 
+    <div class="panel">
+        <div class="carrot carrot1"></div>
+        <div class="panel-main">
+          <h1 class="panel-centered-title"> HOW IT WORKS </h1>
+          <div class="panel-text">
+            GrooveOtter is based off a 30 year  technique to help people be more productive by managing tasks in small intervals. Harness the power of productivity. Find your Groove. 
           </div>
+        </div> 
+    </div>
           <div class="panel light-green"> 
             <h3 class="white-text title-position"> 1. CHOOSE A TASK TO ACCOMPLISH </h3>
             <p class="body-position-left white-text"> Do you need to finish writing that line of code, design out an icon, write a blog post, or study for a test? Choose any number of tasks to work on and we’ll be there to keep you on track.</p>
-            <img src="assets/notes.png" class="img-placement"/>
+            <img src="assets/notes.png" class="right-panel-image"/>
           </div>
           <div class="panel blue">
             <div class="carrot carrot2"></div>
-              <img src="assets/flipclock.png"  id="flipclock-image"/>
+              <img src="assets/flipclock.png"  class="left-panel-image"/>
               <div class="body-position-right">
               <h3 class="white-text "> 2. SET THE TIMER </h3>
                 <p class="white-text">Pick one of our predetermined amounts of time scientifically proven to improve mental agility or  input a custom time of your own. Whatever time you choose we’ll make sure you stick to it.  </p>
@@ -111,17 +108,36 @@
           </div>
           <div class="panel light-blue" id="panel3"> 
               <div class="carrot carrot3"></div>
+              <div class="body-position-left">
+                <h3 class="white-text "> 2. WORK UNTIL THE TIME IS UP </h3>
+                <p class="white-text"> Continue working removed from distractions and without a break until you hear the timer go off. </p>
+              </div>
+              <img src="assets/time-clock.png" id="time-clock" class="right-panel-image"/>
           </div>
           <div class="panel yellow" id="panel4"> 
               <div class="carrot carrot4"></div>
+              <img src="assets/panel-checkmark.png" class="left-panel-image"/>
+              <div class="body-position-right">
+                <h3 class="white-text ">3. Check it off your list  </h3>
+                <p class="white-text"> If you completed your task tell GrooveOtter, watch the progress bar grow, check it off your list, and move on to the next. That felt good right? </p>
+              </div>
           </div>
           <div class="panel red" id="panel5"> 
               <div class="carrot carrot5"></div>
+              <div class="body-position-left"> 
+                <h3 class="white-text">4. Take a 5 minute break </h3>
+                <p class="white-text"> You worked hard. Enjoy a short break. Spend it how you like or use one of our recommended breaks.  </p>
+              </div>
+              <img src="assets/panel-teacup.png" class="right-panel-image"/>
           </div>
           <div class="panel light-green" id="panel6"> 
               <div class="carrot carrot6"></div>
+              <img src="assets/panel-smiley.png" class="left-panel-image"/> 
+              <div class="body-position-right"> 
+                <h3 class="white-text"> 5. Every 4 cycles take a longer break</h3>
+                <p class="white-text"> If you complete 4 successful tasks take a longer break.</p>
+              </div>
           </div>
-      </div> 
-       <footer class="footer">
-      </footer>
+    </div> 
+  </div>
 </div>

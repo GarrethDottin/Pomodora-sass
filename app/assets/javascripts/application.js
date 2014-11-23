@@ -25,59 +25,15 @@
 //= require_tree .
 
 var appcontroller = {
-  init: function (selectors) {
-    startClicked.init(selectors);
-    timerSetting.init(selectors);
-    buttonClicked.init(selectors);
-    about.init(selectors);
-    appcontroller.queFeature();
-    appcontroller.queInit();
-  },
-  hideYesandNo: function (selectors) {
-    $('#yes').fadeToggle( "slow", "linear" );
-    $('#no').fadeToggle( "slow", "linear" );
-    $('#start').prop("disabled",false);
-  },
-  showStartHideYesNo: function(selectors) {
-    selectors.no.css("display", "none")
-    selectors.yes.css("display", "none")
-    selectors.starts.fadeToggle( "slow", "linear")
-    selectors.starts.css("display", "inline")
-    selectors.starts.prop("disabled", false)
-    $('#textbox').css("display", "inline")
-  },
-  counter: 0,
-  queFeature: function(selectors) {
-    $(".que-add").on("click", function() {
-      appcontroller.counter++
-      var div = document.createElement("DIV");
-      div.className = "que-item";
-      var button = document.createElement("button");
-       var textDiv = document.createElement("DIV");
-      div.className = "que-item";
-      button.className ="que-start";
-      button.innerHTML = "start";
-      button.id = "button" + appcontroller.counter;
-      div.id = "que-container" + appcontroller.counter;
-      var href = document.createElement('a');
-      href.innerHTML = "X";
-      textDiv.innerHTML = ($('#que-dropdown input').val());
-      div.appendChild(textDiv);
-      div.appendChild(href);
-      textDiv.onclick = function () {
-        $('main input').val($('#que-dropdown input').val())
-        $('#que-dropdown input').val("")
-      }
-      href.onclick = function () {
-        $('#' + div.id).remove()
-        $('#que-dropdown input').val("")
-      }
-      $("#que-list").append(div)
-    })
-  },
-  queInit: function() {
-    $('#que').on("mouseenter", function() { $('#que-dropdown').css("visibility", "visible")})
-    $('#que-dropdown').on("mouseleave",function() { $('#que-dropdown').css("visibility", "hidden")})
+  init: function () {
+    $('#about').on("click", function () { 
+      $('body,html').animate({ scrollTop: $('.panel').offset().top -50 }, 1600);
+    });
+
+    $('#timer').on("click", function () { 
+      $('body,html').animate({ scrollTop: $('main').offset().top -50 }, 1600);
+    }); 
+
   }
 }
 
@@ -362,25 +318,7 @@ var timerSetting = (function (selectors) {
 
   }) ();
 
-// $(function (){
-//   selectors = {
-//     no: $('#no'),
-//     yes: $('#yes'),
-//     starts: $('#start'),
-//     countdown: $('.timer-container h1'),
-//     longPomodoro: $('#twenty-five'),
-//     shortPomodoro: $('#five'),
-//     medPomodoro: $('#ten'),
-//     counterText: $('.counter-container'),
-//     primaryContent: $('.primary-content'),
-//     signupContent: $('.signup-content'),
-//     loginPartial: $('#login-partial'),
-//     loginContent:  $('#login-content'),
-//     submitButton:  $('#facebook'),
-//     about: $('.menu-container h3'),
-//     counter: $('.timer-container h1'),
-//     stop: $('#stop-button')
-//   };
-//   // appcontroller.init(selectors)
-// });
+$(function (){
+  appcontroller.init()
+});
 
