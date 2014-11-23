@@ -436,12 +436,12 @@ button {
 .carrot1 { 
   position: absolute;
   left: 680px;
-  top: 316px;
+  top: 299px;
 }
 
 .carrot2, .carrot5, .carrot6 { 
   left: 680px;
-  border-top: 25px solid  #70AA95;
+  border-top: 25px solid  #5eba8b;
 }
 
 .carrot3 { 
@@ -486,7 +486,8 @@ footer {
 .title-position { 
   position: relative; 
   top: 100px;
-  margin-left: 5%;
+  margin-left: 7%;
+  display:inline;
 }
 .body-position-left { 
   width: 550px;
