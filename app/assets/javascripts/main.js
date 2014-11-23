@@ -4,7 +4,6 @@ angular.module("App", ['ngCookies'])
 		firstName: ''
 	})
 	.controller("ApplicationController", ["$scope", "$timeout", function($scope, $timeout){
-		window.scope = $scope;
 		$scope.initialOverlay = initialOverlay; 
 		$scope.secondOverlay = secondOverlay; 
 		$scope.increaseCounter = increaseCounter; 
@@ -14,12 +13,15 @@ angular.module("App", ['ngCookies'])
 
 		$scope.counter = 0; 
 		$scope.overlay1 = false; 
-		$scope.overlay2 = false; 
+		$scope.overlay2 = true; 
 		$scope.time = 25;
+		$scope.closeModal = false;
 		$scope.statement = "What can you do in " + $scope.time +  " minutes?"; 
 		$scope.currentUser = 'guest';
+		$scope.changeStatement = changeStatement;
+		$scope.buttonClicked = buttonClicked;
 
-		$scope.changeStatement = function (num) {
+		function changeStatement (num) {
 			if(num =='add') { 
 				$scope.statement ="What can you do in " + $scope.time +  " minutes?";	
 			}
@@ -32,7 +34,7 @@ angular.module("App", ['ngCookies'])
 			}
 		}
 
-		$scope.buttonClicked = function(num) {
+		function buttonClicked(num) {
 			$scope.timerValue = num;
 		};
 
@@ -66,10 +68,6 @@ angular.module("App", ['ngCookies'])
 		function increaseCounter () { 
 			$scope.counter++
 		}
-
-		$scope.close = function (event) { dom.closeModal(event)};
-
-		$scope.closeModal = false;
 
 		function setUser  (user) {
 			$scope.currentUser = user;

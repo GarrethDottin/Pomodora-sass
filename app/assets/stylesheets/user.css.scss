@@ -1,6 +1,8 @@
 // Place all the styles related to the User controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+// Global Styling 
 $bottom: bottom;
 $top: top;
 $spacing: 30px;
@@ -48,14 +50,6 @@ button {
   margin-top: 20px;
 }
 
-#stop-button {
-  font-size: 14px;
-  font-weight: 400;
-  padding-left: 80px !important;
-  padding-right: 80px !important;
-  margin-left: 15px;
-  margin-top: 20px;}
-
 .flat-ui-button:hover {
   background-color: #7BD1AE;
 }
@@ -65,6 +59,78 @@ button {
   padding: 0;
   box-sizing: border-box;
 }
+
+// Header 
+.logo { 
+  padding: 5px; 
+  padding-left: 40px;
+  padding-bottom: 17px;
+}
+
+.header-buttons { 
+  margin-left: 70%;
+  display: inline-block;
+  color: white;
+}
+
+.header-button { 
+  margin-left: 5%; 
+  display: inline-block;
+  font-weight: 100;
+  font-size: 14px;
+  position: relative; 
+  bottom: 20px;
+}
+
+#about { 
+  left: 85px;
+  width: 56px;
+  bottom: 38px;
+  position: relative;
+  width: 100px;
+}
+
+.header-button:hover { 
+  cursor: pointer;
+}
+
+//Main Section 
+
+.addButton{ 
+  top: 190px !important;
+} 
+
+#stop-button {
+  font-size: 14px;
+  font-weight: 400;
+  padding-left: 80px !important;
+  padding-right: 80px !important;
+  margin-left: 15px;
+  margin-top: 20px;}
+
+.upvote { 
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 15px solid #1D354C;
+  position: relative;
+  left: 9px;
+  top: 8px
+}
+
+.downvote { 
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 15px solid #1D354C;
+  position: relative;
+  left: 9px;
+  top: 12px;
+}
+
+// Progress-Bar
 
 #progressbar {
   background-color: black;
@@ -99,6 +165,8 @@ button {
     width: 50%;
   }
 }
+
+
 
 #container {
   display: inline-block;
@@ -135,32 +203,6 @@ button {
   border-radius: 10px;
 }
 
-.upvote { 
-  width: 0;
-  height: 0;
-  border-left: 8px solid transparent;
-  border-right: 8px solid transparent;
-  border-bottom: 15px solid #1D354C;
-  position: relative;
-  left: 9px;
-  top: 8px
-}
-
-.downvote { 
-  width: 0;
-  height: 0;
-  border-left: 8px solid transparent;
-  border-right: 8px solid transparent;
-  border-top: 15px solid #1D354C;
-  position: relative;
-  left: 9px;
-  top: 12px;
-}
-
-.addButton{ 
-  top: 190px !important;
-}
-
 .timerButtonContainer{ 
   background-color: #E1E1E3;
   width: 35px;
@@ -182,39 +224,6 @@ button {
 
 .timerButtonContainer:hover { 
   background-color: #1D354C;
-}
-
-.logo { 
-  padding: 5px; 
-  padding-left: 40px;
-  padding-bottom: 17px;
-}
-
-.header-buttons { 
-  margin-left: 70%;
-  display: inline-block;
-  color: white;
-}
-
-.header-button { 
-  margin-left: 5%; 
-  display: inline-block;
-  font-weight: 100;
-  font-size: 14px;
-  position: relative; 
-  bottom: 20px;
-}
-
-#about { 
-  left: 85px;
-  width: 56px;
-  bottom: 38px;
-  position: relative;
-  width: 100px;
-}
-
-.header-button:hover { 
-  cursor: pointer;
 }
 
 .progress-bar-container { 
@@ -322,6 +331,9 @@ button {
   font-family: 'lato';
   color: white;
 }
+
+
+//Overlays 
 
 .overlay, .overlay2 { 
   width: 105%;

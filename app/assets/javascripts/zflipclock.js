@@ -101,24 +101,25 @@ angular.module("App").directive("flipClock", function() {
 	return {
 		controller: ['$scope', function($scope) {
 			$scope.adjustTime = adjustTime; 
+			$scope.buttonClicked = buttonClicked;
+			$scope.startClicked = startClicked;
 
 			function adjustTime (input) { 
 				flipClockApi.adjustTime(input, $scope);
 			}
 
-			$scope.buttonClicked = function(num) {
+			function buttonClicked(num) {
 				$scope.timerValue = 0;
 				$scope.$apply();
 				$scope.timerValue = num;
 			}
 
-			$scope.startClicked = function (num) {
+			function startClicked (num) {
 				console.log("startClicked");
 				flipClockApi.startClock($scope);
 			}
 
-			$scope.stopClicked =function() {
-				console.log("stopClicked");
+			function stopClicked() {
 				timerInProgress = false;
 				var time = roundTime(flipClockApi.currentTime);
 				flipClockApi.setTimer(flipClockApi.currentTime, $scope);
