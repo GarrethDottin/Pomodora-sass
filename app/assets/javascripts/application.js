@@ -33,7 +33,9 @@ var appcontroller = {
     $('#timer').on("click", function () { 
       $('body,html').animate({ scrollTop: $('main').offset().top -50 }, 1600);
     }); 
-
+    $('.title-position').css("display", "inline");
+    $('.carrot1').css("top", "299px");
+    $('.carrot1').css("background-color", "#5eba8b");
   }
 }
 
