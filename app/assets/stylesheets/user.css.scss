@@ -1,6 +1,9 @@
 // Place all the styles related to the User controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+//Global 
 $bottom: bottom;
 $top: top;
 $spacing: 30px;
@@ -9,10 +12,50 @@ div,main,input{
   outline: none !important;
 }
 
+*:focus {
+    outline: none;
+}
+
+.logo { 
+  padding: 5px; 
+  padding-left: 40px;
+  padding-bottom: 17px;
+}
+
+.header-buttons { 
+  margin-left: 70%;
+  display: inline-block;
+  color: white;
+}
+
+.header-button { 
+  margin-left: 5%; 
+  display: inline-block;
+  font-weight: 100;
+  font-size: 14px;
+  position: relative; 
+  bottom: 20px;
+}
+
+#about { 
+  left: 85px;
+  width: 56px;
+  bottom: 38px;
+  position: relative;
+  width: 100px;
+}
+
+.header-button:hover { 
+  cursor: pointer;
+}
+
+
 button:focus {outline:0;}
 input:focus {outline:none;}
 input {border:0; outline:none;}
 
+
+//Header 
 header{ 
   background-color: #1f1f1f; 
   position: fixed; 
@@ -182,39 +225,6 @@ button {
 
 .timerButtonContainer:hover { 
   background-color: #1D354C;
-}
-
-.logo { 
-  padding: 5px; 
-  padding-left: 40px;
-  padding-bottom: 17px;
-}
-
-.header-buttons { 
-  margin-left: 70%;
-  display: inline-block;
-  color: white;
-}
-
-.header-button { 
-  margin-left: 5%; 
-  display: inline-block;
-  font-weight: 100;
-  font-size: 14px;
-  position: relative; 
-  bottom: 20px;
-}
-
-#about { 
-  left: 85px;
-  width: 56px;
-  bottom: 38px;
-  position: relative;
-  width: 100px;
-}
-
-.header-button:hover { 
-  cursor: pointer;
 }
 
 .progress-bar-container { 
