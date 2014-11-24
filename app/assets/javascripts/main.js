@@ -21,17 +21,7 @@ angular.module("App", ['ngCookies'])
 		$scope.changeStatement = changeStatement;
 		$scope.buttonClicked = buttonClicked;
 
-		$scope.stopClicked  = stopClicked; 
 
-		function stopClicked() {
-			timerInProgress = false;
-			var time = roundTime(flipClockApi.currentTime);
-			flipClockApi.setTimer(flipClockApi.currentTime, $scope);
-			flipClockApi.clock.stop();
-			clearInterval(internalClockTime); 
-			clearInterval(oneMinuteWarning);
-			$scope.overlay1 = true;
-			}
 
 		function changeStatement (num) {
 			if(num =='add') { 

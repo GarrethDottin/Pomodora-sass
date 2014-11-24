@@ -103,6 +103,7 @@ angular.module("App").directive("flipClock", function() {
 			$scope.adjustTime = adjustTime; 
 			$scope.buttonClicked = buttonClicked;
 			$scope.startClicked = startClicked;
+			$scope.stopClicked = stopClicked;
 
 			function adjustTime (input) { 
 				flipClockApi.adjustTime(input, $scope);
