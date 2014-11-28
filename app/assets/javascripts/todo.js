@@ -1,9 +1,6 @@
 angular.module("App").controller("TodoCtrl", ["$scope", "localStorage", "$timeout", function($scope, localStorage, $timeout){
   $scope.model = {};
   $scope.model.todos;
-
-
-
   $scope.toggleEditing = toggleEditing;
   $scope.archive =archive;
   $scope.refreshTodos = refreshTodos;
@@ -11,13 +8,12 @@ angular.module("App").controller("TodoCtrl", ["$scope", "localStorage", "$timeou
   $scope.removeTask = removeTask;
 
 
-  // Code Smell
-    if (localStorage.getItem('todos') != undefined) {
-      $scope.model.todos = localStorage.getItem('todos');
-    }
-    else {
-      $scope.model.todos = [];
-    };
+  if (localStorage.getItem('todos') != undefined) {
+    $scope.model.todos = localStorage.getItem('todos');
+  }
+  else {
+    $scope.model.todos = [];
+  };
 
   function toggleEditing () {
     $scope.editing =  !$scope.editing;

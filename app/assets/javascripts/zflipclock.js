@@ -116,7 +116,6 @@ angular.module("App").directive("flipClock", function() {
 			}
 
 			function startClicked (num) {
-				console.log("startClicked");
 				flipClockApi.startClock($scope);
 			}
 

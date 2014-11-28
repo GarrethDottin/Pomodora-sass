@@ -16,12 +16,12 @@
 //= require angular
 //= require angular-route
 //= main
-//= ztodo
+//= todo
 //= zflipclock
-//= zhome_controller
-//= zpush_menu
-//= zprogress_bar
-//= ztodo_list_service
+//= zlocal_storage
+//= push_menu
+//= progress_bar
+//= outside_libraries 
 //= require_tree .
 
 var appcontroller = {
