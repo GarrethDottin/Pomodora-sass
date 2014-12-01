@@ -8,6 +8,7 @@ $bottom: bottom;
 $top: top;
 $spacing: 30px;
 
+
 div,main,input{ 
   outline: none !important;
 }
@@ -19,6 +20,8 @@ div,main,input{
 body {
   background-color: #449BB6;
   margin-bottom: 0px;
+  margin: 0;
+  padding: 0;
 }
 
 //Header
@@ -112,7 +115,7 @@ button {
 }
 
 .addButton{ 
-  top: 190px !important;
+  top: 213px !important;
 } 
 
 #stop-button {
@@ -223,7 +226,7 @@ button {
   border-radius: 35px;
   cursor: pointer;
   position: absolute;
-  top: 230px;
+  top: 253px;
   left: 740px;
 }
 
@@ -243,12 +246,12 @@ button {
 .progress-bar-container { 
   background-color: #E5E9EE;
   height: 120px;
-  margin-left: -7px;
-  width: 102%;
+//  margin-left: -7px;
+  width: 100%;
   margin-top: 100px;
   margin-bottom: -8px;
   position: absolute;
-  top: 460px;
+  top: 439px;
 }
 
 .progress-bar-hashmark { 
@@ -286,35 +289,35 @@ button {
 }
 
 .image-caption-teacup { 
-  left: 380px;
+  left: 174px;
 }
 
 .image-caption-meditate { 
-  left: 510px;
+  left: 308px;
 }
 
 .image-caption-snack { 
-  left: 640px;
+  left: 440px;
 }
 
 .image-caption-bench { 
-  left: 840px;
+  left: 615px;
 }
 
 #teacup-image { 
-  left: 425px; 
+  left: 220px;
 }
 
 #meditate-image { 
-  left: 555px; 
+  left: 352px;
 }
 
 #snack-image { 
-  left: 685px;
+  left: 482px;
 }
 
 #bench-image { 
-  left: 875px;
+  left: 655px;
 }
 
 .daily-counter { 
@@ -417,31 +420,32 @@ button {
 
 // How TO Section 
 .how-to-container { 
-  width: 102%;
+  width: 100%;
   display: inline-block;
   position: absolute;
   top: 720px;
-  margin-left: -7px;
+//  margin-left: -7px;
 }
 
 .panel-centered-title { 
   text-align: center;
-  padding-top: 100px;
-  margin-left: 35%;
+  padding-top: 50px;
+//  margin-left: 35%;
 }
 
 .panel {
   height: 400px;
   width: 100%;
-  BACKGROUND-COLOR: white;
+  background: white;
   margin-top: -61px;
+  color:#fff;
 }
 
 .panel-main { 
   margin: 0 auto;
   width: 600px;
   position: relative;
-  right: 130px;
+  color: #000;
 }
 
 .panel-text { 
@@ -449,7 +453,7 @@ button {
   font-size: 20px;
   font-family: 'lato';
   text-align: center;
-  margin-left: 15%;
+//  margin-left: 15%;
 }
 
 .carrot { 
@@ -459,26 +463,28 @@ button {
   border-right: 20px solid transparent;
   border-top: 25px solid white;
   position: relative;
+  margin: auto;
 }
 
-.carrot1 { 
-  position: absolute;
-  left: 680px;
-  top: 316px;
+.carrot1 {
+//  position: absolute;
+//  left: 680px;
+//  top: 316px;
+  top: 339px;
 }
 
 .carrot2, .carrot5, .carrot6 { 
-  left: 680px;
+//  left: 680px;
   border-top: 25px solid  #5eba8b;
 }
 
 .carrot3 { 
-  left: 680px;
+//  left: 680px;
   border-top: 25px solid #122F4A;
 }
 
 .carrot4 { 
-  left: 680px;
+//  left: 680px;
   border-top: 25px solid #4A88AE;
 }
 
@@ -490,7 +496,8 @@ button {
 }
 
 #notes { 
-  bottom: 150px;
+//  bottom: 150px;
+
 }
 
 #flipclock-image { 
@@ -567,10 +574,71 @@ footer {
 }
 
 .white-text { 
-  color: white;
+   color: white;
 }
 
 footer .white-text { 
   text-align: center;
 }
+.progress-bar-inner{
+  margin: auto;
+  width:954px;
+}
+.progress-bar-container .image-container{
+  margin: auto;
+  width:954px;
+}
+.progress-bar-inner #container{
+  margin-left: 0;
+  margin-top: 3%;
+}
+.timer-container.timer_outline{
+  padding-left: 0;
+  text-align: center;
+  top: 55px;
+}
+.timer_outline .flip-clock-wrapper{
+  width: 600px;
+  margin: 1em auto;
+}
+.timer_outline #fifteen{
+  margin-left: 0;
+  margin-bottom: 20px;
+}
+.timer_outline .flat-ui-button{
+  margin-left: 0;
+}
+.timer_outline .title{
+  margin-left: 0;
+}
+.panel_imgL{
+  padding: 40px 0 40px;
+  float: left;
+  width: 600px;
+  text-align: left;
+}
+.panel_imgR{
+  padding: 40px 0 40px ;
+  float: right;
+  text-align: center;
+  width: 600px;
+}
+.panel_textL{
+  padding: 50px 50px 50px 0;
+  float: left;
+  width: 550px;
+}
+.panel_textR{
+  padding: 50px 0 50px 50px;
+  float: right;
+  width: 550px;
+}
+.panel_imgR.timeClock{
+  padding: 10px 0 40px;
+}
 
+.inner_panel{
+  width:1200px;
+  margin: auto;
+  overflow:hidden
+}
