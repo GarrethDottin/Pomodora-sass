@@ -184,7 +184,8 @@ button {
 #container {
   display: inline-block;
   margin-left: 200px;
-  margin-top: 2%;
+  margin-top: 15px;
+  margin-bottom: 5px;
   background: white;
   width: 950px;
   height: 22px;
@@ -282,11 +283,11 @@ button {
   position: relative; 
   top: 15px; 
   font-size: 10px;
-  font-family: 'lato';
+  color: #6D6968;
 }
 
 .image-caption-teacup { 
-  left: 380px;
+  left: 376px;
 }
 
 .image-caption-meditate { 
@@ -294,23 +295,23 @@ button {
 }
 
 .image-caption-snack { 
-  left: 640px;
+  left: 636px;
 }
 
 .image-caption-bench { 
-  left: 840px;
+  left: 836px;
 }
 
 #teacup-image { 
-  left: 425px; 
+  left: 421px; 
 }
 
 #meditate-image { 
-  left: 555px; 
+  left: 551px; 
 }
 
 #snack-image { 
-  left: 685px;
+  left: 681px;
 }
 
 #bench-image { 
