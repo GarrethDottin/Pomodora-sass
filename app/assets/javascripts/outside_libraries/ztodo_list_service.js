@@ -5,7 +5,6 @@ angular.module("App").service("dom", function (){
   };
 
   this.positionModal = function () {
-      console.log("inside right function ")
       setInterval (function(){
         if($('nav').position().left == 1280) {
           $('nav').css("right", "0px")

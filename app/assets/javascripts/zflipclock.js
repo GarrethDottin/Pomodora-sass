@@ -7,11 +7,14 @@ angular.module("App").directive("flipClock", function() {
 
 	var timeExpired;
 	flipClockApi.createClock = function () {
+				console.log('inside correct function')
 		var Clock = $('.your-clock').FlipClock({
 			autoStart: false,
 			countdown: true,
 			clockFace: "MinuteCounter",
 		});
+		console.log('inside correct function')
+		console.log(Clock);
 		return Clock;
 	};
 
@@ -116,7 +119,6 @@ angular.module("App").directive("flipClock", function() {
 			}
 
 			function startClicked (num) {
-				console.log("startClicked");
 				flipClockApi.startClock($scope);
 			}
 

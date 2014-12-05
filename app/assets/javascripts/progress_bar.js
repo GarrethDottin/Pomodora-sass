@@ -22,7 +22,6 @@ angular.module("App").directive("progressBar", function() {
 
 		scope.$watch("counter", function (){ 
 			if (scope.counter % 4 == 0 && scope.counter != 0) { 
-				console.log("this is hit")
 				setTimeout(function(){
 					progressBar.reset(progressMeter);
 				},5000);

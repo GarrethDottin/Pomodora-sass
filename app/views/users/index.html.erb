@@ -1,12 +1,16 @@
 <header> 
+<<<<<<< HEAD
 <%= image_tag('groove', :class=> "logo") %> <div class="header-buttons"> <span class="header-button" id='timer'>TIMER </span> <br>   <span id='about' class="header-button"> HOW TO</span> </div>
+=======
+<%= image_tag('groove.png', :class=> "logo") %> <div class="header-buttons"> <span class="header-button" id='timer'>TIMERS </span> <br>   <span id='about' class="header-button"> HOW TO</span> </div>
+>>>>>>> staging
 </header>
   <div class="small-1 columns">
     <main>
 
       <div class="timer-container timer_outline">
         <h2 class="title"> {{statement}} </h2>
-          <button id="fifteen" class="timer-button" ng-click="buttonClicked(15); changeStatement(15)">15 minutes </button>
+          <button id="fifteen" class="timer-button" ng-click="buttonClicked(15); changeStatement(15)">15 minute </button>
           <button class= "timer-button" ng-click="buttonClicked(25); changeStatement(25)">25 minutes </button>
           <button class="timer-button" ng-click="buttonClicked(45); changeStatement(45)">45 minutes </button>
           <div flip-Clock> </div>
