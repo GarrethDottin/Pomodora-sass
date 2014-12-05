@@ -12,7 +12,7 @@ PomodoraSass::Application.configure do
 
   # Full error reports are disabled and caching is turned on.
   config.consider_all_requests_local       = false
-  config.action_controller.perform_caching = false
+  config.action_controller.perform_caching = true
   # Enable Rack::Cache to put a simple HTTP cache in front of your application
   # Add `rack-cache` to your Gemfile before enabling this.
   # For large-scale production use, consider using a caching reverse proxy like nginx, varnish or squid.
@@ -26,7 +26,7 @@ PomodoraSass::Application.configure do
   # config.assets.css_compressor = :sass
   # Do not fallback to assets pipeline if a precompiled asset is missed.
 
-  config.assets.compile = true
+  config.assets.compile = false
   config.assets.compress = true
 
 
@@ -34,7 +34,7 @@ PomodoraSass::Application.configure do
   config.assets.digest = true
 
   # Version of your assets, change this if you want to expire all your assets.
-  config.assets.version = '1.1'
+  config.assets.version = '1.2'
 
 
 
