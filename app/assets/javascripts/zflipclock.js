@@ -3,18 +3,15 @@ angular.module("App").directive("flipClock", function() {
 	flipClockApi.currentTime = 1500;
 	var internalClockTime; 
 	var timerInProgress = false;
-	var audio = new Audio('/assets/warning1.mp4')
+	var audio = audio_tag('warning1.mp4')
 
 	var timeExpired;
 	flipClockApi.createClock = function () {
-				console.log('inside correct function')
 		var Clock = $('.your-clock').FlipClock({
 			autoStart: false,
 			countdown: true,
 			clockFace: "MinuteCounter",
 		});
-		console.log('inside correct function')
-		console.log(Clock);
 		return Clock;
 	};
 
