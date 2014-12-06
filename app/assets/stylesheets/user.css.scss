@@ -23,12 +23,16 @@ body {
   margin: 0;
   padding: 0;
 }
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+    display: none !important;
+}
 
 //Header
 
 [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
     display: none !important;
 }
+
 
 .logo { 
   padding: 5px; 
@@ -622,7 +626,7 @@ footer .white-text {
   text-align: left;
 }
 .panel_imgR{
-  padding: 40px 0 40px ;
+  padding: 40px 0 40px;
   float: right;
   text-align: center;
   width: 600px;

@@ -7,5 +7,6 @@ angular.module("App").controller("HomeController", ["$scope", function($scope){
 		$scope.timerValue = num;
 		$scope.time = num;
 	};
+	
 
 }]);

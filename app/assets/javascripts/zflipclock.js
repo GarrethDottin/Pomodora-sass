@@ -3,8 +3,7 @@ angular.module("App").directive("flipClock", function() {
 	flipClockApi.currentTime = 1500;
 	var internalClockTime; 
 	var timerInProgress = false;
-	var audio = new Audio('/assets/warning1.mp4')
-
+	// var audio = new Audio(audio_tag('warning1.mp4'));
 	var timeExpired;
 	flipClockApi.createClock = function () {
 		var Clock = $('.your-clock').FlipClock({
@@ -76,7 +75,7 @@ angular.module("App").directive("flipClock", function() {
 		var timeInput = ((time - 60) * 1000);
 		if (timeInput != -60000) {
 			oneMinuteWarning = setTimeout(function() { 
-				audio.play();
+				// audio.play();
 			}, timeInput); 	
 		}
 
@@ -116,7 +115,6 @@ angular.module("App").directive("flipClock", function() {
 			}
 
 			function startClicked (num) {
-				console.log("startClicked");
 				flipClockApi.startClock($scope);
 			}
 

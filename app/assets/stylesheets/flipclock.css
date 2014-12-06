@@ -194,13 +194,14 @@
   display: none;}
 
 .flipclock-small-text {
-  color: #22222;
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 300;
   position: absolute;
-  left: 200px;
-  top: 345px;
-  font-family: 'lato';}
+  left: 300px;
+  top: 363px;
+  font-family: 'lato';
+  color: white;
+}
 
 .flipclock-small-text-seconds {
   margin-left: 265px;

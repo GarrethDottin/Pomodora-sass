@@ -21,8 +21,6 @@ angular.module("App", ['ngCookies'])
 		$scope.changeStatement = changeStatement;
 		$scope.buttonClicked = buttonClicked;
 
-
-
 		function changeStatement (num) {
 			if(num =='add') { 
 				$scope.statement ="What can you do in " + $scope.time +  " minutes?";	
