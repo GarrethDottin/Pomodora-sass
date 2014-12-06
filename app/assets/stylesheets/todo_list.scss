@@ -270,7 +270,7 @@ a.spmenu-button {
 
 
 .todo-title {
-  font-weight: 100;
+  font-weight: 200;
   text-align: center;
   font-size: 40px;
   margin-top: 100px;
@@ -297,6 +297,7 @@ a.spmenu-button {
   border-width: 0px;
   margin-bottom: 16px;
   font-size: 16px;
+  font-weight: 400;
   border-top: solid #F6F6F6 1px;
 }
 
@@ -316,9 +317,8 @@ a.spmenu-button {
 }
 
 .todo-inline-edit {
-  font-family: 'Lato-light', sans-serif;
   font-size: 16px;
-  font-weight: 550;
+  font-weight: 400;
   border: none;
   position: absolute;
   left: 38px;
