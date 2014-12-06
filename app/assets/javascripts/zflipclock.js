@@ -3,7 +3,7 @@ angular.module("App").directive("flipClock", function() {
 	flipClockApi.currentTime = 1500;
 	var internalClockTime; 
 	var timerInProgress = false;
-	var audio = audio_tag('warning1.mp4')
+	// var audio = new Audio('/assets/warning1.mp4')
 
 	var timeExpired;
 	flipClockApi.createClock = function () {
