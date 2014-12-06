@@ -26,6 +26,10 @@ body {
 
 //Header
 
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+    display: none !important;
+}
+
 .logo { 
   padding: 5px; 
   padding-left: 40px;
