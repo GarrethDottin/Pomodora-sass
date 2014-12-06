@@ -26,6 +26,10 @@ body {
 
 //Header
 
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+    display: none !important;
+}
+
 .logo { 
   padding: 5px; 
   padding-left: 40px;
@@ -204,7 +208,7 @@ button {
 }
 
 #water {
-  background-image: image-url("waves.png");
+  background-image: url("waves.png");
   background-position: 100% 0%;
   position: absolute;
   left:1px;
