@@ -817,7 +817,6 @@ $body-font-family: $font-family-sans-serif;
 
 .right-off-canvas-wrap { 
 	height: 580px !important;
-	z-index: 100000 !important;
 }
 
 .right-off-canvas-menu { 
@@ -839,6 +838,8 @@ $body-font-family: $font-family-sans-serif;
 	right: -2px;
 	top: 240px;
 	padding: 10px !important;
+	border-top-left-radius: 4px;
+	border-bottom-left-radius: 4px;
 }
 
 // $include-html-off-canvas-classes: $include-html-classes;

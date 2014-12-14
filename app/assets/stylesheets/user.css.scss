@@ -128,14 +128,12 @@ input:focus {outline:none;}
 input {border:0; outline:none;}
 
 
-
-
 //Main Section 
 button {
   outline: 0;
   cursor: pointer;
+  z-index: 3;
 }
-
 
 .flat-ui-button {
   border:none;
@@ -286,6 +284,7 @@ button {
   /* margin-bottom: 7px; */
   position: absolute;
   bottom: 190px;
+  z-index: 3;
 }
 
 .timerButtonContainer:hover .upvote  { 

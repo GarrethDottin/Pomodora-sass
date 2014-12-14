@@ -41,7 +41,14 @@ var appcontroller = {
 
 var pushMenu = { 
   init: function () { 
-      $('#simple-menu').sidr();
+    $('#tasks .off-canvas-button .img-padding').on("click", function () { 
+      // depending on position of 
+      // if its one position then 
+          // move the bar further out 
+          //change the index to zero 
+      // else its 
+      //  
+    });
   }
 }
 

@@ -301,6 +301,7 @@ a.spmenu-button {
 
 .img-padding { 
   padding-bottom: 3px;
+  border-radius: 3px;
 }
 
 .todo-item {
@@ -309,6 +310,7 @@ a.spmenu-button {
   font-size: 16px;
   font-weight: 400;
   border-top: solid #F6F6F6 1px;
+  max-height: 35px;
 }
 
 .todo-exitbutton {
@@ -316,12 +318,14 @@ a.spmenu-button {
   position:absolute;
   left: 280px;
   top: 10px;
+  cursor: pointer;
 }
 
 .todo-item-margin {
   position: relative;
   left: 15px;
   top: 12px;
+  cursor: text;
 }
 
 .todoclosed {
@@ -329,13 +333,15 @@ a.spmenu-button {
 }
 
 .todo-inline-edit {
-  font-size: 16px;
-  font-weight: 400;
+  font-size: 16px !important;
+  font-weight: 500;
   border: none !important;
   position: absolute;
-  left: 30px;
-  bottom: 7px;
+  left: 28px;
+  bottom: -19px;
   cursor: text;
+  font-family: 'Lato', sans-serif !important;
+  color: black !important;
 }
 
 .todo-cancel-button {
