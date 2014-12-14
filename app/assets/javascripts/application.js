@@ -16,12 +16,12 @@
 //= require angular
 //= require angular-route
 //= main
-//= todo
+//= ztodo
 //= zflipclock
-//= zlocal_storage
-//= push_menu
-//= progress_bar
-//= outside_libraries 
+//= zhome_controller
+//= zpush_menu
+//= zprogress_bar
+//= ztodo_list_service
 //= require_tree .
 
 var appcontroller = {
@@ -33,11 +33,19 @@ var appcontroller = {
     $('#timer').on("click", function () { 
       $('body,html').animate({ scrollTop: $('main').offset().top -50 }, 1600);
     }); 
+    $('#tasks').on('click', function () { 
+    	$('a.spmenu-button.show').click()
+    }); 
+    $('[data-magellan-expedition], [data-magellan-expedition-clone]').css("padding", "0px !important");
   }
 }
 
 
+
+
+
 $(function (){
-  appcontroller.init()
+	appcontroller.init();
+	$(document).foundation();
 });
 

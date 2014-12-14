@@ -1,58 +1,104 @@
 angular.module("App").directive("progressBar", function() {
 	progressBar = {};
-	progressBar.width = 0;
+	progressBar.width = 20;
 	progressBar.position = "100% 100%";
+	progressBar.counter = 0; 
+	progressBar.done = false; 
 
-	var progressBarChange = function (progressMeter,progressBarPositioning, progressBarWidth) {
-		if (progressBar.position == "100% 100%") {
-			progressBar.position = "100% 0%";
-		}
-		else {
-			progressBar.position = "100% 100%";
+	var progressBarChange = function (progressMeter, progressBarWidth) {
+		if (progressBar.counter >= 1) { 
+			$('#hashmark' + progressBar.counter).addClass('progress-bar-circle');
 		};
-
-		progressMeter.css("background-position", progressBar.position);
-		progressMeter.css("tansition", "all 2s ease-out");
 		
-		progressMeter.css("width", progressBarWidth );
+		var width = progressBar.width.toString();
+		progressMeter.css("width", width);
+		console.log(progressBar.done)
+		if (progressBar.done) { 
+			progressBar.counter--
+			progressBar.reset(progressMeter);
+		}; 
+		
 	};
 
 	progressBar.watch = function (scope,element,attr){
 		var progressMeter = element.children().children().children();
 
 		scope.$watch("counter", function (){ 
-			if (scope.counter % 4 == 0 && scope.counter != 0) { 
-				setTimeout(function(){
-					progressBar.reset(progressMeter);
-				},5000);
-			};
+			// if (scope.counter % 4 == 0 && scope.counter != 0) { 
+			// 	setTimeout(function(){
+			// 		progressBar.reset(progressMeter);
+			// 		progressBar.counter = 0;
+			// 	},5000);
+			// };
 		})
 		scope.$watch("progress", function () {
-			if(scope.progress == 0) {
-				progressBar.reset(progressMeter);
-			};
 			if (scope.progress > 10) {
+				progressBar.counter++
 				progressBar.add(progressMeter, progressBar.width);
 			};
 		});
 	};
 
 	progressBar.add = function (progressMeter, progressBarwidth) {
-		if (progressBar.width <= 680)  { 
-			if (progressBar.width >= 680) {
-				progressBar.width += 265;
+		if (progressBar.width <= 695)  { 
+			console.log(progressBar.width);
+			if (progressBar.width == 20) {
+				progressBar.width += 200;
+				progressBar.done = false; 
+				progressBarChange(progressMeter);
 			}
-			if (progressBar.width < 680 ){ 
-				progressBar.width += 220;
-			};
-			var width = progressBar.width.toString();
-			progressBarChange(progressMeter,progressBar.position, width);
+			else if (progressBar.width == 220 ){ 
+				progressBar.width += 235;
+				progressBarChange(progressMeter);
+			}
+			else if (progressBar.width == 455) { 
+				progressBar.width += 240;
+				progressBarChange(progressMeter);
+			}
+			else if (progressBar.width == 695) { 
+				progressBar.width += 245;
+				progressBar.done = true
+				progressBarChange(progressMeter);
+			}
 		}
 	};
 
 	progressBar.reset = function (progressMeter) {
-		progressBarChange(progressMeter,progressBar.position, 20);
-		progressBar.width = 20;
+			if (progressBar.counter == 3) {
+				setTimeout(function(){
+					progressMeter.css('width', '695x');
+					$('#hashmark3').addClass('progress-bar-reset'); 
+					progressBar.counter = 2
+					progressBar.reset(progressMeter);
+				},4000); 
+			}
+			if (progressBar.counter == 2) { 
+				console.log("inside counter2")
+				setTimeout(function(){
+					$('#hashmark2').addClass('progress-bar-reset');
+					progressMeter.css('width', '455px');
+					progressBar.counter = 1
+					progressBar.reset(progressMeter);
+				},3000); 
+			}
+
+			if (progressBar.counter == 1) { 
+				setTimeout(function(){
+					$('#hashmark1').addClass('progress-bar-reset');
+					progressMeter.css('width', '220px');
+					progressBar.counter = 0 
+					progressBar.reset(progressMeter);
+				},3000);
+			}
+			if (progressBar.counter == 0) { 
+				progressMeter.css('width', '20px');
+				progressBar.width = 20;
+				progressBar.done = false;
+				$('.progress-bar-hashmark').removeClass('progress-bar-circle');
+				setTimeout(function() { 
+					$('.progress-bar-hashmark').removeClass('progress-bar-reset');
+				}, 3000)
+			}
 	};
 
 	return {
@@ -65,7 +111,7 @@ angular.module("App").directive("progressBar", function() {
 			};
 
 		}],
-		template: '<div id="container"> <div id="glass"><span class="progress-bar-hashmark"> | </span>  <span class="progress-bar-hashmark"> | </span> <span class="progress-bar-hashmark"> | </span>	<div id="water"></div></div></div>',
+		template: '<div id="container"> <div id="glass"><span id="hashmark1" class="progress-bar-hashmark"> &nbsp</span>  <span id="hashmark2" class="progress-bar-hashmark">&nbsp</span> <span id="hashmark3" class="progress-bar-hashmark">&nbsp</span>	<div id="water"></div></div></div>',
 		link: progressBar.watch
 	};
 });

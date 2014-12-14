@@ -196,19 +196,16 @@
 .flipclock-small-text {
   font-size: 12px;
   font-weight: 300;
-  position: absolute;
-  left: 300px;
-  top: 363px;
+  position: relative;
+  right: 75px;
+  bottom: 5px;
   font-family: 'lato';
   color: white;
 }
 
 .flipclock-small-text-seconds {
-  margin-left: 265px;
-
+  margin-left: 260px;
 }
-
-
 
 .flip-clock-divider:first-child {
   width: 0; }
@@ -438,10 +435,10 @@
 
 .timer-container { 
   position: relative;
-  margin: 0 auto ;
+/*  margin: 0 auto ;
   top: 50px;
   width: 800px;
-  padding-left: 100px;
+  padding-left: 100px;*/
 }
 .smallblock, .smallblock2, .smallblock3, .smallblock4, .smallblock5, .smallblock6, .smallblock7, .smallblock8 {
   background-color: #449BB6;
@@ -524,7 +521,7 @@
     border: 1px solid white;
     background-color: inherit;
     font-family: 'Lato', sans-serif;
-    font-weight: 700;
+    font-weight: 500;
     font-size: 12px;
     color: white;
     padding: 15px;

@@ -7,7 +7,7 @@ gem 'execjs'
 gem 'therubyracer', :platforms => :ruby
 gem 'jquery-rails'
 gem "oa-oauth"
-gem 'foundation-rails'
+gem 'zurb-foundation', '~> 4.3.2'
 # To use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '~> 3.0.0', require: 'bcrypt'
 gem 'devise', github: 'plataformatec/devise'
