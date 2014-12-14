@@ -281,7 +281,7 @@ button {
   border-radius: 35px;
   cursor: pointer;
   display: inline-block;
-  margin-left: 340px;
+  margin-left: 315px;
   /* margin-top: -10px; */
   /* margin-bottom: 7px; */
   position: absolute;
@@ -445,7 +445,7 @@ button {
 
 .overlay, .overlay2 { 
   width: 105%;
-  height: 172%;
+  height: 103%;
   background-color: #14304B;
   position: absolute;
   top: -25px;
@@ -465,9 +465,7 @@ button {
   font-size: 30px;
   font-family: 'Lato';
   font-weight: 100;
-  text-align: center;
-  left: 52%;
-  margin-left: -308px;
+  left: 33%;
 }
 
 .overlay-button-yes { 
@@ -500,13 +498,13 @@ button {
   left: 48%;
 }
 .overlay-image-smiley { 
-  margin-left: 40%;
-  margin-top: 50px;
-  margin-bottom: 50px;
+  position: relative;
+  left: 43%;
+  top: 15%;
 }
 
 .second-overlay-text { 
-  top: 300px;
+  top: 400px;
 }
 
 // How TO Section 

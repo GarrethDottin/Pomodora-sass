@@ -804,6 +804,43 @@ $body-font-family: $font-family-sans-serif;
 // 18. Off-canvas
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
+
+.off-canvas-wrap { 
+	height: 580px !important;
+	position: relative !important;
+	bottom: 473px !important;
+}
+
+.inner-wrap { 
+	height: 580px !important;
+}
+
+.right-off-canvas-wrap { 
+	height: 580px !important;
+	z-index: 100000 !important;
+}
+
+.right-off-canvas-menu { 
+	background: white !important;
+}
+
+.exit-off-canvas { 
+	box-shadow: none !important;
+}
+
+.off-canvas-button { 
+	box-shadow: 0px 2px 0px 0px #545454;
+	position: absolute;
+	font-size: 25px;
+	text-align: center;
+	background: white;
+	text-decoration: none;
+	border: none !important;
+	right: -2px;
+	top: 240px;
+	padding: 10px !important;
+}
+
 // $include-html-off-canvas-classes: $include-html-classes;
 
 // $tabbar-bg: $oil;

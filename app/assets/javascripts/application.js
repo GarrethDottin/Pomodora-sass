@@ -19,24 +19,29 @@
 //= ztodo
 //= zflipclock
 //= zhome_controller
-//= zpush_menu
 //= zprogress_bar
 //= ztodo_list_service
+//= sidr
 //= require_tree .
 
 var appcontroller = {
   init: function () {
-    $('#about').on("click", function () { 
-      $('body,html').animate({ scrollTop: $('.panel').offset().top -50 }, 1600);
-    });
+    // $('#about').on("click", function () { 
+    //   $('body,html').animate({ scrollTop: $('.panel').offset().top -50 }, 1600);
+    // });
 
-    $('#timer').on("click", function () { 
-      $('body,html').animate({ scrollTop: $('main').offset().top -50 }, 1600);
-    }); 
-    $('#tasks').on('click', function () { 
-    	$('a.spmenu-button.show').click()
-    }); 
-    $('[data-magellan-expedition], [data-magellan-expedition-clone]').css("padding", "0px !important");
+    // $('#timer').on("click", function () { 
+    //   $('body,html').animate({ scrollTop: $('main').offset().top -50 }, 1600);
+    // }); 
+    // $('#tasks').on('click', function () { 
+    // 	$('a.spmenu-button.show').click()
+    // }); 
+  }
+}
+
+var pushMenu = { 
+  init: function () { 
+      $('#simple-menu').sidr();
   }
 }
 
@@ -46,6 +51,7 @@ var appcontroller = {
 
 $(function (){
 	appcontroller.init();
+  pushMenu.init();
 	$(document).foundation();
 });
 

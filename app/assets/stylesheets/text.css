@@ -1,3 +1,7 @@
 h1,h2,h3,p, span, input {
   font-family: 'Lato', sans-serif;
 }
+
+ .off-canvas-wrap a { 
+	color: black !important;
+}

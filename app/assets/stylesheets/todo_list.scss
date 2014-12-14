@@ -290,11 +290,17 @@ a.spmenu-button {
   top: 9px;
 }
 
+
 .img-checkmark {
   position: relative;
   top: 10px;
   opacity: .1;
   left: 10px;
+  cursor: pointer;
+}
+
+.img-padding { 
+  padding-bottom: 3px;
 }
 
 .todo-item {
@@ -327,15 +333,15 @@ a.spmenu-button {
   font-weight: 400;
   border: none !important;
   position: absolute;
-  left: 28px;
-  bottom: -17px;
+  left: 30px;
+  bottom: 7px;
   cursor: text;
 }
 
 .todo-cancel-button {
-  position: absolute;
-  left: 290px;
-  margin-top: -20px;
+  position: relative;
+  left: 200px;
+  top: -20px;
   opacity: .6;
 }
 .todo-edit-button {
