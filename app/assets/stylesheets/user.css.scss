@@ -64,7 +64,10 @@ header {
   background-color: #333333 !important; 
   cursor: default;
 }
-[data-magellan-expedition-clone] { display: none; }
+
+[data-magellan-expedition-clone] { display: none;
+  padding: 0px !important;
+ }
 
 [data-magellan-expedition] { 
   padding: 0px !important;

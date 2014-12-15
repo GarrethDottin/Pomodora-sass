@@ -21,44 +21,16 @@
 //= zhome_controller
 //= zprogress_bar
 //= ztodo_list_service
-//= sidr
+//= require foundation
 //= require_tree .
 
-var appcontroller = {
-  init: function () {
-    // $('#about').on("click", function () { 
-    //   $('body,html').animate({ scrollTop: $('.panel').offset().top -50 }, 1600);
-    // });
-
-    // $('#timer').on("click", function () { 
-    //   $('body,html').animate({ scrollTop: $('main').offset().top -50 }, 1600);
-    // }); 
-    // $('#tasks').on('click', function () { 
-    // 	$('a.spmenu-button.show').click()
-    // }); 
-  }
-}
-
-var pushMenu = { 
-  init: function () { 
-    $('#tasks .off-canvas-button .img-padding').on("click", function () { 
-      // depending on position of 
-      // if its one position then 
-          // move the bar further out 
-          //change the index to zero 
-      // else its 
-      //  
-    });
-  }
-}
 
 
 
 
 
-$(function (){
-	appcontroller.init();
-  pushMenu.init();
-	$(document).foundation();
+$( document ).ready(function() {
+    $(document).foundation();
 });
+
 

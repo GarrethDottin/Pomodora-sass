@@ -1,4 +1,4 @@
-<div class= 'fixed ' data-magellan-expedition= 'fixed ' >
+<div class= 'fixed ' data-magellan-expedition= 'fixed' >
   <nav class= 'top-bar '>
     <ul class= 'left '>
       <li class= 'name '>
@@ -9,8 +9,8 @@
     <section class= 'top-bar-section'>
       <ul class= 'right '> 
 
-        <li data-magellan-arrival= 'TIMER'><a href= '#TIMER'>TIMER</a></li>
-        <li data-magellan-arrival= 'HOWTO'><a href= '#HOWTO'>HOW TO</a> </li>
+        <li data-magellan-arrival = 'TIMER'><a href = '#TIMER'>TIMER</a></li>
+        <li data-magellan-arrival = 'HOWTO'><a href = '#HOWTO'>HOW TO</a> </li>
         <li id= 'tasks'><a href= '#' class="right-off-canvas-toggle">TASKS</a> </li>
         <li id= 'empty-space'><a id= 'empty-space' href>&nbsp</a> </li>
 <!--         <li id= 'empty-space '><a href>&nbsp</a> </li>
@@ -21,12 +21,12 @@
 
     <main>
       <a class=""><img src="" </a>
-      <div id= 'TIMER' data-magellan-destination= 'TIMER' name= 'timer' class= 'row timer-container timer_outline'>
+      <div id= 'TIMER' data-magellan-destination= 'TIMER' name= 'TIMER' class= 'row timer-container timer_outline'>
         <div class= 'small-12 columns'>
           <h2 class= 'title'> {{statement}} </h2>
-          <button id= 'fifteen' class= 'timer-button' ng-click= 'buttonClicked(15); changeStatement(15)'>15 minutes </button>
-          <button class=  'timer-button' ng-click= 'buttonClicked(25); changeStatement(25)'>25 minutes </button>
-          <button class= 'timer-button' ng-click= 'buttonClicked(45); changeStatement(45) '>45 minutes </button>
+          <button id= 'fifteen' class= 'timer-button transparent' ng-click= 'buttonClicked(15); changeStatement(15)'>15 minutes </button>
+          <button class=  'timer-button transparent' ng-click= 'buttonClicked(25); changeStatement(25)'>25 minutes </button>
+          <button class= 'timer-button transparent' ng-click= 'buttonClicked(45); changeStatement(45) '>45 minutes </button>
           <div flip-Clock> </div>
           <div class= 'buttons'> 
             <div ng-click= 'adjustTime("add"); changeStatement("add");' class= 'timerButtonContainer addButton'> <div class= 'upvote '>&nbsp</div></div>
@@ -34,7 +34,7 @@
           </div>
           <div class= 'flipclock-small-text'> <span>Minutes </span> <span class= 'flipclock-small-text-seconds'>Seconds</span> </div>
           <button class= 'flat-ui-button' ng-click= 'startClicked()'> Start</button>
-          <button id= 'stop-button' class= 'timer-button' ng-click= 'stopClicked()'>Stop </button>
+          <button id= 'stop-button' class= 'timer-button transparent' ng-click= 'stopClicked()'>Stop </button>
         </div>
       </div>
 
@@ -53,7 +53,7 @@
                     <input class= 'todo-inline-edit noshadow ' type= 'text' ng-model= 'todo.text'>
                   </form>
                   <span  class= 'todo-item-margin' ng-hide= 'editing'>{{todo.text}}</span>
-                  <span ng-show= 'editing' class = 'todo-cancel-button todo-item-margin' ng-click= 'removeTask($index, todo.text)'> <%= image_tag('cancel.png') %></span>
+                  <span ng-show= 'editing' class = 'todo-cancel-button todo-item-margin' ng-click= 'removeTask($index, todo.text)'> <%= image_tag('cancel.png', :class => 'img-cancel' ) %></span>
                 </span>
               </div>
             </ul>
@@ -79,8 +79,8 @@
 
       <div> 
       </div>
-
-      <div id= 'HOWTO' data-magellan-destination= 'HOWTO' class= 'progress-bar-container row '>
+      <a name ='HOWTO'></a>
+      <div id = 'HOWTO' data-magellan-destination = 'HOWTO' class= 'progress-bar-container row'>
         <div class= 'small-2 columns'>
           <div class= 'daily-counter'> <div class= 'daily-count'>{{counter}}</div><div class= 'daily-name '>Today </div></div>
         </div>
