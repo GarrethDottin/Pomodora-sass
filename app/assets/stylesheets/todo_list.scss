@@ -274,10 +274,12 @@ a.spmenu-button {
 
 
 .todo-title {
-  font-weight: 200;
+  font-weight: 100;
   text-align: center;
   font-size: 40px;
   margin-top: 100px;
+  font-family: "Helvetica Neue", Helvetica, sans-serif;
+  font-weight: 100;
 }
 
 .img-plus-sign {
@@ -342,15 +344,17 @@ a.spmenu-button {
   cursor: text;
   font-family: 'Lato', sans-serif !important;
   color: black !important;
+  background-color: transparent;
 }
 
 .todo-cancel-button {
   position: relative;
   left: 200px;
-  top: -20px;
+  top: -19px;
   opacity: .6;
   cursor: pointer;
 }
+
 .todo-edit-button {
   position: relative;
   left: 150px;
