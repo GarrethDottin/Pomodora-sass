@@ -56,6 +56,18 @@ header {
   height: 50px;
   z-index: 1001;
 }
+
+#logo_text { 
+  position: relative;
+  bottom: 5px;
+}
+
+#tagline { 
+  position: relative;
+  right: 13px;
+  bottom: 2px;
+}
+
 #empty-space:hover { 
   background-color: #333333 !important; 
   cursor: default;
@@ -265,7 +277,7 @@ button {
   left:1px;
   bottom: 4px;
   width: 19px;
-  height: 19px  ;
+  height: 18px;
   -webkit-transition: all 3s ease-out;
   -moz-transition: all 3s ease-out;
   -o-transition: all 3s ease-out;
