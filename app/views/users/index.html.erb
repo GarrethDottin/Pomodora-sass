@@ -1,4 +1,4 @@
-<div class= 'fixed ' data-magellan-expedition= 'fixed' >
+<div class= 'fixed ' data-magellan-expedition >
   <nav class= 'top-bar '>
     <ul class= 'left '>
       <li class= 'name '>
@@ -9,9 +9,8 @@
 
     <section class= 'top-bar-section'>
       <ul class= 'right '> 
-
-        <li data-magellan-arrival = 'TIMER'><a href = '#TIMER'>TIMER</a></li>
-        <li data-magellan-arrival = 'HOWTO'><a href = '#HOWTO'>HOW TO</a> </li>
+        <li data-magellan-arrival="timer"><a href = '#timer'>TIMER</a></li>
+        <li data-magellan-arrival="howto"><a href = '#howto'>HOW TO</a> </li>
         <li id= 'tasks'><a href= '#' class="right-off-canvas-toggle">TASKS</a> </li>
         <li id= 'empty-space'><a id= 'empty-space' href>&nbsp</a> </li>
 <!--         <li id= 'empty-space '><a href>&nbsp</a> </li>
@@ -21,8 +20,7 @@
 </div>
 
     <main>
-      <a class=""><img src="" </a>
-      <div id= 'TIMER' data-magellan-destination= 'TIMER' name= 'TIMER' class= 'row timer-container timer_outline'>
+      <div id= 'TIMER' class= 'row timer-container timer_outline'>
         <div class= 'small-12 columns'>
           <h2 class= 'title'> {{statement}} </h2>
           <button id= 'fifteen' class= 'timer-button transparent' ng-click= 'buttonClicked(15); changeStatement(15)'>15 minutes </button>
@@ -80,8 +78,7 @@
 
       <div> 
       </div>
-      <a name ='HOWTO'></a>
-      <div id = 'HOWTO' data-magellan-destination = 'HOWTO' class= 'progress-bar-container row'>
+      <div id = 'HOWTO' class= 'progress-bar-container row'>
         <div class= 'small-2 columns'>
           <div class= 'daily-counter'> <div class= 'daily-count'>{{counter}}</div><div class= 'daily-name '>Today </div></div>
         </div>
@@ -96,7 +93,9 @@
         </div>
       </div>
     </main>
-  <div class= 'how-to-container row'>
+  <div data-magellan-destination='howto' class = 'how-to-container row'>
+      <a name ='howto'></a>
+
     <div class= 'small-12 columns'>
       <div class= 'panel'>
         <div class= 'carrot carrot1'></div>

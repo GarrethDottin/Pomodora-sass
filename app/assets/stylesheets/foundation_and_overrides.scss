@@ -865,6 +865,9 @@ $body-font-family: $font-family-sans-serif;
 // $tabbar-header-weight: $font-weight-bold;
 // $tabbar-header-line-height: $tabbar-height;
 // $tabbar-header-margin: 0;
+	.fixed { 
+		border-bottom: solid #bdc3c7 3px !important;
+	}
 
 // Off Canvas Menu Variables
 // $off-canvas-width: rem-calc(250);

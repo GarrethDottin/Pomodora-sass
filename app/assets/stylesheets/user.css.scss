@@ -57,6 +57,10 @@ header {
   z-index: 1001;
 }
 
+.fixed { 
+  border-bottom: solid #bdc3c7 2px !important;
+}
+
 #logo_text { 
   position: relative;
   bottom: 5px;
@@ -681,13 +685,15 @@ button {
 .progress-bar-inner{
   width:954px;
   margin: auto;
-  right: 88px; 
+  right: 70px; 
   position: relative;
 }
 
 .progress-bar-container .image-container{
   margin: auto;
   width:954px;
+  position: relative;
+  left: 15px;
 }
 
 
