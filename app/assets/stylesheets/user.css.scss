@@ -58,7 +58,7 @@ header {
 }
 
 .fixed { 
-  border-bottom: solid #bdc3c7 1px !important;
+  border-bottom: solid #bdc3c7 2px !important;
 }
 
 #logo_text { 
@@ -256,8 +256,6 @@ button {
 
 #container {
   display: inline-block;
-  margin-left: 200px;
-  margin-top: 2%;
   background: white;
   width: 950px;
   height: 22px;
@@ -364,18 +362,19 @@ button {
 
 #hashmark1{ 
   position: relative; 
-  left: 200px
+  left: 200px;
 }
 
 #hashmark2 { 
   top: -10px;
   position: relative;
-  right: 75px;
+  right: 50px;
 }
 
 #hashmark3 { 
   position: relative;
   top: -50px;
+  right: 10px;
 }
 .progress-bar-hashmark:nth-child(2) { 
   margin-left: 47.4%;
@@ -432,10 +431,13 @@ button {
   width: 70px;
   height: 75px;
   background-color: #122F4A;
-  position: absolute;
-  margin-top: 18px;
-  margin-left: 60px;
   border-radius: 6px;
+  margin: auto;
+  margin-top: 20px;
+}
+
+#counter-container { 
+  height: 80px;
 }
 
 .daily-count { 
@@ -682,37 +684,38 @@ button {
    color: white !important;
 }
 
+
+//Progress Bar
 .progress-bar-inner{
   width:954px;
   margin: auto;
-  right: 70px; 
   position: relative;
+  top: 20px;
 }
 
 .progress-bar-container .image-container{
   margin: auto;
-  width:954px;
+  width: 954px;
   position: relative;
-  left: 15px;
+  left: 12px;
+  top: 20px;
 }
 
-
-.progress-bar-inner #container{
-  margin-left: 0;
-  margin-top: 3%;
-}
 .timer-container.timer_outline{
   text-align: center;
   top: 55px;
 }
+
 .timer_outline .flip-clock-wrapper{
   width: 600px;
   margin: 1em auto;
 }
+
 .timer_outline #fifteen{
   margin-left: 0;
   margin-bottom: 20px;
 }
+
 .timer_outline .flat-ui-button{
   margin-left: 0;
 }
