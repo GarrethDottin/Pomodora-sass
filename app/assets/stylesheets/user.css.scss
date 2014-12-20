@@ -342,24 +342,43 @@ button {
 
 .progress-bar-circle {
   background-color: rgb(103,195,151);;
-  -webkit-transition: background 4.5s linear;
-  -moz-transition: background 4.5s linear;
-  -ms-transition: background 4.5s linear;
-  -o-transition: background 4.5s linear;
-  transition: background 4.5s linear;
+  -webkit-transition: background 3.0s linear;
+  -moz-transition: background 3.0s linear;
+  -ms-transition: background 3.0s linear;
+  -o-transition: background 3.0s linear;
+  transition: background 3.0s linear;
   z-index: 2;
 }
 
 .progress-bar-reset {
   background-color: white;
-  -webkit-transition: background 3.6s linear;
-  -moz-transition: background 3.6s linear;
-  -ms-transition: background 3.6s linear;
-  -o-transition: background 3.6s linear;
-  transition: background 3.6s linear;
+  -webkit-transition: background 3.2s linear;
+  -moz-transition: background 3.0s linear;
+  -ms-transition: background 3.0s linear;
+  -o-transition: background 3.0s linear;
+  transition: background 3.2s linear;
   z-index: 2;
 }
 
+.progress-bar-reset-first {
+  background-color: white;
+  -webkit-transition: background 1.8s linear;
+  -moz-transition: background 3.0s linear;
+  -ms-transition: background 3.0s linear;
+  -o-transition: background 3.0s linear;
+  transition: background 1.8s linear;
+  z-index: 2;
+}
+
+.progress-bar-reset-unique { 
+  background-color: white;
+  -webkit-transition: background 5.0s linear;
+  -moz-transition: background 4.0s linear;
+  -ms-transition: background 4.0s linear;
+  -o-transition: background 4.0s linear;
+  transition: background 5.0s linear;
+  z-index: 2;
+}
 #hashmark1{ 
   position: relative; 
   left: 200px;
@@ -376,6 +395,7 @@ button {
   top: -50px;
   right: 10px;
 }
+
 .progress-bar-hashmark:nth-child(2) { 
   margin-left: 47.4%;
 }
@@ -396,19 +416,19 @@ button {
 }
 
 .image-caption-teacup { 
-  left: 110px;
+  left: 185px;
 }
 
 .image-caption-meditate { 
-  left: 273px;
+  left: 376px;
 }
 
 .image-caption-snack { 
-  left: 473px;
+  left: 533px;
 }
 
 .image-caption-bench { 
-  left: 670px;
+  left: 740px;
 }
 
 #teacup-image { 
@@ -749,24 +769,26 @@ button {
   padding: 10px 0 40px;
 }
 
-.inner_panel{
+.inner_panel {
   width:1200px;
   margin: auto;
   overflow:hidden
 }
 
 footer { 
+  display: inline-block;
   background-color: #1A1A1A;
-  position: absolute; 
-  top: 3268px;
-  left: -10px; 
-  width: 125%; 
-  height: 50px;
-  text-align: left;
+  position: absolute;
+  top: 3294px;
+  bottom: 0;
+  width: 125%;
+  height: 60px;
+  margin-bottom: 0px;
 }
 
 footer p { 
   text-align: center;
+  margin-bottom: 0px;
   margin-right: 20%;
   margin-top: 5px;
   font-weight: 100; 

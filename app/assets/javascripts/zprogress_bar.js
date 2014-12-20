@@ -7,7 +7,9 @@ angular.module("App").directive("progressBar", function() {
 
 	var progressBarChange = function (progressMeter, progressBarWidth) {
 		if (progressBar.counter >= 1) { 
-			$('#hashmark' + progressBar.counter).addClass('progress-bar-circle');
+			setTimeout(function(){
+				$('#hashmark' + progressBar.counter).addClass('progress-bar-circle');
+			},2000)
 		};
 		
 		var width = progressBar.width.toString();
@@ -66,11 +68,12 @@ angular.module("App").directive("progressBar", function() {
 	progressBar.reset = function (progressMeter) {
 			if (progressBar.counter == 3) {
 				setTimeout(function(){
+					console.log("reset")
 					progressMeter.css('width', '695x');
-					$('#hashmark3').addClass('progress-bar-reset'); 
+						$('#hashmark3').addClass('progress-bar-reset-unique');
 					progressBar.counter = 2
 					progressBar.reset(progressMeter);
-				},4000); 
+				},3500); 
 			}
 			if (progressBar.counter == 2) { 
 				console.log("inside counter2")
@@ -84,7 +87,7 @@ angular.module("App").directive("progressBar", function() {
 
 			if (progressBar.counter == 1) { 
 				setTimeout(function(){
-					$('#hashmark1').addClass('progress-bar-reset');
+					$('#hashmark1').addClass('progress-bar-reset-first');
 					progressMeter.css('width', '220px');
 					progressBar.counter = 0 
 					progressBar.reset(progressMeter);
@@ -111,7 +114,7 @@ angular.module("App").directive("progressBar", function() {
 			};
 
 		}],
-		template: '<div id="container"> <div id="glass"><span id="hashmark1" class="progress-bar-hashmark"> &nbsp</span>  <span id="hashmark2" class="progress-bar-hashmark">&nbsp</span> <span id="hashmark3" class="progress-bar-hashmark">&nbsp</span>	<div id="water"></div></div></div>',
+		template: '<div id="container"> <div id="glass"><span id="hashmark1" class="progress-bar-hashmark"> &nbsp</span> <span id="hashmark2" class="progress-bar-hashmark">&nbsp</span> <span id="hashmark3" class="progress-bar-hashmark">&nbsp</span>	<div id="water"></div></div></div>',
 		link: progressBar.watch
 	};
 });
