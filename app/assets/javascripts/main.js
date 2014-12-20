@@ -22,10 +22,7 @@ angular.module("App", ['ngCookies'])
 		$scope.buttonClicked = buttonClicked;
 
 		function changeStatement (num) {
-			if(num =='add') { 
-				$scope.statement ="What can you do in " + $scope.time +  " minutes?";	
-			}
-			else if (num == 'down') { 
+			if(num == 'add' || num == 'down') { 
 				$scope.statement ="What can you do in " + $scope.time +  " minutes?";	
 			}
 			else { 
@@ -40,7 +37,6 @@ angular.module("App", ['ngCookies'])
 
 		function initialOverlay () { 
 			$scope.overlay1 = true;
-			debugger
 		}; 
 
 		function secondOverlay () { 

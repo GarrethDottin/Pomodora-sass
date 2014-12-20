@@ -128,7 +128,7 @@ angular.module("App").directive("flipClock", function() {
 				$scope.overlay1 = true;
 			} 
 
-			function resetTimer ( ) { 
+			function resetTimer () { 
 				var time = roundTime(flipClockApi.currentTime); 
 				flipClockApi.setTimer(flipClockApi.currentTime, $scope);
 			}

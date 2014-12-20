@@ -14,7 +14,6 @@ angular.module("App").directive("progressBar", function() {
 		
 		var width = progressBar.width.toString();
 		progressMeter.css("width", width);
-		console.log(progressBar.done)
 		if (progressBar.done) { 
 			progressBar.counter--
 			progressBar.reset(progressMeter);
@@ -68,15 +67,13 @@ angular.module("App").directive("progressBar", function() {
 	progressBar.reset = function (progressMeter) {
 			if (progressBar.counter == 3) {
 				setTimeout(function(){
-					console.log("reset")
 					progressMeter.css('width', '695x');
-						$('#hashmark3').addClass('progress-bar-reset-unique');
+					$('#hashmark3').addClass('progress-bar-reset-unique');
 					progressBar.counter = 2
 					progressBar.reset(progressMeter);
-				},3500); 
+				},3300); 
 			}
 			if (progressBar.counter == 2) { 
-				console.log("inside counter2")
 				setTimeout(function(){
 					$('#hashmark2').addClass('progress-bar-reset');
 					progressMeter.css('width', '455px');
@@ -91,7 +88,7 @@ angular.module("App").directive("progressBar", function() {
 					progressMeter.css('width', '220px');
 					progressBar.counter = 0 
 					progressBar.reset(progressMeter);
-				},3000);
+				},2500);
 			}
 			if (progressBar.counter == 0) { 
 				progressMeter.css('width', '20px');
@@ -99,8 +96,10 @@ angular.module("App").directive("progressBar", function() {
 				progressBar.done = false;
 				$('.progress-bar-hashmark').removeClass('progress-bar-circle');
 				setTimeout(function() { 
+					$('.progress-bar-hashmark').removeClass('progress-bar-reset-first');
 					$('.progress-bar-hashmark').removeClass('progress-bar-reset');
-				}, 3000)
+					$('.progress-bar-hashmark').removeClass('progress-bar-circle-reset-unique');
+				}, 1500)
 			}
 	};
 

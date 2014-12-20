@@ -342,11 +342,11 @@ button {
 
 .progress-bar-circle {
   background-color: rgb(103,195,151);;
-  -webkit-transition: background 3.0s linear;
-  -moz-transition: background 3.0s linear;
-  -ms-transition: background 3.0s linear;
-  -o-transition: background 3.0s linear;
-  transition: background 3.0s linear;
+  -webkit-transition: background 2.5s linear;
+  -moz-transition: background 2.5s linear;
+  -ms-transition: background 2.5s linear;
+  -o-transition: background 2.5s linear;
+  transition: background 2.5s linear;
   z-index: 2;
 }
 
@@ -372,11 +372,11 @@ button {
 
 .progress-bar-reset-unique { 
   background-color: white;
-  -webkit-transition: background 5.0s linear;
+  -webkit-transition: background 6.0s linear;
   -moz-transition: background 4.0s linear;
   -ms-transition: background 4.0s linear;
   -o-transition: background 4.0s linear;
-  transition: background 5.0s linear;
+  transition: background 6.0s linear;
   z-index: 2;
 }
 #hashmark1{ 
@@ -559,7 +559,7 @@ button {
 .panel-centered-title { 
   text-align: center;
   padding-top: 50px;
-//  margin-left: 35%;
+  margin-left: 35px;
 }
 
 .panel {
