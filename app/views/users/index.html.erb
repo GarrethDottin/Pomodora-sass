@@ -1,5 +1,6 @@
 <div class= 'fixed ' data-magellan-expedition >
-  <nav class= 'top-bar '>
+  <nav class= 'top-bar' data-magellan-destination="timer">
+    <a name='timer'></a>
     <ul class= 'left '>
       <li class= 'name '>
         <%= image_tag('GrooveOtter_Website_Logo.png', :id => 'logo_text') %>
@@ -20,7 +21,7 @@
 </div>
 
     <main>
-      <div id= 'TIMER' class= 'row timer-container timer_outline'>
+      <div  id= 'TIMER' class= 'row timer-container timer_outline'>
         <div class= 'small-12 columns'>
           <h2 class= 'title'> {{statement}} </h2>
           <button id= 'fifteen' class= 'timer-button transparent' ng-click= 'buttonClicked(15); changeStatement(15)'>15 minutes </button>
