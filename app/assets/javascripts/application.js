@@ -16,28 +16,21 @@
 //= require angular
 //= require angular-route
 //= main
-//= todo
+//= ztodo
 //= zflipclock
-//= zlocal_storage
-//= push_menu
-//= progress_bar
-//= outside_libraries 
+//= zhome_controller
+//= zprogress_bar
+//= ztodo_list_service
+//= require foundation
 //= require_tree .
 
-var appcontroller = {
-  init: function () {
-    $('#about').on("click", function () { 
-      $('body,html').animate({ scrollTop: $('.panel').offset().top -50 }, 1600);
-    });
-
-    $('#timer').on("click", function () { 
-      $('body,html').animate({ scrollTop: $('main').offset().top -50 }, 1600);
-    }); 
-  }
-}
 
 
-$(function (){
-  appcontroller.init()
+
+
+
+$(document).ready(function() {
+    $(document).foundation();
 });
+
 
