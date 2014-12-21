@@ -319,7 +319,7 @@ button {
 
 .progress-bar-container { 
   background-color: #E5E9EE;
-  height: 120px;
+  height: 100px;
 //  margin-left: -7px;
   width: 100%;
   margin-top: 100px;
@@ -453,7 +453,7 @@ button {
   background-color: #122F4A;
   border-radius: 6px;
   margin: auto;
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 #counter-container { 
@@ -514,9 +514,19 @@ button {
   top: 283px;
   right: 600px;
   position: absolute;
-  left: 45%;
+  left: 49%;
   margin-left: -190px;
 } 
+
+.overlay-button-no { 
+  position: relative;
+  top: 303px;
+  left: 695px;
+  padding-left: 60px;
+  padding-right: 60px;
+  margin-left: 20px;
+  left: 51%;
+}
 
 .overlay-exit { 
   position: absolute;
@@ -529,15 +539,7 @@ button {
   cursor: pointer;
 }
 
-.overlay-button-no { 
-  position: relative;
-  top: 303px;
-  left: 695px;
-  padding-left: 60px;
-  padding-right: 60px;
-  margin-left: 20px;
-  left: 48%;
-}
+
 .overlay-image-smiley { 
   position: relative;
   left: 43%;
@@ -553,7 +555,7 @@ button {
   width: 100%;
   display: inline-block;
   position: absolute;
-  top: 800px;
+  top: 780px;
 //  margin-left: -7px;
 }
 
@@ -780,7 +782,7 @@ footer {
   display: inline-block;
   background-color: #1A1A1A;
   position: absolute;
-  top: 3294px;
+  top: 3272px;
   bottom: 0;
   width: 125%;
   height: 60px;
