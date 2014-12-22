@@ -25,11 +25,27 @@
 //= require_tree .
 
 
+var domManipulations = { 
+  init: function () { 
+    this.todoButton()
+  }, 
+  todoButton: function () { 
+    $('#tasks, .off-canvas-button').on("click", function () { 
+      if ($('.addButton').css('z-index') === "3") { 
+        $('.addButton').css('z-index', '0');
+      }
+      else { 
+       $('.addButton').css('z-index', '3'); 
+      }
+    }); 
+  }
 
+}
 
 
 
 $(document).ready(function() {
+    domManipulations.init();
     $(document).foundation();
 });
 
