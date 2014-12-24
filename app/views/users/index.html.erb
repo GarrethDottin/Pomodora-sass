@@ -71,7 +71,7 @@
     <div class= 'overlay ' ng-show= 'overlay1 '> <div class= 'overlay-exit ' ng-click= 'exitOverlay(1); resetTimer(); '>X</div>
 
     <div class='centered-body'> <span class= 'overlay-text '> Did you complete your task successfully? </span>
-      <button ng-click = 'secondOverlay(); add(); resetTimer(); 'class= 'flat-ui-button overlay-button-yes '> Yes, I Did!</button> <button class= 'timer-button overlay-button-no ' ng-click= 'closeOverlay(); checkProgress(); resetTimer(); ':>No, Not Yet</button> 
+      <button ng-click = 'secondOverlay(); add(); resetTimer(); rewardSound(); 'class= 'flat-ui-button overlay-button-yes '> Yes, I Did!</button> <button class= 'timer-button overlay-button-no ' ng-click= 'closeOverlay(); checkProgress(); resetTimer(); ':>No, Not Yet</button> 
     </div>
         </div>
         <div class= 'overlay2' ng-show= 'overlay2'> 
@@ -190,5 +190,6 @@
   <footer class= 'black'><p id='footer-text' class= 'white-text'> GrooveOttert is a time tracker with similar functions described on Pomodoro Technique®. This tool is NOT an application or anything related with the Pomodoro Technique® or Francesco Cirillo. </p></footer> 
 </div>
 <%= audio_tag("Similar_1.wav", :id => 'alarm') %> 
+<%= audio_tag("Reward2.mp3", :id => 'reward') %> 
 
 

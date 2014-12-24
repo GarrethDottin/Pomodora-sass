@@ -69,4 +69,5 @@ angular.module("App", ['ngCookies'])
 		function setUser  (user) {
 			$scope.currentUser = user;
 		};
+
 	}]);

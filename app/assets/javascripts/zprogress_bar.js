@@ -107,10 +107,17 @@ angular.module("App").directive("progressBar", function() {
 		controller: ['$scope', function($scope) {
 			$scope.add = add;
 			$scope.progress = 0;
-
+			$scope.rewardSound = rewardSound;
 			function add () {
 				$scope.progress += 250;
 			};
+			function rewardSound () { 
+				var alarm = document.getElementById("reward");
+	            alarm.currentTime = 0;
+	            alarm.load();
+	            alarm.play();
+			}
+
 
 		}],
 		template: '<div id="container"> <div id="glass"><span id="hashmark1" class="progress-bar-hashmark"> &nbsp</span> <span id="hashmark2" class="progress-bar-hashmark">&nbsp</span> <span id="hashmark3" class="progress-bar-hashmark">&nbsp</span>	<div id="water"></div></div></div>',
