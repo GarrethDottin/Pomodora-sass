@@ -20,6 +20,7 @@ angular.module("App", ['ngCookies'])
 		$scope.currentUser = 'guest';
 		$scope.changeStatement = changeStatement;
 		$scope.buttonClicked = buttonClicked;
+		$scope.triggerSound = triggerSound;
 
 		function changeStatement (num) {
 			if(num == 'add' || num == 'down') { 
@@ -45,7 +46,7 @@ angular.module("App", ['ngCookies'])
 			$scope.counter++;
 			$timeout(function(){ 
 				$scope.overlay2 = false; 
-			}, 1000)
+			}, 1500)
 		};
 
 		function exitOverlay (num) { 
@@ -70,4 +71,10 @@ angular.module("App", ['ngCookies'])
 			$scope.currentUser = user;
 		};
 
-	}]);
+		function triggerSound () { 
+			var alarm = document.getElementById("reward");
+            alarm.currentTime = 0;
+            alarm.load();
+            alarm.play();
+		}; 
+ 	}]);
