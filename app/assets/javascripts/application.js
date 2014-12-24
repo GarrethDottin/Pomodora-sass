@@ -28,12 +28,13 @@
 var domManipulations = { 
   init: function () { 
     this.todoButton();
-    this.slider();
+    // this.slider();
   }, 
   todoButton: function () { 
     $('#tasks, .off-canvas-button').on("click", function () { 
       if ($('.addButton').css('z-index') === "3") { 
-        $('.addButton').css('z-index', '0');
+        $('.timerButtonContainer').css('z-index', '0');
+        $('.downButton').css('z-index', '0');
       }
       else { 
        $('.addButton').css('z-index', '3'); 
