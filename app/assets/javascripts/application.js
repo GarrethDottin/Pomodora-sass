@@ -27,7 +27,8 @@
 
 var domManipulations = { 
   init: function () { 
-    this.todoButton()
+    this.todoButton();
+    this.slider();
   }, 
   todoButton: function () { 
     $('#tasks, .off-canvas-button').on("click", function () { 
@@ -38,6 +39,17 @@ var domManipulations = {
        $('.addButton').css('z-index', '3'); 
       }
     }); 
+  }, 
+  slider: function () { 
+    $( "#slider" ).slider({ 
+      value:0,
+      min: 0,
+      max: 99,
+      step: 1, 
+      slide: function (event, ui) { 
+        console.log(ui.value); 
+      }
+    });
   }
 
 }
@@ -46,6 +58,7 @@ var domManipulations = {
 
 $(document).ready(function() {
     domManipulations.init();
+
     $(document).foundation();
 });
 

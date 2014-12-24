@@ -43,7 +43,7 @@ angular.module("App").directive("flipClock", function() {
 				flipClockApi.currentTime = roundTime(flipClockApi.currentTime + 60);
 				flipClockApi.setTimer(flipClockApi.currentTime, scope); 
 			}
-			else { 
+			else if (input == 'down') { 
 				flipClockApi.currentTime = roundTime(flipClockApi.currentTime - 60);
 				flipClockApi.setTimer(flipClockApi.currentTime, scope); 
 			}
