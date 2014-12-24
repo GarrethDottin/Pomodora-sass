@@ -34,10 +34,9 @@ var domManipulations = {
     $('#tasks, .off-canvas-button').on("click", function () { 
       if ($('.addButton').css('z-index') === "3") { 
         $('.timerButtonContainer').css('z-index', '0');
-        $('.downButton').css('z-index', '0');
       }
       else { 
-       $('.addButton').css('z-index', '3'); 
+        $('.timerButtonContainer').css('z-index', '3'); 
       }
     }); 
   }, 
