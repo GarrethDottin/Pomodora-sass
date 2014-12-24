@@ -71,13 +71,13 @@
     <div class= 'overlay ' ng-show= 'overlay1 '> <div class= 'overlay-exit ' ng-click= 'exitOverlay(1); resetTimer(); '>X</div>
 
     <div class='centered-body'> <span class= 'overlay-text '> Did you complete your task successfully? </span>
-      <button ng-click = 'secondOverlay(); add(); resetTimer(); 'class= 'flat-ui-button overlay-button-yes '> Yes, I Did!</button> <button class= 'timer-button overlay-button-no ' ng-click= 'closeOverlay(); checkProgress(); resetTimer(); ':>No, Not Yet</button> 
+      <button ng-click = 'secondOverlay(); add(); resetTimer(); triggerSound(); 'class= 'flat-ui-button overlay-button-yes '> Yes, I Did</button> <button class= 'timer-button overlay-button-no ' ng-click= 'closeOverlay(); checkProgress();  resetTimer(); triggerSound(); ':>No, Not Yet</button> 
     </div>
         </div>
         <div class= 'overlay2' ng-show= 'overlay2'> 
         <div ng-cloak class= 'overlay-exit ' ng-click= 'exitOverlay(2)'>X</div>
             <div class='centered-body'> 
-              <%= image_tag('smiley.png', :class =>  'overlay-image-smiley') %> 
+              <%= image_tag('panel-checkmark.png', :class =>  'overlay-image-smiley') %> 
               <span class= 'overlay-text second-overlay-text'> Congrats, you're one step closer to being done!</span>
             </div>
         </div>
@@ -190,5 +190,5 @@
   <footer class= 'black'><p id='footer-text' class= 'white-text'> GrooveOttert is a time tracker with similar functions described on Pomodoro Technique®. This tool is NOT an application or anything related with the Pomodoro Technique® or Francesco Cirillo. </p></footer> 
 </div>
 <%= audio_tag("Similar_1.wav", :id => 'alarm') %> 
-
+<%= audio_tag('Reward2.mp3', :id => 'reward') %> 
 
