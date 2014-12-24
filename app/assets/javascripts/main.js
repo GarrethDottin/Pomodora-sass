@@ -45,7 +45,7 @@ angular.module("App", ['ngCookies'])
 			$scope.counter++;
 			$timeout(function(){ 
 				$scope.overlay2 = false; 
-			}, 1000)
+			}, 10000000)
 		};
 
 		function exitOverlay (num) { 
