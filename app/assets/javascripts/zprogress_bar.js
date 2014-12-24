@@ -98,7 +98,7 @@ angular.module("App").directive("progressBar", function() {
 				setTimeout(function() { 
 					$('.progress-bar-hashmark').removeClass('progress-bar-reset-first');
 					$('.progress-bar-hashmark').removeClass('progress-bar-reset');
-					$('.progress-bar-hashmark').removeClass('progress-bar-circle-reset-unique');
+					$('.progress-bar-hashmark').removeClass('progress-bar-reset-unique');
 				}, 1500)
 			}
 	};
