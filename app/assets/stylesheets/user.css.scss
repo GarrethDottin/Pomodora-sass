@@ -153,6 +153,19 @@ button {
   z-index: 3;
 }
 
+#slider { 
+  width: 500px;
+  border-radius: 5px;
+}
+
+.ui-slider-handle { 
+  background: image_url('slider-button.png') !important;
+  width: 28px !important ;
+  border: none !important;
+  height: 30px !important;
+  margin-top: -4px !important;
+}
+
 .flat-ui-button {
   border:none;
   color: white;
@@ -540,18 +553,17 @@ button {
   font-weight: 100;
   cursor: pointer;
 }
+
 .second-overlay-text { 
   top: 150px;
   width: 100%;
   right: -12px;
 }
 
-
 .overlay-image-smiley { 
   position: relative;
   bottom: 100px;
 }
-
 
 // How TO Section 
 .how-to-container { 

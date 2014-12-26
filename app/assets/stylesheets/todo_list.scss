@@ -231,6 +231,12 @@ a.spmenu-button {
 
 /* Transitions */
 
+.hidetodoitem {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s 2s, opacity 2s linear;
+}
+
 .spmenu, .spmenu-push {
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
@@ -306,6 +312,12 @@ a.spmenu-button {
   border-radius: 3px;
 }
 
+.ul-todo-list { 
+  margin-left: 0px;
+}
+
+
+
 .todo-item {
   border-width: 0px;
   margin-bottom: 16px;
@@ -313,6 +325,7 @@ a.spmenu-button {
   font-weight: 400;
   border-top: solid #F6F6F6 1px;
   max-height: 35px;
+    background-color: transparent;
 }
 
 .todo-exitbutton {
@@ -328,6 +341,7 @@ a.spmenu-button {
   left: 15px;
   top: 12px;
   cursor: text;
+  background-color: transparent;
 }
 
 .todoclosed {
@@ -339,17 +353,18 @@ a.spmenu-button {
   font-weight: 500;
   border: none !important;
   position: absolute;
-  left: 28px;
-  bottom: -19px;
+  left: 26px;
+  bottom: -17px;
   cursor: text;
+  padding-bottom: 13px;
   font-family: 'Lato', sans-serif !important;
   color: black !important;
-  background-color: transparent;
+  background-color: transparent !important;
 }
 
 .todo-cancel-button {
   position: relative;
-  left: 200px;
+  left: 275px;
   top: -19px;
   opacity: .6;
   cursor: pointer;

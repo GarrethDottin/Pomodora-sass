@@ -22,7 +22,7 @@ angular.module("App").controller("TodoCtrl", ["$scope", "localStorage", "$timeou
   function archive(todo) {
     // save oldTodos into Local Storage
     todo.done = true;
-    $timeout(refreshTodos, 500);
+    $timeout(refreshTodos, 3500);
   };
 
   function refreshTodos () {
@@ -34,15 +34,23 @@ angular.module("App").controller("TodoCtrl", ["$scope", "localStorage", "$timeou
   };
 
   function addTodo ($index) {
-    if ($scope.todoText.length > 1 && $scope.todoText.length < 27) {
+    if ($scope.todoText.length > 1 && $scope.todoText.length < 60) {
       $scope.model.todos.push({text:$scope.todoText, done:false});
       $scope.todoText = '';
       localStorage.setItem('todos',$scope.model.todos);
     };
   };
 
-  function removeTask (index, todo) {
-  	$scope.model.todos.splice(index,1);
-    localStorage.removeItem(todo);
+  function removeTask (index, todo, input ) {
+    if (input =='checkmark') { 
+      $timeout( function () { 
+        $scope.model.todos.splice(index,1);
+        localStorage.removeItem(todo);
+      },2000);
+    }
+    else { 
+      $scope.model.todos.splice(index,1);
+      localStorage.removeItem(todo);
+    }
   }
 }]);

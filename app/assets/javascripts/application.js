@@ -25,40 +25,49 @@
 //= require_tree .
 
 
+testApp = 17;
 var domManipulations = { 
   init: function () { 
     this.todoButton();
-    // this.slider();
+    this.slider();
   }, 
   todoButton: function () { 
     $('#tasks, .off-canvas-button').on("click", function () { 
       if ($('.addButton').css('z-index') === "3") { 
         $('.timerButtonContainer').css('z-index', '0');
+        $('.your-clock').css('z-index', '0');
       }
       else { 
         $('.timerButtonContainer').css('z-index', '3'); 
+        $('.your-clock').css('z-index', '');
       }
     }); 
   }, 
   slider: function () { 
-    $( "#slider" ).slider({ 
-      value:0,
+    $("#slider").slider({ 
+      value:25,
       min: 0,
-      max: 99,
+      max: 62,
       step: 1, 
-      slide: function (event, ui) { 
-        console.log(ui.value); 
+      slide: function (event, ui) {
+        console.log(ui.value) 
+        if (ui.value > this.previousUIvalue) { 
+          // $('.addButton').click();
+        }
+        if (ui.value < this.previousUIvalue) { 
+          // $('.timerButtonContainer')[1].click();
+        }
+        this.previousUIvalue = ui.value;
       }
     });
-  }
-
+  }, 
+  previousUIvalue: 0
 }
 
 
 
 $(document).ready(function() {
     domManipulations.init();
-
     $(document).foundation();
 });
 
