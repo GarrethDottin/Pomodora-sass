@@ -22,7 +22,7 @@
     <main>
       <a name='timer' id='timer'></a>
       <div class= 'row timer-container timer_outline'>
-        <div class= 'small-12 columns'>
+        <div class= 'small-12 columns timer-body'>
           <h2 class= 'title'> {{statement}} </h2>
           <button id= 'fifteen' class= 'timer-button transparent' ng-click= 'buttonClicked(15); changeStatement(15)'>15 minutes </button>
           <button class=  'timer-button transparent' ng-click= 'buttonClicked(25); changeStatement(25)'>25 minutes </button>
@@ -42,7 +42,7 @@
     <div class="off-canvas-wrap" data-offcanvas>
       <div class="inner-wrap">
         <aside class="right-off-canvas-menu">
-          <span><div class= 'todo-title'>My To Do List</div></span>
+          <span><div class= 'todo-title'>My To-Do List</div></span>
           <div ng-controller= 'TodoCtrl'>
             <ul class="ul-todo-list">
               <div ng-mouseover= 'editing = true'  ng-mouseleave= 'editing = false' class= 'todo-item' ng-class= '{fader:fadeout, hidetodoitem:checked}' ng-repeat= 'todo in model.todos ' >
@@ -59,7 +59,7 @@
               </div>
             </ul>
             <form ng-submit= 'addTodo($index)' >
-              <input class= 'todo-item todo-input noshadow' maxlength= '32' type= 'text ' ng-model= 'todoText' size= '30'
+              <input id='newtodo' class= 'todo-item todo-input noshadow' maxlength= '32' type= 'text ' ng-model= 'todoText' size= '30'
               placeholder= 'Write Your Activities Here...'>
             </form>
           </div>
@@ -72,7 +72,7 @@
     <div class= 'overlay ' ng-show= 'overlay1 '> <div class= 'overlay-exit ' ng-click= 'exitOverlay(1); resetTimer(); '>X</div>
 
     <div class='centered-body'> <span class= 'overlay-text '> Did you complete your task successfully? </span>
-      <button ng-click = 'secondOverlay(); add(); resetTimer(); triggerSound(); 'class= 'flat-ui-button overlay-button-yes '> Yes, I Did</button> <button class= 'timer-button overlay-button-no ' ng-click= 'closeOverlay(); checkProgress();  resetTimer(); ':>No, Not Yet</button> 
+      <button ng-click = 'secondOverlay(); add(); resetTimer(); triggerSound(); increaseCount("increment"); 'class= 'flat-ui-button overlay-button-yes '> Yes, I Did</button> <button class= 'timer-button overlay-button-no ' ng-click= 'closeOverlay(); checkProgress();  resetTimer(); ':>No, Not Yet</button> 
     </div>
         </div>
         <div class= 'overlay2' ng-show= 'overlay2'> 
@@ -104,7 +104,7 @@
   <div data-magellan-destination='howto' class = 'how-to-container row'>
       <a name ='howto'></a>
 
-    <div class= 'small-12 columns'>
+    <div class= 'small-12 columns no-padding'>
       <div class= 'panel'>
         <div class= 'carrot carrot1'></div>
         <div class= 'panel-main'>

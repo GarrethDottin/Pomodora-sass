@@ -29,39 +29,41 @@ testApp = 17;
 var domManipulations = { 
   init: function () { 
     this.todoButton();
-    this.slider();
   }, 
   todoButton: function () { 
+    var timerBody = $('.timer-body');
+    var newTodo = $('#newtodo');
+    var clock = $('.your-clock');
+
     $('#tasks, .off-canvas-button').on("click", function () { 
       if ($('.addButton').css('z-index') === "3") { 
+        // hide timer buttons 
         $('.timerButtonContainer').css('z-index', '0');
-        $('.your-clock').css('z-index', '0');
+        clock.css('z-index', '0');
+
+        // change placeholder text
+        newTodo.attr('placeholder', 'Write Your Activities Here... ');
+        newTodo.on('click', function () { 
+          newTodo.attr('placeholder', '');
+        });
+
+        timerBody.addClass('push-todo-list-left');
+
+
       }
       else { 
+        // Shift body right 
+        timerBody.addClass('push-todo-list-right');
+        setTimeout(function () { 
+          timerBody.removeClass('push-todo-list-right');
+          timerBody.removeClass('push-todo-list-left');
+        },2000); 
+
         $('.timerButtonContainer').css('z-index', '3'); 
-        $('.your-clock').css('z-index', '');
+        clock.css('z-index', '');
       }
     }); 
   }, 
-  slider: function () { 
-    $("#slider").slider({ 
-      value:25,
-      min: 0,
-      max: 62,
-      step: 1, 
-      slide: function (event, ui) {
-        console.log(ui.value) 
-        if (ui.value > this.previousUIvalue) { 
-          // $('.addButton').click();
-        }
-        if (ui.value < this.previousUIvalue) { 
-          // $('.timerButtonContainer')[1].click();
-        }
-        this.previousUIvalue = ui.value;
-      }
-    });
-  }, 
-  previousUIvalue: 0
 }
 
 

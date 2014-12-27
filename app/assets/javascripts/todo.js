@@ -46,7 +46,7 @@ angular.module("App").controller("TodoCtrl", ["$scope", "localStorage", "$timeou
       $timeout( function () { 
         $scope.model.todos.splice(index,1);
         localStorage.removeItem(todo);
-      },2000);
+      },1500);
     }
     else { 
       $scope.model.todos.splice(index,1);

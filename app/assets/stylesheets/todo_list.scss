@@ -234,7 +234,17 @@ a.spmenu-button {
 .hidetodoitem {
   visibility: hidden;
   opacity: 0;
-  transition: visibility 0s 2s, opacity 2s linear;
+  transition: visibility 0s 1.5s, opacity 1.5s linear;
+}
+
+.push-todo-list-left { 
+  padding-right: 400px !important; 
+  transition: padding-right 1.5s;
+}
+
+.push-todo-list-right { 
+  padding-left: 400px !important; 
+  transition: padding-left 1.5s;
 }
 
 .spmenu, .spmenu-push {
@@ -328,8 +338,8 @@ a.spmenu-button {
   font-size: 16px;
   font-weight: 400;
   border-top: solid #F6F6F6 1px;
-  max-height: 35px;
-    background-color: transparent;
+  max-height: 30px;
+  background-color: transparent;
 }
 
 .todo-exitbutton {

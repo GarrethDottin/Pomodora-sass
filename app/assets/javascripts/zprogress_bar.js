@@ -42,7 +42,6 @@ angular.module("App").directive("progressBar", function() {
 
 	progressBar.add = function (progressMeter, progressBarwidth) {
 		if (progressBar.width <= 695)  { 
-			console.log(progressBar.width);
 			if (progressBar.width == 20) {
 				progressBar.width += 200;
 				progressBar.done = false; 

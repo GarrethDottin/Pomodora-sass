@@ -2,12 +2,11 @@ angular.module("App", ['ngCookies'])
 	.value('user', {
 		username: '',
 		firstName: ''
-	})
-	.controller("ApplicationController", ["$scope", "$timeout", function($scope, $timeout){
+	})	
+	.controller("ApplicationController", ["$scope", "$timeout","localStorage", function($scope, $timeout, localStorage) {
 		$scope.initialOverlay = initialOverlay; 
 		$scope.secondOverlay = secondOverlay; 
-		$scope.increaseCounter = increaseCounter; 
-		$scope.setUser = setUser;
+			$scope.setUser = setUser;
 		$scope.closeOverlay = closeOverlay;
 		$scope.exitOverlay = exitOverlay;
 
@@ -21,6 +20,10 @@ angular.module("App", ['ngCookies'])
 		$scope.changeStatement = changeStatement;
 		$scope.buttonClicked = buttonClicked;
 		$scope.triggerSound = triggerSound;
+		$scope.increaseCount = increaseCount;
+		var date = new Date();
+		var today = date.getDay();
+		resetCounter(today);
 
 		function changeStatement (num) {
 			if(num == 'add' || num == 'down') { 
@@ -43,7 +46,6 @@ angular.module("App", ['ngCookies'])
 		function secondOverlay () { 
 			$scope.overlay1 = false; 
 			$scope.overlay2 = true; 
-			$scope.counter++;
 			$timeout(function(){ 
 				$scope.overlay2 = false; 
 			}, 1500)
@@ -63,11 +65,35 @@ angular.module("App", ['ngCookies'])
 			$scope.overlay2 = false; 
 		}
 
-		function increaseCounter () { 
-			$scope.counter++
+		function increaseCount (input) { 
+			var date = new Date();
+			var today = date.getDay();
+			if (input == 'increment') { 
+				$scope.counter++; 
+				localStorage.setItem('counter', $scope.counter); 
+				localStorage.setItem('currentDay', today); 
+			}
+			else { 
+				resetCounter(today); 
+			}
+			// if increase then increment the counter one and store it in local storage, set the day
+			// if its called on load of page 
+			// check to see if the time current day is the same 
+			// if it is the same display counter as the current total 
+			// otherwise empty out the todo and set a new date 
 		}
 
-		function setUser  (user) {
+		function resetCounter (today) { 
+			if (today == localStorage.getItem('currentDay')) { 
+				$scope.counter = localStorage.getItem('counter');
+			}	
+			else { 
+				$scope.counter = 0; 
+				localStorage.setItem('currentDay', $scope.counter);
+			}
+		}
+
+		function setUser (user) {
 			$scope.currentUser = user;
 		};
 
