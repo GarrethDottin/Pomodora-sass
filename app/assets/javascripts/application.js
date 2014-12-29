@@ -20,47 +20,48 @@
 //= zflipclock
 //= zhome_controller
 //= zprogress_bar
-//= ztodo_list_service
 //= require foundation
 //= require_tree .
 
 
 testApp = 17;
-var domManipulations = { 
-  init: function () { 
+var domManipulations = {
+  init: function () {
     this.todoButton();
   }, 
-  todoButton: function () { 
+  todoButton: function () {
     var timerBody = $('.timer-body');
     var newTodo = $('#newtodo');
     var clock = $('.your-clock');
+    var fortyFiveButton = $('#button45')
 
-    $('#tasks, .off-canvas-button').on("click", function () { 
-      if ($('.addButton').css('z-index') === "3") { 
+    $('#tasks, .off-canvas-button').on("click", function () {
+      if ($('.addButton').css('z-index') === "3") {
+
         // hide timer buttons 
         $('.timerButtonContainer').css('z-index', '0');
         clock.css('z-index', '0');
+        fortyFiveButton.css('z-index', '0');
 
         // change placeholder text
         newTodo.attr('placeholder', 'Write Your Activities Here... ');
         newTodo.on('click', function () { 
           newTodo.attr('placeholder', '');
         });
-
-        timerBody.addClass('push-todo-list-left');
-
-
       }
       else { 
         // Shift body right 
-        timerBody.addClass('push-todo-list-right');
-        setTimeout(function () { 
-          timerBody.removeClass('push-todo-list-right');
-          timerBody.removeClass('push-todo-list-left');
-        },2000); 
+        // timerBody.addClass('push-todo-list-right');
+        // setTimeout(function () { 
+        //   timerBody.removeClass('push-todo-list-right');
+        //   timerBody.removeClass('push-todo-list-left');
+        // },1000); 
 
-        $('.timerButtonContainer').css('z-index', '3'); 
-        clock.css('z-index', '');
+        setTimeout(function () { 
+          $('.timerButtonContainer').css('z-index', '3'); 
+          fortyFiveButton.css('z-index', '3');
+          clock.css('z-index', ''); 
+        },500); 
       }
     }); 
   }, 

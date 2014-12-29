@@ -291,7 +291,7 @@ a.spmenu-button {
 
 .todo-title {
   text-align: center;
-  font-size: 40px;
+  font-size: 36px;
   margin-top: 100px;
   font-family: "Helvetica Neue", Helvetica, sans-serif;
   font-weight: 100;
@@ -300,6 +300,7 @@ a.spmenu-button {
 ::-webkit-input-placeholder {
   color: #333;
   font-family: "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 15px;
 }
 
 .img-plus-sign {
@@ -316,7 +317,7 @@ a.spmenu-button {
 .img-checkmark {
   position: relative;
   top: 10px;
-  opacity: .1;
+  opacity: .4;
   left: 10px;
   cursor: pointer;
 }
@@ -335,7 +336,7 @@ a.spmenu-button {
 .todo-item {
   border-width: 0px;
   margin-bottom: 16px;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 400;
   border-top: solid #F6F6F6 1px;
   max-height: 30px;
@@ -363,7 +364,7 @@ a.spmenu-button {
 }
 
 .todo-inline-edit {
-  font-size: 16px !important;
+  font-size: 14px !important;
   font-weight: 500;
   border: none !important;
   position: absolute;

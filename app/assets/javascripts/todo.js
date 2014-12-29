@@ -6,6 +6,7 @@ angular.module("App").controller("TodoCtrl", ["$scope", "localStorage", "$timeou
   $scope.refreshTodos = refreshTodos;
   $scope.addTodo = addTodo;
   $scope.removeTask = removeTask;
+  $scope.editTodo = editTodo;
 
 
   if (localStorage.getItem('todos') != undefined) {
@@ -41,12 +42,17 @@ angular.module("App").controller("TodoCtrl", ["$scope", "localStorage", "$timeou
     };
   };
 
+  function editTodo ($index, input) { 
+    $scope.model.todos[$index].text = input;
+    localStorage.setItem('todos',$scope.model.todos);
+  }
+
   function removeTask (index, todo, input ) {
     if (input =='checkmark') { 
       $timeout( function () { 
         $scope.model.todos.splice(index,1);
         localStorage.removeItem(todo);
-      },1500);
+      },2000);
     }
     else { 
       $scope.model.todos.splice(index,1);

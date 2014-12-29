@@ -1,12 +1,12 @@
 Areas for Growth:
--Add Angular √
--Add Foundation 
--Remove bootstrap √
--Get App Architecture Reviewed
--Setup Better File Structure 
--Create Service for Dynamic Text 
 -Cut Down on Loading Time of App 
-
+	-Buy Dyno 
+	-Reorganize what gets loaded first
+	-Remove Bower Components 
+-Create factory for overlays 
+-Organize Main.js 
+	-Organize by behavior 
+	-Create service for 
 
 
 

@@ -17,7 +17,6 @@ angular.module("App").directive("flipClock", function() {
 	flipClockApi.startClock = function(scope) {
 		flipClockApi.clock.start();
 		internalClock(flipClockApi.currentTime, scope);
-		warningSound(flipClockApi.currentTime);
 		timerInProgress = true;
 	};
 
@@ -71,16 +70,6 @@ angular.module("App").directive("flipClock", function() {
 		};	
 	}; 
 
-	var warningSound = function (time) { 
-		var timeInput = ((time - 60) * 1000);
-		if (timeInput != -60000) {
-			oneMinuteWarning = setTimeout(function() { 
-				// audio.play();
-			}, timeInput); 	
-		}
-
-	}; 
-
 	var roundTime = function (currentTime) { 
 		var modifiedTime = currentTime.toString();
 		var arrayofTime = modifiedTime.split('');
@@ -124,8 +113,6 @@ angular.module("App").directive("flipClock", function() {
 				flipClockApi.setTimer(flipClockApi.currentTime, $scope);
 				flipClockApi.clock.stop();
 				clearInterval(internalClockTime); 
-				clearInterval(oneMinuteWarning);
-				$scope.overlay1 = true;
 			} 
 
 			function resetTimer () { 
