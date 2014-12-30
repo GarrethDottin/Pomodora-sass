@@ -127,16 +127,4 @@ angular.module("App", ['ngCookies'])
 			$scope.overlay1 = false; 
 			$scope.overlay2 = false; 
 		};
- 	}])
-	// angular.module("App").factory('OverlayFactory', ['$scope', function ($scope) { 
-	// 	var OverlayFactory = {}; 
-
-	// 	OverlayFactory.initialize = function () { 
-	// 		console.log("correct overlay hit")
-	// 		$scope.overlay1 = true; 
-	// 	}; 
-
-	// 	return OverlayFactory;
-
-	// }]); 
-
+ 	}]);
