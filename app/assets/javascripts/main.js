@@ -4,12 +4,18 @@ angular.module("App", ['ngCookies'])
 		firstName: ''
 	})	
 	.controller("ApplicationController", ["$scope", "$timeout","localStorage", function($scope, $timeout, localStorage) {
+		
 		// Initial Values 
+		window.scope = $scope;
 		$scope.currentUser = 'guest';
 		$scope.setUser = setUser;
 		$scope.time = 25;	
 		$scope.counter = 0; 
-		$scope.triggerSound = triggerSound;		
+		$scope.triggerSound = triggerSound;	
+		$scope.storedCount = storedCount; 
+		$scope.notifyUser = false; 	
+
+
 		var date = new Date();
 		var today = date.getDay();
 		resetCounter(today);
@@ -21,11 +27,13 @@ angular.module("App", ['ngCookies'])
 		$scope.secondOverlay = secondOverlay;	
 		$scope.overlay1 = false; 
 		$scope.overlay2 = false; 
-		$scope.increaseCount = increaseCount;
+		$scope.increaseSuccessCount = increaseSuccessCount;
+
 
 		// Statement 
 		$scope.statement = "What can you do in " + $scope.time +  " minutes?"; 
 		$scope.changeStatement = changeStatement;
+
 
 		// Page interactions 
 		function changeStatement (num) {
@@ -42,19 +50,14 @@ angular.module("App", ['ngCookies'])
 			$scope.timerValue = num;
 		};
 
-		function increaseCount (input) { 
-			var date = new Date();
-			var today = date.getDay();
-			if (input == 'increment') { 
-				$scope.counter++; 
-				localStorage.setItem('counter', $scope.counter); 
-				localStorage.setItem('currentDay', today); 
-			}
-			else { 
-				resetCounter(today); 
-			}
-		}
+		function triggerSound () { 
+			var alarm = document.getElementById("reward");
+            alarm.currentTime = 0;
+            alarm.load();
+            alarm.play();
+		}; 
 
+		// Stored Info 
 		function resetCounter (today) { 
 			if (today == localStorage.getItem('currentDay')) { 
 				$scope.counter = localStorage.getItem('counter');
@@ -63,18 +66,49 @@ angular.module("App", ['ngCookies'])
 				$scope.counter = 0; 
 				localStorage.setItem('currentDay', $scope.counter);
 			}
+		};
+
+		function increaseSuccessCount (input) {
+			var date = new Date();
+			var today = date.getDay();
+			if (input == 'increment') { 
+				$scope.counter++; 
+				localStorage.setItem('counter', $scope.counter); 
+				localStorage.setItem('currentDay', today); 
+			}
+			else {
+				resetCounter(today); 
+			}
+		};
+
+		function storedCount () {
+			var oldCount = localStorage.getItem('totalCount');
+			if (oldCount == 1) {
+				animateTodoButton(); 
+			}
+			if (oldCount != undefined) { 
+				var newTotal = parseInt(localStorage.getItem('totalCount')) + 1; 
+				localStorage.setItem('totalCount', newTotal);
+			} 
+			else { 
+				localStorage.setItem('totalCount',1);
+				animateTodoButton(); 
+			}
+		}; 
+
+		function animateTodoButton () { 
+			$timeout(function () { 
+					$scope.notifyUser = true;
+			}, 1000)
+			$timeout(function () { 
+					$scope.notifyUser = false;
+			}, 5000)
 		}
 
+		// User 
 		function setUser (user) {
 			$scope.currentUser = user;
 		};
-
-		function triggerSound () { 
-			var alarm = document.getElementById("reward");
-            alarm.currentTime = 0;
-            alarm.load();
-            alarm.play();
-		}; 
 
 		// Overlay interaction 
 		function initialize () { 
@@ -92,7 +126,7 @@ angular.module("App", ['ngCookies'])
 		function closeOverlay () { 
 			$scope.overlay1 = false; 
 			$scope.overlay2 = false; 
-		}
+		};
  	}])
 	// angular.module("App").factory('OverlayFactory', ['$scope', function ($scope) { 
 	// 	var OverlayFactory = {}; 

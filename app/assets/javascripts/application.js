@@ -23,8 +23,6 @@
 //= require foundation
 //= require_tree .
 
-
-testApp = 17;
 var domManipulations = {
   init: function () {
     this.todoButton();

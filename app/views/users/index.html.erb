@@ -39,7 +39,7 @@
         </div>
       </div>
 
-    <div class="off-canvas-wrap" data-offcanvas>
+    <div class="off-canvas-wrap" ng-class='{notifyusertodolist: notifyUser}' data-offcanvas>
       <div class="inner-wrap">
         <aside class="right-off-canvas-menu">
           <span><div class= 'todo-title'>My To-Do List</div></span>
@@ -64,7 +64,7 @@
             </form>
           </div>
         </aside>
-        <a class="off-canvas-button right-off-canvas-toggle"><%= image_tag('pencilicon.png', :class =>"img-padding") %> 
+        <a class="off-canvas-button right-off-canvas-toggle"><%= image_tag('pencilicon2.png', :class =>"img-padding") %> 
             </a>
       </div>  
     </div>
@@ -72,7 +72,7 @@
       <div class= 'overlay ' ng-show= 'overlay1;'> 
         <div class= 'overlay-exit ' ng-click= ' resetTimer(); '>X</div>
         <div class='centered-body'> <span class= 'overlay-text '> Did you complete your task successfully? </span>
-        <button ng-click = 'secondOverlay(); add(); resetTimer(); triggerSound(); increaseCount("increment"); 'class= 'flat-ui-button overlay-button-yes '> Yes, I Did</button> <button class= 'timer-button overlay-button-no ' ng-click= 'closeOverlay(); checkProgress();  resetTimer(); ':>No, Not Yet</button> 
+        <button ng-click = 'secondOverlay(); add(); resetTimer(); triggerSound(); increaseSuccessCount("increment"); storedCount(); 'class= 'flat-ui-button overlay-button-yes '> Yes, I Did</button> <button class= 'timer-button overlay-button-no ' ng-click= 'closeOverlay(); checkProgress();  resetTimer(); storedCount();':>No, Not Yet</button> 
         </div>
       </div>
       <div class= 'overlay2' ng-show= 'overlay2'> 

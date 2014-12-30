@@ -23,3 +23,18 @@ p {
   font-weight: 100;
   cursor: text;
 }
+
+@media only screen and (max-width: 52em) { 
+  .panel_textL {
+    padding: 50px 50px 50px 0 !important;
+    float: left;
+    width: 430px !important;
+    padding-right: 0px !important;
+  }
+}
+
+@media only screen and (max-width: 49.750em) { 
+  .timerButtonContainer { 
+    display: none !important;
+  }
+}

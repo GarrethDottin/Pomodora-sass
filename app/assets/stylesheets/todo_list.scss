@@ -410,3 +410,64 @@ input[type=text]:focus, input[type=text]:active, input[type=text]:focus:active {
   -moz-box-shadow: none !important;
   -webkit-box-shadow: none !important;
 }
+
+
+.off-canvas-wrap { 
+  height: 700px;
+  bottom: 473px;
+}
+
+.inner-wrap { 
+  height: 100%;
+}
+
+.right-off-canvas-wrap { 
+  height: 580px !important;
+}
+
+.right-off-canvas-menu { 
+  background: white !important;
+  cursor: text;
+}
+
+.exit-off-canvas { 
+  box-shadow: none !important;
+}
+
+.off-canvas-button { 
+  box-shadow: none;
+  position: absolute;
+  font-size: 25px;
+  text-align: center;
+  background: #122F4A;
+  text-decoration: none;
+  border: none !important;
+  right: -2px;
+  top: 240px;
+  padding: 10px !important;
+  border-top-left-radius: none;
+  border-bottom-left-radius: none;
+}
+
+.notifyusertodolist { 
+  -webkit-animation: button-change 7s;
+  animation: button-change 7s;
+}
+@-webkit-keyframes button-change {
+  0%   {opacity: 1;}
+  20%  {opacity: .8}
+  40%  {opacity: 1;}
+  60%  {opacity: .8}
+  80%  {opacity: 1;}
+  100% {opacity: .8;}
+}
+
+@keyframes button-change {
+  0%   {opacity: 1;}
+  20%  {opacity: .8}
+  40%  {opacity: 1;}
+  60%  {opacity: .8}
+  80%  {opacity: 1;}
+  100% {opacity: .8;}
+}
+

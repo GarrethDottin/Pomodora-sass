@@ -813,42 +813,7 @@ $body-font-family: $font-family-sans-serif;
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
 
-.off-canvas-wrap { 
-	height: 700px;
-	bottom: 473px;
-}
 
-.inner-wrap { 
-	height: 100%;
-}
-
-.right-off-canvas-wrap { 
-	height: 580px !important;
-}
-
-.right-off-canvas-menu { 
-	background: white !important;
-	cursor: text;
-}
-
-.exit-off-canvas { 
-	box-shadow: none !important;
-}
-
-.off-canvas-button { 
-	box-shadow: 0px 2px 0px 0px #545454;
-	position: absolute;
-	font-size: 25px;
-	text-align: center;
-	background: white;
-	text-decoration: none;
-	border: none !important;
-	right: -2px;
-	top: 240px;
-	padding: 10px !important;
-	border-top-left-radius: 4px;
-	border-bottom-left-radius: 4px;
-}
 
 // $include-html-off-canvas-classes: $include-html-classes;
 
@@ -871,7 +836,7 @@ $body-font-family: $font-family-sans-serif;
 
 
 // Off Canvas Menu Variables
-$off-canvas-width: rem-calc(300);
+	$off-canvas-width: rem-calc(300);
 // $off-canvas-bg: $oil;
 // $off-canvas-bg-hover: scale-color($tabbar-bg, $lightness: -30%);
 
