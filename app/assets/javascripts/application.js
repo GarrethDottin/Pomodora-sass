@@ -26,6 +26,7 @@
 var domManipulations = {
   init: function () {
     this.todoButton();
+    this.todoSubmit();
   }, 
   todoButton: function () {
     var timerBody = $('.timer-body');
@@ -63,6 +64,13 @@ var domManipulations = {
       }
     }); 
   }, 
+  todoSubmit: function () { 
+    var newTodo = $('#newtodo');
+    $('#todo-list-input').on('submit', function() {
+      newTodo.attr('placeholder', 'Feeling distracted, write your tasks here... ');
+    });
+
+  }
 }
 
 
