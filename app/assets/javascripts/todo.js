@@ -53,10 +53,10 @@ angular.module("App").controller("TodoCtrl", ["$scope", "localStorage", "$timeou
 
   function removeTask (index, todo, input ) {
     if (input =='checkmark') { 
-      $timeout( function () { 
+      // $timeout( function () { 
         $scope.model.todos.remove(index);
         localStorage.setItem('todos',$scope.model.todos);
-      },1500);
+      // },1500);
     }
     else { 
       $scope.model.todos.splice(index,1);
