@@ -42,7 +42,7 @@ var domManipulations = {
         fortyFiveButton.css('z-index', '0');
 
         // change placeholder text
-        newTodo.attr('placeholder', 'Write Your Activities Here... ');
+        newTodo.attr('placeholder', 'Feeling distracted, write your tasks here... ');
         newTodo.on('click', function () { 
           newTodo.attr('placeholder', '');
         });
