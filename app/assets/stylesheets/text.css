@@ -59,7 +59,7 @@ p {
 
 .todo-open { 
   -webkit-animation-name: todoopen-animation;
-  -webkit-animation-duration: 2s;
+  -webkit-animation-duration: 1.5s;
   -webkit-animation-fill-mode: forwards;
   -moz-animation-fill-mode: forwards;
   -ms-animation-fill-mode: forwards;
@@ -69,7 +69,7 @@ p {
 
 .todo-closed { 
   -webkit-animation-name: todoclosed-animation;
-  -webkit-animation-duration: 2s;
+  -webkit-animation-duration: 1.5s;
   -webkit-animation-fill-mode: forwards;
   -moz-animation-fill-mode: forwards;
   -ms-animation-fill-mode: forwards;
