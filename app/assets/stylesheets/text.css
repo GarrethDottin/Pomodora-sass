@@ -3,15 +3,15 @@ h1,h2,h3,p, span, input {
 }
 
 h1, h3{ 
-	font-weight: 300;
+  font-weight: 300;
 }
 
 p { 
-	font-weight:100;
+  font-weight:100;
 }
 
  .off-canvas-wrap a { 
-	color: black !important;
+  color: black !important;
 } 
 
 .todo-title {
@@ -38,3 +38,43 @@ p {
     display: none !important;
   }
 }
+
+@-webkit-keyframes todoopen-animation {
+  from { 
+    padding-right: 0%;
+  }
+  to { 
+    padding-right: 25%;
+  }
+}
+
+@-webkit-keyframes todoclosed-animation {
+  from { 
+    padding-right: 25%;
+  }
+  to { 
+    padding-right: 0%;
+  }
+}
+
+.todo-open { 
+  -webkit-animation-name: todoopen-animation;
+  -webkit-animation-duration: 2s;
+  -webkit-animation-fill-mode: forwards;
+  -moz-animation-fill-mode: forwards;
+  -ms-animation-fill-mode: forwards;
+  -o-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+
+.todo-closed { 
+  -webkit-animation-name: todoclosed-animation;
+  -webkit-animation-duration: 2s;
+  -webkit-animation-fill-mode: forwards;
+  -moz-animation-fill-mode: forwards;
+  -ms-animation-fill-mode: forwards;
+  -o-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+
+

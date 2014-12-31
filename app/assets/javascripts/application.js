@@ -33,12 +33,18 @@ var domManipulations = {
     var newTodo = $('#newtodo');
     var clock = $('.your-clock');
     var fortyFiveButton = $('#button45')
+    var mainBody = $('.timer-container');
+    var addButton = $('.addButton');
+    var timerButtonContainer = $('.timerButtonContainer');
 
     $('#tasks, .off-canvas-button').on("click", function () {
-      if ($('.addButton').css('z-index') === "3") {
+      if (addButton.css('z-index') === "3") {
+        // shift main body 
+        $('.timer-container').removeClass('todo-closed');
+        $('.timer-container').addClass('todo-open');
 
         // hide timer buttons 
-        $('.timerButtonContainer').css('z-index', '0');
+        timerButtonContainer.css('z-index', '0');
         clock.css('z-index', '0');
         fortyFiveButton.css('z-index', '0');
 
@@ -47,20 +53,18 @@ var domManipulations = {
         newTodo.on('click', function () { 
           newTodo.attr('placeholder', '');
         });
+
       }
       else { 
-        // Shift body right 
-        // timerBody.addClass('push-todo-list-right');
-        // setTimeout(function () { 
-        //   timerBody.removeClass('push-todo-list-right');
-        //   timerBody.removeClass('push-todo-list-left');
-        // },1000); 
-
         setTimeout(function () { 
           $('.timerButtonContainer').css('z-index', '3'); 
           fortyFiveButton.css('z-index', '3');
           clock.css('z-index', ''); 
         },500); 
+          
+          $('.timer-container').addClass('todo-closed');
+          $('.timer-container').removeClass('todo-open');
+
       }
     }); 
   }, 
@@ -69,6 +73,9 @@ var domManipulations = {
     $('#todo-list-input').on('submit', function() {
       newTodo.attr('placeholder', 'Feeling distracted, write your tasks here... ');
     });
+
+
+
 
   }
 }
