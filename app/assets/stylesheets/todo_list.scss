@@ -446,8 +446,8 @@ input[type=text]:focus, input[type=text]:active, input[type=text]:focus:active {
   right: -2px;
   top: 240px;
   padding: 10px !important;
-  border-top-left-radius: none;
-  border-bottom-left-radius: none;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
 }
 
 .off-canvas-button:hover { 

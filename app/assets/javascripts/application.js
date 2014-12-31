@@ -28,6 +28,7 @@ var domManipulations = {
     this.todoButton();
     this.todoSubmit();
   }, 
+  todoListOpen: false,
   todoButton: function () {
     var timerBody = $('.timer-body');
     var newTodo = $('#newtodo');
@@ -39,6 +40,8 @@ var domManipulations = {
 
     $('#tasks, .off-canvas-button').on("click", function () {
       if (addButton.css('z-index') === "3") {
+        domManipulations.todoListOpen = true;
+
         // shift main body 
         $('.timer-container').removeClass('todo-closed');
         $('.timer-container').addClass('todo-open');
@@ -46,28 +49,35 @@ var domManipulations = {
         // hide timer buttons 
         timerButtonContainer.css('z-index', '0');
         clock.css('z-index', '0');
-        fortyFiveButton.css('z-index', '0');
 
         // change placeholder text
         newTodo.attr('placeholder', 'Feeling distracted, write your tasks here... ');
         newTodo.on('click', function () { 
           newTodo.attr('placeholder', '');
         });
-
+        domManipulations.checkSliderAlignment();
       }
       else { 
         setTimeout(function () { 
           $('.timerButtonContainer').css('z-index', '3'); 
-          fortyFiveButton.css('z-index', '3');
+          // fortyFiveButton.css('z-index', '3');
           clock.css('z-index', ''); 
         },500); 
           
           $('.timer-container').addClass('todo-closed');
           $('.timer-container').removeClass('todo-open');
+          domManipulations.todoListOpen = false;
 
       }
     }); 
-  }, 
+  },
+  checkSliderAlignment: function () { 
+    if ($('.timer-container').hasClass('todo-open') && domManipulations.todoListOpen == false) { 
+      $('.timer-container').addClass('todo-closed');
+      $('.timer-container').removeClass('todo-open');
+    }; 
+  } 
+  ,
   todoSubmit: function () { 
     var newTodo = $('#newtodo');
     $('#todo-list-input').on('submit', function() {
