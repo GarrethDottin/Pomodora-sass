@@ -11,7 +11,8 @@ angular.module("App", ['ngCookies'])
 		$scope.setUser = setUser;
 		$scope.time = 25;	
 		$scope.counter = 0; 
-		$scope.triggerSound = triggerSound;	
+		$scope.triggerSound = triggerSound;
+		$scope.endSound = endSound;	
 		$scope.storedCount = storedCount; 
 		$scope.notifyUser = false; 	
 
@@ -51,11 +52,17 @@ angular.module("App", ['ngCookies'])
 		};
 
 		function triggerSound () { 
-			var alarm = document.getElementById("reward");
-            alarm.currentTime = 0;
-            alarm.load();
-            alarm.play();
+			var rewardSound = document.getElementById("reward");
+            rewardSound.currentTime = 0;
+            rewardSound.load();
+            rewardSound.play();
 		}; 
+
+		function endSound() { 
+			var alarm = document.getElementById("alarm");
+			alarm.pause();
+			alarm.currentTime = 0;
+		}
 
 		// Stored Info 
 		function resetCounter (today) { 

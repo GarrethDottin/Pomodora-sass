@@ -2,7 +2,8 @@ angular.module("App").controller("TodoCtrl", ["$scope", "localStorage", "$timeou
   $scope.model = {};
   $scope.model.todos;
   $scope.toggleEditing = toggleEditing;
-  $scope.archive =archive;
+  $scope.archiveRefresh =archiveRefresh;
+  $scope.archivedTodos = [];
   $scope.refreshTodos = refreshTodos;
   $scope.addTodo = addTodo;
   $scope.removeTask = removeTask;
@@ -24,10 +25,20 @@ angular.module("App").controller("TodoCtrl", ["$scope", "localStorage", "$timeou
     $scope.editing =  !$scope.editing;
   };
 
-  function archive(todo) {
-    // save oldTodos into Local Storage
+  function archiveRefresh(todo) {
     todo.done = true;
-    $timeout(refreshTodos, 3500);
+    // $scope.archivedTodos.push(todo);
+    if (!localStorage.getItem('archivedTodos')){
+      $scope.archivedTodos.push(todo);
+      localStorage.setItem('archivedTodos', $scope.archivedTodos);
+      console.log('initial value set')
+    }
+    else { 
+      var tempArray = localStorage.getItem('archivedTodos');
+      tempArray.push(todo); 
+      $scope.archivedTodos = tempArray;
+      localStorage.setItem('archivedTodos', $scope.archivedTodos);
+    }
   };
 
   function refreshTodos () {
@@ -53,10 +64,10 @@ angular.module("App").controller("TodoCtrl", ["$scope", "localStorage", "$timeou
 
   function removeTask (index, todo, input ) {
     if (input =='checkmark') { 
-      // $timeout( function () { 
+      $timeout( function () { 
         $scope.model.todos.remove(index);
         localStorage.setItem('todos',$scope.model.todos);
-      // },1500);
+      },1500);
     }
     else { 
       $scope.model.todos.splice(index,1);
