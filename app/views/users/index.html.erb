@@ -69,17 +69,19 @@
       </div>  
     </div>
 
-      <div class= 'overlay ' ng-show= 'overlay1;'> 
-        <div class='centered-body'> <span class= 'overlay-text '> Did you complete your task successfully? </span>
-        <button ng-click = 'secondOverlay(); add(); resetTimer(); triggerSound(); increaseSuccessCount("increment"); storedCount(); 'class= 'flat-ui-button overlay-button-yes '> Yes, I Did</button> <button class= 'timer-button overlay-button-no ' ng-click= 'closeOverlay(); checkProgress();  resetTimer(); storedCount();':>No, Not Yet</button> 
-        </div>
-      </div>
-      <div class= 'overlay2' ng-show= 'overlay2'> 
-          <div class='centered-body'> 
-            <%= image_tag('panel-checkmark.png', :class =>  'overlay-image-smiley') %> 
-            <span class= 'overlay-text second-overlay-text'> Congrats, you're one step closer to being done!</span>
+        <div id='overlays' class='invisible'>
+        <div class= 'overlay' ng-show= 'overlay1;'> 
+          <div class='centered-body'> <span class= 'overlay-text '> Did you complete your task successfully? </span>
+          <button ng-click = 'secondOverlay(); add(); resetTimer(); triggerSound(); increaseSuccessCount("increment"); storedCount(); endSound(); 'class= 'flat-ui-button overlay-button-yes '> Yes, I Did</button> <button class= 'timer-button overlay-button-no ' ng-click= 'closeOverlay(); checkProgress();  resetTimer(); storedCount(); endSound();':>No, Not Yet</button> 
           </div>
-      </div>
+        </div>
+        <div class= 'overlay2 ' ng-show='overlay2'> 
+            <div class='centered-body'> 
+              <%= image_tag('panel-checkmark.png', :class =>  'overlay-image-smiley') %> 
+              <span class= 'overlay-text second-overlay-text'> Congrats, you're one step closer to being done!</span>
+            </div>
+        </div>
+        </div>
 
       <div id = 'HOWTO' class= 'progress-bar-container row'>
         <div class= 'small-1 columns' id="counter-container">
