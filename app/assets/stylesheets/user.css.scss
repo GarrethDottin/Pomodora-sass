@@ -280,7 +280,7 @@ button {
 }
 
 #water {
-  background-image: image-url("waves.png");
+  background-color: #67c397;
   background-position: 100% 0%;
   position: absolute;
   left:1px;
@@ -502,6 +502,11 @@ button {
 
 .overlay2 { 
   background-color: #6FB18C;
+  
+}
+
+.invisible { 
+  visibility: hidden;
 }
 
 .centered-body { 
