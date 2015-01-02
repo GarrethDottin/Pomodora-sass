@@ -27,7 +27,13 @@ var domManipulations = {
   init: function () {
     this.todoButton();
     this.todoSubmit();
+    this.changeOverlay();
   }, 
+  changeOverlay: function () { 
+    window.setTimeout(function () { 
+      $('#overlays').removeClass('invisible');
+    },1500);
+  },
   todoListOpen: false,
   todoButton: function () {
     var timerBody = $('.timer-body');
@@ -58,7 +64,7 @@ var domManipulations = {
         domManipulations.checkSliderAlignment();
       }
       else { 
-        setTimeout(function () { 
+        setTimeout(function () {
           $('.timerButtonContainer').css('z-index', '3'); 
           // fortyFiveButton.css('z-index', '3');
           clock.css('z-index', ''); 
@@ -83,10 +89,6 @@ var domManipulations = {
     $('#todo-list-input').on('submit', function() {
       newTodo.attr('placeholder', 'Feeling distracted, write your tasks here... ');
     });
-
-
-
-
   }
 }
 
