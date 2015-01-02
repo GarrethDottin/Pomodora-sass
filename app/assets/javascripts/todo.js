@@ -5,9 +5,13 @@ angular.module("App").controller("TodoCtrl", ["$scope", "localStorage", "$timeou
   $scope.archiveRefresh =archiveRefresh;
   $scope.archivedTodos = [];
   $scope.refreshTodos = refreshTodos;
+  $scope.getArchivedItems = getArchivedItems;
   $scope.addTodo = addTodo;
   $scope.removeTask = removeTask;
   $scope.editTodo = editTodo;
+  $scope.firstTime = true; 
+  $scope.showOnLoad = true;
+
   Array.prototype.remove = function(from, to) {
     var rest = this.slice((to || from) + 1 || this.length);
     this.length = from < 0 ? this.length + from : from;
@@ -26,12 +30,15 @@ angular.module("App").controller("TodoCtrl", ["$scope", "localStorage", "$timeou
   };
 
   function archiveRefresh(todo) {
-    todo.done = true;
+    if (todo) { 
+      todo.done = true;
+      todo.date = setDate();
+    }
+
     // $scope.archivedTodos.push(todo);
     if (!localStorage.getItem('archivedTodos')){
       $scope.archivedTodos.push(todo);
       localStorage.setItem('archivedTodos', $scope.archivedTodos);
-      console.log('initial value set')
     }
     else { 
       var tempArray = localStorage.getItem('archivedTodos');
@@ -40,6 +47,16 @@ angular.module("App").controller("TodoCtrl", ["$scope", "localStorage", "$timeou
       localStorage.setItem('archivedTodos', $scope.archivedTodos);
     }
   };
+
+  function getArchivedItems () { 
+    $scope.archivedTodos = localStorage.getItem('archivedTodos'); 
+  }
+
+  function setDate () { 
+    var currentDay = new Date().toString();
+    var modifiedDay = currentDay.slice(0,10);
+    return modifiedDay;
+  }
 
   function refreshTodos () {
     var oldTodos = $scope.model.todos;
@@ -50,6 +67,7 @@ angular.module("App").controller("TodoCtrl", ["$scope", "localStorage", "$timeou
   };
 
   function addTodo ($index) {
+    $scope.firstTime = false;
     if ($scope.todoText.length > 1 && $scope.todoText.length < 60) {
       $scope.model.todos.push({text:$scope.todoText, done:false});
       $scope.todoText = '';
@@ -63,6 +81,7 @@ angular.module("App").controller("TodoCtrl", ["$scope", "localStorage", "$timeou
   }
 
   function removeTask (index, todo, input ) {
+    $scope.firstTime = false;
     if (input =='checkmark') { 
       $timeout( function () { 
         $scope.model.todos.remove(index);

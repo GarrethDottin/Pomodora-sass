@@ -23,7 +23,6 @@
 
 	progressBar.watch = function (scope,element,attr){
 		var progressMeter = element.children().children().children();
-		console.log("progressMeter", progressMeter)
 		scope.$watch("progress", function () {
 			if (scope.progress > 10) {
 				progressBar.counter++
