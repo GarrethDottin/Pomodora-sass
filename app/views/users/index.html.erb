@@ -39,18 +39,28 @@
         </div>
       </div>
 
-    <div class="off-canvas-wrap" ng-class='{notifyusertodolist: notifyUser}' data-offcanvas>
+    <div class="off-canvas-wrap" ng-class='{notifyusertodolist: notifyUser}' data-offcanvas ng-controller= 'TodoCtrl'>
       <div class="inner-wrap">
         <aside class="right-off-canvas-menu">
-          <span><div class= 'todo-title'>My To-Do List</div></span>
-<!--           <dl class="tabs" data-tab>
+          <span><div class= 'todo-title'>Daily Hotlist</div></span>
+          <dl class="tabs" data-tab>
             <dd class="active"><a href="#panel1">Today</a></dd>
-            <dd><a href="#panel2">Completed</a></dd>
-          </dl> -->
-          <div ng-controller= 'TodoCtrl'>
+            <dd ng-click='getArchivedItems();'><a href="#panel2">Completed</a></dd>
+          </dl>
+          <div>
             <div class="tabs-content">
               <div class="content active" id="panel1">
                 <ul class="ul-todo-list">
+                  <div ng-if='model.todos.length == 0 && firstTime == true'>
+                    <div ng-show ='showOnLoad == true'>
+                      <span class= 'img-checkmark' ng-mouseover= 'completeTask = true;' ng-click= ' triggerSound(); showOnLoad = false' ng-class= '{opacitychange:completeTask}'  ng-mouseleave= 'completeTask = false'>
+                          <%= image_tag('checkmark2.png') %> 
+                      </span>
+                      <span class = 'todo-item-margin'>Example ~ Read an article</span>
+                      <span class = 'todo-cancel-button todo-item-margin' ng-click= 'showOnLoad = false;'> <%= image_tag('cancel.png', :class => 'img-cancel') %>
+                      </span>
+                    </div>
+                  </div>
                   <div ng-mouseover= 'editing = true'  ng-mouseleave= 'editing = false' class= 'todo-item' ng-class= '{fader:fadeout, hidetodoitem:checked}' ng-repeat= 'todo in model.todos ' >
                     <span>
                       <span class= 'img-checkmark'   ng-mouseover= 'completeTask = true;' ng-click= 'fadeout = true; archiveRefresh(todo); triggerSound(); removeTask($index, todo.text, "checkmark"); checked = true;' ng-class= '{opacitychange:completeTask}'  ng-mouseleave= 'completeTask = false'>
@@ -69,14 +79,14 @@
                   placeholder= 'Feeling distracted, write your tasks here...'>
                 </form>
               </div>
-              <!-- <div class="content" id="panel2">
+              <div class="content" id="panel2">
                 <ul class="stored-todo-list"> 
                   <div ng-repeat= 'todo in archivedTodos'>
-                    <div class='todo-item stored-item'> <span class='todo-item-margin'>   
-                    {{todo. text}}</span></div>
+                    <div class='todo-item stored-item'><span class='index-number'> {{$index}} </span><span class='todo-item-margin'>   
+                    {{todo.text}}</span><span id="timestamp" data-tooltip title='Date activity was completed'>{{todo.date}} </span></div>
                   </div>
                 </ul>
-              </div> -->
+              </div>
             </div>
           </div>
         </aside>
