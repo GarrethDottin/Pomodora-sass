@@ -45,36 +45,48 @@ var domManipulations = {
     var timerButtonContainer = $('.timerButtonContainer');
 
     $('#tasks, .off-canvas-button').on("click", function () {
-      if (addButton.css('z-index') === "3") {
-        domManipulations.todoListOpen = true;
-
-        // shift main body
-        $('.timer-container').removeClass('todo-closed');
-        $('.timer-container').addClass('todo-open');
-
-        // hide timer buttons
-        timerButtonContainer.css('z-index', '0');
-        clock.css('z-index', '0');
-
-        // change placeholder text
-        newTodo.attr('placeholder', 'Feeling distracted, write your tasks here... ');
-        newTodo.on('click', function () {
-          newTodo.attr('placeholder', '');
-        });
-        domManipulations.checkSliderAlignment();
+      if ($('.off-canvas-wrap').hasClass('move-left')) {
+        console.log('inside correct')
+        mainBody.removeClass('todo-open');
+        mainBody.addClass('todo-closed');
+        setTimeout(function() {
+          $('.off-canvas-wrap').removeClass('move-left');
+        },1000);
       }
       else {
-        setTimeout(function () {
-          $('.timerButtonContainer').css('z-index', '3');
-          // fortyFiveButton.css('z-index', '3');
-          clock.css('z-index', '');
-        },500);
-
-          $('.timer-container').addClass('todo-closed');
-          $('.timer-container').removeClass('todo-open');
-          domManipulations.todoListOpen = false;
-
+        mainBody.removeClass('todo-closed');
+        mainBody.addClass('todo-open');
       }
+      // if (addButton.css('z-index') === "3") {
+      //   domManipulations.todoListOpen = true;
+
+      //   // shift main body
+      //   $('.timer-container').removeClass('todo-closed');
+      //   $('.timer-container').addClass('todo-open');
+
+      //   // hide timer buttons
+      //   timerButtonContainer.css('z-index', '0');
+      //   clock.css('z-index', '0');
+
+      //   // change placeholder text
+      //   newTodo.attr('placeholder', 'Feeling distracted, write your tasks here... ');
+      //   newTodo.on('click', function () {
+      //     newTodo.attr('placeholder', '');
+      //   });
+      //   domManipulations.checkSliderAlignment();
+      // }
+      // else {
+      //   setTimeout(function () {
+      //     $('.timerButtonContainer').css('z-index', '3');
+      //     // fortyFiveButton.css('z-index', '3');
+      //     clock.css('z-index', '');
+      //   },500);
+
+      //     $('.timer-container').addClass('todo-closed');
+      //     $('.timer-container').removeClass('todo-open');
+      //     domManipulations.todoListOpen = false;
+
+      // }
     });
   },
   checkSliderAlignment: function () {
