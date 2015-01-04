@@ -234,16 +234,16 @@ a.spmenu-button {
 .hidetodoitem {
   visibility: hidden;
   opacity: 0;
-  transition: visibility 0s 1.5s, opacity 1.5s linear;
+  transition: visibility 0s 1s, opacity 1s linear;
 }
 
-.push-todo-list-left { 
-  padding-right: 400px !important; 
+.push-todo-list-left {
+  padding-right: 400px !important;
   transition: padding-right 1.5s;
 }
 
-.push-todo-list-right { 
-  padding-left: 400px !important; 
+.push-todo-list-right {
+  padding-left: 400px !important;
   transition: padding-left 1.5s;
 }
 
@@ -322,12 +322,12 @@ a.spmenu-button {
   cursor: pointer;
 }
 
-.img-padding { 
+.img-padding {
   padding-bottom: 3px;
   border-radius: 3px;
 }
 
-.ul-todo-list { 
+.ul-todo-list {
   margin-left: 0px;
 }
 
@@ -403,17 +403,17 @@ a.spmenu-button {
   font-wieght: 300;
 }
 
-//Stored Todo-List 
+//Stored Todo-List
 
-.tabs dd.active a, .tabs .tab-title.active a { 
+.tabs dd.active a, .tabs .tab-title.active a {
   background-color: #e1e1e1;
 }
 
-.tabs dd > a, .tabs .tab-title > a { 
+.tabs dd > a, .tabs .tab-title > a {
   background-color: white;
-} 
+}
 
-#timestamp { 
+#timestamp {
   position: relative;
   display: inline-block;
   float: right;
@@ -421,33 +421,33 @@ a.spmenu-button {
   margin-right: 5%;
 }
 
-.index-number { 
+.index-number {
   position: relative;
   top: 13px;
   font-size: 15px;
 }
 
-dd { 
+dd {
   text-align: center;
 }
 
-.tabs dd > a, .tabs .tab-title > a { 
+.tabs dd > a, .tabs .tab-title > a {
   width: 150px;
 }
 
-.content { 
+.content {
   padding-top: 1px !important;
 }
 
-.stored-item { 
-  position: relative; 
+.stored-item {
+  position: relative;
   right: 17px;
   padding-left:31px;
 }
 
-.todo-panel { 
-  position: relative; 
-  bottom:76px; 
+.todo-panel {
+  position: relative;
+  bottom:76px;
 }
 
 
@@ -461,29 +461,29 @@ input[type=text]:focus, input[type=text]:active, input[type=text]:focus:active {
   -webkit-box-shadow: none !important;
 }
 
-.off-canvas-wrap { 
+.off-canvas-wrap {
   height: 700px;
   bottom: 473px;
 }
 
-.inner-wrap { 
+.inner-wrap {
   height: 100%;
 }
 
-.right-off-canvas-wrap { 
+.right-off-canvas-wrap {
   height: 580px !important;
 }
 
-.right-off-canvas-menu { 
+.right-off-canvas-menu {
   background: white !important;
   cursor: text;
 }
 
-.exit-off-canvas { 
+.exit-off-canvas {
   box-shadow: none !important;
 }
 
-.off-canvas-button { 
+.off-canvas-button {
   box-shadow: none;
   position: absolute;
   font-size: 25px;
@@ -498,11 +498,11 @@ input[type=text]:focus, input[type=text]:active, input[type=text]:focus:active {
   border-bottom-left-radius: 3px;
 }
 
-.off-canvas-button:hover { 
+.off-canvas-button:hover {
   opacity: .95;
 }
 
-.notifyusertodolist { 
+.notifyusertodolist {
   -webkit-animation: button-change 7s;
   animation: button-change 7s;
 }

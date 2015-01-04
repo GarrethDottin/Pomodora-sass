@@ -9,7 +9,7 @@ angular.module("App").controller("TodoCtrl", ["$scope", "localStorage", "$timeou
   $scope.addTodo = addTodo;
   $scope.removeTask = removeTask;
   $scope.editTodo = editTodo;
-  $scope.firstTime = true; 
+  $scope.firstTime = true;
   $scope.showOnLoad = true;
 
   Array.prototype.remove = function(from, to) {
@@ -30,7 +30,7 @@ angular.module("App").controller("TodoCtrl", ["$scope", "localStorage", "$timeou
   };
 
   function archiveRefresh(todo) {
-    if (todo) { 
+    if (todo) {
       todo.done = true;
       todo.date = setDate();
     }
@@ -40,19 +40,19 @@ angular.module("App").controller("TodoCtrl", ["$scope", "localStorage", "$timeou
       $scope.archivedTodos.push(todo);
       localStorage.setItem('archivedTodos', $scope.archivedTodos);
     }
-    else { 
+    else {
       var tempArray = localStorage.getItem('archivedTodos');
-      tempArray.push(todo); 
+      tempArray.push(todo);
       $scope.archivedTodos = tempArray;
       localStorage.setItem('archivedTodos', $scope.archivedTodos);
     }
   };
 
-  function getArchivedItems () { 
-    $scope.archivedTodos = localStorage.getItem('archivedTodos'); 
+  function getArchivedItems () {
+    $scope.archivedTodos = localStorage.getItem('archivedTodos');
   }
 
-  function setDate () { 
+  function setDate () {
     var currentDay = new Date().toString();
     var modifiedDay = currentDay.slice(0,10);
     return modifiedDay;
@@ -75,20 +75,20 @@ angular.module("App").controller("TodoCtrl", ["$scope", "localStorage", "$timeou
     };
   };
 
-  function editTodo ($index, input) { 
+  function editTodo ($index, input) {
     $scope.model.todos[$index].text = input;
     localStorage.setItem('todos',$scope.model.todos);
   }
 
   function removeTask (index, todo, input ) {
     $scope.firstTime = false;
-    if (input =='checkmark') { 
-      $timeout( function () { 
+    if (input =='checkmark') {
+      $timeout( function () {
         $scope.model.todos.remove(index);
         localStorage.setItem('todos',$scope.model.todos);
-      },1500);
+      },1000);
     }
-    else { 
+    else {
       $scope.model.todos.splice(index,1);
       localStorage.setItem('todos',$scope.model.todos);
     }
