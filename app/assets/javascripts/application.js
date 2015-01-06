@@ -44,7 +44,7 @@ var domManipulations = {
     var addButton = $('.addButton');
     var timerButtonContainer = $('.timerButtonContainer');
 
-    $('#tasks, .off-canvas-button').on("click", function () {
+    $('#tasks, .off-canvas-button, .exit-mark').on("click", function () {
       if (addButton.css('z-index') === "3") {
         domManipulations.todoListOpen = true;
 
@@ -57,7 +57,7 @@ var domManipulations = {
         clock.css('z-index', '0');
 
         // change placeholder text
-        newTodo.attr('placeholder', 'Feeling distracted, write your tasks here... ');
+        newTodo.attr('placeholder', 'Feeling distracted, write your to-dos here... ');
         newTodo.on('click', function () { 
           newTodo.attr('placeholder', '');
         });

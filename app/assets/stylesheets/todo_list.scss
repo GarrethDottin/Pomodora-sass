@@ -329,8 +329,23 @@ a.spmenu-button {
 
 .ul-todo-list { 
   margin-left: 0px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  max-height: 318px;
+  margin-bottom: 0px;
+}
+.exit-mark { 
+  position: absolute;
+  right: 1px;
+  top: 9px;
+  cursor: pointer;
 }
 
+#panel2 { 
+  overflow-x: hidden;
+  overflow-y: scroll;
+  max-height: 366px;
+}
 
 
 .todo-item {
