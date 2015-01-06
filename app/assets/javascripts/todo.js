@@ -12,6 +12,7 @@ angular.module("App").controller("TodoCtrl", ["$scope", "localStorage", "$timeou
   $scope.firstTime = true; 
   $scope.showOnLoad = true;
 
+  window.scope = $scope;
   Array.prototype.remove = function(from, to) {
     var rest = this.slice((to || from) + 1 || this.length);
     this.length = from < 0 ? this.length + from : from;
@@ -41,7 +42,8 @@ angular.module("App").controller("TodoCtrl", ["$scope", "localStorage", "$timeou
       localStorage.setItem('archivedTodos', $scope.archivedTodos);
     }
     else { 
-      var tempArray = localStorage.getItem('archivedTodos');
+      var tempArray = [];
+      tempArray.push(localStorage.getItem('archivedTodos'));
       tempArray.push(todo); 
       $scope.archivedTodos = tempArray;
       localStorage.setItem('archivedTodos', $scope.archivedTodos);
