@@ -11,7 +11,7 @@
       <ul class= 'right '> 
         <li data-magellan-arrival="test1"><a href = '#timer'>TIMER</a></li>
         <li data-magellan-arrival="howto"><a href = '#howto'>HOW TO</a> </li>
-        <li id= 'tasks'><a href= '#' class="right-off-canvas-toggle">TASKS</a> </li>
+        <li id= 'tasks'><a href= '#' class="right-off-canvas-toggle">To Do</a> </li>
         <li id= 'empty-space'><a id= 'empty-space' href>&nbsp</a> </li>
 <!--         <li id= 'empty-space '><a href>&nbsp</a> </li>
  -->      </ul>
@@ -42,6 +42,7 @@
     <div class="off-canvas-wrap" ng-class='{notifyusertodolist: notifyUser}' data-offcanvas ng-controller= 'TodoCtrl'>
       <div class="inner-wrap">
         <aside class="right-off-canvas-menu">
+          <span class='exit-mark right-off-canvas-toggle'> <%= image_tag('exit-mark.png') %></span>
           <span><div class= 'todo-title'>Daily Hotlist</div></span>
           <dl class="tabs" data-tab>
             <dd class="active"><a href="#panel1">Today</a></dd>
@@ -50,7 +51,7 @@
           <div>
             <div class="tabs-content">
               <div class="content active" id="panel1">
-                <ul class="ul-todo-list">
+                <ul ng-hide ='model.todos.length == 0' class="ul-todo-list">
                   <div ng-if='model.todos.length == 0 && firstTime == true'>
                     <div ng-show ='showOnLoad == true'>
                       <span class= 'img-checkmark' ng-mouseover= 'completeTask = true;' ng-click= ' triggerSound(); showOnLoad = false' ng-class= '{opacitychange:completeTask}'  ng-mouseleave= 'completeTask = false'>
@@ -76,13 +77,13 @@
                 </ul>
                 <form ng-submit= 'addTodo($index);' id="todo-list-input" >
                   <input id='newtodo' class= 'todo-item todo-input noshadow' maxlength= '32' type= 'text ' ng-model= 'todoText' size= '30'
-                  placeholder= 'Feeling distracted, write your tasks here...'>
+                  placeholder= 'Feeling distracted, write your to-dos here...'>
                 </form>
               </div>
               <div class="content" id="panel2">
                 <ul class="stored-todo-list"> 
                   <div ng-repeat= 'todo in archivedTodos'>
-                    <div class='todo-item stored-item'><span class='index-number'> {{$index}} </span><span class='todo-item-margin'>   
+                    <div class='todo-item stored-item'><span class='index-number'> {{$index + 1}} </span><span class='todo-item-margin'>   
                     {{todo.text}}</span><span id="timestamp" data-tooltip title='Date activity was completed'>{{todo.date}} </span></div>
                   </div>
                 </ul>
