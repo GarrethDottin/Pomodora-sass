@@ -57,7 +57,7 @@
                       <span class= 'img-checkmark' ng-mouseover= 'completeTask = true;' ng-click= ' triggerSound(); showOnLoad = false' ng-class= '{opacitychange:completeTask}'  ng-mouseleave= 'completeTask = false'>
                           <%= image_tag('checkmark2.png') %> 
                       </span>
-                      <span class = 'todo-item-margin'>Example ~ Read an article</span>
+                      <span class = 'todo-item-margin stored-item-margin'>Example ~ Read an article</span>
                       <span class = 'todo-cancel-button todo-item-margin' ng-click= 'showOnLoad = false;'> <%= image_tag('cancel.png', :class => 'img-cancel') %>
                       </span>
                     </div>
@@ -76,15 +76,16 @@
                   </div>
                 </ul>
                 <form ng-submit= 'addTodo($index);' id="todo-list-input" >
-                  <input id='newtodo' class= 'todo-item todo-input noshadow' maxlength= '32' type= 'text ' ng-model= 'todoText' size= '30'
+                  <input id='newtodo' class= 'todo-item todo-input noshadow' maxlength= '32' type= 'text ' ng-model= 'todoText' size= '32'
                   placeholder= 'Feeling distracted, write your to-dos here...'>
                 </form>
               </div>
               <div class="content" id="panel2">
                 <ul class="stored-todo-list"> 
                   <div ng-repeat= 'todo in archivedTodos'>
-                    <div class='todo-item stored-item'><span class='index-number'> {{$index + 1}} </span><span class='todo-item-margin'>   
-                    {{todo.text}}</span><span id="timestamp" data-tooltip title='Date activity was completed'>{{todo.date}} </span></div>
+                    <div class='todo-item stored-item'><span class='index-number'> {{$index + 1}} </span>
+                    <span class='todo-item-margin stored-item-margin'>{{todo.text}}</span>
+                    <span id="timestamp" data-tooltip title='Date activity was completed'>{{todo.date}} </span></div>
                   </div>
                 </ul>
               </div>

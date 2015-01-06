@@ -34,6 +34,14 @@ angular.module("App").controller("TodoCtrl", ["$scope", "localStorage", "$timeou
     if (todo) { 
       todo.done = true;
       todo.date = setDate();
+      todo.text = todo.text.split('');
+      for (var i =0; i < todo.text.length; i++) { 
+        if (i != 0) {
+          todo.text[i] = todo.text[i].toLowerCase();
+        }
+      }
+      todo.text = todo.text.join('');
+      debugger
     }
 
     // $scope.archivedTodos.push(todo);
@@ -86,10 +94,8 @@ angular.module("App").controller("TodoCtrl", ["$scope", "localStorage", "$timeou
   function removeTask (index, todo, input ) {
     $scope.firstTime = false;
     if (input =='checkmark') { 
-      $timeout( function () { 
-        $scope.model.todos.remove(index);
-        localStorage.setItem('todos',$scope.model.todos);
-      },1500);
+      $scope.model.todos.remove(index);
+      localStorage.setItem('todos',$scope.model.todos);
     }
     else { 
       $scope.model.todos.splice(index,1);
