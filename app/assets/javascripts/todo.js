@@ -42,8 +42,7 @@ angular.module("App").controller("TodoCtrl", ["$scope", "localStorage", "$timeou
       localStorage.setItem('archivedTodos', $scope.archivedTodos);
     }
     else { 
-      var tempArray = [];
-      tempArray.push(localStorage.getItem('archivedTodos'));
+      var tempArray = localStorage.getItem('archivedTodos');
       tempArray.push(todo); 
       $scope.archivedTodos = tempArray;
       localStorage.setItem('archivedTodos', $scope.archivedTodos);
@@ -51,7 +50,9 @@ angular.module("App").controller("TodoCtrl", ["$scope", "localStorage", "$timeou
   };
 
   function getArchivedItems () { 
-    $scope.archivedTodos = localStorage.getItem('archivedTodos'); 
+    if (localStorage.getItem('archivedTodos')) { 
+      $scope.archivedTodos = localStorage.getItem('archivedTodos'); 
+    }
   }
 
   function setDate () { 
