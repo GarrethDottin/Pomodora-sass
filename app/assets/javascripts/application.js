@@ -53,6 +53,7 @@ var domManipulations = {
           $('.off-canvas-wrap').removeClass('move-left');
         },1000);
       }
+      
       else {
         mainBody.removeClass('todo-closed');
         mainBody.addClass('todo-open');
