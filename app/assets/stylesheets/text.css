@@ -2,17 +2,17 @@ h1,h2,h3,p, span, input {
   font-family: 'Lato', sans-serif;
 }
 
-h1, h3{ 
+h1, h3{
   font-weight: 300;
 }
 
-p { 
+p {
   font-weight:100;
 }
 
- .off-canvas-wrap a { 
+ .off-canvas-wrap a {
   color: black !important;
-} 
+}
 
 .todo-title {
   font-weight: 100;
@@ -24,7 +24,7 @@ p {
   cursor: text;
 }
 
-@media only screen and (max-width: 52em) { 
+@media only screen and (max-width: 52em) {
   .panel_textL {
     padding: 50px 50px 50px 0 !important;
     float: left;
@@ -33,31 +33,37 @@ p {
   }
 }
 
-@media only screen and (max-width: 49.750em) { 
-  .timerButtonContainer { 
+@media only screen and (max-width: 69.875em) {
+  .timerButtonContainer, .your-clock {
+    z-index: 0 !important;
+  }
+}
+
+@media only screen and (max-width: 49.750em) {
+  .timerButtonContainer {
     display: none !important;
   }
 }
 
 @-webkit-keyframes todoopen-animation {
-  from { 
+  from {
     padding-right: 0%;
   }
-  to { 
+  to {
     padding-right: 25%;
   }
 }
 
 @-webkit-keyframes todoclosed-animation {
-  from { 
+  from {
     padding-right: 25%;
   }
-  to { 
+  to {
     padding-right: 0%;
   }
 }
 
-.todo-open { 
+.todo-open {
   -webkit-animation-name: todoopen-animation;
   -webkit-animation-duration: 1.3s;
   -webkit-animation-fill-mode: forwards;
@@ -67,7 +73,11 @@ p {
   animation-fill-mode: forwards;
 }
 
-.todo-closed { 
+.body-initial {
+  padding-right: 25%;
+}
+
+.todo-closed {
   -webkit-animation-name: todoclosed-animation;
   -webkit-animation-duration: 1.3s;
   -webkit-animation-fill-mode: forwards;
