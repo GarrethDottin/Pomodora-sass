@@ -23,6 +23,9 @@
 //= require foundation
 //= require_tree .
 
+var domState = {
+  openTodo: false
+}
 var domManipulations = {
   init: function () {
     this.todoButton();
@@ -45,7 +48,8 @@ var domManipulations = {
     var timerButtonContainer = $('.timerButtonContainer');
 
     $('#tasks, .off-canvas-button, .exit-mark').on("click", function () {
-      if (addButton.css('z-index') === "3") {
+      if (!domState.openTodo) {
+        console.log('closed')
         domManipulations.todoListOpen = true;
 
         // shift main body
@@ -61,7 +65,8 @@ var domManipulations = {
         newTodo.on('click', function () {
           newTodo.attr('placeholder', '');
         });
-        domManipulations.checkSliderAlignment();
+        // domManipulations.checkSliderAlignment();
+        domState.openTodo = true;
       }
       else {
         setTimeout(function () {
@@ -70,9 +75,11 @@ var domManipulations = {
           clock.css('z-index', '');
         },500);
 
-          $('.timer-container').addClass('todo-closed');
+        console.log('closed')
           $('.timer-container').removeClass('todo-open');
-          domManipulations.todoListOpen = false;
+          $('.timer-container').addClass('todo-closed');
+          // domManipulations.todoListOpen = false;
+          domState.openTodo = false;
 
       }
     });
