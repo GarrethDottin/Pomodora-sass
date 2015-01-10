@@ -529,6 +529,8 @@ input[type=text]:focus, input[type=text]:active, input[type=text]:focus:active {
   -webkit-animation: button-change 7s;
   animation: button-change 7s;
 }
+
+
 @-webkit-keyframes button-change {
   0%   {opacity: 1;}
   20%  {opacity: .8}
