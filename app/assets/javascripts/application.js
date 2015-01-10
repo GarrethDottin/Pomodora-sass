@@ -44,7 +44,7 @@ var domManipulations = {
     var addButton = $('.addButton');
     var timerButtonContainer = $('.timerButtonContainer');
 
-    $('#tasks, .off-canvas-button').on("click", function () {
+    $('#tasks, .off-canvas-button, .exit-mark').on("click", function () {
       if (addButton.css('z-index') === "3") {
         domManipulations.todoListOpen = true;
 

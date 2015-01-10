@@ -12,6 +12,7 @@ angular.module("App").controller("TodoCtrl", ["$scope", "localStorage", "$timeou
   $scope.firstTime = true;
   $scope.showOnLoad = true;
 
+  window.scope = $scope;
   Array.prototype.remove = function(from, to) {
     var rest = this.slice((to || from) + 1 || this.length);
     this.length = from < 0 ? this.length + from : from;
@@ -33,6 +34,14 @@ angular.module("App").controller("TodoCtrl", ["$scope", "localStorage", "$timeou
     if (todo) {
       todo.done = true;
       todo.date = setDate();
+      todo.text = todo.text.split('');
+      for (var i =0; i < todo.text.length; i++) {
+        if (i != 0) {
+          todo.text[i] = todo.text[i].toLowerCase();
+        }
+      }
+      todo.text = todo.text.join('');
+      debugger
     }
 
     // $scope.archivedTodos.push(todo);
@@ -49,7 +58,9 @@ angular.module("App").controller("TodoCtrl", ["$scope", "localStorage", "$timeou
   };
 
   function getArchivedItems () {
-    $scope.archivedTodos = localStorage.getItem('archivedTodos');
+    if (localStorage.getItem('archivedTodos')) {
+      $scope.archivedTodos = localStorage.getItem('archivedTodos');
+    }
   }
 
   function setDate () {
@@ -82,11 +93,17 @@ angular.module("App").controller("TodoCtrl", ["$scope", "localStorage", "$timeou
 
   function removeTask (index, todo, input ) {
     $scope.firstTime = false;
+<<<<<<< HEAD
     if (input =='checkmark') {
       $timeout( function () {
         $scope.model.todos.remove(index);
         localStorage.setItem('todos',$scope.model.todos);
       },1000);
+=======
+    if (input =='checkmark') {
+      $scope.model.todos.remove(index);
+      localStorage.setItem('todos',$scope.model.todos);
+>>>>>>> 44a68c3247a3fd6fd67a22d7999566e35f56482e
     }
     else {
       $scope.model.todos.splice(index,1);
