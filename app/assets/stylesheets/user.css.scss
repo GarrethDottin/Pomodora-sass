@@ -163,19 +163,20 @@ button {
 
 .threed-button {
   background-color: #3bb3e0;
-  padding: 10px;
+  padding: 5px;
   position: relative;
+  bottom: 10px;
   font-family: 'Open Sans', sans-serif;
   font-size: 12px;
   text-decoration: none;
   color: #fff;
   border: solid 1px #186f8f;
-  background-image: linear-gradient(bottom, rgb(44,160,202) 0%, rgb(62,184,229) 100%);
-  background-image: -o-linear-gradient(bottom, rgb(44,160,202) 0%, rgb(62,184,229) 100%);
-  background-image: -moz-linear-gradient(bottom, rgb(44,160,202) 0%, rgb(62,184,229) 100%);
-  background-image: -webkit-linear-gradient(bottom, rgb(44,160,202) 0%, rgb(62,184,229) 100%);
-  background-image: -ms-linear-gradient(bottom, rgb(44,160,202) 0%, rgb(62,184,229) 100%);
-  background-image: -webkit-gradient( linear, left bottom, left top, color-stop(0, rgb(44,160,202)), color-stop(1, rgb(62,184,229)) );
+  background-image: linear-gradient(bottom, #2ca0ca 0%, #3eb8e5 100%);
+  background-image: -o-linear-gradient(bottom, #2ca0ca 0%, #3eb8e5 100%);
+  background-image: -moz-linear-gradient(bottom, #2ca0ca 0%, #3eb8e5 100%);
+  background-image: -webkit-linear-gradient(bottom, #2ca0ca 0%, #3eb8e5 100%);
+  background-image: -ms-linear-gradient(bottom, #2ca0ca 0%, #3eb8e5 100%);
+  background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, #2ca0ca), color-stop(1, #3eb8e5));
   -webkit-box-shadow: inset 0px 1px 0px #7fd2f1, 0px 1px 0px #fff;
   -moz-box-shadow: inset 0px 1px 0px #7fd2f1, 0px 1px 0px #fff;
   box-shadow: inset 0px 1px 0px #7fd2f1, 0px 1px 0px #fff;
@@ -183,7 +184,39 @@ button {
   -moz-border-radius: 5px;
   -o-border-radius: 5px;
   border-radius: 5px;
+  width: 39px;
+  height: 42px;
+  z-index: 10;
+  cursor: pointer;
+  display: inline-block;
+  bottom: 13px;
+  left: 5px;
 }
+
+.hidden-todo {
+  position: relative;
+  bottom: 25px;
+  width: 200px !important;
+  margin: auto !important;
+  border-radius: 5px !important;
+  opacity: 0;
+  z-index: 1000;
+}
+
+
+::-webkit-input-placeholder {
+  text-align: center;
+  padding-left: 5px;
+}
+
+div.threed-button:active {
+    padding-bottom:6px;
+    padding-left:5px;
+    padding-right:6px;
+    padding-top:3px;
+    background-image: linear-gradient(bottom, rgb(171,27,27) 100%, rgb(212,51,51) 0%);
+}
+
 .flat-ui-button {
   border:none;
   color: white;
@@ -215,7 +248,7 @@ button {
 }
 
 .addButton{
-  top: 225px !important;
+  top: 240px !important;
 }
 
 #stop-button {
@@ -328,7 +361,7 @@ button {
   display: inline-block;
   margin-left: 315px;
   position: absolute;
-  bottom: 190px;
+  bottom: 215px;
   z-index: 3;
 }
 
@@ -783,6 +816,8 @@ button {
   padding: 40px 0 40px;
   float: left;
   text-align: left;
+  position: relative;
+  left: 100px;
 }
 
 .panel_imgR{
@@ -796,6 +831,8 @@ button {
   padding: 50px 50px 50px 0;
   float: left;
   width: 550px;
+  position: relative;
+  left: 100px;
 }
 .panel_textR{
   width: 60%;

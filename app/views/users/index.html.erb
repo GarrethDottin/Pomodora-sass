@@ -24,18 +24,19 @@
       <div class= 'row timer-container timer_outline'>
         <div class= 'small-12 columns timer-body'>
           <h2 class= 'title'> {{statement}} </h2>
-<!--           <div class='threed-button'><%=image_tag('todo-icon.png') %>  </div>
- -->          <button id = 'fifteen' class= 'timer-button transparent' ng-click= 'buttonClicked(15); changeStatement(15)'>15 minutes </button>
+          <div ng-click='showTodo = true' id="buttontest" class='threed-button'><%=image_tag('todo-icon.png') %>  </div>
+          <input class='hidden-todo' ng-class='{todoshowing: showTodo}' placeholder='Write your activity here!' type='text' maxlength = '32'>
+          <button id = 'fifteen' class= 'timer-button transparent' ng-click= 'buttonClicked(15); changeStatement(15)'>15 minutes </button>
           <button class=  'timer-button transparent' ng-click= 'buttonClicked(25); changeStatement(25)'>25 minutes </button>
           <button  id='button45' class= 'timer-button transparent' ng-click= 'buttonClicked(45); changeStatement(45) '>45 minutes </button>
-          <div flip-Clock> </div>
+          <div class='flip-clock-position' flip-Clock> </div>
           <div class= 'buttons'>
             <div ng-click= 'adjustTime("add"); changeStatement("add");' class= 'timerButtonContainer addButton'> <div class= 'upvote '>&nbsp</div></div>
             <div ng-click= 'adjustTime("down"); changeStatement("down");' class= 'timerButtonContainer '>&nbsp<div class= 'downvote'></div></div>
           </div>
-          <div class= 'flipclock-small-text'> <span>Minutes </span> <span class= 'flipclock-small-text-seconds'>Seconds</span> </div>
+          <div class ='flipclock-small-text'> <span>Minutes </span> <span class= 'flipclock-small-text-seconds'>Seconds</span> </div>
 <!--           <div data-id = '0' id="slider"></div>
- -->          <button class= 'flat-ui-button' ng-click= 'startClicked()'> Start</button>
+ -->          <button id='start-button' class= 'flat-ui-button' ng-click= 'startClicked()'> Start</button>
           <button id= 'stop-button' class= 'timer-button transparent' ng-click= 'stopClicked(); initialize();'>Stop </button>
         </div>
       </div>
@@ -43,7 +44,6 @@
     <div class="off-canvas-wrap" ng-class='{notifyusertodolist: notifyUser}' data-offcanvas ng-controller= 'TodoCtrl'>
       <div class="inner-wrap">
         <aside class="right-off-canvas-menu">
-          <span class='exit-mark right-off-canvas-toggle'> <%= image_tag('exit-mark.png') %></span>
           <span><div class= 'todo-title'>Daily Hotlist</div></span>
           <dl class="tabs" data-tab>
             <dd class="active"><a href="#panel1">Today</a></dd>
