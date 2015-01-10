@@ -31,15 +31,12 @@ p {
   }
 }
 
-<<<<<<< HEAD
 @media only screen and (max-width: 69.875em) {
   .timerButtonContainer, .your-clock {
     z-index: 0 !important;
   }
 }
 
-=======
->>>>>>> 9c700433913618e727c323e8807e457782958e03
 @media only screen and (max-width: 49.750em) {
   .timerButtonContainer {
     display: none !important;
