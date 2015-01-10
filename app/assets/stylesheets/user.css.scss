@@ -4,12 +4,12 @@
 
 
 
-div,main,input{ 
+div,main,input{
   outline: none !important;
 }
 
-.no-padding { 
-  padding-left: 0px; 
+.no-padding {
+  padding-left: 0px;
   padding-right: 0px;
 }
 
@@ -24,10 +24,10 @@ body {
   padding: 0;
 }
 
-.row { 
+.row {
   max-width: 100% !important;
 }
-  
+
 html, body {
   max-width: 100%;
 }
@@ -36,7 +36,7 @@ html, body {
     display: none !important;
 }
 
-.relative { 
+.relative {
   position: relative;
 }
 
@@ -51,27 +51,27 @@ header {
   z-index: 1001;
 }
 
-.fixed { 
+.fixed {
   border-bottom: solid #bdc3c7 2px !important;
 }
 
-#logo_text { 
+#logo_text {
   position: relative;
   bottom: 5px;
 }
 
-#tagline { 
+#tagline {
   position: relative;
   right: 13px;
   bottom: 2px;
 }
 
-#empty-space:hover { 
-  background-color: #333333 !important; 
+#empty-space:hover {
+  background-color: #333333 !important;
   cursor: default;
 }
-#empty-space:active { 
-  background-color: #333333 !important; 
+#empty-space:active {
+  background-color: #333333 !important;
   cursor: default;
 }
 
@@ -79,18 +79,18 @@ header {
   padding: 0px !important;
  }
 
-[data-magellan-expedition] { 
+[data-magellan-expedition] {
   padding: 0px !important;
 }
-.top-bar-section li.active:not(.has-form) a:not(.button) { 
+.top-bar-section li.active:not(.has-form) a:not(.button) {
   background-color: #333333 !important;
 }
 
-.fixed { 
+.fixed {
   padding: 0px !important;
 }
 
-#timer, #about { 
+#timer, #about {
   margin-left: 30px;
   cursor: pointer;
   position: relative;
@@ -101,37 +101,37 @@ header {
 html, body {
   min-height: 100% !important;
 }
-#timer { 
+#timer {
   margin-left: 30px;
 }
 
-#about { 
+#about {
   margin-left: 30px;
   margin-right: 30px;
 }
-.logo { 
-  padding: 5px; 
+.logo {
+  padding: 5px;
   padding-left: 40px;
   padding-bottom: 17px;
 }
 
-.header-buttons { 
+.header-buttons {
   margin-left: 70%;
   display: inline-block;
   color: white;
 }
 
-.header-button { 
+.header-button {
 margin-left: 70%;
 display: inline-block;
 color: white;
   font-weight: 100;
   font-size: 14px;
-  position: relative; 
+  position: relative;
   bottom: 20px;
 }
 
-.header-button:hover { 
+.header-button:hover {
   cursor: pointer;
 }
 
@@ -141,24 +141,80 @@ input:focus {outline:none;}
 input {border:0; outline:none;}
 
 
-//Main Section 
+//Main Section
 button {
   outline: 0;
   cursor: pointer;
   z-index: 3;
 }
 
-#slider { 
+#slider {
   width: 500px;
   border-radius: 5px;
 }
 
-.ui-slider-handle { 
+.ui-slider-handle {
   background: image_url('slider-button.png') !important;
   width: 28px !important;
   border: none !important;
   height: 30px !important;
   margin-top: -4px !important;
+}
+
+.threed-button {
+  background-color: #3bb3e0;
+  padding: 5px;
+  position: relative;
+  bottom: 10px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 12px;
+  text-decoration: none;
+  color: #fff;
+  border: solid 1px #186f8f;
+  background-image: linear-gradient(bottom, #2ca0ca 0%, #3eb8e5 100%);
+  background-image: -o-linear-gradient(bottom, #2ca0ca 0%, #3eb8e5 100%);
+  background-image: -moz-linear-gradient(bottom, #2ca0ca 0%, #3eb8e5 100%);
+  background-image: -webkit-linear-gradient(bottom, #2ca0ca 0%, #3eb8e5 100%);
+  background-image: -ms-linear-gradient(bottom, #2ca0ca 0%, #3eb8e5 100%);
+  background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, #2ca0ca), color-stop(1, #3eb8e5));
+  -webkit-box-shadow: inset 0px 1px 0px #7fd2f1, 0px 1px 0px #fff;
+  -moz-box-shadow: inset 0px 1px 0px #7fd2f1, 0px 1px 0px #fff;
+  box-shadow: inset 0px 1px 0px #7fd2f1, 0px 1px 0px #fff;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+  width: 39px;
+  height: 42px;
+  z-index: 10;
+  cursor: pointer;
+  display: inline-block;
+  bottom: 13px;
+  left: 5px;
+}
+
+.hidden-todo {
+  position: relative;
+  bottom: 25px;
+  width: 200px !important;
+  margin: auto !important;
+  border-radius: 5px !important;
+  opacity: 0;
+  z-index: 1000;
+}
+
+
+::-webkit-input-placeholder {
+  text-align: center;
+  padding-left: 5px;
+}
+
+div.threed-button:active {
+    padding-bottom:6px;
+    padding-left:5px;
+    padding-right:6px;
+    padding-top:3px;
+    background-image: linear-gradient(bottom, rgb(171,27,27) 100%, rgb(212,51,51) 0%);
 }
 
 .flat-ui-button {
@@ -187,13 +243,13 @@ button {
 }
 
 
-.header-button:hover { 
+.header-button:hover {
   cursor: pointer;
 }
 
-.addButton{ 
-  top: 225px !important;
-} 
+.addButton{
+  top: 240px !important;
+}
 
 #stop-button {
   font-size: 14px;
@@ -203,7 +259,7 @@ button {
   margin-left: 15px;
   margin-top: 20px;}
 
-.upvote { 
+.upvote {
   width: 0;
   height: 0;
   border-left: 8px solid transparent;
@@ -214,7 +270,7 @@ button {
   top: 8px
 }
 
-.downvote { 
+.downvote {
   width: 0;
   height: 0;
   border-left: 8px solid transparent;
@@ -296,7 +352,7 @@ button {
   border-radius: 10px;
 }
 
-.timerButtonContainer{ 
+.timerButtonContainer{
   background-color: #E1E1E3;
   width: 35px;
   height: 35px;
@@ -305,24 +361,24 @@ button {
   display: inline-block;
   margin-left: 315px;
   position: absolute;
-  bottom: 190px;
+  bottom: 215px;
   z-index: 3;
 }
 
-.timerButtonContainer:hover .upvote  { 
+.timerButtonContainer:hover .upvote  {
   border-bottom: 15px solid white;
 }
 
-.timerButtonContainer:hover .downvote { 
-  border-top: 15px solid white; 
+.timerButtonContainer:hover .downvote {
+  border-top: 15px solid white;
 }
 
-.timerButtonContainer:hover { 
+.timerButtonContainer:hover {
   background-color: #1D354C;
   outline: none;
 }
 
-.progress-bar-container { 
+.progress-bar-container {
   background-color: #E5E9EE;
   height: 100px;
   width: 100%;
@@ -331,10 +387,10 @@ button {
   position: absolute;
   top: 519px;
   border: solid 1px #bdc3c7;
-  overflow: hidden; 
+  overflow: hidden;
 }
 
-.progress-bar-hashmark { 
+.progress-bar-hashmark {
   width: 40px !important;
   height: 40px;
   border-radius: 40px;
@@ -375,7 +431,7 @@ button {
   z-index: 2;
 }
 
-.progress-bar-reset-unique { 
+.progress-bar-reset-unique {
   background-color: white;
   -webkit-transition: background 6.0s linear;
   -moz-transition: background 4.0s linear;
@@ -384,75 +440,75 @@ button {
   transition: background 6.0s linear;
   z-index: 2;
 }
-#hashmark1{ 
-  position: relative; 
+#hashmark1{
+  position: relative;
   left: 200px;
 }
 
-#hashmark2 { 
+#hashmark2 {
   top: -10px;
   position: relative;
   right: 50px;
 }
 
-#hashmark3 { 
+#hashmark3 {
   position: relative;
   top: -50px;
   right: 10px;
 }
 
-.progress-bar-hashmark:nth-child(2) { 
+.progress-bar-hashmark:nth-child(2) {
   margin-left: 47.4%;
 }
 
-.progress-bar-hashmark:nth-child(3) { 
+.progress-bar-hashmark:nth-child(3) {
   margin-left: 70.4%;
 }
 
-.progress-bar-image { 
+.progress-bar-image {
   position: relative;
 }
 
-.progress-bar-image-caption { 
-  position: relative; 
-  bottom: 40px; 
+.progress-bar-image-caption {
+  position: relative;
+  bottom: 40px;
   font-size: 10px;
   color: #6D6968;
 }
 
-.image-caption-teacup { 
+.image-caption-teacup {
   left: 185px;
 }
 
-.image-caption-meditate { 
+.image-caption-meditate {
   left: 374px;
 }
 
-.image-caption-snack { 
+.image-caption-snack {
   left: 534px;
 }
 
-.image-caption-bench { 
+.image-caption-bench {
   left: 740px;
 }
 
-#teacup-image { 
+#teacup-image {
   left: 114px;
 }
 
-#meditate-image { 
+#meditate-image {
   left: 246px;
 }
 
-#snack-image { 
+#snack-image {
   left: 376px;
 }
 
-#bench-image { 
+#bench-image {
   left: 549px;
 }
 
-.daily-counter { 
+.daily-counter {
   width: 70px;
   height: 75px;
   background-color: #122F4A;
@@ -461,12 +517,12 @@ button {
   margin-top: 10px;
 }
 
-#counter-container { 
+#counter-container {
   margin-right: 1%;
   height: 80px;
 }
 
-.daily-count { 
+.daily-count {
   background-color: white;
   height: 65%;
   border-radius: 2px;
@@ -479,7 +535,7 @@ button {
   padding-top: 5px;
 }
 
-.daily-name { 
+.daily-name {
   text-align: center;
   font-family: 'lato';
   color: white;
@@ -487,9 +543,9 @@ button {
 }
 
 
-//Overlays 
+//Overlays
 
-.overlay, .overlay2 { 
+.overlay, .overlay2 {
   width: 100.7%;
   height: 61.2%;
   background-color: #14304B;
@@ -500,23 +556,23 @@ button {
   opacity: 0.95;
 }
 
-.overlay2 { 
+.overlay2 {
   background-color: #6FB18C;
-  
+
 }
 
-.invisible { 
+.invisible {
   visibility: hidden;
 }
 
-.centered-body { 
-  text-align: center; 
-  position:relative; 
+.centered-body {
+  text-align: center;
+  position:relative;
   top: 35%;
   margin-left: 8px;
 }
 
-.overlay-text { 
+.overlay-text {
   position: absolute;
   color: white;
   font-size: 30px;
@@ -524,13 +580,13 @@ button {
   font-weight: 100;
 }
 
-.overlay-button-yes { 
+.overlay-button-yes {
   position: relative;
   top: 100px;
-  right: 75px;  
-} 
+  right: 75px;
+}
 
-.overlay-button-no { 
+.overlay-button-no {
   position: relative;
   top: 100px;
   padding-left: 60px;
@@ -538,7 +594,7 @@ button {
   right: 75px;
 }
 
-.overlay-exit { 
+.overlay-exit {
   position: absolute;
   top: 25px;
   right: 40px;
@@ -549,19 +605,19 @@ button {
   cursor: pointer;
 }
 
-.second-overlay-text { 
+.second-overlay-text {
   top: 150px;
   width: 100%;
   right: -12px;
 }
 
-.overlay-image-smiley { 
+.overlay-image-smiley {
   position: relative;
   bottom: 100px;
 }
 
-// How TO Section 
-.how-to-container { 
+// How TO Section
+.how-to-container {
   width: 100%;
   display: inline-block;
   position: absolute;
@@ -569,7 +625,7 @@ button {
 //  margin-left: -7px;
 }
 
-.panel-centered-title { 
+.panel-centered-title {
   text-align: center;
   padding-top: 50px;
   margin-left: 35px;
@@ -583,14 +639,14 @@ button {
   color:#fff;
 }
 
-.panel-main { 
+.panel-main {
   margin: 0 auto;
   width: 600px;
   position: relative;
   color: #000;
 }
 
-.panel-text { 
+.panel-text {
   width: 600px;
   font-size: 20px;
   font-family: 'lato';
@@ -598,7 +654,7 @@ button {
 //  margin-left: 15%;
 }
 
-.carrot { 
+.carrot {
   width: 0;
   height: 0;
   border-left: 20px solid transparent;
@@ -615,105 +671,105 @@ button {
     top: 334px;
 }
 
-.carrot2, .carrot5, .carrot6 { 
+.carrot2, .carrot5, .carrot6 {
 //  left: 680px;
     border-top: 25px solid  #5eba8b;
     top: 338px;
 }
 
-.carrot3 { 
+.carrot3 {
 //  left: 680px;
   border-top: 25px solid #122F4A;
   top: 334px;
 }
 
-.carrot4 { 
+.carrot4 {
 //  left: 680px;
   border-top: 25px solid #4A88AE;
   top: -21px;
 }
 
-.carrot5{ 
+.carrot5{
   border-top: 25px solid #F3D44D;
   bottom: 21px;
   top: -21px;
 }
-.carrot6{ 
+.carrot6{
   border-top: 25px solid #CE4A4C;
-  top: -22px; 
+  top: -22px;
   bottom: 21px;
 }
 
-#notes { 
+#notes {
 //  bottom: 150px;
 
 }
 
-#flipclock-image { 
-  position: relative; 
+#flipclock-image {
+  position: relative;
   left: 105px;
   top: 50px;
 }
 
-.left-panel-image { 
-  position: relative; 
+.left-panel-image {
+  position: relative;
   left: 105px;
   top: 50px;
 }
 
-.title2 { 
-  position: relative; 
+.title2 {
+  position: relative;
   top: 100px;
   margin-left: 7%;
   display: inline;
 }
 
-.body-position-left { 
+.body-position-left {
   width: 550px;
   position: relative;
   top: 100px;
   left: 100px;
 }
 
-.body-position-right { 
+.body-position-right {
   width: 550px;
   position: relative;
   left: 800px;
   bottom: 100px;
 }
 
-.right-panel-image { 
-  position: relative; 
+.right-panel-image {
+  position: relative;
   left: 1000px;
   bottom: 40px;
 }
 
-#time-clock{ 
+#time-clock{
   bottom: 100px;
 }
 
 
-//colors 
-.light-green { 
+//colors
+.light-green {
     background-color: #5eba8b;
 }
 
-.light-blue { 
+.light-blue {
   background-color: #4A88AE;
 }
-.blue { 
+.blue {
   background-color: #122F4A;
 }
 
-.yellow { 
+.yellow {
   background-color: #F3D44D;
 }
 
-.red { 
+.red {
   background-color: #CE4A4C;
 }
 
-.white-text { 
+.white-text {
    color: white !important;
 }
 
@@ -754,12 +810,14 @@ button {
 }
 .timer_outline .title{
   margin-left: 0;
-  margin-bottom: 30px; 
+  margin-bottom: 30px;
 }
 .panel_imgL{
   padding: 40px 0 40px;
   float: left;
   text-align: left;
+  position: relative;
+  left: 100px;
 }
 
 .panel_imgR{
@@ -773,6 +831,8 @@ button {
   padding: 50px 50px 50px 0;
   float: left;
   width: 550px;
+  position: relative;
+  left: 100px;
 }
 .panel_textR{
   width: 60%;
@@ -790,11 +850,11 @@ button {
   overflow:hidden;
 }
 
-p.white-text { 
+p.white-text {
   width: 80%;
 }
 
-footer { 
+footer {
   display: inline-block;
   background-color: #1A1A1A;
   position: absolute;
@@ -804,11 +864,11 @@ footer {
   text-align: center;
 }
 
-#footer-text { 
+#footer-text {
   width: 100%;
 }
-footer p { 
+footer p {
   margin-top: 5px;
-  font-weight: 100; 
+  font-weight: 100;
   margin-bottom: 0px;
 }

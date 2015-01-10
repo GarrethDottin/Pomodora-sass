@@ -15,6 +15,8 @@ angular.module("App", ['ngCookies'])
 		$scope.endSound = endSound;
 		$scope.storedCount = storedCount;
 		$scope.notifyUser = false;
+		$scope.showTodo = false;
+		// $scope.hideTodo = hideTodo;
 
 
 		var date = new Date();
@@ -37,6 +39,14 @@ angular.module("App", ['ngCookies'])
 
 
 		// Page interactions
+
+		function showTodo() {
+			return true;
+
+			// add CSS class to transition in item
+			//
+		}
+
 		function changeStatement (num) {
 			if(num == 'add' || num == 'down') {
 				$scope.statement ="What can you do in " + $scope.time +  " minutes?";

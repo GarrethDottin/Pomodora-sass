@@ -293,8 +293,6 @@ a.spmenu-button {
   text-align: center;
   font-size: 36px;
   margin-top: 100px;
-  font-family: "Helvetica Neue", Helvetica, sans-serif;
-  font-weight: 100;
 }
 
 ::-webkit-input-placeholder {
@@ -334,14 +332,14 @@ a.spmenu-button {
   max-height: 318px;
   margin-bottom: 0px;
 }
-.exit-mark { 
+.exit-mark {
   position: absolute;
   right: 1px;
   top: 9px;
   cursor: pointer;
 }
 
-#panel2 { 
+#panel2 {
   overflow-x: hidden;
   overflow-y: scroll;
   max-height: 366px;
@@ -421,6 +419,12 @@ a.spmenu-button {
 
 //Stored Todo-List
 
+.stored-item-margin {
+  position: relative;
+  left: 2px;
+  top: 13px;
+}
+
 .tabs dd.active a, .tabs .tab-title.active a {
   background-color: #e1e1e1;
 }
@@ -478,7 +482,7 @@ input[type=text]:focus, input[type=text]:active, input[type=text]:focus:active {
 
 .off-canvas-wrap {
   height: 700px;
-  bottom: 473px;
+  bottom: 510px;
 }
 
 .inner-wrap {
@@ -521,6 +525,7 @@ input[type=text]:focus, input[type=text]:active, input[type=text]:focus:active {
   -webkit-animation: button-change 7s;
   animation: button-change 7s;
 }
+
 @-webkit-keyframes button-change {
   0%   {opacity: 1;}
   20%  {opacity: .8}
@@ -537,5 +542,33 @@ input[type=text]:focus, input[type=text]:active, input[type=text]:focus:active {
   60%  {opacity: .8}
   80%  {opacity: 1;}
   100% {opacity: .8;}
+}
+
+
+// Main Page Todo item
+
+.todoshowing {
+  -webkit-animation-name: todoshowing-animation;
+  -webkit-animation-duration: 1.3s;
+  -webkit-animation-fill-mode: forwards;
+  animation: todoshowing-animatio;
+  animation-duration: 1.3s;
+  animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes todoshowing-animation {
+  0%   {opacity: .2;}
+  25%  {opacity: .4}
+  50%  {opacity: .6;}
+  75%  {opacity: .8}
+  100%  {opacity: .85;}
+}
+
+@keyframes todoshowing-animation {
+  0%   {opacity: .2;}
+  25%  {opacity: .4}
+  50%  {opacity: .6;}
+  75%  {opacity: .8}
+  100%  {opacity: .85;}
 }
 

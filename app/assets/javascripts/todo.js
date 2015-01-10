@@ -35,7 +35,7 @@ angular.module("App").controller("TodoCtrl", ["$scope", "localStorage", "$timeou
       todo.done = true;
       todo.date = setDate();
       todo.text = todo.text.split('');
-      for (var i =0; i < todo.text.length; i++) { 
+      for (var i =0; i < todo.text.length; i++) {
         if (i != 0) {
           todo.text[i] = todo.text[i].toLowerCase();
         }
@@ -57,11 +57,12 @@ angular.module("App").controller("TodoCtrl", ["$scope", "localStorage", "$timeou
     }
   };
 
-  function getArchivedItems () { 
-    if (localStorage.getItem('archivedTodos')) { 
-      $scope.archivedTodos = localStorage.getItem('archivedTodos'); 
+
+  function getArchivedItems () {
+    if (localStorage.getItem('archivedTodos')) {
+      $scope.archivedTodos = localStorage.getItem('archivedTodos');
     }
-  };
+  }
 
   function setDate () {
     var currentDay = new Date().toString();
@@ -94,10 +95,8 @@ angular.module("App").controller("TodoCtrl", ["$scope", "localStorage", "$timeou
   function removeTask (index, todo, input ) {
     $scope.firstTime = false;
     if (input =='checkmark') {
-      $timeout( function () {
-        $scope.model.todos.remove(index);
-        localStorage.setItem('todos',$scope.model.todos);
-      },1000);
+      $scope.model.todos.remove(index);
+      localStorage.setItem('todos',$scope.model.todos);
     }
     else {
       $scope.model.todos.splice(index,1);
