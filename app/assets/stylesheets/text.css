@@ -71,10 +71,6 @@ p {
   animation-fill-mode: forwards;
 }
 
-.body-initial {
-  padding-right: 25%;
-}
-
 .todo-closed {
   -webkit-animation-name: todoclosed-animation;
   -webkit-animation-duration: 1.3s;

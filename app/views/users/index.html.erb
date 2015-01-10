@@ -21,7 +21,7 @@
 
     <main>
       <a name='timer' id='timer'></a>
-      <div class= 'row timer-container timer_outline body-initial'>
+      <div class= 'row timer-container timer_outline'>
         <div class= 'small-12 columns timer-body'>
           <h2 class= 'title'> {{statement}} </h2>
           <div ng-click='showTodo = true' id="buttontest" class='threed-button'><%=image_tag('todo-icon.png') %>  </div>
@@ -41,7 +41,7 @@
         </div>
       </div>
 
-    <div class="off-canvas-wrap move-left" ng-class='{notifyusertodolist: notifyUser}' data-offcanvas ng-controller= 'TodoCtrl'>
+    <div class="off-canvas-wrap" ng-class='{notifyusertodolist: notifyUser}' data-offcanvas ng-controller= 'TodoCtrl'>
       <div class="inner-wrap">
         <aside class="right-off-canvas-menu">
           <span><div class= 'todo-title'>Daily Hotlist</div></span>

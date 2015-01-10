@@ -46,11 +46,13 @@ var domManipulations = {
 
     $('#tasks, .off-canvas-button, .exit-mark').on("click", function () {
       if (addButton.css('z-index') === "3") {
+        console.log('three is hit')
         domManipulations.todoListOpen = true;
 
         // shift main body
         $('.timer-container').removeClass('todo-closed');
         $('.timer-container').addClass('todo-open');
+
 
         // hide timer buttons
         timerButtonContainer.css('z-index', '0');
@@ -61,12 +63,12 @@ var domManipulations = {
         newTodo.on('click', function () {
           newTodo.attr('placeholder', '');
         });
-        domManipulations.checkSliderAlignment();
+        // domManipulations.checkSliderAlignment();
       }
       
       else {
-        mainBody.removeClass('todo-closed');
-        mainBody.addClass('todo-open');
+        mainBody.removeClass('todo-open');
+        mainBody.addClass('todo-closed');
       }
       // if (addButton.css('z-index') === "3") {
       //   domManipulations.todoListOpen = true;
@@ -101,8 +103,8 @@ var domManipulations = {
   },
   checkSliderAlignment: function () {
     if ($('.timer-container').hasClass('todo-open') && domManipulations.todoListOpen == false) {
-      $('.timer-container').addClass('todo-closed');
-      $('.timer-container').removeClass('todo-open');
+      // $('.timer-container').addClass('todo-closed');
+      // $('.timer-container').removeClass('todo-open');
     };
   }
   ,
