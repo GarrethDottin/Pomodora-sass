@@ -41,7 +41,6 @@ angular.module("App").controller("TodoCtrl", ["$scope", "localStorage", "$timeou
         }
       }
       todo.text = todo.text.join('');
-      debugger
     }
 
     // $scope.archivedTodos.push(todo);

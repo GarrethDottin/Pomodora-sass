@@ -15,9 +15,6 @@ angular.module("App", ['ngCookies'])
 		$scope.endSound = endSound;
 		$scope.storedCount = storedCount;
 		$scope.notifyUser = false;
-		$scope.showTodo = false;
-		// $scope.hideTodo = hideTodo;
-
 
 		var date = new Date();
 		var today = date.getDay();
@@ -39,13 +36,6 @@ angular.module("App", ['ngCookies'])
 
 
 		// Page interactions
-
-		function showTodo() {
-			return true;
-
-			// add CSS class to transition in item
-			//
-		}
 
 		function changeStatement (num) {
 			if(num == 'add' || num == 'down') {

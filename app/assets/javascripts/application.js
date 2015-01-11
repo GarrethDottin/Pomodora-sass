@@ -60,11 +60,6 @@ var domManipulations = {
         timerButtonContainer.css('z-index', '0');
         clock.css('z-index', '0');
 
-        // change placeholder text
-        newTodo.attr('placeholder', 'Feeling distracted, write your tasks here... ');
-        newTodo.on('click', function () {
-          newTodo.attr('placeholder', '');
-        });
         // domManipulations.checkSliderAlignment();
         domState.openTodo = true;
       }
