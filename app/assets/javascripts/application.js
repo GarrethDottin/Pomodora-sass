@@ -23,6 +23,9 @@
 //= require foundation
 //= require_tree .
 
+var domState = {
+  openTodo: false
+}
 var domManipulations = {
   init: function () {
     this.todoButton();
@@ -45,8 +48,8 @@ var domManipulations = {
     var timerButtonContainer = $('.timerButtonContainer');
 
     $('#tasks, .off-canvas-button, .exit-mark').on("click", function () {
-      if (addButton.css('z-index') === "3") {
-        console.log('three is hit')
+      if (!domState.openTodo) {
+        console.log('closed')
         domManipulations.todoListOpen = true;
 
         // shift main body
@@ -58,24 +61,21 @@ var domManipulations = {
         timerButtonContainer.css('z-index', '0');
         clock.css('z-index', '0');
 
-        // change placeholder text
-        newTodo.attr('placeholder', 'Feeling distracted, write your tasks here... ');
-        newTodo.on('click', function () {
-          newTodo.attr('placeholder', '');
-        });
         // domManipulations.checkSliderAlignment();
+        domState.openTodo = true;
       }
       
       else {
         mainBody.removeClass('todo-open');
         mainBody.addClass('todo-closed');
+        domState.openTodo = false;
       }
       // if (addButton.css('z-index') === "3") {
       //   domManipulations.todoListOpen = true;
 
-      //   // shift main body
-      //   $('.timer-container').removeClass('todo-closed');
-      //   $('.timer-container').addClass('todo-open');
+          // $('.timer-container').removeClass('todo-open');
+          // $('.timer-container').addClass('todo-closed');
+          // domManipulations.todoListOpen = false;
 
       //   // hide timer buttons
       //   timerButtonContainer.css('z-index', '0');

@@ -9,7 +9,7 @@
 
     <section class= 'top-bar-section'>
       <ul class= 'right '>
-        <li data-magellan-arrival="test1"><a href = '#timer'>TIMER</a></li>
+        <li class='timer-header' data-magellan-arrival="test1"><a class='timer-header'href = '#timer'>TIMER</a></li>
         <li data-magellan-arrival="howto"><a href = '#howto'>HOW TO</a> </li>
         <li id= 'tasks'><a href= '#' class="right-off-canvas-toggle">TO DO</a> </li>
         <li id= 'empty-space'><a id= 'empty-space' href>&nbsp</a> </li>
@@ -24,8 +24,7 @@
       <div class= 'row timer-container timer_outline'>
         <div class= 'small-12 columns timer-body'>
           <h2 class= 'title'> {{statement}} </h2>
-          <div ng-click='showTodo = true' id="buttontest" class='threed-button'><%=image_tag('todo-icon.png') %>  </div>
-          <input class='hidden-todo' ng-class='{todoshowing: showTodo}' placeholder='Write your activity here!' type='text' maxlength = '32'>
+          <input class='hidden-todo' ng-class='{todoshowing: showTodo}' placeholder='Write your activity here!' type='text' maxlength = '30'>
           <button id = 'fifteen' class= 'timer-button transparent' ng-click= 'buttonClicked(15); changeStatement(15)'>15 minutes </button>
           <button class=  'timer-button transparent' ng-click= 'buttonClicked(25); changeStatement(25)'>25 minutes </button>
           <button  id='button45' class= 'timer-button transparent' ng-click= 'buttonClicked(45); changeStatement(45) '>45 minutes </button>
@@ -69,7 +68,7 @@
                         <%= image_tag('checkmark2.png') %>
                       </span>
                       <form class= 'todo-item-margin noshadow ' ng-show= 'editing' ng-submit= 'editing = false; editTodo($index, todo.text);'>
-                        <input class= 'todo-inline-edit noshadow' maxlength= '32' type= 'text' ng-model= 'todo.text'>
+                        <input class= 'todo-inline-edit noshadow' maxlength= '30' type= 'text' ng-model= 'todo.text'>
                       </form>
                       <span  class= 'todo-item-margin' ng-hide= 'editing'>{{todo.text}}</span>
                       <span ng-show= 'editing' class = 'todo-cancel-button todo-item-margin' ng-click= 'removeTask($index, todo.text);'> <%= image_tag('cancel.png', :class => 'img-cancel' ) %></span>
@@ -77,7 +76,7 @@
                   </div>
                 </ul>
                 <form ng-submit= 'addTodo($index);' id="todo-list-input" >
-                  <input id='newtodo' class= 'todo-item todo-input noshadow' maxlength= '32' type= 'text ' ng-model= 'todoText' size= '32'
+                  <input id='newtodo' class= 'todo-item todo-input noshadow' maxlength= '30' type= 'text ' ng-model= 'todoText' size= '32'
                   placeholder= 'Feeling distracted, write your to-dos here...'>
                 </form>
               </div>
