@@ -52,7 +52,7 @@
             <div class="tabs-content">
               <div class="content active" id="panel1">
                 <ul  class="ul-todo-list" ng-class="{scrollable:model.todos.length >= 9}">
-                  <div ng-if='model.todos.length == 0'>
+                  <div ng-if='model.todos.length == 0 && firstTime == true'>
                     <div class='sample-task' ng-show ='showOnLoad == true'>
                       <span class= 'img-checkmark' ng-mouseover= 'completeTask = true;' ng-click= ' triggerSound(); showOnLoad = false' ng-class= '{opacitychange:completeTask}'  ng-mouseleave= 'completeTask = false'>
                           <%= image_tag('checkmark2.png') %>
