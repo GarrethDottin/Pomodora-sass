@@ -24,7 +24,7 @@
       <div class= 'row timer-container timer_outline'>
         <div class= 'small-12 columns timer-body'>
           <h2 class= 'title'> {{statement}} </h2>
-          <input class='hidden-todo' ng-class='{todoshowing: showTodo}' placeholder='Write your activity here!' type='text' maxlength = '30'>
+          <input class='hidden-todo' ng-class='{todoshowing: showTodo}' placeholder='Write your activity here!' type='text' maxlength="38">
           <button id = 'fifteen' class= 'timer-button transparent' ng-click= 'buttonClicked(15); changeStatement(15)'>15 minutes </button>
           <button class=  'timer-button transparent' ng-click= 'buttonClicked(25); changeStatement(25)'>25 minutes </button>
           <button  id='button45' class= 'timer-button transparent' ng-click= 'buttonClicked(45); changeStatement(45) '>45 minutes </button>
@@ -45,15 +45,15 @@
         <aside class="right-off-canvas-menu">
           <span><div class= 'todo-title'>Daily Hotlist</div></span>
           <dl class="tabs" data-tab>
-            <dd class="active"><a href="#panel1">Today</a></dd>
-            <dd ng-click='getArchivedItems();'><a href="#panel2">Completed</a></dd>
+            <dd class="active"><a class='tab-width' href="#panel1">Today</a></dd>
+            <dd ng-click='getArchivedItems();'><a class='tab-width' href="#panel2">Completed</a></dd>
           </dl>
           <div>
             <div class="tabs-content">
               <div class="content active" id="panel1">
-                <ul ng-hide ='model.todos.length == 0' class="ul-todo-list">
-                  <div ng-if='model.todos.length == 0 && firstTime == true'>
-                    <div ng-show ='showOnLoad == true'>
+                <ul  class="ul-todo-list" ng-class="{scrollable:model.todos.length >= 9}">
+                  <div ng-if='model.todos.length == 0'>
+                    <div class='sample-task' ng-show ='showOnLoad == true'>
                       <span class= 'img-checkmark' ng-mouseover= 'completeTask = true;' ng-click= ' triggerSound(); showOnLoad = false' ng-class= '{opacitychange:completeTask}'  ng-mouseleave= 'completeTask = false'>
                           <%= image_tag('checkmark2.png') %>
                       </span>
@@ -68,7 +68,7 @@
                         <%= image_tag('checkmark2.png') %>
                       </span>
                       <form class= 'todo-item-margin noshadow ' ng-show= 'editing' ng-submit= 'editing = false; editTodo($index, todo.text);'>
-                        <input class= 'todo-inline-edit noshadow' maxlength= '30' type= 'text' ng-model= 'todo.text'>
+                        <input class= 'todo-inline-edit noshadow' maxlength="38" type= 'text' ng-model= 'todo.text'>
                       </form>
                       <span  class= 'todo-item-margin' ng-hide= 'editing'>{{todo.text}}</span>
                       <span ng-show= 'editing' class = 'todo-cancel-button todo-item-margin' ng-click= 'removeTask($index, todo.text);'> <%= image_tag('cancel.png', :class => 'img-cancel' ) %></span>
@@ -76,7 +76,7 @@
                   </div>
                 </ul>
                 <form ng-submit= 'addTodo($index);' id="todo-list-input" >
-                  <input id='newtodo' class= 'todo-item todo-input noshadow' maxlength= '30' type= 'text ' ng-model= 'todoText' size= '32'
+                  <input id='newtodo' class= 'todo-item todo-input noshadow' maxlength="38" type= 'text ' ng-model= 'todoText' size= '32'
                   placeholder= 'Feeling distracted, write your to-dos here...'>
                 </form>
               </div>
