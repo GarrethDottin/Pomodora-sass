@@ -292,7 +292,8 @@ a.spmenu-button {
 .todo-title {
   text-align: center;
   font-size: 36px;
-  margin-top: 100px;
+  margin-top: 20px;
+  font-weight: 300;
 }
 
 ::-webkit-input-placeholder {
@@ -328,10 +329,19 @@ a.spmenu-button {
 .ul-todo-list {
   margin-left: 0px;
   overflow-x: hidden;
-  overflow-y: scroll;
-  max-height: 318px;
+  max-height: 400px;
+  overflow-y: hidden;
   margin-bottom: 0px;
 }
+
+.sample-task { 
+  height: 50px;
+}
+
+.scrollable { 
+  overflow-y: scroll !important;
+}
+
 .exit-mark {
   position: absolute;
   right: 1px;
@@ -394,7 +404,7 @@ a.spmenu-button {
 
 .todo-cancel-button {
   position: relative;
-  left: 275px;
+  left: 310px;
   top: -19px;
   opacity: .6;
   cursor: pointer;
@@ -412,25 +422,37 @@ a.spmenu-button {
   font-size: 15px;
   display: inline-block;
   height: 40px;
-  width: 320px;
+  width: 100%;
   font-wieght: 300;
 }
 
 
 //Stored Todo-List
+.stored-todo-list { 
+  margin-left: 0px;
+}
 
 .stored-item-margin {
   position: relative;
-  left: 2px;
+  left: 10px;
   top: 13px;
 }
 
 .tabs dd.active a, .tabs .tab-title.active a {
   background-color: #e1e1e1;
 }
+.tab-width { 
+  width: 175px !important;
+}
+
+dd { 
+  width: 50%;
+}
 
 .tabs dd > a, .tabs .tab-title > a {
   background-color: white;
+  padding: .5em !important;
+  width: 175px;
 }
 
 #timestamp {
@@ -501,6 +523,7 @@ input[type=text]:focus, input[type=text]:active, input[type=text]:focus:active {
 .exit-off-canvas {
   box-shadow: none !important;
 }
+
 
 .off-canvas-button {
   box-shadow: none;
