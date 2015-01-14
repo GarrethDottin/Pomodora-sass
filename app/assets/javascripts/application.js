@@ -58,7 +58,11 @@ var domManipulations = {
 
 
         // hide timer buttons
-        timerButtonContainer.css('z-index', '0');
+        if ($(window).width() <= 1202) { 
+          console.log('this is inside width')
+           timerButtonContainer.css('z-index', '0');
+        };
+        // timerButtonContainer.css('z-index', '0');
         clock.css('z-index', '0');
 
         // domManipulations.checkSliderAlignment();
@@ -69,36 +73,8 @@ var domManipulations = {
         mainBody.removeClass('todo-open');
         mainBody.addClass('todo-closed');
         domState.openTodo = false;
+        $('.timerButtonContainer').css('z-index', 3);
       }
-      // if (addButton.css('z-index') === "3") {
-      //   domManipulations.todoListOpen = true;
-
-          // $('.timer-container').removeClass('todo-open');
-          // $('.timer-container').addClass('todo-closed');
-          // domManipulations.todoListOpen = false;
-
-      //   // hide timer buttons
-      //   timerButtonContainer.css('z-index', '0');
-      //   clock.css('z-index', '0');
-      //   // change placeholder text
-      //   newTodo.attr('placeholder', 'Feeling distracted, write your tasks here... ');
-      //   newTodo.on('click', function () {
-      //     newTodo.attr('placeholder', '');
-      //   });
-      //   domManipulations.checkSliderAlignment();
-      // }
-      // else {
-      //   setTimeout(function () {
-      //     $('.timerButtonContainer').css('z-index', '3');
-      //     // fortyFiveButton.css('z-index', '3');
-      //     clock.css('z-index', '');
-      //   },500);
-
-      //     $('.timer-container').addClass('todo-closed');
-      //     $('.timer-container').removeClass('todo-open');
-      //     domManipulations.todoListOpen = false;
-
-      // }
     });
   },
   checkSliderAlignment: function () {
