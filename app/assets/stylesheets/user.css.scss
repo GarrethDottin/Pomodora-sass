@@ -642,11 +642,13 @@ div.threed-button:active {
 }
 
 .panel-text {
-  width: 600px;
+  width: 700px;
   font-size: 20px;
   font-family: 'lato';
   text-align: center;
 //  margin-left: 15%;
+  position: relative; 
+  right: 10px;
 }
 
 .carrot {
@@ -846,7 +848,7 @@ div.threed-button:active {
 }
 
 p.white-text {
-  width: 80%;
+  width: 95%;
 }
 
 footer {
