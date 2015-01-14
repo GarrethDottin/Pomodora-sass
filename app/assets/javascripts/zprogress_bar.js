@@ -1,4 +1,4 @@
-angular.module("App").directive("progressBar", function() {
+	angular.module("App").directive("progressBar", function() {
 	progressBar = {};
 	progressBar.width = 20;
 	progressBar.position = "100% 100%";
@@ -23,15 +23,6 @@ angular.module("App").directive("progressBar", function() {
 
 	progressBar.watch = function (scope,element,attr){
 		var progressMeter = element.children().children().children();
-
-		scope.$watch("counter", function (){ 
-			// if (scope.counter % 4 == 0 && scope.counter != 0) { 
-			// 	setTimeout(function(){
-			// 		progressBar.reset(progressMeter);
-			// 		progressBar.counter = 0;
-			// 	},5000);
-			// };
-		})
 		scope.$watch("progress", function () {
 			if (scope.progress > 10) {
 				progressBar.counter++

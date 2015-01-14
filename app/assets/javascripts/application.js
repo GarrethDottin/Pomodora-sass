@@ -23,11 +23,20 @@
 //= require foundation
 //= require_tree .
 
+var domState = {
+  openTodo: false
+}
 var domManipulations = {
   init: function () {
     this.todoButton();
     this.todoSubmit();
-  }, 
+    this.changeOverlay();
+  },
+  changeOverlay: function () {
+    window.setTimeout(function () {
+      $('#overlays').removeClass('invisible');
+    },1500);
+  },
   todoListOpen: false,
   todoButton: function () {
     var timerBody = $('.timer-body');
@@ -38,55 +47,48 @@ var domManipulations = {
     var addButton = $('.addButton');
     var timerButtonContainer = $('.timerButtonContainer');
 
-    $('#tasks, .off-canvas-button').on("click", function () {
-      if (addButton.css('z-index') === "3") {
+    $('#tasks, .off-canvas-button, .exit-mark').on("click", function () {
+      if (!domState.openTodo) {
+        console.log('closed')
         domManipulations.todoListOpen = true;
 
-        // shift main body 
+        // shift main body
         $('.timer-container').removeClass('todo-closed');
         $('.timer-container').addClass('todo-open');
 
-        // hide timer buttons 
-        timerButtonContainer.css('z-index', '0');
+
+        // hide timer buttons
+        if ($(window).width() <= 1202) { 
+          console.log('this is inside width')
+           timerButtonContainer.css('z-index', '0');
+        };
+        // timerButtonContainer.css('z-index', '0');
         clock.css('z-index', '0');
 
-        // change placeholder text
-        newTodo.attr('placeholder', 'Feeling distracted, write your tasks here... ');
-        newTodo.on('click', function () { 
-          newTodo.attr('placeholder', '');
-        });
-        domManipulations.checkSliderAlignment();
+        // domManipulations.checkSliderAlignment();
+        domState.openTodo = true;
       }
-      else { 
-        setTimeout(function () { 
-          $('.timerButtonContainer').css('z-index', '3'); 
-          // fortyFiveButton.css('z-index', '3');
-          clock.css('z-index', ''); 
-        },500); 
-          
-          $('.timer-container').addClass('todo-closed');
-          $('.timer-container').removeClass('todo-open');
-          domManipulations.todoListOpen = false;
-
+      
+      else {
+        mainBody.removeClass('todo-open');
+        mainBody.addClass('todo-closed');
+        domState.openTodo = false;
+        $('.timerButtonContainer').css('z-index', 3);
       }
-    }); 
+    });
   },
-  checkSliderAlignment: function () { 
-    if ($('.timer-container').hasClass('todo-open') && domManipulations.todoListOpen == false) { 
-      $('.timer-container').addClass('todo-closed');
-      $('.timer-container').removeClass('todo-open');
-    }; 
-  } 
+  checkSliderAlignment: function () {
+    if ($('.timer-container').hasClass('todo-open') && domManipulations.todoListOpen == false) {
+      // $('.timer-container').addClass('todo-closed');
+      // $('.timer-container').removeClass('todo-open');
+    };
+  }
   ,
-  todoSubmit: function () { 
+  todoSubmit: function () {
     var newTodo = $('#newtodo');
     $('#todo-list-input').on('submit', function() {
       newTodo.attr('placeholder', 'Feeling distracted, write your tasks here... ');
     });
-
-
-
-
   }
 }
 

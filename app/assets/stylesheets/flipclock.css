@@ -197,9 +197,17 @@
   font-weight: 300;
   position: relative;
   right: 75px;
-  bottom: 5px;
+  bottom: 35px;
   font-family: 'lato';
   color: white;
+}
+
+#start-button {
+  bottom: 20px;
+}
+.flip-clock-position {
+  position: relative;
+  bottom: 20px;
 }
 
 .flipclock-small-text-seconds {
@@ -432,7 +440,7 @@
   100% {
     opacity: 0; } }
 
-.timer-container { 
+.timer-container {
   position: relative;
 /*  margin: 0 auto ;
   top: 50px;
@@ -528,17 +536,19 @@
     padding-right: 25px;
     outline: 0;
     margin-left: 15px;
+    bottom: 20px;
   }
 
-  .title { 
+  .title {
     font-family: 'Lato', sans-serif;
     font-weight: 300;
     font-size: 32px;
     margin-left: 10%;
     color: white;
+    display: inline-block;
   }
 
-  #fifteen { 
+  #fifteen {
     margin-left: 120px;
   }
 
