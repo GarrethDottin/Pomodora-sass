@@ -1,0 +1,6 @@
+Code Quality and Standards: 
+	Outside Libraries: 
+ 	When adding any future libraries its important that the library conform to our standard of code quality. Before immediately adding the library make sure to check that the code is clear and concise. If the logic is deeply nested or confusing to understand don’t include it even if it says time. 
+ 	
+	Another important aspect to ensure code quality is good abstractions. Even if the code is well written and avoids a ton of conditional logic, it should also have clear abstractions that show how the functionality interrelates to one another. 
+	These are the most important aspects we use to ensure code quality but we also should look at whether there’s an outside community involved with issues. As with any codebase there will be bugs that we find, its vital that there be a supportive community able to assist us. This drastically cuts down on developer time.  

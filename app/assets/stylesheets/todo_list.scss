@@ -24,7 +24,7 @@ $caret-color-closed: #000;
 $caret-color-opened: #000;
 
 // SIZES
-$spmenu-vertical-width: 320px;
+$spmenu-vertical-width: 330px;
 $spmenu-horizontal-height: 150px;
 
 /* General styles for all menus */
@@ -174,6 +174,10 @@ a.spmenu-button {
     -webkit-border-bottom-left-radius: 5px;
     -moz-border-bottom-left-radius: 5px;
     border-bottom-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    width: 42px;
+    padding-bottom: 15px;
+    border-radius: 0px !important;
   }
 }
 
@@ -227,6 +231,22 @@ a.spmenu-button {
 
 /* Transitions */
 
+.hidetodoitem {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s 1s, opacity 1s linear;
+}
+
+.push-todo-list-left {
+  padding-right: 400px !important;
+  transition: padding-right 1.5s;
+}
+
+.push-todo-list-right {
+  padding-left: 400px !important;
+  transition: padding-left 1.5s;
+}
+
 .spmenu, .spmenu-push {
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
@@ -270,10 +290,16 @@ a.spmenu-button {
 
 
 .todo-title {
-  font-weight: 100;
   text-align: center;
-  font-size: 40px;
-  margin-top: 100px;
+  font-size: 36px;
+  margin-top: 20px;
+  font-weight: 300;
+}
+
+::-webkit-input-placeholder {
+  color: #333;
+  font-family: "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 14px;
 }
 
 .img-plus-sign {
@@ -286,18 +312,59 @@ a.spmenu-button {
   top: 9px;
 }
 
+
 .img-checkmark {
   position: relative;
   top: 10px;
-  opacity: .1;
+  opacity: .4;
   left: 10px;
+  cursor: pointer;
 }
+
+.img-padding {
+  padding-bottom: 3px;
+  border-radius: 3px;
+}
+
+.ul-todo-list {
+  margin-left: 0px;
+  overflow-x: hidden;
+  max-height: 400px;
+  overflow-y: hidden;
+  margin-bottom: 0px;
+}
+
+.sample-task { 
+  height: 50px;
+}
+
+.scrollable { 
+  overflow-y: scroll !important;
+}
+
+.exit-mark {
+  position: absolute;
+  right: 1px;
+  top: 9px;
+  cursor: pointer;
+}
+
+#panel2 {
+  overflow-x: hidden;
+  overflow-y: scroll;
+  max-height: 366px;
+}
+
 
 .todo-item {
   border-width: 0px;
   margin-bottom: 16px;
-  font-size: 16px;
+  font-size: 14px;
+  font-weight: 400;
   border-top: solid #F6F6F6 1px;
+  max-height: 30px;
+  background-color: transparent;
+  width: 105%;
 }
 
 .todo-exitbutton {
@@ -305,33 +372,44 @@ a.spmenu-button {
   position:absolute;
   left: 280px;
   top: 10px;
+  cursor: pointer;
 }
 
 .todo-item-margin {
   position: relative;
   left: 15px;
+  top: 12px;
+  cursor: text;
+  font-size: 15px;
+  background-color: transparent;
 }
+
 .todoclosed {
   right: -320px;
 }
 
 .todo-inline-edit {
-  font-family: 'Lato-light', sans-serif;
-  font-size: 16px;
-  font-weight: 550;
-  border: none;
+  font-size: 15px !important;
+  font-weight: 500;
+  border: none !important;
   position: absolute;
-  left: 38px;
-  bottom: -1px;
+  left: 25px;
+  bottom: -17px;
   cursor: text;
+  padding-bottom: 13px;
+  font-family: 'Lato', sans-serif !important;
+  color: black !important;
+  background-color: transparent !important;
 }
 
 .todo-cancel-button {
-  position: absolute;
-  left: 290px;
-  margin-top: -20px;
+  position: relative;
+  left: 310px;
+  top: -19px;
   opacity: .6;
+  cursor: pointer;
 }
+
 .todo-edit-button {
   position: relative;
   left: 150px;
@@ -340,11 +418,78 @@ a.spmenu-button {
 
 .todo-input {
   text-align: left;
-  padding-left: 51px;
-  font-size: 16px;
+  padding-left: 15px;
+  font-size: 15px;
   display: inline-block;
   height: 40px;
-  width: 320px;
+  width: 100%;
+  font-wieght: 300;
+}
+
+
+//Stored Todo-List
+.stored-todo-list { 
+  margin-left: 0px;
+}
+
+.stored-item-margin {
+  position: relative;
+  left: 10px;
+  top: 13px;
+}
+
+.tabs dd.active a, .tabs .tab-title.active a {
+  background-color: #e1e1e1;
+}
+.tab-width { 
+  width: 175px !important;
+}
+
+dd { 
+  width: 50%;
+}
+
+.tabs dd > a, .tabs .tab-title > a {
+  background-color: white;
+  padding: .5em !important;
+  width: 175px;
+}
+
+#timestamp {
+  position: relative;
+  display: inline-block;
+  float: right;
+  top: 14px;
+  margin-right: 1%;
+}
+
+.index-number {
+  position: relative;
+  top: 13px;
+  font-size: 15px;
+}
+
+dd {
+  text-align: center;
+}
+
+.tabs dd > a, .tabs .tab-title > a {
+  width: 150px;
+}
+
+.content {
+  padding-top: 1px !important;
+}
+
+.stored-item {
+  position: relative;
+  right: 17px;
+  padding-left:31px;
+}
+
+.todo-panel {
+  position: relative;
+  bottom:76px;
 }
 
 input[type=text]:focus, input[type=text]:active, input[type=text]:focus:active {
@@ -356,3 +501,97 @@ input[type=text]:focus, input[type=text]:active, input[type=text]:focus:active {
   -moz-box-shadow: none !important;
   -webkit-box-shadow: none !important;
 }
+
+.off-canvas-wrap {
+  height: 700px;
+  bottom: 510px;
+}
+
+.inner-wrap {
+  height: 100%;
+}
+
+.right-off-canvas-wrap {
+  height: 580px !important;
+}
+
+.right-off-canvas-menu {
+  background: white !important;
+  cursor: text;
+}
+
+.exit-off-canvas {
+  box-shadow: none !important;
+}
+
+
+.off-canvas-button {
+  box-shadow: none;
+  position: absolute;
+  font-size: 25px;
+  text-align: center;
+  background: #122F4A;
+  text-decoration: none;
+  border: none !important;
+  right: -2px;
+  top: 262px;
+  padding: 10px !important;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+
+.off-canvas-button:hover {
+  opacity: .95;
+}
+
+.notifyusertodolist {
+  -webkit-animation: button-change 7s;
+  animation: button-change 7s;
+}
+
+@-webkit-keyframes button-change {
+  0%   {opacity: 1;}
+  20%  {opacity: .8}
+  40%  {opacity: 1;}
+  60%  {opacity: .8}
+  80%  {opacity: 1;}
+  100% {opacity: .8;}
+}
+
+@keyframes button-change {
+  0%   {opacity: 1;}
+  20%  {opacity: .8}
+  40%  {opacity: 1;}
+  60%  {opacity: .8}
+  80%  {opacity: 1;}
+  100% {opacity: .8;}
+}
+
+
+// Main Page Todo item
+
+.todoshowing {
+  -webkit-animation-name: todoshowing-animation;
+  -webkit-animation-duration: 1.3s;
+  -webkit-animation-fill-mode: forwards;
+  animation: todoshowing-animatio;
+  animation-duration: 1.3s;
+  animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes todoshowing-animation {
+  0%   {opacity: .2;}
+  25%  {opacity: .4}
+  50%  {opacity: .6;}
+  75%  {opacity: .8}
+  100%  {opacity: .85;}
+}
+
+@keyframes todoshowing-animation {
+  0%   {opacity: .2;}
+  25%  {opacity: .4}
+  50%  {opacity: .6;}
+  75%  {opacity: .8}
+  100%  {opacity: .85;}
+}
+

@@ -3,8 +3,7 @@ angular.module("App").directive("flipClock", function() {
 	flipClockApi.currentTime = 1500;
 	var internalClockTime; 
 	var timerInProgress = false;
-	var audio = new Audio('/assets/warning1.mp4')
-
+	// var audio = new Audio(audio_tag('warning1.mp4'));
 	var timeExpired;
 	flipClockApi.createClock = function () {
 		var Clock = $('.your-clock').FlipClock({
@@ -16,10 +15,9 @@ angular.module("App").directive("flipClock", function() {
 	};
 
 	flipClockApi.startClock = function(scope) {
-			flipClockApi.clock.start();
-			internalClock(flipClockApi.currentTime, scope);
-			warningSound(flipClockApi.currentTime);
-			timerInProgress = true;
+		flipClockApi.clock.start();
+		internalClock(flipClockApi.currentTime, scope);
+		timerInProgress = true;
 	};
 
 	flipClockApi.initClock = function (scope) {
@@ -44,7 +42,7 @@ angular.module("App").directive("flipClock", function() {
 				flipClockApi.currentTime = roundTime(flipClockApi.currentTime + 60);
 				flipClockApi.setTimer(flipClockApi.currentTime, scope); 
 			}
-			else { 
+			else if (input == 'down') { 
 				flipClockApi.currentTime = roundTime(flipClockApi.currentTime - 60);
 				flipClockApi.setTimer(flipClockApi.currentTime, scope); 
 			}
@@ -72,16 +70,6 @@ angular.module("App").directive("flipClock", function() {
 		};	
 	}; 
 
-	var warningSound = function (time) { 
-		var timeInput = ((time - 60) * 1000);
-		if (timeInput != -60000) {
-			oneMinuteWarning = setTimeout(function() { 
-				audio.play();
-			}, timeInput); 	
-		}
-
-	}; 
-
 	var roundTime = function (currentTime) { 
 		var modifiedTime = currentTime.toString();
 		var arrayofTime = modifiedTime.split('');
@@ -104,6 +92,7 @@ angular.module("App").directive("flipClock", function() {
 			$scope.buttonClicked = buttonClicked;
 			$scope.startClicked = startClicked;
 			$scope.stopClicked = stopClicked;
+			$scope.resetTimer = resetTimer;
 
 			function adjustTime (input) { 
 				flipClockApi.adjustTime(input, $scope);
@@ -116,19 +105,21 @@ angular.module("App").directive("flipClock", function() {
 			}
 
 			function startClicked (num) {
-				console.log("startClicked");
 				flipClockApi.startClock($scope);
 			}
 
 			function stopClicked() {
 				timerInProgress = false;
-				var time = roundTime(flipClockApi.currentTime);
 				flipClockApi.setTimer(flipClockApi.currentTime, $scope);
 				flipClockApi.clock.stop();
 				clearInterval(internalClockTime); 
-				clearInterval(oneMinuteWarning);
-				$scope.overlay1 = true;
+			} 
+
+			function resetTimer () { 
+				var time = roundTime(flipClockApi.currentTime); 
+				flipClockApi.setTimer(flipClockApi.currentTime, $scope);
 			}
+
 
 		}],
 		template: '<div class="your-clock test"></div>',

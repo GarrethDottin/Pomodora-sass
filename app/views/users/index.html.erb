@@ -1,169 +1,221 @@
-<header> 
-<%= image_tag('groove.png', :class=> "logo") %> <div class="header-buttons"> <span class="header-button" id='timer'>TIMER </span> <br>   <span id='about' class="header-button"> HOW TO</span> </div>
-</header>
-  <div class="small-1 columns">
+<div class= 'fixed ' data-magellan-expedition  >
+  <nav class= 'top-bar' data-magellan-destination="timer">
+    <ul class= 'left '>
+      <li class= 'name '>
+        <%= image_tag('GrooveOtter_Website_Logo.png', :id => 'logo_text') %>
+        <%= image_tag('tagline.png', :id => 'tagline') %>
+      </li>
+    </ul>
+
+    <section class= 'top-bar-section'>
+      <ul class= 'right '>
+        <li class='timer-header' data-magellan-arrival="test1"><a class='timer-header'href = '#timer'>TIMER</a></li>
+        <li data-magellan-arrival="howto"><a href = '#howto'>HOW TO</a> </li>
+        <li id= 'tasks'><a href= '#' class="right-off-canvas-toggle">TO DO</a> </li>
+        <li id= 'empty-space'><a id= 'empty-space' href>&nbsp</a> </li>
+<!--         <li id= 'empty-space '><a href>&nbsp</a> </li>
+ -->      </ul>
+    </section>
+  </nav>
+</div>
+
     <main>
+      <a name='timer' id='timer'></a>
+      <div class= 'row timer-container timer_outline'>
+        <div class= 'small-12 columns timer-body'>
+          <h2 class= 'title'> {{statement}} </h2>
+          <input class='hidden-todo' ng-class='{todoshowing: showTodo}' placeholder='Write your activity here!' type='text' maxlength="38">
+          <button id = 'fifteen' class= 'timer-button transparent' ng-click= 'buttonClicked(15); changeStatement(15)'>15 minutes </button>
+          <button class=  'timer-button transparent' ng-click= 'buttonClicked(25); changeStatement(25)'>25 minutes </button>
+          <button  id='button45' class= 'timer-button transparent' ng-click= 'buttonClicked(45); changeStatement(45) '>45 minutes </button>
+          <div class='flip-clock-position' flip-Clock> </div>
+          <div class= 'buttons'>
+            <div ng-click= 'adjustTime("add"); changeStatement("add");' class= 'timerButtonContainer addButton'> <div class= 'upvote '>&nbsp</div></div>
+            <div ng-click= 'adjustTime("down"); changeStatement("down");' class= 'timerButtonContainer '>&nbsp<div class= 'downvote'></div></div>
+          </div>
+          <div class ='flipclock-small-text'> <span>Minutes </span> <span class= 'flipclock-small-text-seconds'>Seconds</span> </div>
+<!--           <div data-id = '0' id="slider"></div>
+ -->          <button id='start-button' class= 'flat-ui-button' ng-click= 'startClicked()'> Start</button>
+          <button id= 'stop-button' class= 'timer-button transparent' ng-click= 'stopClicked(); initialize();'>Stop </button>
+        </div>
+      </div>
 
-      <div class="timer-container timer_outline">
-        <h2 class="title"> {{statement}} </h2>
-          <button id="fifteen" class="timer-button" ng-click="buttonClicked(15); changeStatement(15)">15 minutes </button>
-          <button class= "timer-button" ng-click="buttonClicked(25); changeStatement(25)">25 minutes </button>
-          <button class="timer-button" ng-click="buttonClicked(45); changeStatement(45)">45 minutes </button>
-          <div flip-Clock> </div>
-   <!--        <div class="flipclock-small-text"> <span>Minutes </span> <span class="flipclock-small-text-seconds">Seconds</span> </div>
-          <div class="smallblock">&nbsp</div>
-          <div class="smallblock2"> &nbsp</div>
-          <div class="smallblock3"> &nbsp</div>
-          <div class="smallblock4"> &nbsp</div>
-          <div class="smallblock5"> &nbsp</div>
-          <div class="smallblock6"> &nbsp</div>s
-          <div class="smallblock7"> &nbsp</div>
-          <div class="smallblock8"> &nbsp</div>
-          <div class="blockcontent1">&nbsp</div>
-          <div class="blockcontent2">&nbsp</div>
-          <div class="blockcontent3">&nbsp</div>
-          <div class="blockcontent4">&nbsp</div>
-          <div class="blockcontent5">&nbsp</div> -->
-          <button class="flat-ui-button" ng-click="startClicked()"> Start</button>
-          <button id="stop-button" class="timer-button " ng-click="stopClicked()">Stop </button>
-          <div ng-click="adjustTime('add'); changeStatement('add');" class="timerButtonContainer addButton"> <div class="upvote"> </div></div>
-          <div ng-click="adjustTime('down'); changeStatement('down');"class="timerButtonContainer"> <div class="downvote"> </div></div>
-      </div>  
-
-
-
-  <div class="small-12 columns" >
-         <ng-slide-push-menu position="right" button="push" button-icon-class="glyphicon glyphicon-cog">
-        <span><div class="todo-title">My To Do List</div></span>
-        <div ng-controller="TodoCtrl">
-          <ul>
-            <div ng-mouseover="editing = true"  ng-mouseleave="editing = false" class="todo-item" ng-class="{fader:fadeout}" ng-repeat="todo in model.todos" >
-                <span>
-                  <img class="img-checkmark"   ng-mouseover="completeTask = true" ng-click="fadeout = true; archive(todo);" ng-class="{opacitychange:completeTask}"  ng-mouseleave="completeTask = false" src="assets/checkmark2.png"/>
-                  <form class="todo-item-margin noshadow" ng-show="editing" ng-submit="editing = false">
-                    <input class="todo-inline-edit noshadow" type="text" ng-model="todo.text">
-                  </form>
-                  <span  class="todo-item-margin" ng-hide="editing">{{todo.text}}</span>
-                  <img ng-show="editing" class ="todo-cancel-button todo-item-margin" ng-click="removeTask($index, todo.text)" src="assets/cancel.png"/>
-
-                </span>
+    <div class="off-canvas-wrap" ng-class='{notifyusertodolist: notifyUser}' data-offcanvas ng-controller= 'TodoCtrl'>
+      <div class="inner-wrap">
+        <aside class="right-off-canvas-menu">
+          <span><div class= 'todo-title'>Daily Hotlist</div></span>
+          <dl class="tabs" data-tab>
+            <dd class="active"><a class='tab-width' href="#panel1">Today</a></dd>
+            <dd ng-click='getArchivedItems();'><a class='tab-width' href="#panel2">Completed</a></dd>
+          </dl>
+          <div>
+            <div class="tabs-content">
+              <div class="content active" id="panel1">
+                <ul  class="ul-todo-list" ng-class="{scrollable:model.todos.length >= 9}">
+                  <div ng-if='model.todos.length == 0 && firstTime == true'>
+                    <div class='sample-task' ng-show ='showOnLoad == true'>
+                      <span class= 'img-checkmark' ng-mouseover= 'completeTask = true;' ng-click= ' triggerSound(); showOnLoad = false' ng-class= '{opacitychange:completeTask}'  ng-mouseleave= 'completeTask = false'>
+                          <%= image_tag('checkmark2.png') %>
+                      </span>
+                      <span class = 'todo-item-margin stored-item-margin'>Example ~ Read an article</span>
+                      <span class = 'todo-cancel-button todo-item-margin' ng-click= 'showOnLoad = false;'> <%= image_tag('cancel.png', :class => 'img-cancel') %>
+                      </span>
+                    </div>
+                  </div>
+                  <div ng-mouseover= 'editing = true'  ng-mouseleave= 'editing = false' class= 'todo-item' ng-class= '{fader:fadeout, hidetodoitem:checked}' ng-repeat= 'todo in model.todos ' >
+                    <span>
+                      <span class= 'img-checkmark'   ng-mouseover= 'completeTask = true;' ng-click= 'fadeout = true; archiveRefresh(todo); triggerSound(); removeTask($index, todo.text, "checkmark"); checked = true;' ng-class= '{opacitychange:completeTask}'  ng-mouseleave= 'completeTask = false'>
+                        <%= image_tag('checkmark2.png') %>
+                      </span>
+                      <form class= 'todo-item-margin noshadow ' ng-show= 'editing' ng-submit= 'editing = false; editTodo($index, todo.text);'>
+                        <input class= 'todo-inline-edit noshadow' maxlength="38" type= 'text' ng-model= 'todo.text'>
+                      </form>
+                      <span  class= 'todo-item-margin' ng-hide= 'editing'>{{todo.text}}</span>
+                      <span ng-show= 'editing' class = 'todo-cancel-button todo-item-margin' ng-click= 'removeTask($index, todo.text);'> <%= image_tag('cancel.png', :class => 'img-cancel' ) %></span>
+                    </span>
+                  </div>
+                </ul>
+                <form ng-submit= 'addTodo($index);' id="todo-list-input" >
+                  <input id='newtodo' class= 'todo-item todo-input noshadow' maxlength="38" type= 'text ' ng-model= 'todoText' size= '32'
+                  placeholder= 'Feeling distracted, write your to-dos here...'>
+                </form>
+              </div>
+              <div class="content" id="panel2">
+                <ul class="stored-todo-list">
+                  <div ng-repeat= 'todo in archivedTodos'>
+                    <div class='todo-item stored-item'><span class='index-number'> {{$index + 1}} </span>
+                    <span class='todo-item-margin stored-item-margin'>{{todo.text}}</span>
+                    <span id="timestamp" data-tooltip title='Date activity was completed'>{{todo.date}} </span></div>
+                  </div>
+                </ul>
+              </div>
             </div>
-          </ul>
-          <form ng-submit="addTodo($index)" >
-            <input class="todo-item todo-input noshadow" maxlength="25" type="text" ng-model="todoText" size="30"
-            placeholder="Add New Item...">
-          </form>
-        </div>
-        </ng-slide-push-menu>
-     </div>
-        <div class="overlay" ng-show="overlay1"> <div class="overlay-exit" ng-click="exitOverlay(1)">X</div><span class="overlay-text"> Did you complete your task successfully? </span>
-            <button ng-click ="secondOverlay(); add();"class="flat-ui-button overlay-button-yes"> Yes, I Did!</button> <button class="timer-button overlay-button-no" ng-click="closeOverlay(); checkProgress();":>No, Not this Time</button>
-        </div>
-        <div class="overlay2" ng-show="overlay2"> 
-        <div class="overlay-exit" ng-click="exitOverlay(2)">X</div>
-            <%= image_tag('smiley.png', :class => "overlay-image-smiley") %> 
-            <span class="overlay-text second-overlay-text"> Congrats, you're one step closer to being done!</span>
-        </div>
-
-      <div> 
-      </div>
-     </main>
-
-    <div class="progress-bar-container">
-        <div class="daily-counter"> <div class="daily-count">{{counter}}</div><div class="daily-name">Today </div></div>
-        <div progress-bar class="progress-bar-inner"></div>
-        <div class="image-container">
-          <%= image_tag('teacup.png', :id => 'teacup-image', :class => 'progress-bar-image')  %> 
-          <span class="progress-bar-image-caption image-caption-teacup"> short break</span>
-          <%= image_tag('meditate.png', :id => 'meditate-image', :class => 'progress-bar-image')  %> 
-          <span class="progress-bar-image-caption image-caption-meditate"> short break</span>
-          <%= image_tag('snack.png', :id => 'snack-image', :class => 'progress-bar-image')  %> 
-          <span class="progress-bar-image-caption image-caption-snack"> short break</span>
-          <%= image_tag('bench.png', :id => 'bench-image', :class => 'progress-bar-image')  %> 
-          <span class="progress-bar-image-caption image-caption-bench"> long break</span>
-        </div>
-    </div>
-<div class="how-to-container">
-  <div class="panel">
-    <div class="carrot carrot1"></div>
-    <div class="panel-main">
-      <h1 class="panel-centered-title"> HOW IT WORKS </h1>
-      <div class="panel-text">
-        GrooveOtter is based off a 30 year  technique to help people be more productive by managing tasks in small intervals. Harness the power of productivity. Find your Groove. 
-      </div>
-    </div> 
-  </div>
-<div class="panel light-green">
-    <div class="inner_panel">
-        <div class="panel_textL">
-          <h3> 1. CHOOSE A TASK TO ACCOMPLISH </h3>
-          <p> Do you need to finish writing that line of code, design out an icon, write a blog post, or study for a test? Choose any number of tasks to work on and we’ll be there to keep you on track.</p>
-        </div>
-        <div class="panel_imgR">
-            <%= image_tag('notes.png', :id => "notes") %>
-        </div>
-    </div>
-</div>
-
-<div class="panel blue">
-    <div class="inner_panel">
-        <div class="carrot carrot2"></div>
-        <div class="panel_imgL">
-          <%= image_tag("flipclock.png") %> 
-        </div>
-        <div class="panel_textR">
-          <h3> 2. SET THE TIMER </h3>
-          <p>Pick one of our predetermined amounts of time scientifically proven to improve mental agility or  input a custom time of your own. Whatever time you choose we’ll make sure you stick to it.  </p>
-        </div>
-    </div>
-</div>
-<div class="panel light-blue" id="panel3">
-    <div class="inner_panel">
-        <div class="carrot carrot3"></div>
-        <div class="panel_textL">
-          <h3> 2. WORK UNTIL THE TIME IS UP </h3>
-          <p> Continue working removed from distractions and without a break until you hear the timer go off. </p>
-        </div>
-        <div class="panel_imgR  timeClock">
-            <%= image_tag("time-clock.png", :id => "time-clock") %>
-        </div>
-    </div>
-</div>
-  <div class="panel yellow" id="panel4">
-      <div class="inner_panel">
-          <div class="carrot carrot4"></div>
-          <div class="panel_imgL">
-              <%= image_tag("panel-checkmark.png" ) %>
           </div>
-          <div class="panel_textR">
-            <h3>3. Check it off your list  </h3>
-            <p> If you completed your task tell GrooveOtter, watch the progress bar grow, check it off your list, and move on to the next. That felt good right? </p>
-          </div>
-      </div>
-  </div>
- <div class="panel red" id="panel5">
-     <div class="inner_panel">
-         <div class="carrot carrot5"></div>
-         <div class="panel_textL">
-           <h3>4. Take a 5 minute break </h3>
-           <p> You worked hard. Enjoy a short break. Spend it how you like or use one of our recommended breaks.  </p>
-         </div>
-         <div class="panel_imgR">
-         <%= image_tag("panel-teacup.png") %>
-         </div>
-     </div>
- </div>
-<div class="panel light-green" id="panel6">
-    <div class="inner_panel">
-    <div class="carrot carrot6"></div>
-        <div class="panel_imgL panelSmiley">
-           <%= image_tag("panel-smiley.png") %>
-        </div>
-      <div class="panel_textR">
-        <h3> 5. Every 4 cycles take a longer break</h3>
-        <p> If you complete 4 successful tasks take a longer break.</p>
+        </aside>
+        <a class="off-canvas-button right-off-canvas-toggle"><%= image_tag('pencilicon.png', :class =>"img-padding") %>
+            </a>
       </div>
     </div>
+
+      <div id='overlays' class='invisible'>
+        <div class= 'overlay' ng-show= 'overlay1;'>
+          <div class='centered-body'> <span class= 'overlay-text '> Did you complete your task successfully? </span>
+          <button ng-click = 'secondOverlay(); add(); resetTimer(); triggerSound(); increaseSuccessCount("increment"); storedCount(); endSound(); 'class= 'flat-ui-button overlay-button-yes '> Yes, I Did</button> <button class= 'timer-button overlay-button-no ' ng-click= 'closeOverlay(); checkProgress();  resetTimer(); storedCount(); endSound();':>No, Not Yet</button>
+          </div>
+        </div>
+        <div class= 'overlay2 ' ng-show='overlay2'>
+            <div class='centered-body'>
+              <%= image_tag('panel-checkmark.png', :class =>  'overlay-image-smiley') %>
+              <span class= 'overlay-text second-overlay-text'> Congrats, you're one step closer to being done!</span>
+            </div>
+        </div>
+      </div>
+
+      <div id = 'HOWTO' class= 'progress-bar-container row'>
+        <div class= 'small-1 columns' id="counter-container">
+          <div class= 'daily-counter'> <div class= 'daily-count'>{{counter}}</div><div class= 'daily-name '>Today </div></div>
+        </div>
+        <div class= 'small-10 columns'>
+          <div progress-bar class= 'progress-bar-inner'></div>
+          <div class= 'image-container'>
+            <span class= 'progress-bar-image-caption image-caption-teacup'> short break</span>
+            <span class= 'progress-bar-image-caption image-caption-meditate'> short break</span>
+            <span class= 'progress-bar-image-caption image-caption-snack'> short break</span>
+            <span class= 'progress-bar-image-caption image-caption-bench'> long break</span>
+          </div>
+        </div>
+        <div class='small-1 columns'> &nbsp</div>
+      </div>
+    </main>
+  <div data-magellan-destination='howto' class = 'how-to-container row'>
+      <a name ='howto'></a>
+
+    <div class= 'small-12 columns no-padding'>
+      <div class= 'panel'>
+        <div class= 'carrot carrot1'></div>
+        <div class= 'panel-main'>
+          <h1 class= 'panel-centered-title'> HOW IT WORKS </h1>
+          <div class= 'panel-text'>
+         Do you often feel distracted, like you just can’t get back to work? Gain your focus back with GrooveOtter. You choose the activity you need to focus on and work for a set amount of time.  By working in blocks of time GrooveOtter helps improve your mental agility and reduces that feeling of mental exhaustion.  Discover the power of your own productivity. Find your Groove. 
+          </div>
+        </div>
+      </div>
+      <div class= 'panel light-green'>
+        <div class= 'carrot carrot2'></div>
+        <div class= 'inner_panel'>
+            <div class= 'panel_textL'>
+              <h3 class= 'white-text'> 1. Choose A Task To Accomplish </h3>
+              <p class= 'white-text'>Having trouble writing that blog post, designing out an icon, studying for a test, or finishing that line of code? Choose any number of tasks to work on and we’ll be there to keep you on track.  In fact if you write it down studies show that you're 80% more likely to finish them. </p>
+            </div>
+            <div class= 'panel_imgR'>
+                <%= image_tag('notes.png', :id =>  'notes') %>
+            </div>
+        </div>
+      </div>
+
+      <div class= 'panel blue'>
+        <div class= 'carrot carrot3'></div>
+        <div class= 'inner_panel'>
+            <div class= 'panel_imgL'>
+              <%= image_tag( 'flipclock.png') %>
+            </div>
+            <div class= 'panel_textR white-text'>
+              <h3 class= 'white-text '> 2. Set The Timer </h3>
+              <p class= 'white-text '>Estimate how long it will take you to complete a task, set the timer to one of our predetermined amounts or input a custom time of your own. Whatever time you choose we’ll help you stick to it. Working for a set amount of time has shown to improve the output of your work, and is commonly known as applying creative constraints.   </p>
+            </div>
+        </div>
+      </div>
+      <div class= 'panel light-blue' id= 'panel3'>
+        <div class= 'inner_panel'>
+          <div class= 'panel_textL white-text'>
+            <h3 class= 'white-text'> 3. Work Until The Time Is Up </h3>
+            <p class= 'white-text'> Continue working removed from distractions and without a break until you hear the timer go off. Everyone from writers, to architects have credited this technique of utilizing creative constraints to achieve more inspirational and higher quality work. You’ll be surprised how far you can go with a little focus.   </p>
+          </div>
+          <div class= 'panel_imgR timeClock'>
+              <%= image_tag( 'time-clock.png', :id =>  'time-clock') %>
+          </div>
+        </div>
+      </div>
+      <div class= 'panel yellow' id= 'panel4'>
+        <div class= 'carrot carrot4'></div>
+        <div class= 'inner_panel'>
+          <div class= 'panel_imgL'>
+              <%= image_tag( 'panel-checkmark.png' ) %>
+          </div>
+          <div class= 'panel_textR white-text'>
+            <h3 class= 'white-text'>4. Check it off your list  </h3>
+            <p class= 'white-text'> If you completed your task tell GrooveOtter, watch the progress bar grow, check it off your hot list, and move on to the next. That felt good right?  </p>
+          </div>
+        </div>
+      </div>
+      <div class= 'panel red' id= 'panel5'>
+        <div class= 'carrot carrot5'></div>
+        <div class= 'inner_panel'>
+          <div class= 'panel_textL white-text'>
+             <h3 class= 'white-text'>5. Take a short minute break </h3>
+             <p class= 'white-text'> You worked hard. Enjoy a guilt free break. Too many times people brush off the  importance of breaks. Experts say that the best performers are the ones that know when to take break. </p>
+          </div>
+          <div class= 'panel_imgR'>
+             <%= image_tag( 'panel-teacup.png') %>
+          </div>
+         </div>
+       </div>
+      <div class= 'panel light-green' id= 'panel6'>
+        <div class= 'carrot carrot6'> </div>
+        <div class= 'inner_panel'>
+          <div class= 'panel_imgL panelSmiley'>
+            <%= image_tag( 'panel-smiley.png') %>
+          </div>
+            <div class= 'panel_textR white-text'>
+              <h3 class= 'white-text'> 6. Every 4 cycles take a longer break</h3>
+              <p class= 'white-text'> If you complete 4 successful tasks take a longer break.  Now is the time to stretch your legs, waste some time on youtube, and get ready to dive back in. </p>
+            </div>
+        </div>
+      </div>
+      </div>
+  </div>
+  <footer class= 'black'><p id='footer-text' class= 'white-text'> GrooveOttert is a time tracker with similar functions described in the Pomodoro Technique®. This tool is NOT an application or anything related with the Pomodoro Technique® or Francesco Cirillo. </p></footer>
 </div>
-  </div> 
-</div>
+<%= audio_tag("Similar_1.wav", :id => 'alarm') %>
+<%= audio_tag('Reward2.mp3', :id => 'reward') %>
+
